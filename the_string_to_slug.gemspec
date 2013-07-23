@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["zykin-ilya@ya.ru"]
   spec.description   = %q{ Convert text string to slug param }
   spec.summary       = %q{ Translite, downcase, parameterize }
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/the-teacher/the_string_to_slug"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
