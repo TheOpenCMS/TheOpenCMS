@@ -1,29 +1,20 @@
-# TheStringToSlug
+### TheStringToSlug
 
-TODO: Write a gem description
+Convert text string to slug param
 
-## Installation
+Translite, downcase, parameterize
 
-Add this line to your application's Gemfile:
+```ruby
+"Привет Мир! Hello world!".to_slug_param
+# => "privet-mir-hello-world"
 
-    gem 'the_string_to_slug'
+String.to_slug_param("Привет Мир! Hello world!")
+# => "privet-mir-hello-world"
+```
 
-And then execute:
+Be carefully with file extension
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install the_string_to_slug
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```ruby
+"Документ.doc".to_slug_param
+# => "dokument-doc"
+```
