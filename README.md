@@ -28,3 +28,10 @@ Be carefully with file extension
 "Документ.doc".to_slug_param
 # => "dokument-doc"
 ```
+
+For filenames:
+
+```ruby
+"/доки/dir/тест/документ.doc".slugged_filename         #=> "dokument.doc"
+String.slugged_filename("/доки/dir/тест/документ.doc") #=> "dokument.doc"
+```
