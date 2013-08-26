@@ -20,4 +20,15 @@ describe 'StringToSlug' do
       String.slugged_filename("/доки/dir/тест/доку мент").should eq "doku-ment"
     end
   end
+
+  context 'Full path to file' do
+    it 'should be true' do
+      "/doc/dir/test/document.doc".slugged_file.should  eq "/doc/dir/test/document.doc"
+      "/доки/dir/тест/документ.doc".slugged_file.should eq "/доки/dir/тест/dokument.doc"
+      "/доки/dir/тест/документ".slugged_file.should     eq "/доки/dir/тест/dokument"
+      "/доки/dir/тест/доку мент".slugged_file.should    eq "/доки/dir/тест/doku-ment"
+
+      String.slugged_file("/доки/dir/тест/доку мент").should eq "/доки/dir/тест/doku-ment"
+    end
+  end
 end
