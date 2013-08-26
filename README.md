@@ -35,3 +35,10 @@ For filenames:
 "/доки/dir/тест/документ.doc".slugged_filename         #=> "dokument.doc"
 String.slugged_filename("/доки/dir/тест/документ.doc") #=> "dokument.doc"
 ```
+
+For full file path:
+
+```ruby
+"/доки/dir/тест/документ.doc".slugged_file             #=> "/доки/dir/тест/dokument.doc"
+String.slugged_filename("/доки/dir/тест/документ.doc") #=> "/доки/dir/тест/dokument.doc"
+```
