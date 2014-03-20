@@ -42,3 +42,18 @@ For full file path:
 "/доки/dir/тест/документ.doc".slugged_file             #=> "/доки/dir/тест/dokument.doc"
 String.slugged_filename("/доки/dir/тест/документ.doc") #=> "/доки/dir/тест/dokument.doc"
 ```
+
+Params
+
+```ruby
+"Документ.doc".to_slug_param(locale: :en)
+# => "doc"
+
+"Документ.doc".to_slug_param(locale: :en)
+# => "dokument-doc"
+```
+
+```ruby
+"Документ.doc".to_slug_param(delimiter: '_')
+# => "dokument_doc"
+```
