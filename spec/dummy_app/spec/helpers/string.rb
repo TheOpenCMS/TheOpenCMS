@@ -69,9 +69,54 @@ describe 'StringToSlug' do
     end
   end
 
+  context "spec chars" do
+    it "should works" do
+      "[$&+,:;=?@Hello world!#|'<>.^*()%!-]".to_slug_param.should eq 'hello-world'
+    end
+
+    it "should works" do
+      "教師 — the-teacher".to_slug_param.should eq 'the-teacher'
+      "Hello ^, I'm here!".to_slug_param.should eq 'hello-i-m-here'
+    end
+
+    it "should works" do
+      "HELLO---WorlD".to_slug_param(delimiter: '_').should eq 'hello_world'
+    end
+
+    it "should works" do
+      str = "__...HELLO-___--+++--WorlD----__&&***...__.---"
+      
+      str.to_slug_param.should eq 'hello-world'
+      str.to_slug_param(delimiter: '_').should eq 'hello_world'
+      str.to_slug_param(delimiter: '+').should eq 'hello+world'
+    end
+
+    it "should works" do
+      str = "Ilya zykin aka   Killich, $$$ aka the-teacher"
+      str.to_slug_param(delimiter: '+').should eq "ilya+zykin+aka+killich+aka+the+teacher"
+    end
+  end
+
   context 'Scopes' do
-    it 'should be true' do
-      ActionController::Base.to_s.to_slug_param(delimiter: '_').should eq 'actioncontroller_base'
+    it "should work with Nested Controller Name" do
+      class PagesController < ApplicationController; end
+      ctrl = PagesController.new
+      ctrl.controller_path.to_slug_param.should eq 'pages'
+    end
+
+    it "should work with Nested Controller Name" do
+      module Admin; end
+      class Admin::PagesController < ApplicationController; end
+      ctrl = Admin::PagesController.new
+      ctrl.controller_path.to_slug_param.should eq 'admin-pages'
+    end
+
+    it "should work with Nested Controller Name" do
+      module Admin; end
+      class Admin::PagesController < ApplicationController; end
+      ctrl = Admin::PagesController.new
+      params = { delimiter: '_' }
+      ctrl.controller_path.to_slug_param(params).should eq 'admin_pages'
     end
   end
 end

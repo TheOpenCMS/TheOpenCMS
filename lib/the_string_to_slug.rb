@@ -22,9 +22,10 @@ class String
   class << self
     def to_slug_param str, opts = {}
       delimiter = opts.delete(:delimiter) || '-'
-
-      str = I18n::transliterate(str.mb_chars, opts)
+      str = str.gsub(/\-{2,}/, '-').mb_chars
+      str = I18n::transliterate(str, opts)
         .gsub('_', delimiter)
+        .gsub('-', delimiter)
         .parameterize(delimiter)
         .downcase.to_s
     end
