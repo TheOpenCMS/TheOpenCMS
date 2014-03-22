@@ -12,8 +12,8 @@ class String
     self.class.slugged_filename(self, opts)
   end
 
-  def slugged_file opts = {}
-    self.class.slugged_file(self, opts)
+  def slugged_filepath opts = {}
+    self.class.slugged_filepath(self, opts)
   end
 
   # -----------------------------------
@@ -21,13 +21,13 @@ class String
   # -----------------------------------
   class << self
     def to_slug_param str, opts = {}
-      delimiter = opts.delete(:delimiter) || '-'
+      sep = opts.delete(:sep) || '-'
       str = str.gsub(/\-{2,}/, '-').mb_chars
       str = I18n::transliterate(str, opts)
-        .gsub('_', delimiter)
-        .gsub('-', delimiter)
-        .parameterize(delimiter)
-        .downcase.to_s
+        .gsub('_', sep)
+        .gsub('-', sep)
+        .parameterize(sep)
+        .to_s
     end
 
     def file_ext file_name, opts = {}
@@ -49,9 +49,23 @@ class String
       [fname, ext].join('.')
     end
 
-    def slugged_file file_full_path, opts = {}
+    def slugged_filepath file_full_path, opts = {}
       fname = slugged_filename file_full_path, opts
       file_full_path.split('/')[0...-1].push(fname).join '/'
     end
+  end
+end
+
+class Symbol
+  def to_slug_param opts = {}
+    String.to_slug_param(self.to_s, opts)
+  end
+
+  def slugged_filename opts = {}
+    String.slugged_filename(self.to_s, opts)
+  end
+
+  def slugged_filepath opts = {}
+    String.slugged_file(self.to_s, opts)
   end
 end

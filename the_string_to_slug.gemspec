@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = TheStringToSlug::VERSION
   spec.authors       = ['Ilya N. Zykin']
   spec.email         = ['zykin-ilya@ya.ru']
-  spec.description   = %q{ Convert text string to slug param }
-  spec.summary       = %q{ Translite, downcase, parameterize }
+  spec.description   = %q{ Convert strings and symbols to slug param }
+  spec.summary       = %q{ Transliteration + Parameterization for slugs building }
   spec.homepage      = 'https://github.com/the-teacher/the_string_to_slug'
   spec.license       = 'MIT'
 
