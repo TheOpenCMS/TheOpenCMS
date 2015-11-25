@@ -8,6 +8,7 @@ end
 # short_id    h11149              # uniq
 # id          50                  # uniq
 
+# include ::FriendlyIdPack::Base
 module FriendlyIdPack
   module Base
     extend ActiveSupport::Concern
