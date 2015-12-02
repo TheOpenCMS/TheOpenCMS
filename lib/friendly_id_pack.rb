@@ -28,7 +28,9 @@ module FriendlyIdPack
     end
 
     included do
-      def to_param; self.slug end
+      def to_param
+        (self.slug.present? ? self.slug : self.id).to_s
+      end
 
       validates_presence_of   :short_id, :friendly_id, if: ->{ errors.blank? }
       validates_uniqueness_of :short_id, :slug,        if: ->{ errors.blank? }
