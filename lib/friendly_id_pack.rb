@@ -40,12 +40,18 @@ module FriendlyIdPack
 
       def friendly_prefix
         {
-          hub:    :h,
-          page:   :p,
-          post:   :pt,
-          blog:   :b,
-          recipe: :r,
-          note:   :n
+          article: :a,
+          hub:     :h,
+          page:    :p,
+          post:    :pt,
+          blog:    :b,
+          recipe:  :r,
+          note:    :n,
+          brand:   :br,
+          product: :pr,
+
+          product_category: :pc,
+          product_brand:    :pb
         }
       end
 
