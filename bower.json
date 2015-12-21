@@ -1,0 +1,23 @@
+{
+  "name": "protozaur",
+  "homepage": "https://github.com/the-teacher/protozaur",
+  "authors": [
+    "Ilya N. Zykin <zykin-ilya@ya.ru>"
+  ],
+  "description": "Protozaur CSS framework. Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid wasting time and increase productivity",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "Protozaur",
+    "CSS",
+    "Framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

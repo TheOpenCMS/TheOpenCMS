@@ -1,0 +1,109 @@
+// margin/padding
+.ma{ margin: auto }
+
+$i: 0;
+@while $i <= 100 {
+  .p#{ $i }{ padding:#{ $i }px !important }
+  .m#{ $i }{ margin: #{ $i }px !important }
+
+  .pt#{ $i }{ padding-top:    #{ $i }px !important }
+  .pr#{ $i }{ padding-right:  #{ $i }px !important }
+  .pb#{ $i }{ padding-bottom: #{ $i }px !important }
+  .pl#{ $i }{ padding-left:   #{ $i }px !important }
+
+  .mt#{ $i }{ margin-top:    #{ $i }px !important }
+  .mr#{ $i }{ margin-right:  #{ $i }px !important }
+  .mb#{ $i }{ margin-bottom: #{ $i }px !important }
+  .ml#{ $i }{ margin-left:   #{ $i }px !important }
+
+  $i: $i + 5;
+}
+
+// width
+$i: 10;
+@while $i <= 1200 {
+  .w#{ $i }{ width: #{ $i }px !important }
+  $i: $i + 5;
+}
+
+// width %
+$i: 5;
+@while $i <= 100 {
+  .w#{ $i }p{ width: #{ $i }% !important }
+  $i: $i + 5;
+}
+
+// font-size
+.fs0{ font-size: 0 }
+
+$i: 10;
+@while $i <= 30 {
+  .fs#{ $i }{ font-size: #{ $i }px !important }
+  $i: $i + 1;
+}
+
+// line-height
+$i: 100;
+@while $i <= 200 {
+  .lh#{ $i }{ line-height: #{ $i + '%' } !important }
+  $i: $i + 5;
+}
+
+.tac{ text-align: center  !important }
+.tar{ text-align: right   !important }
+.tal{ text-align: left    !important }
+.taj{ text-align: justify !important }
+
+.vat{ vertical-align: top    !important }
+.vam{ vertical-align: middle !important }
+.vab{ vertical-align: bottom !important }
+
+.b{ font-weight: bold   !important }
+.i{ font-style:  italic !important }
+.n{ font-style:  normal !important }
+.u{ text-decoration: underline !important }
+.fwn{ font-weight: normal !important }
+
+.upcase  { text-transform: uppercase }
+.downcase{ text-transform: lowercase }
+
+.ffa{ font-family: Arial }
+.fft{ font-family: Tahoma }
+.ffv{ font-family: Verdana }
+.ffg{ font-family: Georgia }
+.ffm{ font-family: Monospace }
+.fftnr{ font-family: Times New Roman }
+
+.inline{ display: inline       !important }
+.block { display: block        !important }
+.iblock{ display: inline-block !important }
+
+.showme{ border: 1px solid red !important }
+
+.posrel{ position: relative !important }
+.posabs{ position: absolute !important }
+
+// TABLE
+.ptz--table {
+  display: table
+}
+
+.ptz--row, .ptz--tr {
+  display: table-row
+}
+
+.ptz--cell, .ptz--th, .ptz--td {
+  display: table-cell;
+  vertical-align: top
+}
+
+// BORDER RADIUS
+.brn{ border-radius: 0 !important }
+
+// LINE BREAKES
+.br-off, .nobr{ white-space: nowrap }
+.br-on{ white-space: normal }
+
+// LETTER SPACING
+.ls0{ letter-spacing: 0 }
+.lsn{ letter-spacing: normal }

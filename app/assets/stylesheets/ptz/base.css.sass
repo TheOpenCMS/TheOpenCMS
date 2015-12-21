@@ -1,0 +1,105 @@
+// LINKS
+a
+  color: #012d85
+  transition: color .2s ease
+
+  &:hover
+    color: red
+
+// HEADERS
+h1,h2,h3,h4,h5,h6
+  font-size: 18px
+  line-height: 130%
+  font-weight: normal
+
+// PARAGRAPH
+p
+  margin: 20px 0
+  color: #292e31
+  font-size: 16px
+  line-height: 160%
+
+hr
+  border-top: 1px solid #eee
+  margin: 20px 0
+
+// SUP/SUB
+sup, sub
+  font-size: 85%
+  zoom: 1
+sup
+  vertical-align: 40%
+sub
+  vertical-align: -40%
+
+// LISTS
+.ol, .ul
+  margin-left:   20px
+  margin-bottom: 20px
+
+.ol li, .ul li
+  list-style-position: outside
+  margin-left: 15px
+  padding-left: 5px
+  line-height: 135%
+
+.ol li
+  list-style-type: decimal
+
+.ul li
+  list-style-type: disc
+
+// VISIBILITY
+.hidden
+  display: none !important
+
+.invisible
+  visibility: hidden !important
+  height: 0 !important
+
+.visible
+  visibility: visible !important
+  height: auto
+
+// FLOATING
+.ob, .ofh
+  overflow: hidden !important
+  zoom: 1
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+.clearfix:after
+  content: "."
+  display: block
+  line-height: 0
+
+  height: 0
+  clear: both
+  visibility: hidden
+
+html[xmlns] .clearfix
+  display: block
+
+* html .clearfix
+  zoom: 1
+
+// ADDITIONAL
+.text-select-off
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+
+noscript
+  background: red
+  padding: 5px
+
+  color: white
+  font-size: 20px

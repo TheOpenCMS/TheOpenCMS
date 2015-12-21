@@ -1,0 +1,26 @@
+{
+  "name": "GulpHTMLBuilder",
+  "version": "1.0.0",
+  "description": "HTML builder",
+  "main": "Gulpfile.js",
+  "repository": "https://github.com/the-teacher",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "https://github.com/the-teacher ; Ilya N. Zykin <zykin-ilya@ya.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer-core": "^5.1.7",
+    "chokidar": "^1.0.0-rc4",
+    "gulp": "^3.8.11",
+    "gulp-batch": "^1.0.5",
+    "gulp-concat": "^2.5.2",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-postcss": "^4.0.3",
+    "gulp-sass": "^2.0.0",
+    "gulp-util": "^3.0.4",
+    "gulp-coffee": "^2.3.1",
+    "gulp-livereload": "^3.8.0"
+  }
+}

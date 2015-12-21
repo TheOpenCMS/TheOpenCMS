@@ -1,0 +1,55 @@
+.ptz--btn, .ptz--input, .ptz--textarea {
+  color: black;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ptz--btn:disabled, .ptz--input:disabled, .ptz--textarea:disabled {
+  color: #eee;
+  background: white;
+  cursor: not-allowed;
+}
+
+.ptz--btn:disabled:hover, .ptz--input:disabled:hover, .ptz--textarea:disabled:hover {
+  color: #eee;
+  background: white;
+}
+
+.ptz--btn {
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+  background: white;
+  transition: background-color .2s ease;
+}
+
+.ptz--btn.current {
+  border-color: #7bc7ff;
+  background-color: #c5e6ff;
+}
+
+.ptz--btn.current:hover {
+  background-color: #c5e6ff;
+}
+
+.ptz--btn:hover {
+  color: #000;
+  background-color: #e3f2fd;
+}
+
+.ptz--btn--side-left {
+  margin-right: -3px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ptz--btn--side-right {
+  margin-left: -3px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

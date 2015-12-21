@@ -1,0 +1,69 @@
+// 29/10/15
+*
+  margin:  0
+  padding: 0
+  border:  0
+  outline: 0
+  box-sizing: border-box
+
+*:hover, *:active, *:focus
+  outline: 0
+
+*::after, *::before
+  box-sizing: border-box
+
+body
+  color: black
+  font-size: 10px
+  line-height: 125%
+  background: white
+
+// IE a > img fix
+a img
+  border: none
+
+img
+  vertical-align: top
+
+// A
+a
+  text-decoration: none
+
+  &:hover
+    text-decoration: none
+
+// LISTS
+ol, ul
+  list-style: none
+li
+  list-style-position: outside
+
+// TABLES
+table, tr, th, td
+  border-collapse: collapse
+  vertical-align: top
+  border-spacing: 0
+
+th
+  font-weight: bold
+
+// INPUTS/BUTTONS
+::-moz-focus-inner
+  border:  0
+  margin:  0
+  padding: 0
+  outline: 0
+
+// PLACEHOLDER
+input
+  &::-moz-placeholder
+    color: #ccc !important
+  &:-ms-input-placeholder
+    color: #ccc !important
+  &::-webkit-input-placeholder
+    color: #ccc !important
+  &:focus::-webkit-input-placeholder
+    color: transparent !important
+
+input[type=submit]
+  cursor: pointer
