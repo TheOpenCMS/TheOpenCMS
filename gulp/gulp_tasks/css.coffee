@@ -29,19 +29,41 @@ gulp.task 'copyCSS', ['compressCss'], ->
     .on 'error', gutil.log
 
 gulp.task 'compressCss', ->
-  reset = params.css.dest  + 'ptz/reset.css.css'
-  base  = params.css.dest  + 'ptz/base.css.css'
-  fw    = params.css.dest  + 'ptz/framework.css.css'
+  reset = params.css.dest + 'ptz/reset.css'
+  base  = params.css.dest + 'ptz/base.css'
+  fw    = params.css.dest + 'ptz/framework.css'
 
-  ib_base  = params.css.dest + 'ptz/inputs-buttons/base.css.css'
-  ib_sizes = params.css.dest + 'ptz/inputs-buttons/sizes.css.css'
+  ib_base_1 = params.css.dest + 'ptz/inputs_buttons/buttons.css'
+  ib_base_2 = params.css.dest + 'ptz/inputs_buttons/button_groups.css'
+  ib_base_3 = params.css.dest + 'ptz/inputs_buttons/inputs.css'
+  ib_base_4 = params.css.dest + 'ptz/inputs_buttons/sizes.css'
 
   dest_path = params.css.dest + 'ptz'
-  min_file  = 'protozaur.min.css'
 
-  gulp.src([ reset, base, fw, ib_base, ib_sizes ])
+  gulp.src([ reset ])
     .pipe plumber()
-    .pipe concat(min_file)
+    .pipe concat('reset.min.css')
+    .pipe minCSS( keepBreaks: false )
+    .pipe gulp.dest(dest_path)
+    .on 'error', gutil.log
+
+  gulp.src([ base ])
+    .pipe plumber()
+    .pipe concat('base.min.css')
+    .pipe minCSS( keepBreaks: false )
+    .pipe gulp.dest(dest_path)
+    .on 'error', gutil.log
+
+  gulp.src([ fw ])
+    .pipe plumber()
+    .pipe concat('framework.min.css')
+    .pipe minCSS( keepBreaks: false )
+    .pipe gulp.dest(dest_path)
+    .on 'error', gutil.log
+
+  gulp.src([ reset, base, fw, ib_base_1, ib_base_2, ib_base_3, ib_base_4 ])
+    .pipe plumber()
+    .pipe concat('protozaur.min.css')
     .pipe minCSS( keepBreaks: false )
     .pipe gulp.dest(dest_path)
     .on 'error', gutil.log

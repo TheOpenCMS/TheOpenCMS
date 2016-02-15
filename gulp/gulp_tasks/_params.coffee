@@ -1,11 +1,15 @@
 path  = require 'path'
 __abs = (_path) -> path.resolve(_path) + '/'
+__app_root  = "#{ __dirname }/../../"
 __gulp_root = "#{ __dirname }/.."
 
 config =
   # Livereload
   livereload:
     port: 3030
+
+  clean:
+    "#{ __app_root }/ptz"
 
   # SASS
   sass:

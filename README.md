@@ -121,7 +121,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        pr0 ... pt100
+        pt0 ... pt100
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         padding-top: <b>X</b>px !important;
@@ -199,7 +199,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        ptz--table
+        ptz_table
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         display: table
@@ -208,7 +208,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        ptz--row, ptz--tr
+        ptz_row, ptz_tr
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         display: table-row
@@ -217,7 +217,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        ptz--cell, ptz--th, ptz--td
+        ptz_cell, ptz_th, ptz_td
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         display: table-cell; vertical-align: top
@@ -528,7 +528,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        ptz--btn
+        ptz_btn
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         button style
@@ -537,7 +537,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        ptz--size-10 ... ptz--size-25
+        ptz_size-10 ... ptz_size-25
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         button's size. 10px ... 25px
@@ -551,7 +551,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        ptz--input, ptz--textarea
+        ptz_input, ptz_textarea
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         Input style
@@ -560,7 +560,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
-        ptz--size-10 ... ptz--size-25
+        ptz_size-10 ... ptz_size-25
       </td>
       <td width="400px" valign="top" style='vertical-align:top'>
         inputs's size. 10px ... 25px
@@ -613,6 +613,30 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
 ### How Protozaur works?
 
+```html
+<html>
+  <head>...</head>
+  <body class='ptz_reset'>...</body>
+</html>
+```
+
+or
+
+```html
+<html>
+  <head>...</head>
+  <body>
+
+    ...
+
+    <div class='ptz_reset'> ... </div>
+
+    ...
+
+  </body>
+</html>
+```
+
 **Example 1**
 
 ```html
@@ -633,7 +657,7 @@ margin-bottom: 20px;
 **Example 2**
 
 ```html
-<a href='http://github.com' class='ptz--btn ptz--size-16'>Button to Github</a>
+<a href='http://github.com' class='ptz_btn ptz_size-16'>Button to Github</a>
 ```
 
 Will show button based on `font-size: 16px;`
@@ -646,16 +670,16 @@ Will show button based on `font-size: 16px;`
   <div class='m20'>
 
     <div class='mb20'>
-      <input name='login' type='text' class='ptz--input ptz--size-16 w300'>
+      <input name='login' type='text' class='ptz_input ptz_size-16 w300'>
     </div>
 
     <div class='mb20'>
-      <input name='email' type='text' class='ptz--input ptz--size-16 w300'>
+      <input name='email' type='text' class='ptz_input ptz_size-16 w300'>
     </div>
 
     <div class='clearfix'>
       <div class='pull-right'>
-        <input type='submit' class='ptz--submit ptz--size-16'>
+        <input type='submit' class='ptz_submit ptz_size-16'>
       </div>
     </div>
 
@@ -735,8 +759,7 @@ bundle
   #= require ptz/base
   #= require ptz/framework
 
-  #= require ptz/inputs-buttons/base
-  #= require ptz/inputs-buttons/sizes
+  #= require ptz/inputs_buttons/all
 */
 ```
 
@@ -764,22 +787,4 @@ you can use following path
 
 ## The MIT License (MIT)
 
-Copyright (c) 2015 Ilya N. Zykin
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+See <a href='./LICENSE.txt'>LICENSE.txt</a>

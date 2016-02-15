@@ -1,0 +1,45 @@
+.ptz_checkbox
+  display: none
+
+  + label
+    cursor: pointer
+    position: relative
+    display: inline-block
+    margin-left: 30px
+
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: -30px
+      width:  19px
+      height: 19px
+      border-radius: 5px
+      border: 4px solid lightgray
+
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 5px
+      left: -25px
+      width: 9px
+      height: 9px
+      border-radius: 2px
+
+    &:hover:after
+      background-color: gray
+
+.ptz_checkbox
+  &:checked
+    + label:after
+      background: black
+
+  &:disabled
+    + label
+      cursor: not-allowed
+
+  &:disabled:not(:checked)
+    + label:hover:after
+      background-color: transparent

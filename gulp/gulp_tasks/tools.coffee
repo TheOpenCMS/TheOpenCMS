@@ -24,6 +24,7 @@ module.exports =
 
   # Common
   concat: require 'gulp-concat' # files
+  clean:  require 'gulp-clean'
 
   # SCSS/CSS
   sass:         require 'gulp-sass'

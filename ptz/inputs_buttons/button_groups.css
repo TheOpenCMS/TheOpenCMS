@@ -1,0 +1,17 @@
+.ptz_btn-group .ptz_btn {
+  border-radius: 0;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.ptz_btn-group .ptz_btn:first-child {
+  margin-right: -3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.ptz_btn-group .ptz_btn:last-child {
+  margin-left: -3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}

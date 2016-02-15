@@ -1,0 +1,11 @@
+.inline {
+  display: inline !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.iblock {
+  display: inline-block !important;
+}

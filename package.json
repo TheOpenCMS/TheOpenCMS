@@ -1,6 +1,6 @@
 {
   "name": "protozaur",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid wasting time and increase productivity",
   "main": "index.js",
   "directories": {
