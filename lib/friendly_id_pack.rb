@@ -105,7 +105,8 @@ module FriendlyIdPack
     module ClassMethods
       def friendly_where id
         if FriendlyIdPack::Base.int?(id)
-          where(id: id)
+          collection = where(id: id)
+          collection.blank? ? where(slug: id) : collection
         elsif id.is_a? Array
           ids = id.map(&:to_slug_param)
           where(slug: ids)
