@@ -88,10 +88,14 @@ module FriendlyIdPack
         end
       end
 
+      def build_slug_attempts
+        100
+      end
+
       def uniq_slug str
         _slug = str.to_s.to_slug_param
 
-        10.times do |i|
+        build_slug_attempts.times do |i|
           objs_with_this_slug = self.class.where(slug: _slug)
           break if objs_with_this_slug.size.zero?
           break if objs_with_this_slug.size == 1 && objs_with_this_slug.include?(self)
