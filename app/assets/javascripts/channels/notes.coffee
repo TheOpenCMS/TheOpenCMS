@@ -12,5 +12,7 @@ App.notes = App.cable.subscriptions.create "NotesChannel",
     console.log 'NotesChannel received'
     # Called when there's incoming data on the websocket for this channel
 
+    JODY.process(data)
+
   random: ->
     @perform 'random'

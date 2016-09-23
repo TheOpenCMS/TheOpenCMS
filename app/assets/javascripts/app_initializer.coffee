@@ -1,2 +1,3 @@
 $ ->
   Search.init()
+  Notes.init()

@@ -1,5 +1,7 @@
 # Be sure to restart your server when you modify this file. Action Cable runs in a loop that does not support auto reloading.
 class NotesChannel < ApplicationCable::Channel
+  include ChannelHelper
+
   def subscribed
     puts ">>> NotesChannel subscribed"
     stream_from "notes_channel"
@@ -12,6 +14,10 @@ class NotesChannel < ApplicationCable::Channel
 
   def random
     puts ">>> NotesChannel random"
-    ActionCable.server.broadcast 'notes_channel', message: 'random'
+
+    broadcast 'notes_channel', render_json(
+      template: 'notes/ws_random',
+      locals: { note: Note.random.first }
+    )
   end
 end

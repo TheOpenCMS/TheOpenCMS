@@ -8,7 +8,10 @@
   .fs20.mb20 There is no any note yet
 - else
   .pull-right.w300.ml20.mb20
-    = render partial: 'search/form'
+    .mb30= render partial: 'search/form'
+    .mb10= render(template: 'notes/random', locals: { note: Note.random.first })
+    .mb20.fs14.i.js-current-time= Time.now.to_s(:db)
+
   = render template: 'notes/list', locals: { notes: @notes }
   .fs18.lh120
     = paginate @notes
