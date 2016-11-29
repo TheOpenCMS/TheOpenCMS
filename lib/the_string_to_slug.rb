@@ -26,7 +26,7 @@ class String
       str = I18n::transliterate(str, opts)
         .gsub('_', sep)
         .gsub('-', sep)
-        .parameterize(sep)
+        .parameterize(separator: sep)
         .to_s
     end
 
