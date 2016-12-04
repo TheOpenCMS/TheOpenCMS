@@ -1,7 +1,19 @@
 require "rails-i18n"
 require "the_string_to_slug/version"
 
-module TheStringToSlug; end
+module TheStringToSlug
+  class << self
+    def basic_parametrize(str, sep)
+      str.gsub('_', sep).gsub('-', sep)
+    end
+
+    def parameterize(str, sep)
+      Rails::VERSION::MAJOR > 4          ? \
+        str.parameterize(separator: sep) : \
+        str.parameterize(sep)
+    end
+  end
+end
 
 class String
   def to_slug_param opts = {}
@@ -21,13 +33,11 @@ class String
   # -----------------------------------
   class << self
     def to_slug_param str, opts = {}
-      sep = opts.delete(:sep) || '-'
       str = str.gsub(/\-{2,}/, '-').mb_chars
+      sep = opts.delete(:sep) || '-'
       str = I18n::transliterate(str, opts)
-        .gsub('_', sep)
-        .gsub('-', sep)
-        .parameterize(separator: sep)
-        .to_s
+      str = TheStringToSlug::basic_parametrize(str, sep)
+      TheStringToSlug::parameterize(str, sep).to_s
     end
 
     def file_ext file_name, opts = {}
