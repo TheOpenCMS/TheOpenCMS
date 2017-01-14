@@ -24,3 +24,9 @@
 /yarn-error.log
 
 .byebug_history
+
+config/ENV/*
+!config/ENV/production.example
+
+db/REDIS/*
+db/SPHINX/*
