@@ -14,5 +14,6 @@
 //= require rails-ujs
 //= require turbolinks
 
+//= require cable
 //= require search
 //= require app_initializer
