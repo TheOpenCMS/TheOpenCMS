@@ -1,0 +1,6 @@
+app:
+  default_locale: <%= ENV['DEFAULT_LOCALE'] || 'en' %>
+  time_zone: 'St. Petersburg'
+
+  secret_key_base: 'a000000000000000000000000000000000000000000000000001'
+  secret_token:    'a000000000000000000000000000000000000000000000000002'
