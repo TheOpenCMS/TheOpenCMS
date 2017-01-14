@@ -36,6 +36,8 @@ gem 'sidekiq-limit_fetch', '3.3.0'
 gem 'redis-namespace', '1.5.2'
 gem 'sinatra', '1.0', require: nil
 
+gem 'whenever', '0.9.7', require: false
+
 # CONTENT
 gem 'protozaur', github: 'the-teacher/protozaur', branch: 'v2.0.pre'
 gem 'slim-rails', github: 'slim-template/slim-rails', branch: '8dbc1fbf8'
