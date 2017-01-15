@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources  :notes
+
+  get '/search' => 'search#search', as: :search
 end
 
 # For details on the DSL available within this file,

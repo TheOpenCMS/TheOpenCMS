@@ -1,0 +1,12 @@
+production.example:
+  mysql41: 9191
+  address: localhost
+  morphology: 'stem_en, stem_ru'
+
+  indices_location:   /ABS/PATH/TO/Rails5App/db/SPHINX
+  configuration_file: /ABS/PATH/TO/Rails5App/config/ENV/production.example/services/SPHINX.config
+
+  log:         /ABS/PATH/TO/Rails5App/log/searchd.log
+  query_log:   /ABS/PATH/TO/Rails5App/log/searchd.query.log
+  pid_file:    /ABS/PATH/TO/Rails5App/tmp/pids/searchd.production.example.pid
+  binlog_path: /ABS/PATH/TO/Rails5App/tmp/binlog/searchd.production.example

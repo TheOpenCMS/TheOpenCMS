@@ -13,4 +13,6 @@
 //= require jquery3
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+
+//= require search
+//= require app_initializer

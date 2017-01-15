@@ -7,6 +7,8 @@
 - if @notes.blank?
   .fs20.mb20 There is no any note yet
 - else
+  .pull-right.w300.ml20.mb20
+    = render partial: 'search/form'
   = render template: 'notes/list', locals: { notes: @notes }
   .fs18.lh120
     = paginate @notes

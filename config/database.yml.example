@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: Rails5App_dev
+  pool: 5
+  username: rails5app
+  password: qwerty
