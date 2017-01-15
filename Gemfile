@@ -36,6 +36,12 @@ gem 'sidekiq-limit_fetch', '3.3.0'
 gem 'redis-namespace', '1.5.2'
 gem 'sinatra', '1.0', require: nil
 
+# CONTENT
+gem 'protozaur', github: 'the-teacher/protozaur', branch: 'v2.0.pre'
+gem 'slim-rails', github: 'slim-template/slim-rails', branch: '8dbc1fbf8'
+gem 'slim', '3.0.7'
+gem 'ffaker'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.beta1'
 # Use sqlite3 as the database for Active Record

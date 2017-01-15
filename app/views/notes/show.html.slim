@@ -1,0 +1,9 @@
+- if notice.present?
+  .fs18.mb30#notice
+    = notice
+
+.fs24.lh130.mb40= @note.title
+.fs18.lh130.mb40= @note.content
+
+= link_to 'Edit', edit_note_path(@note), class: 'ptz_btn ptz_size-14 mr30'
+= link_to 'Back to Index page', notes_path, class: 'ptz_btn ptz_size-14'

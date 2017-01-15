@@ -1,0 +1,16 @@
+- if @note.errors.any?
+  #error_explanation.mb40
+    .fs22.mb20 = "#{pluralize(@note.errors.count, "error")} prohibited this note from being saved:"
+    ul.ul
+      - @note.errors.full_messages.each do |message|
+        li.li.fs18.lh130 = message
+
+= form_for @note do |f|
+  .field.mb20
+    = f.label :title, class: 'block mb10 fs16'
+    = f.text_field :title, class: 'ptz_input ptz_size-16 w400'
+  .field.mb20
+    = f.label :content, class: 'block mb10 fs16'
+    = f.text_area :content, class: 'ptz_textarea ptz_size-16 w400', rows: 7
+  .actions
+    = f.submit 'Save Note', class: 'ptz_btn ptz_size-18'

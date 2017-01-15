@@ -1,0 +1,11 @@
+.ptz_table.fs24.mb50
+  .ptz_td.vam
+    | Notes Index
+  .ptz_td.vam.pl30
+    = link_to 'Create New Note', new_note_path, class: 'ptz_btn ptz_size-18'
+
+- if @notes.blank?
+  .fs20.mb20 There is no any note yet
+- else
+  = render template: 'notes/list', locals: { notes: @notes }
+  .fs18.lh120= paginate @notes
