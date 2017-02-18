@@ -1,0 +1,75 @@
+app:
+  name:   'example.com'
+  root:   '/home/rails/www/example.com'
+
+  repo:   'https://github.com/DeployRB/Rails5App.git'
+  branch: 'master'
+
+rvm:
+  rvm_path:     '/home/rails/.rvm/bin/rvm'
+  ruby_version: 'ruby-2.3.1'
+  gemset_name:  'example_com'
+  # rubygems_version: '1.5.3'
+  # bundler_version: '1.3.5'
+  # rake_version: '0.8.7'
+
+copy_app:
+  settings:
+    - app.yml
+    - app_mailer.yml
+    - oauth.yml
+
+link:
+  shared:
+    - log
+    - tmp
+    - db/REDIS
+    - db/SPHINX
+    - public/uploads
+    - public/assets
+
+git:
+  submodules:
+    - '.'
+
+tools:
+  os: debian
+  app_server: puma
+  assets_precompile: true
+  binstubs: true
+  new_relic: false
+  whenever: true
+  sphinx: false
+  sidekiq: true
+  redis: true
+  ssl: false
+
+redis:
+  port: 6010
+
+sidekiq:
+  namespace:
+    'example_com'
+
+sphinx:
+  mysql_port: 9156
+
+web_server:
+  domain:      'example.com'
+  socket_name: 'example_com'
+
+ssl:
+  files:
+    - example_com.key
+    - example_com.ssl-bundle.crt
+
+  private_key: example_com.key
+  bundle_crt: example_com.ssl-bundle.crt
+
+dump:
+  db:
+    from: ~/DUMPS
+    to:   ~/DUMPS
+  files:
+    from:
+    to: ~/DUMPS/example.com

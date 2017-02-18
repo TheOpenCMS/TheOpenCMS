@@ -1,0 +1,4 @@
+production.example:
+  log_level: info
+  app_name: MyProject
+  license_key: a000000000000000000000000000000000000001

@@ -1,7 +1,9 @@
-.DS_Store
-
 __ENV__/*
 __TEMPLATES__/*
-kit/custom
 
+!__ENV__/production.example/*
+!__TEMPLATES__/production.example/*
+
+.DS_Store
+kit/custom
 RELEASES.txt
