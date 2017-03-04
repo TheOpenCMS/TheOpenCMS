@@ -613,7 +613,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
 ### How Protozaur works?
 
-**Example 1.0**
+**Example 1**
 
 ```html
 <h1 class='fs18 lh130 mt20 mb20'>
