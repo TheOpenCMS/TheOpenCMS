@@ -613,31 +613,7 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
 
 ### How Protozaur works?
 
-```html
-<html>
-  <head>...</head>
-  <body class='ptz_reset'>...</body>
-</html>
-```
-
-or
-
-```html
-<html>
-  <head>...</head>
-  <body>
-
-    ...
-
-    <div class='ptz_reset'> ... </div>
-
-    ...
-
-  </body>
-</html>
-```
-
-**Example 1**
+**Example 1.0**
 
 ```html
 <h1 class='fs18 lh130 mt20 mb20'>
