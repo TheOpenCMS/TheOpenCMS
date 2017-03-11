@@ -2,7 +2,7 @@
 
 This simple gem helps to keep system work if some part of the system is not included.
 
-For example, sometimes a common engine for a multiple projects may has an ECommerce module and sometimes not. Common code base must be stable even the system can't provide some functionality in routes, controllers of models.
+For example, sometimes a common engine for a multiple projects may has an ECommerce module and sometimes don't. Common code base must be stable even the system can't provide some functionality in routes, controllers of models.
 
 This gem wrap potentially dangerous code with a block, where we catch an exception and show to a developer just a notification message where we don't have some part of a code.
 
