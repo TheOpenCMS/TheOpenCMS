@@ -8,4 +8,5 @@
   .fs20.mb20 There is no any note yet
 - else
   = render template: 'notes/list', locals: { notes: @notes }
-  .fs18.lh120= paginate @notes
+  .fs18.lh120
+    = paginate @notes

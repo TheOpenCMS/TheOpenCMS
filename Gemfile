@@ -42,6 +42,8 @@ gem 'slim-rails', github: 'slim-template/slim-rails', branch: '8dbc1fbf8'
 gem 'slim', '3.0.7'
 gem 'ffaker'
 
+gem 'kaminari', github: 'amatsuda/kaminari', branch: '1c9ec3603'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.beta1'
 # Use sqlite3 as the database for Active Record
