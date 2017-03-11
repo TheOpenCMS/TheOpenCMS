@@ -1,0 +1,163 @@
+= render partial: 'notifications/form', locals: { object: @user, format: :json }
+
+- content_for :crop_tool do
+  = render partial: 'crop_tool/canvas', locals: { image: @user.avatar.url(:original) }
+
+.panel.panel-default
+  .panel-heading
+    h3 Основная информация
+  .panel-body
+    = form_for @user, html: { enctype: "multipart/form-data", role: :form } do |f|
+      .form-group(name=:avatar)
+        a(name=:avatar)
+        p= image_tag current_user.avatar.url(:medium), id: :avatar_medium
+        p
+          = f.file_field :avatar, class: 'ptz_btn ptz_btn-default', style: 'display:inline'
+          - if @user.avatar?
+            ruby:
+              crop_data_150_150 = {
+                url: user_avatar_crop_path(@user),
+                source:  @user.avatar.url(:original),
+                holder:  { width: 400 },
+                preview: { width: 100, height: 100 },
+                final_size: "100x100",
+                callback_handler: "TheCrop.post_main_image_crop"
+              }
+
+            '
+            = link_to "Изменить миниатюру", "#", class: "ptz_btn ptz_btn-success js_the_crop", data: crop_data_150_150
+            '
+            = link_to "Удалить миниатюру", user_avatar_delete_path(@user), method: :delete, class: "ptz_btn ptz_btn-danger"
+
+      .form-group
+        = f.label :username, "Имя пользователя"
+        = f.text_field :username, class: 'form-control'
+
+      .form-group(name=:about_me)
+        a(name=:about_me)
+        = f.label :raw_about, "О себе"
+        = f.text_area :raw_about, class: 'form-control', style: 'height: 200px;'
+
+      .form-group
+        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info'
+
+.panel.panel-default
+  a(name=:social_networks)
+  .panel-heading
+    h3 Социальные сети
+  .panel-body(name=:social_networks)
+    = form_for @user, html: { role: :form } do |f|
+      .form-group
+        = f.label :vk_addr, "vk.com"
+        = f.text_field :vk_addr, class: 'form-control'
+
+      .form-group
+        = f.label :ok_addr, "odnoklassniki.ru"
+        = f.text_field :ok_addr, class: 'form-control'
+
+      .form-group
+        = f.label :fb_addr, "facebook.com"
+        = f.text_field :fb_addr, class: 'form-control'
+
+      .form-group
+        = f.label :tw_addr, "twitter.com"
+        = f.text_field :tw_addr, class: 'form-control'
+
+      .form-group
+        = f.label :ig_addr, "instagram.com"
+        = f.text_field :ig_addr, class: 'form-control'
+
+      .form-group
+        = f.label :pt_addr, "pinterest.com"
+        = f.text_field :pt_addr, class: 'form-control'
+
+      .form-group
+        = f.label :gp_addr, "google plus"
+        = f.text_field :gp_addr, class: 'form-control'
+
+      .form-group
+        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info'
+
+.panel.panel-default
+  .panel-heading
+    a(name=:email)
+    h3 Сменить Email
+  .panel-body(name=:email)
+    p Для того, что бы новый Email вступил в силу, вам будет необходимо подтвердить его, перейдя по ссылке, которая будет вам выслана на желаемый Email
+
+    = form_for @user, url: user_change_email_path(@user), method: :patch, html: { role: :form } do |f|
+      .form-group
+        = f.label :email, "Укажите ваш новый email"
+        = f.text_field :email, class: 'form-control'
+
+      - if @user.unconfirmed_email
+        .form-group
+          b Email ожидает подтверждения:
+          '
+          = @user.unconfirmed_email
+
+      .form-group
+        = f.submit "Сменить Email", class: 'ptz_btn ptz_btn-info'
+
+.panel.panel-default
+  .panel-heading
+    a(name=:login)
+    h3 Сменить логин
+  .panel-body(name=:login)
+    p Логин - ваш псевдоним в системе. Смена логина может отразиться на доступности публикаций, в адресе которых он используется.
+    = form_for @user, html: { role: :form } do |f|
+      .form-group
+        = f.label :login, "Логин"
+        = f.text_field :login, class: 'form-control'
+      .form-group
+        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info', data: { confirm: "Я уверен, что хочу сменить Логин" }
+
+.panel.panel-default
+  .panel-heading
+    h3 Сменить пароль
+  .panel-body
+    p Инструкции по процессу смены пароля вам будут высланы на ваш текущий Email.
+    = link_to "Сменить пароль", user_change_password_path(@user), method: :patch, class: 'ptz_btn ptz_btn-warning'
+
+- credentials = @user.credentials
+- if credentials.size < 5
+  .sessions.new
+    .panel.panel-default
+      .panel-heading
+        a(name=:oauth_refs)
+        h3 Привязать аккаунт к социальным сетям
+
+      .panel-body(name=:oauth_refs)
+        p Привязка к социальным сетям позволит вам выполнять легкий вход на сайт без ввода Email и пароля.
+        p <b>Обратите внимание</b>, что регистрация с помощью различных социальных сетей приводит к созданию различных аккаунтов на сайте OPEN-COOK.RU.
+        p Если вы хотите <b>входить в один и тот же аккаунт</b> с помощью различных социальных сетей, то выполните привязку своего аккаунта к социальным сетям с этой страницы с помощью следующих кнопок:
+
+        br
+
+
+          - if credentials.select{|c| c.provider == 'vkontakte'}.blank?
+            = link_to '', user_omniauth_authorize_path(:vkontakte),     class: :vk
+          - if credentials.select{|c| c.provider == 'odnoklassniki'}.blank?
+            = link_to '', user_omniauth_authorize_path(:odnoklassniki), class: :ok
+          - if credentials.select{|c| c.provider == 'facebook'}.blank?
+            = link_to '', user_omniauth_authorize_path(:facebook),      class: :fb
+          - if credentials.select{|c| c.provider == 'twitter'}.blank?
+            = link_to '', user_omniauth_authorize_path(:twitter),       class: :tw
+          - if credentials.select{|c| c.provider == 'google_oauth2'}.blank?
+            = link_to '', user_omniauth_authorize_path(:google_oauth2), class: :gp
+
+          = form_for(@user, as: @user.class, url: registration_path(@user), html: { id: :signin, class: :hidden, remote: true, data: { type: :json } }) do |f|
+            = hidden_field_tag 'user[oauth_data]', '', id: :oauth_data, autocomplete: :off
+
+- if credentials.any?
+  br
+  .panel.panel-default
+    .panel-heading
+      a(name=:oauth_refs)
+      h4 Ваш аккаунт уже привязан к социальным сетям
+    .panel-body(name=:oauth_refs)
+      ol
+        - @user.credentials.each do |credential|
+          li
+            b= credential.provider
+

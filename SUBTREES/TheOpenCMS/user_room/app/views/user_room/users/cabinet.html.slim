@@ -1,0 +1,4 @@
+- if current_user.admin?
+  = render partial: 'users/admin_cabinet'
+- else
+  = render partial: 'users/user_cabinet'
