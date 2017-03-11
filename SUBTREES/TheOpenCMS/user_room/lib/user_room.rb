@@ -28,7 +28,6 @@ require 'user_room/config'
   notifications
 
   protozaur
-  protozaur_theme
 ].each { |gem_name| require gem_name }
 
 module UserRoom
