@@ -1,0 +1,57 @@
+content_for :title do
+  | Кабинет Администратора APP
+
+= render template: 'layouts/items/header_footer'
+
+.m20.ptz_theme-0
+  .fs20.mb40 Кабинет Администратора
+
+  ruby:
+    hubs_count = Hub.for_manage.count
+    pubs_count = Post.for_manage.count + Page.for_manage.count
+    com_count  = Comment.for_manage.count
+
+    pc_count = ShopCategory.for_manage.count
+    br_count = ShopBrand.for_manage.count
+    pr_cout  = Product.for_manage.count
+
+    ct_count = Cart.count
+    or_count = Order.for_manage.count
+
+    cr_count = CurrencyRate.count
+    dt_count = DeliveryType.for_manage.count
+    pub_tags_count = PubTag.for_manage.count
+
+  .ptz_table.ptz_table-0.w100p
+    .ptz_thead.fs18
+      .ptz_tr
+        .ptz_th.p25 Мой Профиль
+        .ptz_th.p25 Контент
+        .ptz_th.p25 Товары
+        .ptz_th.p25 Заказы
+        .ptz_th.p25 Разное
+    .ptz_tbody
+      .ptz_tr
+        .ptz_td.p25
+          .mb20 = link_to "Моя страница",  @user,            class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to "Редактировать", [ :edit, @user ], class: 'ptz_btn ptz_size-14'
+
+        .ptz_td.p25
+          .mb20 = link_to raw("Разделы &mdash; #{ hubs_count }"),    manage_hubs_path, class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to raw("Публикации &mdash; #{ pubs_count }"), manage_pubs_path, class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to raw("Теги &mdash; #{ pub_tags_count }"),   manage_pub_tags_path, class: 'ptz_btn ptz_size-14'
+
+        .ptz_td.p25
+          .mb20 = link_to raw("Категории товаров &mdash; #{ pc_count }"), manage_shop_categories_path, class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to raw("Товары &mdash; #{ pr_cout } "),            manage_products_path,        class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to raw("Бренды &mdash; #{ br_count }"),            manage_shop_brands_path,     class: 'ptz_btn ptz_size-14'
+          / .mb20 = link_to 'Яндекс Маркет', yandex_market_path, class: 'ptz_btn ptz_size-14'
+
+        .ptz_td.p25
+          .mb20 = link_to raw("Корзины &mdash; #{ ct_count }"), manage_carts_path,  class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to raw("Заказы &mdash; #{ or_count }"),  manage_orders_path, class: 'ptz_btn ptz_size-14'
+
+        .ptz_td.p25
+          .mb20 = link_to raw("Курсы валюты &mdash; #{ cr_count }"),      manage_currency_rates_path, class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to raw("Варианты доставки &mdash; #{ dt_count }"), manage_delivery_types_path, class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to raw("Отзывы/Комментарии &mdash; #{ com_count }"), manage_comments_path, class: 'ptz_btn ptz_size-14'

@@ -1,0 +1,57 @@
+- content_for :title do
+  | Страница пользователя
+
+= render partial: 'users/header_footer'
+
+.ptz_table
+  .ptz_tr
+    .ptz_td.p20
+      .mb20
+        - if @user.avatar.present?
+          = image_tag @user.avatar.url(:v100x100), class: 'user-room-header--avatar-image'
+        - else
+          .user-room-header--avatar-placeholder.w100 ?
+
+      - if current_user && current_user == @user
+        = link_to 'Редактировать', [:edit, @user], class: 'ptz_btn ptz_btn--size-s'
+    .ptz_td.p20
+      .mt20
+        - if current_user.try(:admin?)
+          - if current_user != @user
+            .mb20
+              = link_to 'Войти под этим пользователем', autologin_path(@user), method: :post, class: 'ptz_btn ptz_size-12'
+
+        - if @user.username.present?
+          .fs15.mb15
+            span.b Имя:
+            '
+            = @user.username
+
+        - if @user.login.present?
+          .fs15.mb15
+            span.b Логин:
+            '
+            = @user.login
+
+        .fs15.mb15
+          span.b Зарегистрирован(а):
+          '
+          = I18n.l(@user.created_at, format: "%-d %B %Y")
+
+        - if @user.vk_addr.present?
+          .fs15.mb15
+            span.b VK.com:
+            '
+            = link_to @user.vk_addr, @user.vk_addr
+
+        - if @user.tw_addr.present?
+          .fs15.mb15
+            span.b twitter.com:
+            '
+            = link_to @user.tw_addr, @user.tw_addr
+
+        - if @user.ok_addr.present?
+          .fs15.mb15
+            span.b odnoklassniki.ru:
+            '
+            = link_to @user.ok_addr, @user.ok_addr

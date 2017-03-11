@@ -1,0 +1,19 @@
+- content_for :title
+  = @subject
+
+.m20
+  .mb50.fs16.lh130.ffa Здравствуйте! Для входа на сайт воспользуйтесь следующей ссылкой:
+
+  .mb50.tac
+    table.w100p
+      tr
+        td.w50p
+        td
+          .app-mailer--activation-btn-border
+            = link_to 'Войти на сайт', activate_onetime_login_link_url(@uid, callback_path: @callback_path), class: 'app-mailer--activation-btn p20 block br-off'
+        td.w50p
+
+  .mb15.fs16.lh130.ffa Если ссылка не активна, то скопируйте следующий адрес в адресную строку своего браузера:
+
+  .app-mailer--activation-text.p20.tac.fs12
+    = activate_onetime_login_link_url(@uid, callback_path: @callback_path)

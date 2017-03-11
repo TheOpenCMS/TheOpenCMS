@@ -1,0 +1,34 @@
+- content_for :crop_tool do
+  = render partial: 'crop_tool/canvas', locals: { image: object.avatar.url(:original) }
+
+ruby:
+  crop_data_1x1 = {
+    role:   'crop-tool--open',
+    url:     url_for([:avatar_crop_1x1, object]),
+    source:  object.avatar.url(:original),
+    holder:  { width: 500 },
+    preview: { width: 100, height: 100 },
+    callback_handler: "AvatarCrop.crop_tool_callback"
+  }
+
+= form_for object, html: { enctype: 'multipart/form-data', class: 'ptz_theme-0--div-0' } do |f|
+  .mb15.fs16.b Изменить аватар
+
+  .clearfix@main-image-manage-intro
+    .pull-left
+      .pull-left.mr10
+        = image_tag object.avatar.url(:v100x100), data: { role: 'main-image--v1x1' }, data: { role: 'user-avatar--v1x1' }, class: 'w100'
+
+      .pull-left
+        = link_to jsvoid, class: 'ptz_btn ptz_size-14 mr15 pt5 pb5 pr10 pl10', data: crop_data_1x1 do
+          .fa.fa-crop.fs18
+
+        = link_to [:avatar_rotate_left, object], method: :patch,  class: 'ptz_btn ptz_size-14 mr15 pt5 pb5 pr10 pl10' do
+          .fa.fa-undo.fs18
+
+        = link_to [:avatar_rotate_right, object], method: :patch, class: 'ptz_btn ptz_size-14 mr15 pt5 pb5 pr10 pl10'
+          .fa.fa-repeat.fs18
+
+    .pull-right
+      = link_to [:avatar_delete, object], method: :delete, class: 'ptz_btn ptz_size-14 pt5 pb5 pr10 pl10'
+        .fa.fa-trash.fs18

@@ -1,0 +1,9 @@
+.mt20
+  .mb15
+    .fs13.b Мой профиль
+
+  - unless current_page? cabinet_path
+    .mb15= link_to "Мой кабинет",  cabinet_path, class: 'ptz_btn ptz_size-14'
+
+  .mb15= link_to "Моя страница", @user, class: 'ptz_btn ptz_size-14'
+  .mb15= link_to "Редактировать", [ :edit, @user ], class: 'ptz_btn ptz_size-14'

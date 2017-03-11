@@ -1,0 +1,26 @@
+/*
+  #= require ptz/reset
+  #= require ptz/base
+  #= require ptz/framework
+
+  #= require ptz/inputs_buttons/all
+
+  #= require protozaur_theme/theme-0/divs
+  #= require protozaur_theme/theme-0/radios
+  #= require protozaur_theme/theme-0/tables
+  #= require protozaur_theme/theme-0/buttons
+  #= require protozaur_theme/theme-0/paginators
+
+  #= require crop_tool/crop_tool
+  #= require crop_tool/jcrop/jquery.Jcrop
+
+  #= require user_room/social-login-btn
+  #= require user_room/notifications
+  #= require user_room/section-switcher
+  #= require user_room/user-room-header
+
+  #= require app_view/layout/common_styles
+
+  #= require notifications/vendors/toastr
+  #= require components/toastr/style
+*/
