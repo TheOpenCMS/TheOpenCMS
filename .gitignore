@@ -30,3 +30,5 @@ config/ENV/*
 
 db/REDIS/*
 db/SPHINX/*
+/public/packs
+/node_modules
