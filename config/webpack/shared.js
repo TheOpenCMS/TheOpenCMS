@@ -28,11 +28,12 @@ const config = {
     rules: [
       { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
       {
-        test: /\.js(\.erb)?$/,
+        test: /\.jsx?(\.erb)?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: [
+            'react',
             ['env', { modules: false }]
           ]
         }
