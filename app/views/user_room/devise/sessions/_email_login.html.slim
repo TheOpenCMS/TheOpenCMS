@@ -3,15 +3,15 @@
 - visible_style   = 'disable'      if !visible
 
 .ptz_theme-0
-  .ptz_div-0@registration-accordion(class=visible_style)
-    .m15@registration-accordion--intro(style=intro_visible)
+  .ptz_div-0.js-registration-accordion(class=visible_style)
+    .m15.js-registration-accordion--intro(style=intro_visible)
 
-      @registration-accordion--switcher
+      .js-registration-accordion--switcher
         input#accounted-off-always.radio-btn(type='checkbox' autocomplete='off')
         label(for='accounted-off')
           span.fs16 У меня уже есть учетная запись
 
-    .m15@registration-accordion--content(style=content_visible)
+    .m15.js-registration-accordion--content(style=content_visible)
       .ptz_table.w100p
         .ptz_tr
           .ptz_td.pl10

@@ -50,7 +50,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'crop_tool'
 
   spec.add_dependency 'log_js'
-  spec.add_dependency 'role_slim_js'
   spec.add_dependency 'notifications'
 
   spec.add_dependency 'protozaur'
