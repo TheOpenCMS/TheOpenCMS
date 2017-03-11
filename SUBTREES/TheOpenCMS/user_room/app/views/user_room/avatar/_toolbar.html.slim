@@ -14,7 +14,7 @@ ruby:
 = form_for object, html: { enctype: 'multipart/form-data', class: 'ptz_theme-0--div-0' } do |f|
   .mb15.fs16.b Изменить аватар
 
-  .clearfix@main-image-manage-intro
+  .clearfix.js-main-image-manage-intro
     .pull-left
       .pull-left.mr10
         = image_tag object.avatar.url(:v100x100), data: { role: 'main-image--v1x1' }, data: { role: 'user-avatar--v1x1' }, class: 'w100'

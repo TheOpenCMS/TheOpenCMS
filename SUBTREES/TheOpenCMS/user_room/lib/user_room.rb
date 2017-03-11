@@ -24,7 +24,6 @@ require 'user_room/config'
   crop_tool
 
   log_js
-  role_slim_js
   notifications
 
   protozaur
