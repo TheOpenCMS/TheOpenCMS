@@ -1,4 +1,22 @@
 GIT
+  remote: https://github.com/jquery-ui-rails/jquery-ui-rails.git
+  revision: 0b22d46622c6615334cdfcd86d0d3ea22d9841ca
+  branch: 0b22d466
+  specs:
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
+
+GIT
+  remote: https://github.com/rails/jquery-rails.git
+  revision: 89d609282348b56751b8d5068c43863b80b899ef
+  branch: 89d60928
+  specs:
+    jquery-rails (4.2.2)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+
+GIT
   remote: https://github.com/rails/sass-rails.git
   revision: dfbcc6a53653d8908007e26324a0f299f026ec4f
   specs:
@@ -179,6 +197,8 @@ DEPENDENCIES
   capybara (~> 2.7.0)
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
+  jquery-rails!
+  jquery-ui-rails!
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
   rails (~> 5.1.0.beta1)
