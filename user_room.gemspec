@@ -54,7 +54,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'notifications'
 
   spec.add_dependency 'protozaur'
-  spec.add_dependency 'protozaur_theme'
   # ~ DEPENDENCIES
 
   spec.add_development_dependency "bundler", "~> 1.9"
