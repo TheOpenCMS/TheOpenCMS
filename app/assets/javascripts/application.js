@@ -17,5 +17,4 @@
 //= require cable
 //= require JODY
 //= require search
-//= require notes
 //= require app_initializer
