@@ -14,7 +14,7 @@ require 'user_room/config'
 
   pagination
   simple_sort
-  to_slug_param
+  the_string_to_slug
   premailer/rails
 
   mini_magick
@@ -45,8 +45,6 @@ module UserRoom
         prepend_view_path("#{ _root_ }/#{ views }" ) if respond_to?(:prepend_view_path)
       end
     end
-
-    # ::HakushuIo::Application.config.paths['db/migrate'] << "#{ _views_root_ }/db/migrate"
   end
 end
 
