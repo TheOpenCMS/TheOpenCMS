@@ -70,6 +70,12 @@ GIT
   specs:
     protozaur (1.1.0)
 
+PATH
+  remote: SUBTREES/TheOpenCMS/voiceless
+  specs:
+    voiceless (1.1)
+      colorize
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -373,6 +379,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  voiceless!
   web-console (>= 3.3.0)
   webpacker!
   whenever (= 0.9.7)

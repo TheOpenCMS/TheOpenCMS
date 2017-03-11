@@ -8,10 +8,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/async/tasks'
   mount ActionCable.server => '/app-cable'
 
-  root to: "notes#index"
-
   devise_for :users
-  resources  :notes
 
   get '/search' => 'search#search', as: :search
 end
