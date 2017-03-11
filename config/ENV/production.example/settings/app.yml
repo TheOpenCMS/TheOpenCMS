@@ -4,3 +4,12 @@ app:
 
   secret_key_base: 'a000000000000000000000000000000000000000000000000001'
   secret_token:    'a000000000000000000000000000000000000000000000000002'
+
+redis:
+  port: 6010
+  url:  "redis://localhost:6010/1"
+
+sidekiq:
+  namespace: 'example.com'
+  ui:
+    password: qwerty
