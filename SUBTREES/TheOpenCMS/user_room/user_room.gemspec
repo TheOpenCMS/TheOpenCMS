@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'pagination'
   spec.add_dependency 'simple_sort'
-  spec.add_dependency 'to_slug_param'
+  spec.add_dependency 'the_string_to_slug'
   spec.add_dependency 'premailer-rails'
 
   spec.add_dependency 'mini_magick'
