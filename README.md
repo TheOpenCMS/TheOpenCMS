@@ -1,4 +1,18 @@
-# UserRoom
+## UserRoom
+
+This gem provides sign-in/log-in functionality and basic UI for User's cabinet
+
+Out of the box it woks with some social networks logins.
+
+* Vkontakte
+* Odnoklassniki
+* Facebook
+* Twitter
+* Google Plus
+
+```
+```
+
 
 gem "user_room", path: './plugins/user_room'
 

@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ilya N. Zykin"]
   spec.email         = ["zykin-ilya@ya.ru"]
 
-  spec.summary       = %q{Devise/User part of application}
-  spec.description   = %q{Devise/User part of application}
-  spec.homepage      = "https://github/com/user_room"
+  spec.summary       = %q{User's area based on Devise gem}
+  spec.description   = %q{User's cabinet and sign-in/log-in staff}
+  spec.homepage      = "https://github.com/TheOpenCMS/user_room"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
