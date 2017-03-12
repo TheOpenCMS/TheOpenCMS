@@ -1,3 +1,7 @@
+```ruby
+This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
+```
+
 # ImageTools
 
 A few helpers for image processing and manipulations
@@ -40,7 +44,7 @@ class Image < ApplicationRecord
 end
 ```
 
-The MIT License (MIT)
+### The MIT License (MIT)
 
 Copyright (c) 2014-[Current Year] Ilya N. Zykin (https://github.com/the-teacher)
 
