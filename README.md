@@ -1,3 +1,7 @@
+```ruby
+This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
+```
+
 ## Voiceless
 
 This simple gem helps to keep system work if some part of the system is not included.
