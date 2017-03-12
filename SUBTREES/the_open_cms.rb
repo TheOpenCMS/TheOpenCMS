@@ -10,4 +10,8 @@ SUBTREES = %w[
   TheOpenCMS/pagination
   git@github.com:TheOpenCMS/pagination.git
   master
+
+  TheOpenCMS/log_js
+  git@github.com:TheOpenCMS/log_js.git
+  master
 ]
