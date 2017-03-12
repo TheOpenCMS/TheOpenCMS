@@ -14,4 +14,8 @@ SUBTREES = %w[
   TheOpenCMS/log_js
   git@github.com:TheOpenCMS/log_js.git
   master
+
+  TheOpenCMS/notifications
+  git@github.com:TheOpenCMS/notifications.git
+  master
 ]
