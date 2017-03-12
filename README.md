@@ -1,3 +1,7 @@
+# Content is Everything!
+
+Let's make Content Management Systems great again! Together we can!
+
 ## TheOpenCMS
 
 CMS (Content Management System) based on Rails.
