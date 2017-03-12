@@ -11,7 +11,7 @@ CMS (Content Management System) based on Rails.
 This open CMS provides:
 
 * User Room
-  * Aauthentication via Devise
+  * Authentication via Devise
   * Sign in/Login via social networks: Facebook, Twitter, G+, Vk.com ...
   * User's cabinet. Basic management panel to manage a user's profile
 * Blogging System
