@@ -25,13 +25,13 @@ See documentation in [DOCS](./docs)
 
 ## Changelog
 
-See documentation in [DOCS](./docs/Changelog.md)
+See documentation in [Changelog](./docs/Changelog.md)
 
 ## Contribution notes
 
-This project uses `git subtree` approach. You will find many of dependencies in folder [SUBTREES](./SUBTREES)
+This project uses `git subtree` approach. You will find many of dependencies in the folder [SUBTREES](./SUBTREES)
 
-You can change this project and all dependencies right in the current `master` and push it to the main repo of the project. All changes will be stored in the main repo.
+You can change files of the main project and also all dependencies right in the current `master` and push them all together to the main repo of the project. All changes will be stored in the main repo.
 
 If you want to update a specific repo of a dependency then you can do that directly via command `git subtree push`. Also you can use this simple automatic [ruby script](./SUBTREES/subtree.rb) to updated a few dependencies in the same time.
 
