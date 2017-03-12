@@ -26,4 +26,8 @@ SUBTREES = %w[
   TheOpenCMS/image_tools
   git@github.com:TheOpenCMS/image_tools.git
   master
+
+  TheOpenCMS/crop_tool
+  git@github.com:TheOpenCMS/crop_tool.git
+  master
 ]
