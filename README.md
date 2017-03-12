@@ -43,7 +43,7 @@ ruby SUBTREES/subtree.rb push the_open_cms
 
 ### The MIT License (MIT)
 
-Copyright (c) 2016-[Current Year] Ilya N. Zykin (https://github.com/the-teacher)
+Copyright (c) 2017-[Current Year] Ilya N. Zykin (https://github.com/the-teacher)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
