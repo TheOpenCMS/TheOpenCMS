@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{User's area based on Devise gem}
   spec.description   = %q{User's cabinet and sign-in/log-in staff}
-  spec.homepage      = "https://github.com/TheOpenCMS/user_room"
+  spec.homepage      = "https://github.com/TheOpenCMS"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
