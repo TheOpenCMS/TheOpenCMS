@@ -1,7 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'user_room/version'
+
+module UserRoom
+  VERSION = "0.1.0"
+end
 
 Gem::Specification.new do |spec|
   spec.name          = "user_room"
@@ -38,7 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'slim'
   spec.add_dependency 'config'
 
-  spec.add_dependency 'pagination'
+  spec.add_dependency 'the_pagination'
   spec.add_dependency 'simple_sort'
   spec.add_dependency 'the_string_to_slug'
   spec.add_dependency 'premailer-rails'
