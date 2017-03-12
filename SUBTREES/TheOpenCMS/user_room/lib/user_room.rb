@@ -1,4 +1,3 @@
-require 'user_room/version'
 require 'user_room/config'
 
 %w[
@@ -12,8 +11,8 @@ require 'user_room/config'
   slim
   config
 
-  pagination
   simple_sort
+  the_pagination
   the_string_to_slug
   premailer/rails
 
