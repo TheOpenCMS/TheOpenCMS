@@ -4,7 +4,7 @@ This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
 
 ## Pagination
 
-This simple gem provides the only method `pagination`, which takes `per_page` and `page` parameters from `params` hash and applies these parameters to a Model. In fact this gem just provides a simple helper to improve a typical staff with `per_page` and `page` parameters. Works with `Kaminary`.
+This simple gem provides the only method `pagination`, which takes `per_page` and `page` parameters from `params` hash and applies these parameters to a Model. In fact this gem just provides a simple helper to improve a typical staff with `per_page` and `page` parameters. Works with `Kaminari`.
 
 ```ruby
 class Product < AR
@@ -40,7 +40,7 @@ end
 
 ## Pagination (RU)
 
-Этот простой гем всего лишь предоставляет метод `pagination`, который берет параметры `per_page` и  `page` из хеша `params` и применяет их к Модели. По факту гем просто обеспечивает простой хелпер, что бы улучшить типичную работу с переменными `per_page` и `page`. Работает с `Kaminary`.
+Этот простой гем всего лишь предоставляет метод `pagination`, который берет параметры `per_page` и  `page` из хеша `params` и применяет их к Модели. По факту гем просто обеспечивает простой хелпер, что бы улучшить типичную работу с переменными `per_page` и `page`. Работает с `Kaminari`.
 
 ```ruby
 class Product < AR
