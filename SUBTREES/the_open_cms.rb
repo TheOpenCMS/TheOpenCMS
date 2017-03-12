@@ -22,4 +22,8 @@ SUBTREES = %w[
   TheOpenCMS/simple_sort
   git@github.com:TheOpenCMS/simple_sort.git
   master
+
+  TheOpenCMS/image_tools
+  git@github.com:TheOpenCMS/image_tools.git
+  master
 ]
