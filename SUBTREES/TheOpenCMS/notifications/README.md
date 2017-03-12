@@ -12,7 +12,7 @@ gem 'notifications'
 
 ## How it works
 
-This gem helps to you get rid of this bunch of a code
+This gem helps you to get rid of this bunch of a code
 
 ```ruby
 <%= form_for(@resource) do |f| %>
