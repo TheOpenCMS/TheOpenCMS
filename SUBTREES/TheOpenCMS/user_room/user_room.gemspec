@@ -53,7 +53,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'crop_tool'
 
   spec.add_dependency 'log_js'
-  spec.add_dependency 'notifications'
+  spec.add_dependency 'the_notifications'
 
   spec.add_dependency 'protozaur'
   # ~ DEPENDENCIES
