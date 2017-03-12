@@ -7,7 +7,7 @@ module Pagination
 end
 
 Gem::Specification.new do |spec|
-  spec.name          = "pagination"
+  spec.name          = "the_pagination"
   spec.version       = Pagination::VERSION
   spec.authors       = ["Ilya N. Zykin"]
   spec.email         = ["zykin-ilya@ya.ru"]
