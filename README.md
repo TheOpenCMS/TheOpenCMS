@@ -19,6 +19,24 @@ This open CMS provides:
 
 See documentation in [DOCS](./docs)
 
+## Contribution notes
+
+This project uses `git subtree` approach. You will find many of dependencies in folder
+
+You can change this project and all dependencies right in the current `master` and push it to the main repo of the project.
+
+If you want to update a repo of a dependency then you can do that directly via command `git subtree push`. Also you can use this automatic [ruby script](./SUBTREES/subtree.rb) to updated some dependencies in the same time.
+
+Examples:
+
+```ruby
+ruby SUBTREES/subtree.rb add the_open_cms
+
+ruby SUBTREES/subtree.rb pull the_open_cms
+
+ruby SUBTREES/subtree.rb push the_open_cms
+```
+
 ### The MIT License (MIT)
 
 Copyright (c) 2016-[Current Year] Ilya N. Zykin (https://github.com/the-teacher)
