@@ -26,11 +26,11 @@ class ProductsController < ApplicationController
 end
 ```
 
-* Use `simple_sort_url` helper in your views to provide sorting.
+* Use `simple_sort_url` helper in your views to provide sorting for required field
 * Use `reset_simple_sort` helper to reset current sort params
 
 ```ruby
-= link_to 'Reset filters', url_for(reset_simple_sort)
+= link_to 'Reset sort params', url_for(reset_simple_sort)
 
 = link_to 'Title ↕',      simple_sort_url(:title)
 = link_to 'Created At ↕', simple_sort_url(:crated_at)
