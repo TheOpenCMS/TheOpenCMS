@@ -1,5 +1,9 @@
 ## Pagination
 
+```ruby
+This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
+```
+
 This simple gem provides the only method `pagination`, which takes `per_page` and `page` parameters from `params` hash and applies these parameters to a Model. In fact this gem just provides a simple helper to improve a typical staff with `per_page` and `page` parameters. Works with `Kaminary`.
 
 ```ruby
