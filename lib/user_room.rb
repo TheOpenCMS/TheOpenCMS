@@ -23,7 +23,7 @@ require 'user_room/config'
   crop_tool
 
   log_js
-  notifications
+  the_notifications
 
   protozaur
 ].each { |gem_name| require gem_name }
