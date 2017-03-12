@@ -37,6 +37,24 @@ end
 = link_to 'Updated At ↕', simple_sort_url(:updated_at)
 ```
 
+# Bonus methods for Models
+
+Also gem provides some dead-simple but helpful methods
+
+* `max2min` for descending order `DESC` (1000, 102, 15, 3)
+* `min2max` for ascending order `ASC` (3, 15, 102, 1000)
+* `random` random record from a database (`mysql`, `psql`)
+
+```ruby
+class ProductsController < ApplicationController
+  def index
+    @products = Product.max2min(:created_at)
+    @articles = Article.min2max(:title)
+    @banners  = Banner.random.limit(3)
+  end
+end
+```
+
 ### MIT License
 
 Copyright (c) 2014-[Current Year] Ilya N. Zykin
