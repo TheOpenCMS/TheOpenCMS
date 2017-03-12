@@ -7,7 +7,7 @@ module Notifications
 end
 
 Gem::Specification.new do |spec|
-  spec.name          = "notifications"
+  spec.name          = "the_notifications"
   spec.version       = Notifications::VERSION
   spec.authors       = ["Ilya N. Zykin"]
   spec.email         = ["zykin-ilya@ya.ru"]
