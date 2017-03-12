@@ -1,0 +1,28 @@
+-# Error mesages
+-# Post.model_name.human              => activerecord.models.post
+-# Post.human_attribute_name('title') => activerecord.attributes.post.title
+- format = (format || Notifications.config.default_type).to_s
+
+- if object.try(:errors).try(:any?)
+  - _errors = object.respond_to?(:localized_errors) ? object.localized_errors : object.errors
+  - if format == 'html'
+    .error_explanation.alert.alert-danger
+      h4= t "notifications.form_errors"
+      ul
+        - _errors.map do |name, msgs|
+          - if msgs.is_a? Array
+            - msgs.each do |msg|
+              li
+                strong= name
+                '
+                = msg
+          - else
+            li
+              strong= name
+              '
+              = msgs
+
+  - else
+    = javascript_tag defer: :defer, type: "text/javascript" do
+      | window.notifications = window.notifications || {};
+      | window.notifications['errors'] = JSON.parse('#{ raw j _errors.to_json }');
