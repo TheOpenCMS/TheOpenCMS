@@ -18,4 +18,8 @@ SUBTREES = %w[
   TheOpenCMS/notifications
   git@github.com:TheOpenCMS/notifications.git
   master
+
+  TheOpenCMS/simple_sort
+  git@github.com:TheOpenCMS/simple_sort.git
+  master
 ]
