@@ -63,10 +63,8 @@ GIT
       railties (>= 3.1)
       slim (~> 3.0)
 
-GIT
-  remote: https://github.com/the-teacher/protozaur.git
-  revision: a39e67a7b0cf185b7446d084137330cd90114c7c
-  branch: v2.0.pre
+PATH
+  remote: SUBTREES/Protozaur/protozaur
   specs:
     protozaur (1.1.0)
 

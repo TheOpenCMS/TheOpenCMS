@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 eval_gemfile "Gemfiles/subtrees/TheOpenCMS.rb"
+eval_gemfile "Gemfiles/subtrees/Protozaur.rb"
 
 gem 'webpacker', github: 'rails/webpacker'
 
@@ -44,7 +45,6 @@ gem 'whenever', '0.9.7', require: false
 
 # CONTENT
 gem 'paperclip', '5.1.0'
-gem 'protozaur', github: 'the-teacher/protozaur', branch: 'v2.0.pre'
 gem 'slim-rails', github: 'slim-template/slim-rails', branch: '8dbc1fbf8'
 gem 'slim', '3.0.7'
 gem 'ffaker'
