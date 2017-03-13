@@ -40,7 +40,7 @@ The following options in the Devise migration must be turned-on
 
 Use `gem 'config'` to configure Devise
 
-```yaml
+```yml
 devise:
   mailer_sender: 'mail-sender@example.com'
   parent_mailer: 'ActionMailer::Base'
