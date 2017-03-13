@@ -5,59 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-eval_gemfile "Gemfiles/subtrees/TheOpenCMS.rb"
+eval_gemfile "Gemfiles/content.rb"
+eval_gemfile "Gemfiles/app_base.rb"
+eval_gemfile "Gemfiles/databases.rb"
+eval_gemfile "Gemfiles/user_room.rb"
+eval_gemfile "Gemfiles/delayed_jobs.rb"
 eval_gemfile "Gemfiles/subtrees/Protozaur.rb"
-
-gem 'webpacker', github: 'rails/webpacker'
-
-gem 'jquery-rails',
-  github: 'rails/jquery-rails',
-  branch: '89d60928'
-
-gem 'jquery-ui-rails',
-  github: 'jquery-ui-rails/jquery-ui-rails',
-  branch: '0b22d466'
-
-gem 'config', '1.3.0'
-gem 'colorize'
-
-# LOGIN
-gem 'devise', '4.1.1'
-
-gem 'omniauth',        '1.3.1'
-gem 'omniauth-oauth',  '1.1.0'
-gem 'omniauth-oauth2', '1.4.0'
-
-gem 'omniauth-facebook',      '4.0.0'
-gem 'omniauth-vkontakte',     '1.3.7'
-gem 'omniauth-google-oauth2', '0.4.1'
-gem 'omniauth-odnoklassniki', '0.0.5'
-gem 'omniauth-twitter',       '1.2.1'
-
-# DELAYED JOBS
-gem 'sidekiq', '4.2.1'
-gem 'sidekiq-limit_fetch', '3.3.0'
-
-gem 'redis-namespace', '1.5.2'
-gem 'sinatra', '1.0', require: nil
-
-gem 'whenever', '0.9.7', require: false
-
-# CONTENT
-gem 'paperclip', '5.1.0'
-gem 'slim-rails', github: 'slim-template/slim-rails', branch: '8dbc1fbf8'
-gem 'slim', '3.0.7'
-gem 'ffaker'
-
-gem 'kaminari', github: 'amatsuda/kaminari', branch: '1c9ec3603'
-
-# DATABASES & SEARCH
-gem 'pg', '0.18.4'
-gem 'mysql2', '0.4.4'
-gem 'thinking-sphinx', '3.2.0'
-
-# MAILER
-gem 'premailer-rails', '1.9.5'
+eval_gemfile "Gemfiles/subtrees/TheOpenCMS.rb"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.beta1'

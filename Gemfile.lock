@@ -462,7 +462,6 @@ DEPENDENCIES
   sidekiq-limit_fetch (= 3.3.0)
   simple_sort!
   sinatra (= 1.0)
-  slim (= 3.0.7)
   slim-rails!
   the_notifications!
   the_pagination!
