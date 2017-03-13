@@ -1,26 +1,28 @@
+```ruby
+This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
+```
+
 ## UserRoom
 
-This gem provides sign-in/log-in functionality and basic UI for User's cabinet
+This gem provides sign-in/log-in functionality and basic user profile management interface. Based on Devise gem.
 
-Out of the box it woks with some social networks logins.
+### Installation
 
-* Vkontakte
-* Odnoklassniki
-* Facebook
-* Twitter
-* Google Plus
+**Install required gems**
 
+```ruby
+gem "devise"
+gem "config"
+gem "user_room"
 ```
-```
 
+**Run required genetators**
 
-gem "user_room", path: './plugins/user_room'
-
-# 1
-
+```ruby
 rails generate config:install
 rails generate devise:install
 rails generate devise user
+```
 
 # 2
 
