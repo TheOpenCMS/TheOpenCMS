@@ -1,6 +1,6 @@
 gem 'devise', '4.1.1'
 
-gem 'omniauth',        '1.3.1'
+gem 'omniauth',        '1.6.1'
 gem 'omniauth-oauth',  '1.1.0'
 gem 'omniauth-oauth2', '1.4.0'
 
