@@ -1,4 +1,4 @@
-class UserRoomAdditionalFields < ActiveRecord::Migration[5.0]
+class UserRoomAdditionalFields < ActiveRecord::Migration[5.1]
   def change
       add_column :users, :login,    :string, default: ''
       add_column :users, :username, :string, default: ''
