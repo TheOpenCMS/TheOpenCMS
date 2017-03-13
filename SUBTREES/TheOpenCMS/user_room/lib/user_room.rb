@@ -34,18 +34,18 @@ module UserRoom
 
     initializer :add_user_room_engine_view_paths do
       ActiveSupport.on_load(:active_record) do
-        _root_ = ::UserRoom::Engine.config.root
-        ::Rails.application.config.paths['db/migrate'] << "#{ _root_ }/db/migrate"
+        gem_root = ::UserRoom::Engine.config.root
+        ::Rails.application.config.paths['db/migrate'] << "#{ gem_root }/db/migrate"
       end
 
       ActiveSupport.on_load(:action_controller) do
         views  = "app/views/user_room"
-        _root_ = ::UserRoom::Engine.config.root
-        prepend_view_path("#{ _root_ }/#{ views }" ) if respond_to?(:prepend_view_path)
+        gem_root = ::UserRoom::Engine.config.root
+        prepend_view_path("#{ gem_root }/#{ views }" ) if respond_to?(:prepend_view_path)
       end
     end
   end
 end
 
-_root_ = File.expand_path('../../', __FILE__)
-require "#{ _root_ }/config/routes"
+gem_root = File.expand_path('../../', __FILE__)
+require "#{ gem_root }/config/routes"

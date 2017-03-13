@@ -12,6 +12,7 @@ redis:
 sidekiq:
   namespace: 'example.com'
   ui:
+    user: admin
     password: qwerty
 
 action_cable:
