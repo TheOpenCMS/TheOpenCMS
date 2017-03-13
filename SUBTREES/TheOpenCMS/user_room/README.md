@@ -16,6 +16,16 @@ gem "config"
 gem "user_room"
 ```
 
+**Ensure you have users table**
+
+```ruby
+class AddUsers < ActiveRecord::Migration[5.1]
+  def change
+    create_table :users
+  end
+end
+```
+
 **Run required genetators**
 
 ```ruby

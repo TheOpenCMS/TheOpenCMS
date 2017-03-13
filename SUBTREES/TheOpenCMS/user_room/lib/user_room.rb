@@ -33,10 +33,10 @@ module UserRoom
     config.autoload_paths << "#{ config.root }/app/mailers/concerns/"
 
     initializer :add_user_room_engine_view_paths do
-      ActiveSupport.on_load(:active_record) do
-        gem_root = ::UserRoom::Engine.config.root
-        ::Rails.application.config.paths['db/migrate'] << "#{ gem_root }/db/migrate"
-      end
+      # ActiveSupport.on_load(:active_record) do
+      #   gem_root = ::UserRoom::Engine.config.root
+      #   ::Rails.application.config.paths['db/migrate'] << "#{ gem_root }/db/migrate"
+      # end
 
       ActiveSupport.on_load(:action_controller) do
         views  = "app/views/user_room"
