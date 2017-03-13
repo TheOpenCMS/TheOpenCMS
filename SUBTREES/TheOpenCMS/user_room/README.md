@@ -21,6 +21,7 @@ gem "user_room"
 ```ruby
 rails generate config:install
 rails generate devise:install
+
 rails generate devise user
 rake user_room_engine:install:migrations
 ```

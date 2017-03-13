@@ -1,5 +1,5 @@
 # This migration comes from user_room_engine (originally 500)
-class UserRoomCredentials < ActiveRecord::Migration[5.0]
+class UserRoomCredentials < ActiveRecord::Migration[5.1]
   def change
     create_table :credentials do |t|
       t.references :user

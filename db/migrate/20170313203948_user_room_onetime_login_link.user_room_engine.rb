@@ -1,5 +1,5 @@
 # This migration comes from user_room_engine (originally 300)
-class UserRoomOnetimeLoginLink < ActiveRecord::Migration[5.0]
+class UserRoomOnetimeLoginLink < ActiveRecord::Migration[5.1]
   def change
     create_table :onetime_login_links do |t|
       t.string  :uid,    default: ''

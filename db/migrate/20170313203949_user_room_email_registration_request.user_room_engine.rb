@@ -1,5 +1,5 @@
 # This migration comes from user_room_engine (originally 400)
-class UserRoomEmailRegistrationRequest < ActiveRecord::Migration[5.0]
+class UserRoomEmailRegistrationRequest < ActiveRecord::Migration[5.1]
   def change
     create_table :email_registration_requests do |t|
       t.string  :uid,    default: ''
