@@ -1,11 +1,5 @@
-# OmniAuth::Strategies::Odnoklassniki.class_eval do
-#   def callback_url
-#     options.redirect_url || (full_host + script_name + callback_path)
-#   end
-# end
-
-Devise.setup do |config|
-  if defined? Settings
+if defined? Settings
+  Devise.setup do |config|
     config.omniauth :vkontakte,
       Settings.oauth.try(:vkontakte).try(:app_id),
       Settings.oauth.try(:vkontakte).try(:app_secret),
@@ -31,7 +25,7 @@ Devise.setup do |config|
       display: 'popup',
       skip_jwt: true
 
-    # http://eastflower.ru/auth/odnoklassniki/callback
+    # http://example.com/auth/odnoklassniki/callback
     config.omniauth :odnoklassniki,
       Settings.oauth.try(:odnoklassniki).try(:app_id),
       Settings.oauth.try(:odnoklassniki).try(:app_secret),
