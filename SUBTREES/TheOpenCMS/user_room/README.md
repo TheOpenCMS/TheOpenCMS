@@ -22,18 +22,18 @@ gem "user_room"
 rails generate config:install
 rails generate devise:install
 rails generate devise user
+rake user_room_engine:install:migrations
 ```
 
-# 2
+**Configurate Devise**
 
-`config/initializers/devise.rb`
+Use `gem 'config'` to configure Devise
 
-```rb
-# config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-config.mailer_sender = 'mail-sender@example.com'
-
-# config.mailer = 'Devise::Mailer'
-config.mailer = 'DeviseMailer'
+```yml
+devise:
+  mailer_sender: mail-sender@example.com
+  parent_mailer: 'ActionMailer::Base'
+  mailer: 'DeviseMailer'
 ```
 
 # 3
