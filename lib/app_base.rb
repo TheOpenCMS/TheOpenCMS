@@ -1,0 +1,3 @@
+module AppBase
+  # Your code goes here...
+end
