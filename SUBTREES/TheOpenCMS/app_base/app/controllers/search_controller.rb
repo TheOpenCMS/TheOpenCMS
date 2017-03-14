@@ -6,7 +6,7 @@ class SearchController < ApplicationController
     @notes = ::ThinkingSphinx.search(
       to_search,
       star: true,
-      classes: [ Note ],
+      classes: [ ModelName ],
       field_weights: {
         title: 5,
         content: 3
