@@ -1,7 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'app_base/version'
+
+module AppBase
+  VERSION = "0.1.0"
+end
 
 Gem::Specification.new do |spec|
   spec.name          = "app_base"
@@ -9,9 +12,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ilya N. Zykin"]
   spec.email         = ["zykin-ilya@ya.ru"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{AppBase for TheOpenCMS}
+  spec.description   = %q{Base part of the App for TheOpenCMS}
+  spec.homepage      = "https://github.com/TheOpenCMS"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
