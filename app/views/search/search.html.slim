@@ -1,0 +1,21 @@
+.mb30= link_to 'Back to Index page', notes_path, class: 'ptz_btn ptz_size-14'
+
+.fs24.mb25
+  | Search by:
+  =< @q
+
+- if @notes.count > 0
+  .mb50.fs15.i
+    | Results:
+    =<> @notes.size
+    | of
+    =< @notes.count
+
+.mb25= render partial: 'search/form'
+
+- if @notes.blank?
+  .fs20.mb20 Nothing to show
+- else
+  = render template: 'notes/list', locals: { notes: @notes }
+  .fs18.lh120
+    = paginate @notes
