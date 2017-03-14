@@ -1,8 +1,10 @@
 gem 'voiceless',         path: '../../SUBTREES/TheOpenCMS/voiceless'
-gem 'user_room',         path: '../../SUBTREES/TheOpenCMS/user_room'
-gem 'the_pagination',    path: '../../SUBTREES/TheOpenCMS/pagination'
 gem 'the_notifications', path: '../../SUBTREES/TheOpenCMS/notifications'
+gem 'the_pagination',    path: '../../SUBTREES/TheOpenCMS/pagination'
 gem 'simple_sort',       path: '../../SUBTREES/TheOpenCMS/simple_sort'
 gem 'image_tools',       path: '../../SUBTREES/TheOpenCMS/image_tools'
 gem 'crop_tool',         path: '../../SUBTREES/TheOpenCMS/crop_tool'
 gem 'log_js',            path: '../../SUBTREES/TheOpenCMS/log_js'
+
+gem 'user_room',         path: '../../SUBTREES/TheOpenCMS/user_room'
+gem 'app_base',          path: '../../SUBTREES/TheOpenCMS/app_base'

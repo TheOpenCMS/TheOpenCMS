@@ -69,6 +69,11 @@ PATH
     protozaur (1.1.0)
 
 PATH
+  remote: SUBTREES/TheOpenCMS/app_base
+  specs:
+    app_base (0.1.0)
+
+PATH
   remote: SUBTREES/TheOpenCMS/crop_tool
   specs:
     crop_tool (0.4)
@@ -423,6 +428,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  app_base!
   byebug
   capybara (~> 2.7.0)
   coffee-rails (~> 4.2)
