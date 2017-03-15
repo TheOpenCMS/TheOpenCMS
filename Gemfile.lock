@@ -45,6 +45,14 @@ GIT
       sprockets-rails (< 4.0)
 
 GIT
+  remote: https://github.com/rails/sprockets.git
+  revision: 09f44cb0334ba94afbf0c3c385933e38f62bcd82
+  specs:
+    sprockets (4.0.0.beta4)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+
+GIT
   remote: https://github.com/rails/webpacker.git
   revision: a85a3ab0eac6626af9da0efbda9320404114d675
   specs:
@@ -381,9 +389,6 @@ GEM
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
-    sprockets (4.0.0.beta4)
-      concurrent-ruby (~> 1.0)
-      rack (> 1, < 3)
     sprockets-rails (3.2.0)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
@@ -469,6 +474,7 @@ DEPENDENCIES
   simple_sort!
   sinatra (= 1.0)
   slim-rails!
+  sprockets!
   the_notifications!
   the_pagination!
   thinking-sphinx (= 3.2.0)

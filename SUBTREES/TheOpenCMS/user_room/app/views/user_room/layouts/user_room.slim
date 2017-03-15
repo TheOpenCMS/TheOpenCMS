@@ -1,0 +1,17 @@
+doctype html
+
+html.w100p.h100p
+  head
+    meta charset='utf-8'
+    title TheOpenCMS / User Room
+
+    = action_cable_meta_tag
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'user_room/frontend', media: :all, 'data-turbolinks-track' => true
+    = javascript_include_tag 'user_room/frontend', 'data-turbolinks-track' => true
+
+  body.w100p.h100p.ffa
+    .w80p.ma
+      .mt20.mb20
+        = yield

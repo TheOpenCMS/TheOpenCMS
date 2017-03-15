@@ -23,12 +23,3 @@
       )
 
       false
-
-# oauth_processing: ->
-#   oauth_data = window.oauth_data
-#   data = json2data oauth_data
-#   form = $ '#signin'
-#   # AppPreloader('show')
-#   if !data.length && data?.provider
-#     form.find('#oauth_data').val oauth_data
-#   form.submit()

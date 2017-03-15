@@ -1,40 +1,64 @@
-- intro_visible   = 'display:none' if  visible
-- content_visible = 'display:none' if !visible
-- visible_style   = 'disable'      if !visible
+ruby:
+  callback_path = local_assigns[:callback_path]
 
-.ptz_theme-0
-  .ptz_div-0.js-registration-accordion(class=visible_style)
-    .m15.js-registration-accordion--intro(style=intro_visible)
+  intro_visible   = 'display:none' if  visible
+  content_visible = 'display:none' if !visible
+  visible_style   = 'disable'      if !visible
 
-      .js-registration-accordion--switcher
-        input#social-ligin-off-always.radio-btn(type='checkbox' autocomplete='off')
-        label(for='social-ligin-off')
-          span.fs16 Вход / Регистрация через социальную сеть
+.js-registration_accordion(class=visible_style)
+  .m15.js-registration_accordion-intro(style=intro_visible)
 
-    .m15.js-registration-accordion--content(style=content_visible)
-      .ptz_table.w100p
-        .ptz_tr
-          .ptz_td.pl10
-            p.mt0 Вход / Регистрация через социальные сети
-            - callback_path = local_assigns[:callback_path]
+    .js-registration_accordion-switcher
+      input#social-ligin-off-always(type='checkbox' autocomplete='off')
+      label(for='social-ligin-off')
+        span.fs16 Вход / Регистрация через социальную сеть
 
-            .ptz_table.mt40.mb40.w100p
-              .ptz_tr
-                .ptz_td.pr40.tac
-                  = link_to '', user_omniauth_authorize_path(:vkontakte,     callback_path: callback_path), class: 'social-login-btn social-login-btn--vk fa fa-vk',            data: { role: 'social-login-btn' },              title: 'ВКонтакте'
-                  .fs11.mt5 ВКонтакте
-                / .ptz_td.pr40.tac
-                /   = link_to '', user_omniauth_authorize_path(:odnoklassniki, callback_path: callback_path), class: 'social-login-btn social-login-btn--ok fa fa-odnoklassniki', data: { role: 'social-login-btn', width: 650 },  title: 'Одноклассники'
-                /   .fs11.mt5 Одноклассники
-                .ptz_td.pr40.tac
-                  = link_to '', user_omniauth_authorize_path(:facebook,      callback_path: callback_path), class: 'social-login-btn social-login-btn--fb fa fa-facebook',      data: { role: 'social-login-btn', height: 600 }, title: 'Facebook'
-                  .fs11.mt5 Facebook
-                .ptz_td.pr40.tac
-                  = link_to '', user_omniauth_authorize_path(:twitter,       callback_path: callback_path), class: 'social-login-btn social-login-btn--tw fa fa-twitter',       data: { role: 'social-login-btn', height: 650 }, title: 'Твиттер'
-                  .fs11.mt5 Twitter
-                / .ptz_td.pr40.tac
-                /   = link_to '', user_omniauth_authorize_path(:google_oauth2, callback_path: callback_path), class: 'social-login-btn social-login-btn--gp fa fa-google-plus',   data: { role: 'social-login-btn', height: 600 }, title: 'Google+'
-                /   .fs11.mt5 Google+
+  .m15.js-registration_accordion-content(style=content_visible)
+    .ptz_table.w100p
+      .ptz_tr
+        .ptz_td.pl10
+          p.mt0 Вход / Регистрация через социальные сети
 
-            .fs12.mb10 &mdash; Регистрация через социальную сеть это быстро, безопасно, удобно!
-            .fs12 &mdash; В личном кабинете вы сможете привязать несколько социальных сетей к своему профилю
+          .ptz_table.mt40.mb40.w100p
+            .ptz_tr
+              .ptz_td.pr40.tac
+                = link_to '',
+                  user_vkontakte_omniauth_authorize_path(callback_path: callback_path),
+                  class: 'js-social_login_btn social_login_btn social_login_btn-vk fa fa-vk',
+                  title: 'ВКонтакте'
+                .fs11.mt5 ВКонтакте
+
+              .ptz_td.pr40.tac
+                = link_to '',
+                  user_odnoklassniki_omniauth_authorize_path(callback_path: callback_path),
+                  class: 'js-social_login_btn social_login_btn social_login_btn-ok fa fa-odnoklassniki',
+                  data: { width: 650 },
+                  title: 'Одноклассники'
+                .fs11.mt5 Одноклассники
+
+              .ptz_td.pr40.tac
+                = link_to '',
+                  user_facebook_omniauth_authorize_path(callback_path: callback_path),
+                  class: 'js-social_login_btn social_login_btn social_login_btn-fb fa fa-facebook',
+                  data: { height: 600 },
+                  title: 'Facebook'
+                .fs11.mt5 Facebook
+
+              .ptz_td.pr40.tac
+                = link_to '',
+                  user_twitter_omniauth_authorize_path(callback_path: callback_path),
+                  class: 'js-social_login_btn social_login_btn social_login_btn-tw fa fa-twitter',
+                  data: { height: 650 },
+                  title: 'Твиттер'
+                .fs11.mt5 Twitter
+
+              .ptz_td.pr40.tac
+                = link_to '',
+                  user_google_oauth2_omniauth_authorize_path(callback_path: callback_path),
+                  class: 'js-social_login_btn social_login_btn social_login_btn-gp fa fa-google-plus',
+                  data: { height: 600 },
+                  title: 'Google+'
+                .fs11.mt5 Google+
+
+          .fs12.mb10 &mdash; Регистрация через социальную сеть это быстро, безопасно, удобно!
+          .fs12 &mdash; В личном кабинете вы сможете привязать несколько социальных сетей к своему профилю

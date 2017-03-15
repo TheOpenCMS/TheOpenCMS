@@ -38,6 +38,14 @@ module UserRoom
       #   ::Rails.application.config.paths['db/migrate'] << "#{ gem_root }/db/migrate"
       # end
 
+      # %w[
+      #   user_room
+      #   user_room/frontend
+      # ].each do |additional_path|
+      #   config.assets.paths << "#{config.root}/app/assets/javascripts/#{additional_path}"
+      #   config.assets.paths << "#{config.root}/app/assets/stylesheets/#{additional_path}"
+      # end
+
       ActiveSupport.on_load(:action_controller) do
         views  = "app/views/user_room"
         gem_root = ::UserRoom::Engine.config.root

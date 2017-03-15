@@ -1,6 +1,9 @@
 gem 'colorize'
 gem 'config', '1.3.0'
 
+gem 'sprockets',
+  github: 'rails/sprockets' # 09f44cb
+
 gem 'webpacker',
   github: 'rails/webpacker'
 
