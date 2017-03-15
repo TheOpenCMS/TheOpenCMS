@@ -8,12 +8,12 @@
     .ptz_td.p20
       .mb20
         - if @user.avatar.present?
-          = image_tag @user.avatar.url(:v100x100), class: 'user-room-header--avatar-image'
+          = image_tag @user.avatar.url(:v100x100), class: 'user-room-header-avatar-image'
         - else
-          .user-room-header--avatar-placeholder.w100 ?
+          .user-room-header-avatar-placeholder.w100 ?
 
       - if current_user && current_user == @user
-        = link_to 'Редактировать', [:edit, @user], class: 'ptz_btn ptz_btn--size-s'
+        = link_to 'Редактировать', [:edit, @user], class: 'ptz_btn ptz_btn-size-s'
     .ptz_td.p20
       .mt20
         - if current_user.try(:admin?)

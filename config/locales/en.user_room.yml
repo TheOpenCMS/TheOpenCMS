@@ -1,0 +1,26 @@
+en:
+  user_room:
+    social_login:
+      login_title: Login via Social networks
+
+    email_login:
+      i_have_a_profile: I already have a Profile
+      your_email: Email
+      your_password: Password
+      remember_me: Remember me
+      login: Login
+
+    networks_names:
+      vk: VKontakte
+      ok: Odnoklassniki
+      gp: Google +
+      tw: Twitter
+      fb: Facebook
+
+    login_copies:
+      title_1: Some Hints
+      copy_1_html: "&mdash; Registration via social networks is easy, fast, secure and comfortable."
+      copy_2_html: "&mdash; On your Profile Settings page you can link your Profile to a few social networks."
+      copy_3_html: "&mdash; <span class='b'>Password is forgotten?</span> Get a link for a one-time login below."
+      copy_4_html: "&mdash; You can change your password after you are logged in"
+      copy_5_html: "&mdash; It's easy to use Login via Social networks"
