@@ -13,8 +13,8 @@
 
   .mt20.mb20= render partial: 'user_room/avatar/uploader', locals: { object: @user }
 
-  .ptz_theme-0
-    .ptz_div-0.mt20.mb20
+  
+    .mt20.mb20
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Основная информация
 
@@ -50,8 +50,8 @@
         .mt20
           = f.submit "Обновить профиль", class: 'ptz_btn ptz_size-14'
 
-  .ptz_theme-0
-    .ptz_div-0.mt20.mb20
+  
+    .mt20.mb20
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Сменить пароль
 
@@ -67,8 +67,8 @@
         .mt20
           = f.submit "Сменить пароль", class: 'ptz_btn ptz_size-14'
 
-  .ptz_theme-0
-    .ptz_div-0.mt20.mb20
+  
+    .mt20.mb20
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Ваши контакты в социальных сетях
 
@@ -109,8 +109,8 @@
   - credentials = @user.credentials
   - available_to_unlink = @user.credentials.count > 1
 
-  .ptz_theme-0
-    .ptz_div-0.mb15.p20
+  
+    .mb15.p20
 
       h3.mb15.fs16.b Привязать учетную запись к социальной сети
 
@@ -118,66 +118,66 @@
         .ptz_tr
           .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'vkontakte'}.blank?
-              = link_to '', user_omniauth_authorize_path(:vkontakte), class: 'social-login-btn social-login-btn--vk fa fa-vk', data: { role: 'social-login-btn' }, title: 'ВКонтакте'
+              = link_to '', user_omniauth_authorize_path(:vkontakte), class: 'social-login-btn social-login-btn-vk fa fa-vk', data: { role: 'social-login-btn' }, title: 'ВКонтакте'
             - else
-              .social-login-btn--unlink-holder
-                = link_to '', jsvoid, class: 'social-login-btn social-login-btn--linked social-login-btn--vk fa fa-vk', title: 'ВКонтакте'
+              .social-login-btn-unlink-holder
+                = link_to '', jsvoid, class: 'social-login-btn social-login-btn-linked social-login-btn-vk fa fa-vk', title: 'ВКонтакте'
 
                 - if available_to_unlink
-                  = link_to delete_provider_path(:vkontakte), method: :delete, class: 'social-login-btn--unlink' do
-                    .fa.fa-times.social-login-btn--unlink-icon
+                  = link_to delete_provider_path(:vkontakte), method: :delete, class: 'social-login-btn-unlink' do
+                    .fa.fa-times.social-login-btn-unlink-icon
 
             .fs11.mt5 ВКонтакте
 
           .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'odnoklassniki'}.blank?
-              = link_to '', user_omniauth_authorize_path(:odnoklassniki), class: 'social-login-btn social-login-btn--ok fa fa-odnoklassniki', data: { role: 'social-login-btn', width: 650 },  title: 'Одноклассники'
+              = link_to '', user_omniauth_authorize_path(:odnoklassniki), class: 'social-login-btn social-login-btn-ok fa fa-odnoklassniki', data: { role: 'social-login-btn', width: 650 },  title: 'Одноклассники'
             - else
-              .social-login-btn--unlink-holder
-                = link_to '', jsvoid, class: 'social-login-btn social-login-btn--linked social-login-btn--ok fa fa-odnoklassniki',  title: 'Одноклассники'
+              .social-login-btn-unlink-holder
+                = link_to '', jsvoid, class: 'social-login-btn social-login-btn-linked social-login-btn-ok fa fa-odnoklassniki',  title: 'Одноклассники'
 
                 - if available_to_unlink
-                  = link_to delete_provider_path(:odnoklassniki), method: :delete, class: 'social-login-btn--unlink' do
-                    .fa.fa-times.social-login-btn--unlink-icon
+                  = link_to delete_provider_path(:odnoklassniki), method: :delete, class: 'social-login-btn-unlink' do
+                    .fa.fa-times.social-login-btn-unlink-icon
 
             .fs11.mt5 Одноклассники
 
           .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'facebook'}.blank?
-              = link_to '', user_omniauth_authorize_path(:facebook), class: 'social-login-btn social-login-btn--fb fa fa-facebook', data: { role: 'social-login-btn' }, title: 'Facebook'
+              = link_to '', user_omniauth_authorize_path(:facebook), class: 'social-login-btn social-login-btn-fb fa fa-facebook', data: { role: 'social-login-btn' }, title: 'Facebook'
             - else
-              .social-login-btn--unlink-holder
-                = link_to '', jsvoid, class: 'social-login-btn social-login-btn--linked social-login-btn--fb fa fa-facebook', title: 'Facebook'
+              .social-login-btn-unlink-holder
+                = link_to '', jsvoid, class: 'social-login-btn social-login-btn-linked social-login-btn-fb fa fa-facebook', title: 'Facebook'
 
                 - if available_to_unlink
-                  = link_to delete_provider_path(:facebook), method: :delete, class: 'social-login-btn--unlink' do
-                    .fa.fa-times.social-login-btn--unlink-icon
+                  = link_to delete_provider_path(:facebook), method: :delete, class: 'social-login-btn-unlink' do
+                    .fa.fa-times.social-login-btn-unlink-icon
 
             .fs11.mt5 Facebook
 
           .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'twitter'}.blank?
-              = link_to '', user_omniauth_authorize_path(:twitter), class: 'social-login-btn social-login-btn--tw fa fa-twitter', data: { role: 'social-login-btn', height: 650 }, title: 'Twitter'
+              = link_to '', user_omniauth_authorize_path(:twitter), class: 'social-login-btn social-login-btn-tw fa fa-twitter', data: { role: 'social-login-btn', height: 650 }, title: 'Twitter'
             - else
-              .social-login-btn--unlink-holder
-                = link_to '', jsvoid, class: 'social-login-btn social-login-btn--linked social-login-btn--tw fa fa-twitter', title: 'Twitter'
+              .social-login-btn-unlink-holder
+                = link_to '', jsvoid, class: 'social-login-btn social-login-btn-linked social-login-btn-tw fa fa-twitter', title: 'Twitter'
 
                 - if available_to_unlink
-                  = link_to delete_provider_path(:twitter), method: :delete, class: 'social-login-btn--unlink' do
-                    .fa.fa-times.social-login-btn--unlink-icon
+                  = link_to delete_provider_path(:twitter), method: :delete, class: 'social-login-btn-unlink' do
+                    .fa.fa-times.social-login-btn-unlink-icon
 
             .fs11.mt5 Twitter
 
           .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'google_oauth2'}.blank?
-              = link_to '', user_omniauth_authorize_path(:google_oauth2), class: 'social-login-btn social-login-btn--gp fa fa-google-plus', data: { role: 'social-login-btn' }, title: 'Google+'
+              = link_to '', user_omniauth_authorize_path(:google_oauth2), class: 'social-login-btn social-login-btn-gp fa fa-google-plus', data: { role: 'social-login-btn' }, title: 'Google+'
             - else
-              .social-login-btn--unlink-holder
-                = link_to '', jsvoid, class: 'social-login-btn social-login-btn--linked social-login-btn--gp fa fa-google-plus', title: 'Google+'
+              .social-login-btn-unlink-holder
+                = link_to '', jsvoid, class: 'social-login-btn social-login-btn-linked social-login-btn-gp fa fa-google-plus', title: 'Google+'
 
                 - if available_to_unlink
-                  = link_to delete_provider_path(:google_oauth2), method: :delete, class: 'social-login-btn--unlink' do
-                    .fa.fa-times.social-login-btn--unlink-icon
+                  = link_to delete_provider_path(:google_oauth2), method: :delete, class: 'social-login-btn-unlink' do
+                    .fa.fa-times.social-login-btn-unlink-icon
 
             .fs11.mt5 Google+
 

@@ -17,12 +17,12 @@
           td.fs15.pt25.pb25
             = link_to user do
               - if user.avatar.present?
-                = image_tag user.avatar.url(:v100x100), class: 'user-room-header--avatar-image'
+                = image_tag user.avatar.url(:v100x100), class: 'user-room-header-avatar-image'
               - else
-                .user-room-header--avatar-placeholder.w100 ?
+                .user-room-header-avatar-placeholder.w100 ?
           td.fs15.pt25.pb25.vam= user.login
           td.fs15.pt25.pb25.vam= user.username
           td.fs15.pt25.pb25.vam= I18n.l(user.created_at, format: "%-d %B %Y")
 
     - if (paginator = paginate @users, views_prefix: 'protozaur_theme/paginator').present?
-      .ptz_theme-0.mt20.mb20= paginator
+      .mt20.mb20= paginator

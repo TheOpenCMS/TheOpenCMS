@@ -2,44 +2,44 @@
 - content_visible = 'display:none' if !visible
 - visible_style   = 'disable'      if !visible
 
-.ptz_theme-0
-  .ptz_div-0.js-registration-accordion(class=visible_style)
-    .m15.js-registration-accordion--intro(style=intro_visible)
 
-      .js-registration-accordion--switcher
-        input#accounted-off-always.radio-btn(type='checkbox' autocomplete='off')
-        label(for='accounted-off')
-          span.fs16 У меня уже есть учетная запись
+.js-registration_accordion(class=visible_style)
+  .js-registration_accordion-intro.registration_accordion-intro(style=intro_visible)
 
-    .m15.js-registration-accordion--content(style=content_visible)
-      .ptz_table.w100p
-        .ptz_tr
-          .ptz_td.pl10
-            p.mt0 У меня уже есть учетная запись
+    .js-registration_accordion-switcher
+      input#accounted-off-always.radio-btn(type='checkbox' autocomplete='off')
+      label(for='accounted-off')
+        span.fs16 = t('email_login.i_have_a_profile', scope: :user_room)
 
-            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .js-registration_accordion-content.registration_accordion-content(style=content_visible)
+    .ptz_table.w100p
+      .ptz_tr
+        .ptz_td.pl10
+          p.mt0 = t('email_login.i_have_a_profile', scope: :user_room)
 
-              .mb15.clearfix
-                .pull-left.mr20.mb5
-                  = f.label :email, 'Ваша электронная почта', class: 'block fs14 lh120 mb5 '
-                  = f.text_field :email, value: '', autofocus: true, class: 'ptz_input ptz_size-14 w250'
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
-                .pull-left.mr20.mb5
-                  = f.label :password, 'Ваш пароль', class: 'block fs14 lh120 mb5 '
-                  = f.password_field :password, value: '', autocomplete: :off, class: 'ptz_input ptz_size-14 w250'
+            .mb15.clearfix
+              .pull-left.mr20.mb5
+                = f.label :email, t('email_login.your_email', scope: :user_room), class: 'block fs14 lh120 mb5 '
+                = f.text_field :email, value: '', autofocus: true, class: 'ptz_input ptz_size-14 w250'
 
-              .clearfix
-                - if devise_mapping.rememberable?
-                  .mb15.clearfix.mb0
-                    = f.check_box :remember_me, { checked: true, autocomplete: :off }
-                    ' &nbsp;
-                    span.fs13 Запомнить меня
+              .pull-left.mr20.mb5
+                = f.label :password, t('email_login.your_password', scope: :user_room), class: 'block fs14 lh120 mb5 '
+                = f.password_field :password, value: '', autocomplete: :off, class: 'ptz_input ptz_size-14 w250'
 
-                .pull-left.mr20.mb5
-                  = f.submit "Войти", class: 'ptz_btn ptz_size-14 ptz_theme-0--btn w100'
+            .clearfix
+              - if devise_mapping.rememberable?
+                .mb15.clearfix.mb0
+                  = f.check_box :remember_me, { checked: true, autocomplete: :off }
+                  ' &nbsp;
+                  span.fs13 = t('email_login.remember_me', scope: :user_room)
 
-          .ptz_td.w50p.pl30
-            p.mt0 Подсказка:
-            p.fs14.mt0.mb10 &mdash; <span class='b'>Забыли пароль?</span> Запросите одноразовую ссылку для входа ниже.
-            p.fs14.mt0.mb10 &mdash; После входа пароль можно сменить в личном кабинете
-            p.fs14.mt0.mb10 &mdash; Особенно удобно пользоваться входом через социальные сети
+              .pull-left.mr20.mb5
+                = f.submit t('email_login.login', scope: :user_room), class: 'ptz_btn ptz_size-14 ptz_theme-0-btn w100'
+
+        .ptz_td.w50p.pl30
+          p.mt0 = t('login_copies.title_1', scope: :user_room)
+          p.fs14.mt0.mb10 = t('login_copies.copy_3_html', scope: :user_room)
+          p.fs14.mt0.mb10 = t('login_copies.copy_4_html', scope: :user_room)
+          p.fs14.mt0.mb10 = t('login_copies.copy_5_html', scope: :user_room)

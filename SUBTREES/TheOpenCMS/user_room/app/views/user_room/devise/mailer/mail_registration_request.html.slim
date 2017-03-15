@@ -10,12 +10,12 @@
       tr
         td.w50p
         td
-          .app-mailer--activation-btn-border
-            = link_to 'Активировать учетную запись', activate_email_registration_request_url(@uid, callback_path: @callback_path), class: 'app-mailer--activation-btn p20 block br-off'
+          .app-mailer-activation-btn-border
+            = link_to 'Активировать учетную запись', activate_email_registration_request_url(@uid, callback_path: @callback_path), class: 'app-mailer-activation-btn p20 block br-off'
         td.w50p
 
   .mb15.fs16.lh130.ffa Если ссылка не активна, то скопируйте следующий адрес в адресную строку своего браузера:
-  .app-mailer--activation-text.p20.tac.fs12.mb50
+  .app-mailer-activation-text.p20.tac.fs12.mb50
     = activate_email_registration_request_url(@uid, callback_path: @callback_path)
 
   .mb15.fs16.lh130.ffa

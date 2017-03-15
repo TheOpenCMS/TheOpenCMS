@@ -3,7 +3,7 @@
 
 ruby:
   crop_data_1x1 = {
-    role:   'crop-tool--open',
+    role:   'crop-tool-open',
     url:     url_for([:avatar_crop_1x1, object]),
     source:  object.avatar.url(:original),
     holder:  { width: 500 },
@@ -11,13 +11,13 @@ ruby:
     callback_handler: "AvatarCrop.crop_tool_callback"
   }
 
-= form_for object, html: { enctype: 'multipart/form-data', class: 'ptz_theme-0--div-0' } do |f|
+= form_for object, html: { enctype: 'multipart/form-data', class: '' } do |f|
   .mb15.fs16.b Изменить аватар
 
   .clearfix.js-main-image-manage-intro
     .pull-left
       .pull-left.mr10
-        = image_tag object.avatar.url(:v100x100), data: { role: 'main-image--v1x1' }, data: { role: 'user-avatar--v1x1' }, class: 'w100'
+        = image_tag object.avatar.url(:v100x100), data: { role: 'main-image-v1x1' }, data: { role: 'user-avatar-v1x1' }, class: 'w100'
 
       .pull-left
         = link_to jsvoid, class: 'ptz_btn ptz_size-14 mr15 pt5 pb5 pr10 pl10', data: crop_data_1x1 do
