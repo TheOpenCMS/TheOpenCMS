@@ -1,5 +1,12 @@
 en:
   user_room:
+    networks_names:
+      vk: VKontakte
+      ok: Odnoklassniki
+      gp: Google +
+      tw: Twitter
+      fb: Facebook
+
     social_login:
       login_title: Login via Social networks
 
@@ -10,17 +17,47 @@ en:
       remember_me: Remember me
       login: Login
 
-    networks_names:
-      vk: VKontakte
-      ok: Odnoklassniki
-      gp: Google +
-      tw: Twitter
-      fb: Facebook
+    onetime_login:
+      cant_recall_the_password: I can't recall the password
+      cant_recall_send_me_link: I can't recall the password. Send me one-time login link
+      your_email: Your email
+      get_the_link: Get the link
+
+    email_signup:
+      signup: Email Sign up
+      signup_copy: You'll get an activation link. Check your inbox
+      your_email: Your email
+      signup_btn: Sign up
+
+    avatar:
+      change: Change Avatar
+      upload: Upload Avatar
+      upload_btn: Upload
+
+    oauth:
+      failure: "OAuth failure. Can't user social network for login"
+
+    confirmations:
+      get_instructions: To get instructions to activate my Profile
+      get_instructions_btn: To get instructions
+
+    passwors:
+      new_password: New Password
+      repeat_new_password: Repeat the password
+      set_new_password_btn: Save a new password
+      set_new_password: Set a new password
+      forgot_the_password: Did you forget the password?
+      email_for_instructions: Type your email. We will send you instructions to recover your password
+      get_instructions_btn: To get password recover instructions
 
     login_copies:
       title_1: Some Hints
       copy_1_html: "&mdash; Registration via social networks is easy, fast, secure and comfortable."
       copy_2_html: "&mdash; On your Profile Settings page you can link your Profile to a few social networks."
+
       copy_3_html: "&mdash; <span class='b'>Password is forgotten?</span> Get a link for a one-time login below."
       copy_4_html: "&mdash; You can change your password after you are logged in"
       copy_5_html: "&mdash; It's easy to use Login via Social networks"
+
+      copy_6_html: "&mdash; If you are already signed in the you will get the link to login this web site"
+      copy_7_html: "&mdash; If email didn't come in a few minutes, please, check the <b>SPAM</b>. Sometimes even good letters may be marked as SPAM"

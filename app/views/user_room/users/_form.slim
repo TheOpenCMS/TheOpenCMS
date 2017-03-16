@@ -5,10 +5,10 @@
 
 .panel.panel-default
   .panel-heading
-    h3 Основная информация
+    h3 Basic Info
   .panel-body
     = form_for @user, html: { enctype: "multipart/form-data", role: :form } do |f|
-      .form-group(name=:avatar)
+      .mb20(name=:avatar)
         a(name=:avatar)
         p= image_tag current_user.avatar.url(:medium), id: :avatar_medium
         p
@@ -25,99 +25,99 @@
               }
 
             '
-            = link_to "Изменить миниатюру", "#", class: "ptz_btn ptz_btn-success js_the_crop", data: crop_data_150_150
+            = link_to "Change the pic", "#", class: "ptz_btn js-the_crop", data: crop_data_150_150
             '
-            = link_to "Удалить миниатюру", user_avatar_delete_path(@user), method: :delete, class: "ptz_btn ptz_btn-danger"
+            = link_to "Remove the pic", user_avatar_delete_path(@user), method: :delete, class: "ptz_btn"
 
-      .form-group
-        = f.label :username, "Имя пользователя"
-        = f.text_field :username, class: 'form-control'
+      .mb20
+        = f.label :username, "Users name"
+        = f.text_field :username, class: ''
 
-      .form-group(name=:about_me)
+      .mb20(name=:about_me)
         a(name=:about_me)
-        = f.label :raw_about, "О себе"
-        = f.text_area :raw_about, class: 'form-control', style: 'height: 200px;'
+        = f.label :raw_about, "About me"
+        = f.text_area :raw_about, class: '', style: 'height: 200px;'
 
-      .form-group
-        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info'
+      .mb20
+        = f.submit "Update", class: 'ptz_btn'
 
 .panel.panel-default
   a(name=:social_networks)
   .panel-heading
-    h3 Социальные сети
+    h3 Social Networks
   .panel-body(name=:social_networks)
     = form_for @user, html: { role: :form } do |f|
-      .form-group
+      .mb20
         = f.label :vk_addr, "vk.com"
-        = f.text_field :vk_addr, class: 'form-control'
+        = f.text_field :vk_addr, class: ''
 
-      .form-group
+      .mb20
         = f.label :ok_addr, "odnoklassniki.ru"
-        = f.text_field :ok_addr, class: 'form-control'
+        = f.text_field :ok_addr, class: ''
 
-      .form-group
+      .mb20
         = f.label :fb_addr, "facebook.com"
-        = f.text_field :fb_addr, class: 'form-control'
+        = f.text_field :fb_addr, class: ''
 
-      .form-group
+      .mb20
         = f.label :tw_addr, "twitter.com"
-        = f.text_field :tw_addr, class: 'form-control'
+        = f.text_field :tw_addr, class: ''
 
-      .form-group
+      .mb20
         = f.label :ig_addr, "instagram.com"
-        = f.text_field :ig_addr, class: 'form-control'
+        = f.text_field :ig_addr, class: ''
 
-      .form-group
+      .mb20
         = f.label :pt_addr, "pinterest.com"
-        = f.text_field :pt_addr, class: 'form-control'
+        = f.text_field :pt_addr, class: ''
 
-      .form-group
+      .mb20
         = f.label :gp_addr, "google plus"
-        = f.text_field :gp_addr, class: 'form-control'
+        = f.text_field :gp_addr, class: ''
 
-      .form-group
-        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info'
+      .mb20
+        = f.submit "Update", class: 'ptz_btn'
 
 .panel.panel-default
   .panel-heading
     a(name=:email)
-    h3 Сменить Email
+    h3 Change email
   .panel-body(name=:email)
-    p Для того, что бы новый Email вступил в силу, вам будет необходимо подтвердить его, перейдя по ссылке, которая будет вам выслана на желаемый Email
+    p New email must be approved. Check you inbox after you change Email
 
     = form_for @user, url: user_change_email_path(@user), method: :patch, html: { role: :form } do |f|
-      .form-group
-        = f.label :email, "Укажите ваш новый email"
-        = f.text_field :email, class: 'form-control'
+      .mb20
+        = f.label :email, "New Email"
+        = f.text_field :email, class: ''
 
       - if @user.unconfirmed_email
-        .form-group
-          b Email ожидает подтверждения:
+        .mb20
+          b Email is waitong for actiovation:
           '
           = @user.unconfirmed_email
 
-      .form-group
-        = f.submit "Сменить Email", class: 'ptz_btn ptz_btn-info'
+      .mb20
+        = f.submit "Change Email", class: 'ptz_btn'
 
 .panel.panel-default
   .panel-heading
     a(name=:login)
-    h3 Сменить логин
+    h3 Change the Login
   .panel-body(name=:login)
-    p Логин - ваш псевдоним в системе. Смена логина может отразиться на доступности публикаций, в адресе которых он используется.
+    p Login
     = form_for @user, html: { role: :form } do |f|
-      .form-group
-        = f.label :login, "Логин"
-        = f.text_field :login, class: 'form-control'
-      .form-group
-        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info', data: { confirm: "Я уверен, что хочу сменить Логин" }
+      .mb20
+        = f.label :login, "Login"
+        = f.text_field :login, class: ''
+      .mb20
+        = f.submit "Update profile", class: 'ptz_btn', data: { confirm: "Are you sure?" }
 
 .panel.panel-default
   .panel-heading
-    h3 Сменить пароль
+    h3 Change the password
   .panel-body
-    p Инструкции по процессу смены пароля вам будут высланы на ваш текущий Email.
-    = link_to "Сменить пароль", user_change_password_path(@user), method: :patch, class: 'ptz_btn ptz_btn-warning'
+    p Check your inbox
+    = link_to "Change the password", user_change_password_path(@user), method: :patch, class: 'ptz_btn ptz_btn-warning'
 
 - credentials = @user.credentials
 - if credentials.size < 5
@@ -125,16 +125,12 @@
     .panel.panel-default
       .panel-heading
         a(name=:oauth_refs)
-        h3 Привязать аккаунт к социальным сетям
+        h3 Link the account to Social networks
 
       .panel-body(name=:oauth_refs)
-        p Привязка к социальным сетям позволит вам выполнять легкий вход на сайт без ввода Email и пароля.
-        p <b>Обратите внимание</b>, что регистрация с помощью различных социальных сетей приводит к созданию различных аккаунтов на сайте OPEN-COOK.RU.
-        p Если вы хотите <b>входить в один и тот же аккаунт</b> с помощью различных социальных сетей, то выполните привязку своего аккаунта к социальным сетям с этой страницы с помощью следующих кнопок:
+        p You can use a few social networks to Loging
 
         br
-
-
           - if credentials.select{|c| c.provider == 'vkontakte'}.blank?
             = link_to '', user_omniauth_authorize_path(:vkontakte),     class: :vk
           - if credentials.select{|c| c.provider == 'odnoklassniki'}.blank?
@@ -154,7 +150,7 @@
   .panel.panel-default
     .panel-heading
       a(name=:oauth_refs)
-      h4 Ваш аккаунт уже привязан к социальным сетям
+      h4 You account is already linked to
     .panel-body(name=:oauth_refs)
       ol
         - @user.credentials.each do |credential|

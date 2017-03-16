@@ -7,9 +7,13 @@
   .js-registration_accordion-intro.registration_accordion-intro(style=intro_visible)
 
     .js-registration_accordion-switcher
-      input#accounted-off-always.radio-btn(type='checkbox' autocomplete='off')
-      label(for='accounted-off')
-        span.fs16 = t('email_login.i_have_a_profile', scope: :user_room)
+      ruby:
+        checked = false
+        id = 'accounted-off-always'
+        radio_group_name = :radio_group
+
+      input.ptz_radio_button(type='radio' value=id id=id name=radio_group_name checked=checked)
+      label.fs15.lh120(for=id) = t('email_login.i_have_a_profile', scope: :user_room)
 
   .js-registration_accordion-content.registration_accordion-content(style=content_visible)
     .ptz_table.w100p
@@ -36,7 +40,7 @@
                   span.fs13 = t('email_login.remember_me', scope: :user_room)
 
               .pull-left.mr20.mb5
-                = f.submit t('email_login.login', scope: :user_room), class: 'ptz_btn ptz_size-14 ptz_theme-0-btn w100'
+                = f.submit t('email_login.login', scope: :user_room), class: 'ptz_btn ptz_size-14  w100'
 
         .ptz_td.w50p.pl30
           p.mt0 = t('login_copies.title_1', scope: :user_room)

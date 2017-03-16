@@ -12,7 +12,7 @@
     do popup.focus
 
   init: ->
-    $('.js-social-login-btn').click (e) ->
+    $('.js-social_login-btn').click (e) ->
       btn = $ e.target
 
       SocialLoginButtons.popupCenter(
