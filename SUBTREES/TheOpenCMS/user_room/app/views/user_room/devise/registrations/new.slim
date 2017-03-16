@@ -1,9 +1,3 @@
-- content_for :header do
-  = render template: 'app_view/layouts/items/header', locals: { current_section: :main, search_block: false }
-
-- content_for :footer do
-  = render template: 'app_view/layouts/items/footer'
-
 = render partial: 'notifications/flash', locals: { format: :json }
 
 .mt20.mb20= render partial: 'devise/sessions/social_login',       locals: { visible: true }

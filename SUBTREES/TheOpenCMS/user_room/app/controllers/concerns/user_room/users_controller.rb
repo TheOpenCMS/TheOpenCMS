@@ -6,7 +6,7 @@ module UserRoom
       layout 'user_room'
       include ::UserRoom::UserAvatarActions
 
-      before_action :set_user_var, only: %w[
+      before_action :set_user, only: %w[
         show edit update
         change_password change_email
       ] + ::UserRoom::UserAvatarActions::ACTIONS_NAMES
@@ -37,7 +37,7 @@ module UserRoom
     def update
       if @user.update(user_params)
         sign_in(@user, bypass: true) if user_params[:password].present?
-        redirect_to edit_user_path(@user), notice: "Изменения сохранены"
+        redirect_to edit_user_path(@user), notice: _t(:changes_saved)
       else
         @user.reload
         render 'users/edit'
@@ -46,12 +46,12 @@ module UserRoom
 
     def change_password
       @user.send_reset_password_instructions
-      redirect_to url_for([:edit, @user]), notice: "В течение нескольких минут вы получите письмо с инструкциями по смене пароле"
+      redirect_to url_for([:edit, @user]), notice: _t(:password_instructions_sent)
     end
 
     def change_email
       if @user.update(user_params)
-        redirect_to url_for([:edit, @user]), notice: "В течение нескольких минут вы получите письмо с инструкциями по подтверждению вашего нового Email."
+        redirect_to url_for([:edit, @user]), notice: _t(:email_instructions_sent)
       else
         @user.reload
         render 'users/edit'
@@ -60,7 +60,7 @@ module UserRoom
 
     private
 
-    def set_user_var
+    def set_user
       @user = ::User.where(login: user_id).first
       @owner_check_object = @user
     end
@@ -87,5 +87,10 @@ module UserRoom
       _params
     end
 
+    protected
+
+    def _t(name)
+      t("users_controller.#{name}", scope: :user_room)
+    end
   end # UsersController
 end # UserRoom

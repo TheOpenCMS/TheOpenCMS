@@ -13,7 +13,7 @@ module UserRoom
 
     def avatar_crop_1x1
       path = @user.avatar_crop_1x1(params)
-      render json: { ids: { '@user-avatar--v1x1' => path + rnd_num } }
+      render json: { ids: { '.js-user_avatar-v1x1' => path + rnd_num } }
     end
 
     def avatar_rotate_left

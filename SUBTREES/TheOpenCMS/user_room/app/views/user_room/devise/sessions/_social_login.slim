@@ -9,9 +9,13 @@ ruby:
   .js-registration_accordion-intro.registration_accordion-intro(style=intro_visible)
 
     .js-registration_accordion-switcher
-      input#social-ligin-off-always(type='checkbox' autocomplete='off')
-      label(for='social-ligin-off')
-        span.fs16 = t('social_login.login_title', scope: :user_room)
+      ruby:
+        checked = false
+        id = 'social-ligin-off-always'
+        radio_group_name = :radio_group
+
+      input.ptz_radio_button(type='radio' value=id id=id name=radio_group_name checked=checked)
+      label.fs15.lh120(for=id) = t('social_login.login_title', scope: :user_room)
 
   .js-registration_accordion-content.registration_accordion-content(style=content_visible)
     .ptz_table.w100p

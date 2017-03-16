@@ -1,40 +1,38 @@
 - content_for :title do
   = t 'users_page', scope: :user_room
 
-= render partial: 'users/header_footer'
-
 .ptz_table
   .ptz_tr
     .ptz_td.p20
       .mb20
         - if @user.avatar.present?
-          = image_tag @user.avatar.url(:v100x100), class: 'user-room-header-avatar-image'
+          = image_tag @user.avatar.url(:v100x100), class: 'user_room_header-avatar_image'
         - else
-          .user-room-header-avatar-placeholder.w100 ?
+          .user_room_header-avatar-placeholder.w100 ?
 
       - if current_user && current_user == @user
-        = link_to 'Редактировать', [:edit, @user], class: 'ptz_btn ptz_btn-size-s'
+        = link_to 'Edit', [:edit, @user], class: 'ptz_btn ptz_btn-size-s'
     .ptz_td.p20
       .mt20
         - if current_user.try(:admin?)
           - if current_user != @user
             .mb20
-              = link_to 'Войти под этим пользователем', autologin_path(@user), method: :post, class: 'ptz_btn ptz_size-12'
+              = link_to 'Login as', autologin_path(@user), method: :post, class: 'ptz_btn ptz_size-12'
 
         - if @user.username.present?
           .fs15.mb15
-            span.b Имя:
+            span.b Name:
             '
             = @user.username
 
         - if @user.login.present?
           .fs15.mb15
-            span.b Логин:
+            span.b Login:
             '
             = @user.login
 
         .fs15.mb15
-          span.b Зарегистрирован(а):
+          span.b Created at
           '
           = I18n.l(@user.created_at, format: "%-d %B %Y")
 
