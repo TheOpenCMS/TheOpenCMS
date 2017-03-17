@@ -27,24 +27,6 @@ See documentation in [DOCS](./docs)
 
 See documentation in [Changelog](./docs/Changelog.md)
 
-## Contribution notes
-
-This project uses `git subtree` approach. You will find many of dependencies in the folder [SUBTREES](./SUBTREES)
-
-You can change files of the main project and also all dependencies right in the current `master` and push them all together to the main repo of the project. All changes will be stored in the main repo.
-
-If you want to update a specific repo of a dependency then you can do that directly via command `git subtree push`. Also you can use this simple automatic [ruby script](./SUBTREES/subtree.rb) to updated a few dependencies in the same time.
-
-Examples:
-
-```ruby
-ruby SUBTREES/subtree.rb add the_open_cms
-
-ruby SUBTREES/subtree.rb pull the_open_cms
-
-ruby SUBTREES/subtree.rb push the_open_cms
-```
-
 ### The MIT License (MIT)
 
 Copyright (c) 2017-[Current Year] Ilya N. Zykin (https://github.com/the-teacher)
