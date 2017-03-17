@@ -27,6 +27,12 @@ There is an example how you have to create BEM structure in your `SASS`
   &-item
     margin: 10px
 
+  &-item_link
+    color: blue
+
+    &:hover
+      color: green
+
   &-title
     font-size: 18px
 
@@ -82,3 +88,7 @@ Second one with using `&`
   &.for-custom
     color: red
 ```
+
+### Global modifiers
+
+Use [Protozaur](https://github.com/the-teacher/protozaur) to reduce an amount of a css code and for rapid prototyping
