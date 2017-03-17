@@ -2,9 +2,7 @@
 
 ### SASS
 
-This project uses `SASS` to write `CSS` code. All new CSS code must be written in `SASS`, all old code must be converted to `SASS`
-
-[SASS](http://sass-lang.com/)
+This project uses [SASS](http://sass-lang.com/) to write `CSS` code. All new CSS code must be written in `SASS`, all old code must be converted to `SASS`
 
 ### BEM
 
@@ -14,12 +12,12 @@ This project uses its own syntax and way to write BEM classes, but the approach 
 
 ### BEM delimiters
 
-* `-` &mdash; to delimit blocks, elements and modifiers
-* `_` &mdash; to delimit words in blocks, elements and modifiers
+* `-` &mdash; `minus` to delimit blocks, elements and modifiers
+* `_` &mdash; `underscore` to delimit words in blocks, elements and modifiers
 
 ### Name of the Block should be used as a scope
 
-There is an example how you have to create BEM structure in your SASS ```
+There is an example how you have to create BEM structure in your `SASS`
 
 ```sass
 .custom_search
@@ -47,3 +45,5 @@ There is an example how you have to create BEM structure in your SASS ```
   &-button
     padding: 10px
 ```
+
+###
