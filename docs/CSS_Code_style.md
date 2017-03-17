@@ -46,4 +46,39 @@ There is an example how you have to create BEM structure in your `SASS`
     padding: 10px
 ```
 
-###
+### Modifiers
+
+There are 2 ways how you can create modifiers.
+
+First one (preferred) with full name
+
+```sass
+.custom_search
+  &-block
+    color: black
+
+  ...
+
+  // Modifiers
+
+  &-custom_block
+    color: red
+```
+
+Second one with using `&`
+
+```sass
+.custom_search
+  &-block
+    color: black
+
+  ...
+
+  // Modifiers
+
+  &.is-custom
+    color: red
+
+  &.for-custom
+    color: red
+```
