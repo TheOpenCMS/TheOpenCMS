@@ -81,16 +81,4 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
   def views_path view_path
     "devise/omniauth_callbacks/#{ view_path }"
   end
-
-  # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
-
-  # protected
-
-  # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
 end
