@@ -27,9 +27,9 @@ There is an example how it can look with coffee script
       input = $(e.currentTarget)
       input.addClass 'search_line-input_focused'
 
-      doc.on 'blur', '.js-search_line-input', (e) ->
-        input = $(e.currentTarget)
-        input.removeClass 'search_line-input_focused'
+    doc.on 'blur', '.js-search_line-input', (e) ->
+      input = $(e.currentTarget)
+      input.removeClass 'search_line-input_focused'
 ```
 
 Later you should `init` modules like that:

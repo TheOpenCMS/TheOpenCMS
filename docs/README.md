@@ -23,3 +23,7 @@ This project based on the project `Deploy.RB` https://deployrb.github.io
 ### JavaScript / CoffeeScript code style
 
 [JS Code style](./JS_Code_style.md)
+
+### Structure of a configuration system
+
+[Project's configuration_system](./Configuration_system.md)
