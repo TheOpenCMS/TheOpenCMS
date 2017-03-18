@@ -1,4 +1,15 @@
+[&rarr: Docs](./README)
+
+```
+```
+
 ### Structure of a configuration system
+
+### Gem `Config`
+
+To manage settings TheOpenCMS uses [gem `config`](https://github.com/railsconfig/config)
+
+### Structure
 
 :warning: Holy War alert
 
@@ -61,4 +72,41 @@ config/ENV/development/
     ├── app_mailer.yml
     ├── devise.yml
     └── oauth.yml
+```
+
+### Environment variables
+
+You shouldn't use [Environment variables](https://richonrails.com/articles/environment-variables-in-ruby-on-rails) directly in a code of TheOpenCMS.
+
+**VERY BAD**
+
+```ruby
+class User < ApplicationRecord
+  ADMIN_EMAIl = ENV['ADMIN_EMAIl']
+end
+```
+
+**Much better, but still bad**
+
+```ruby
+class User < ApplicationRecord
+  ADMIN_EMAIl = ENV.fetch('ADMIN_EMAIl')
+end
+```
+
+You have to use `gem config` and `Settings` object for that:
+
+**GOOD**
+
+```ruby
+class User < ApplicationRecord
+  ADMIN_EMAIl = Settings.admin.eamil
+end
+```
+
+*config/ENV/development/settings/app*
+
+```yml
+admin:
+  email: admin@email.com
 ```

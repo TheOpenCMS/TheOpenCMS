@@ -1,3 +1,8 @@
+[&rarr: Docs](./README)
+
+```
+```
+
 ## JS code style
 
 TheOpenCMS uses [Coffee Script](http://coffeescript.org/) for JS code.

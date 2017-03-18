@@ -1,3 +1,8 @@
+[&rarr: Docs](./README)
+
+```
+```
+
 ## TheOpenCMS. Docs
 
 ### Installation
