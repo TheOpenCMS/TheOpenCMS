@@ -100,11 +100,11 @@ You have to use `gem config` and `Settings` object for that:
 
 ```ruby
 class User < ApplicationRecord
-  ADMIN_EMAIl = Settings.admin.eamil
+  ADMIN_EMAIl = Settings.admin.email
 end
 ```
 
-*config/ENV/development/settings/app*
+*config/ENV/development/settings/app.yml*
 
 ```yml
 admin:
