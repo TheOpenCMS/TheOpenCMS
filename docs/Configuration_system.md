@@ -1,4 +1,4 @@
-[&rarr: Docs](./README)
+[&rarr; Docs](./README)
 
 ```
 ```
@@ -108,5 +108,5 @@ end
 
 ```yml
 admin:
-  email: admin@email.com
+  email: <%= ENV.fetch('ADMIN_EMAIl') %>
 ```

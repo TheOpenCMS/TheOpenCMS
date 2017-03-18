@@ -1,4 +1,4 @@
-[&rarr: Docs](./README)
+[&rarr; Docs](./README)
 
 ```
 ```
