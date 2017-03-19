@@ -30,11 +30,12 @@ On this week I've done the following things:
 **Plans for the next week**
 
 - I'm going to proceed making improvements for [user_room](https://github.com/TheOpenCMS/user_room) gem. It will take some time to make it work properly
+- I have to improve gem [notifications](https://github.com/TheOpenCMS/notifications) and to make it work properly with `user_room` gem
 
 **How to help**
 
-- If you want to help you can try to improve translation files [config/locales](../config/locales)
-- Fell free to give a star to the [TheOpenCMS](https://github.com/TheOpenCMS/TheOpenCMS)
+- If you want to help you can try to improve translation files for `user_room` gem [locale files](https://github.com/TheOpenCMS/user_room/config/locales)
+- Fell free to give a star to the project [TheOpenCMS](https://github.com/TheOpenCMS/TheOpenCMS)
 
 TheOpenCMS. Content is Everything!
 
