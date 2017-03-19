@@ -1,4 +1,4 @@
-[&larr; Docs](./README.md)
+[&larr; Main Readme](../README.md)
 
 ```
 ```
