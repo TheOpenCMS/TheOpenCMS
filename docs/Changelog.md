@@ -33,7 +33,7 @@ On this week I've done the following things:
 
 **How to help**
 
-- If you want to help you can try to improve translation files [../config/locales]
+- If you want to help you can try to improve translation files [config/locales](../config/locales)
 - Fell free to give a star to the [TheOpenCMS](https://github.com/TheOpenCMS/TheOpenCMS)
 
 TheOpenCMS. Content is Everything!
