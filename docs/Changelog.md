@@ -5,6 +5,28 @@
 
 # TheOpenCMS weekly report
 
+### Week 2
+
+Hello World!
+
+Content is Everything!
+
+A week ago I've started to make my own CMS project on Rails 5.
+
+Why do I do that? I believe - Content is Everything! And we (developers, community) have to provide a diversity of CMS projects on the Web. Unfortunately, I've noticed that Rails eco-system doesn't have enough CMS projects. All great developers are concentrated on something else, and many people around think that a CMS is something what easy to create and it doesn't worth to pay an attention to this area. I'll try to change something.
+
+I'm going to create my CMS based on [Rails Engines](http://guides.rubyonrails.org/engines.html). First of all I have to create an Engine for a user's profile. This engine will provide Sign in and Login process, some user's profile staff like avatar uploading, a profile's edit page and so on.
+
+On this week I've done the following things:
+
+- [x] Cleaned up the code of the [user_room](https://github.com/TheOpenCMS/user_room) gem
+- [x] Added some docs in the [Docs](./) folder
+- [x] Added translation files and provided `I18n` for [user_room](https://github.com/TheOpenCMS/user_room) gem
+- [x] [Sprockets](https://github.com/rails/sprockets-rails) didn't compile my Engine's assets as they have to. I found a solution. Just use a code form tteh current *mater* branch.
+- [x] The first page of [user_room](https://github.com/TheOpenCMS/user_room) gem started to work. Now it looks so:
+
+  <img src="./img/pic_1.png">
+
 ### Week 1
 
 Hello World! Content is Everything!
