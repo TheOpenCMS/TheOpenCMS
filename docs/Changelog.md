@@ -22,7 +22,7 @@ On this week I've done the following things:
 - [x] Cleaned up the code of the [user_room](https://github.com/TheOpenCMS/user_room) gem
 - [x] Added some docs in the [Docs](./) folder
 - [x] Added translation files and provided `I18n` for [user_room](https://github.com/TheOpenCMS/user_room) gem
-- [x] [Sprockets](https://github.com/rails/sprockets-rails) didn't compile my Engine's assets as they have to. I found a solution. Just use a code form they current *mater* branch.
+- [x] [Sprockets](https://github.com/rails/sprockets-rails) didn't compile my Engine's assets as they have to. I found a solution. Just use a code from the current *mater* branch.
 - [x] The first page of [user_room](https://github.com/TheOpenCMS/user_room) gem started to work. Now it looks so:
 
   <img src="./imgs/pic_1.png" width="150">
