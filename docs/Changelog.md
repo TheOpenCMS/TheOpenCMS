@@ -1,11 +1,11 @@
-[&larr; Docs](./README)
+[&larr; Docs](./README.md)
 
 ```
 ```
 
 # TheOpenCMS weekly report
 
-### Week 2
+## Week 2
 
 Hello World!
 
@@ -27,7 +27,20 @@ On this week I've done the following things:
 
   <img src="./imgs/pic_1.png" width="150">
 
-### Week 1
+**Plans for the next week**
+
+- I'm going to proceed making improvements for [user_room](https://github.com/TheOpenCMS/user_room) gem. It will take some time to make it work properly
+
+**How to help**
+
+- If you want to help you can try to improve translation files [../config/locales]
+- Fell free to give a star to the [TheOpenCMS](https://github.com/TheOpenCMS/TheOpenCMS)
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
+## Week 1
 
 Hello World! Content is Everything!
 
@@ -70,4 +83,5 @@ My first goal is to create a user's cabinet (user registration & user profile). 
 The app still doesn't work. There are a lot of things to do, but I know what I have to finish to make it alive. Wish me good luck :)
 
 TheOpenCMS. Content is Everything!
+
 See you next week!
