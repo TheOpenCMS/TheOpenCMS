@@ -34,7 +34,7 @@ On this week I've done the following things:
 
 **How to help**
 
-- If you want to help you can try to improve translation files for `user_room` gem [locale files](https://github.com/TheOpenCMS/user_room/config/locales)
+- If you want to help you can try to improve translation files for `user_room` gem [locale files](https://github.com/TheOpenCMS/user_room/tree/master/config/locales)
 - Fell free to give a star to the project [TheOpenCMS](https://github.com/TheOpenCMS/TheOpenCMS)
 
 TheOpenCMS. Content is Everything!
