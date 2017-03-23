@@ -11,10 +11,11 @@ module Notifications
   class Configuration
     include ActiveSupport::Configurable
 
-    config_accessor :default_type
+    config_accessor :default_type, :default_types
   end
 
   configure do |config|
     config.default_type = :html # :json
+    config.default_types = %w[ notice alert error ]
   end
 end

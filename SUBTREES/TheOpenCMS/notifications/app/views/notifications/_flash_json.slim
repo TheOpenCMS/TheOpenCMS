@@ -1,0 +1,11 @@
+= javascript_tag defer: :defer, type: "text/javascript" do
+  | window.notifications = window.notifications || {};
+  | window.notifications['flash'] = window.notifications['flash'] || {};
+
+- flash_types.each do |level|
+  ruby:
+    msg = flash.try(:[], level.to_s) || flash.try(:[], level.to_sym)
+
+  - if msg.present?
+    = javascript_tag defer: :defer, type: "text/javascript" do
+      | window.notifications['flash']['#{ level }'] = '#{ j msg }';

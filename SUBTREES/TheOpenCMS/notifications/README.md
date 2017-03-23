@@ -55,7 +55,9 @@ body
 *application.css*
 
 ```css
-//= require vendors/toastr
+/*
+  //= require notifications/base
+*/
 ```
 
 *application.js*
@@ -63,7 +65,11 @@ body
 ```js
 //= require vendors/toastr
 //= require notifications
+```
 
+*application_initializer.js*
+
+```js
 $ ->
   Notifications.init()
   Notifications.show_notifications()
@@ -102,13 +108,13 @@ Do the following steps:
 
 ```ruby
 class Post < ActiveRecord::Base
-  include Notifications::LocalizedErrors
+  include ::Notifications::LocalizedErrors
 end
 ```
 
 *config/locales/ru.yml*
 
-```
+```yml
 activerecord:
   models:
     post: Публикация

@@ -1,0 +1,29 @@
+ruby:
+  # Error mesages
+  # Post.model_name.human              => activerecord.models.post
+  # Post.human_attribute_name('title') => activerecord.attributes.post.title
+  format = (format || Notifications.config.default_type).to_s
+
+- if object.try(:errors).try(:any?)
+  ruby:
+    _errors = object.errors
+    _errors = object.localized_errors if object.respond_to?(:localized_errors)
+
+  - if format == 'html'
+    .notifications-block
+      .notifications-title = t 'notifications.form_errors'
+      .notifications-list
+        - _errors.map do |name, msgs|
+          - if msgs.is_a? Array
+            - msgs.each do |msg|
+              .notifications-item
+                .notifications-item_name = name
+                .notifications-item_message = msg
+          - else
+            .notifications-item = name
+            .notifications-item_message = msgs
+
+  - else
+    = javascript_tag defer: :defer, type: "text/javascript" do
+      | window.notifications = window.notifications || {};
+      | window.notifications['errors'] = JSON.parse('#{ raw j _errors.to_json }');
