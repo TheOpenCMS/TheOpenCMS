@@ -90,7 +90,7 @@ module UserRoom
     protected
 
     def _t(name)
-      t("controllers.users.#{name}", scope: :user_room)
+      t("user_room.controllers.users.#{name}")
     end
   end # UsersController
 end # UserRoom

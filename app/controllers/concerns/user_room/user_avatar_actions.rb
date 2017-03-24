@@ -18,17 +18,17 @@ module UserRoom
 
     def avatar_rotate_left
       @user.avatar_rotate_left
-      redirect_to :back
+      redirect_back fallback_location: root_path
     end
 
     def avatar_rotate_right
       @user.avatar_rotate_right
-      redirect_to :back
+      redirect_back fallback_location: root_path
     end
 
     def avatar_delete
       @user.avatar_destroy!
-      redirect_to :back
+      redirect_back fallback_location: root_path
     end
 
     private
