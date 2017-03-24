@@ -21,6 +21,14 @@ ru:
         subject: "Инструкции по восстановлению пароля"
       unlock_instructions:
         subject: "Инструкции по разблокировке учётной записи"
+      password_change:
+        subject: "Пароль изменен"
+
+      subjects:
+        confirmation_instructions: "Инструкции по подтверждению учётной записи"
+        reset_password_instructions: "Инструкции по восстановлению пароля"
+        unlock_instructions: "Инструкции по разблокировке учётной записи"
+        password_change: "Пароль изменен"
     omniauth_callbacks:
       failure: "Вы не можете войти в систему с учётной записью из %{ kind }, так как \"%{reason}\"."
       success: "Вход в систему выполнен с учётной записью из %{ kind }."
