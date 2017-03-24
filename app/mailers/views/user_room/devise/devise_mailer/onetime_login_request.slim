@@ -9,7 +9,7 @@
       tr
         td.w50p
         td
-          .app_mailer-activation_btn_border
+          .user_room_mailer-activation_btn_border
             = link_to 'Login',
               activate_onetime_login_link_url(@uid, callback_path: @callback_path),
               class: 'app_mailer-activation_btn p20 block br-off'
@@ -18,5 +18,5 @@
 
   .mb15.fs16.lh130.ffa If the link above is disabled then copy/paste the following address:
 
-  .app_mailer-activation_text.p20.tac.fs12
+  .user_room_mailer-activation_text.p20.tac.fs12
     = activate_onetime_login_link_url(@uid, callback_path: @callback_path)

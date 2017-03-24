@@ -64,10 +64,16 @@ en:
 
     mailer:
       subjects:
+        mail_registration_request: "Registration Request"
         confirmation_instructions: "Confirmation instructions"
         reset_password_instructions: "Reset password instructions"
         unlock_instructions: "Unlock instructions"
         password_change: "Password Changed"
+      copies:
+        alt_address: 'If the link above is disabled then copy/paste the following address:'
+        reg_request: Hello! Someone has sent a request to create a new account
+        if_its_you: If it was you, please, follow insructions below
+        activate_btn: Activate my account
 
     controllers:
       users:

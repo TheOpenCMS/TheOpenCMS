@@ -1,0 +1,22 @@
+- content_for :title
+  = @subject
+
+.m20
+  .tac
+    .mb15.fs16.lh130.ffa = _t_copy(:reg_request)
+    .mb50.fs16.lh130.ffa = _t_copy(:if_its_you)
+
+  .mb50.tac
+    table.w100p
+      tr
+        td.w50p
+        td
+          .user_room_mailer-activation_btn_border
+            = link_to _t_copy(:activate_btn),
+              activate_email_registration_request_url(@uid, callback_path: @callback_path),
+              class: 'user_room_mailer-activation_btn p20 block br-off fs18 ffa'
+        td.w50p
+
+  .tac.mb15.fs16.lh130.ffa = _t_copy(:alt_address)
+  .user_room_mailer-activation_text.p20.tac.fs12.mb50
+    = activate_email_registration_request_url(@uid, callback_path: @callback_path)

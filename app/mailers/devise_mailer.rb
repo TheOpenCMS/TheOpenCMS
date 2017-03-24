@@ -1,10 +1,14 @@
 class DeviseMailer < Devise::Mailer
   include ::UserRoom::MailerSettingsConcern
 
-  layout 'user_room/layouts/mailers/user_room'
-  default template_path: ['user_room/devise/mailer']
+  layout 'layouts/user_room'
+  default template_path: ['devise_mailer']
+  helper_method :_t_copy
 
+  ######################################################
   # Additional Mailers
+  ######################################################
+
   # id = EmailRegistrationRequest.last.id
   # DeviseMailer.mail_registration_request(id, '').deliver_now
   def mail_registration_request(id, callback_path = nil)
@@ -51,6 +55,10 @@ class DeviseMailer < Devise::Mailer
   end
 
   private
+
+  def _t_copy(name)
+    t(name, scope: 'user_room.mailer.copies')
+  end
 
   def _t_subjects(name)
     t(name, scope: 'user_room.mailer.subjects')
