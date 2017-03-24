@@ -8,16 +8,19 @@ class DeviseControllers::SessionsController < Devise::SessionsController
     user_for_login = User.where(email: _email).first
 
     if _email.blank? || !_email.match(/@/) || user_for_login.blank?
-      return redirect_to :back, alert: _t(:cant_perform_request)
+      return redirect_back fallback_location: root_path,
+        alert: _t(:cant_perform_request)
     end
 
     if ::OnetimeLoginLink.where("email = ? AND created_at > ?", _email, 2.minutes.ago).first
-      return redirect_to :back, alert: _t(:request_already_sent)
+      return redirect_back fallback_location: root_path,
+        alert: _t(:request_already_sent)
     end
 
     log_req = ::OnetimeLoginLink.create(email: _email)
     ::DeviseMailer.onetime_login_request(log_req.id, callback_path).deliver_now
-    redirect_to :back, alert: _t(:check_inbox)
+    return redirect_back fallback_location: root_path,
+      alert: _t(:check_inbox)
   end
 
   def activate_onetime_login_link
