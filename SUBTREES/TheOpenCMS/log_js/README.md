@@ -29,7 +29,7 @@ You can configure a visibility of `log` messages with `data-log-js` param.
 **layouts/application.html.slim**
 
 ```slim
-head(data-log-js=Rails.env.development?)
+head class=('log-js' if Rails.env.development?)
 ```
 
 **Into your Browser Console**
@@ -38,9 +38,17 @@ head(data-log-js=Rails.env.development?)
 log('Hello World!')
 ```
 
+**Turn On/Off**
+
 ```javascript
 LogJS.enable = true  // log messages will be visible
 LogJS.enable = false // log messages will be disabled
+```
+
+turn on via URL address
+
+```
+https://example.com/products?uid=12345&log-js
 ```
 
 ### MIT License
