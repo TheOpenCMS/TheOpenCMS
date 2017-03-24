@@ -46,14 +46,22 @@ module UserRoom
       #   config.assets.paths << "#{config.root}/app/assets/stylesheets/#{additional_path}"
       # end
 
+      ActiveSupport.on_load(:action_mailer) do
+        if respond_to?(:prepend_view_path)
+          gem_root = ::UserRoom::Engine.config.root
+          prepend_view_path("#{ gem_root }/app/mailers/views/user_room/devise")
+        end
+      end
+
       ActiveSupport.on_load(:action_controller) do
-        views  = "app/views/user_room"
-        gem_root = ::UserRoom::Engine.config.root
-        prepend_view_path("#{ gem_root }/#{ views }" ) if respond_to?(:prepend_view_path)
+        if respond_to?(:prepend_view_path)
+          gem_root = ::UserRoom::Engine.config.root
+          prepend_view_path("#{ gem_root }/app/views/user_room")
+        end
       end
     end
   end
 end
 
 gem_root = File.expand_path('../../', __FILE__)
-require "#{ gem_root }/config/routes"
+require_relative "#{ gem_root }/config/routes"

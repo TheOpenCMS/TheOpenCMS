@@ -3,3 +3,5 @@ Premailer::Rails.config.merge!(
   remove_classes: !Rails.env.development?,
   remove_ids: true
 )
+
+Premailer::RELATED_ATTRIBUTES['body'] = []

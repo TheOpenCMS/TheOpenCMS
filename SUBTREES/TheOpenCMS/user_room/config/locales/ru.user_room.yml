@@ -65,6 +65,7 @@ ru:
 
     mailer:
       subjects:
+        mail_registration_request: "Запрос на регистрацию"
         confirmation_instructions: "Инструкции по подтверждению учётной записи"
         reset_password_instructions: "Инструкции по восстановлению пароля"
         unlock_instructions: "Инструкции по разблокировке учётной записи"
