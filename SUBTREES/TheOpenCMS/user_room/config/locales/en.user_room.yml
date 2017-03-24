@@ -61,3 +61,24 @@ en:
 
       copy_6_html: "&mdash; If you are already signed in the you will get the link to login this web site"
       copy_7_html: "&mdash; If email didn't come in a few minutes, please, check the <b>SPAM</b>. Sometimes even good letters may be marked as SPAM"
+
+  controllers:
+    users:
+      changes_saved: Changes are saved
+      password_instructions_sent: You will get instructions about how to change the password in a few minutes. Check your inbox
+      email_instructions_sent: You will get instructions about how to confirm your Email in a few minutes. Check your inbox
+
+    devise:
+      registrations:
+        incorrect_email: You can not use this email for registration. Email is incorrect or already used
+        request_created: Request is created. Check yout inbox
+        request_not_found: Request doesn't exist
+        request_activated: Request is already activated
+        signed_in: You are signed in
+
+      sessions:
+        cant_perform_request: Request can not be performed
+        request_already_sent: Request is already sent. Please, wait for a few minues and retry
+        check_inbox:   Request is already created. Check your inbox
+        wrong_request: Wrong request
+        logined_in: You are logged in

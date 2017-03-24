@@ -20,12 +20,14 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
   private
 
   def auth
-    @omniauth      = request.env['omniauth.auth']
-    uid, provider  = @omniauth['uid'], @omniauth['provider']
-    @credential    = Credential.find_by_uid_and_provider(uid, provider)
+    @omniauth     = request.env['omniauth.auth']
+    uid, provider = @omniauth['uid'], @omniauth['provider']
+    @credential   = ::Credential.find_by_uid_and_provider(uid, provider)
 
-    @callback_path    = params[:callback_path]    # where to redirect after oauth success
-    @callback_process = params[:callback_process] # [for future] callback process name after oauth success
+    # where to redirect after oauth success
+    # [for future] callback process name after oauth success
+    @callback_path    = params[:callback_path]
+    @callback_process = params[:callback_process]
 
     return credential_was_found if @credential
 
@@ -36,7 +38,7 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
       current_user.add_credential(@omniauth)
       action_after_add_credential
     else
-      @oauth_user = User.new(oauth_data: @omniauth)
+      @oauth_user = ::User.new(oauth_data: @omniauth)
       @oauth_user.skip_confirmation!
 
       if @oauth_user.save
@@ -69,7 +71,7 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
     sign_in @oauth_user
     current_user.remember_me!
 
-    UserRoomLogger.new_user_created(@oauth_user.id)
+    ::UserRoomLogger.new_user_created(@oauth_user.id)
 
     render views_path('close_popup_and_redirect_to_cabinet'), layout: false
   end
@@ -81,4 +83,4 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
   def views_path view_path
     "devise/omniauth_callbacks/#{ view_path }"
   end
-end
+end # OmniauthCallbacksController

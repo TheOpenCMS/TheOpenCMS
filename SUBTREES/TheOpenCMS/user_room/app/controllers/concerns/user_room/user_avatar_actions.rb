@@ -2,7 +2,7 @@
 module UserRoom
   module UserAvatarActions
 
-    # UserRoom::UserAvatarActions::ACTIONS_NAMES
+    # ::UserRoom::UserAvatarActions::ACTIONS_NAMES
 
     ACTIONS_NAMES = %w[
       avatar_crop_1x1

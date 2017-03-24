@@ -10,13 +10,13 @@ module UserRoom
     private
 
     def define_user
-      @root   = ::User.try(:root)
+      @root = ::User.try(:root)
 
-      @user   = current_user
+      @user = current_user
       user_id = params[:user_id]
 
       if user_id
-        @user = if FriendlyIdPack::Base.int? user_id
+        @user = if ::FriendlyIdPack::Base.int? user_id
           ::User.find(user_id)
         else
           ::User.where(login: user_id).first
