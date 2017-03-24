@@ -8,9 +8,9 @@ module UserRoom
       # id = EmailRegistrationRequest.last.id
       # DeviseMailer.mail_registration_request(id, '').deliver_now
       def mail_registration_request(id, callback_path = nil)
-        reg_req  = ::EmailRegistrationRequest.find(id)
+        reg_req = ::EmailRegistrationRequest.find(id)
 
-        title    = t(:subject, scope: [:user_room, :mailer, :mail_registration_request])
+        title = t(:subject, scope: [:user_room, :mailer, :mail_registration_request])
         @subject = "#{ env_prefix }#{ title }"
 
         @uid   = reg_req.uid
