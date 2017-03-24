@@ -62,6 +62,13 @@ en:
       copy_6_html: "&mdash; If you are already signed in the you will get the link to login this web site"
       copy_7_html: "&mdash; If email didn't come in a few minutes, please, check the <b>SPAM</b>. Sometimes even good letters may be marked as SPAM"
 
+    mailer:
+      subjects:
+        confirmation_instructions: "Confirmation instructions"
+        reset_password_instructions: "Reset password instructions"
+        unlock_instructions: "Unlock instructions"
+        password_change: "Password Changed"
+
     controllers:
       users:
         changes_saved: Changes are saved

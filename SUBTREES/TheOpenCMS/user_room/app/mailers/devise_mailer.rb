@@ -2,7 +2,7 @@ class DeviseMailer < Devise::Mailer
   include ::UserRoom::MailerSettingsConcern
 
   layout 'user_room/layouts/mailers/user_room'
-  default template_path: [ 'user_room/devise/mailer' ]
+  default template_path: ['user_room/devise/mailer']
 
   # Additional Mailers
   # id = EmailRegistrationRequest.last.id
