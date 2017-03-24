@@ -5,7 +5,7 @@ mailer_config = ::Settings.app.mailer
 
 # localhost:300/rails/mailers
 if Rails.env.development?
-  config.action_mailer.preview_path = "#{ Rails.root }/app/mailers"
+  config.action_mailer.preview_path = "#{ Rails.root }/app/mailers/previews"
 end
 
 # ======================================================
