@@ -18,18 +18,10 @@ module UserRoom
         default bcc:  _mailer.admin_email
         default from: _mailer.smtp.default.user_name
 
-        default template_path: 'devise/mailer'
-
         def self.smtp_settings
           ::Settings.app.mailer.smtp.default.to_h
         end
       end
-    end
-
-    private
-
-    def env_prefix
-      'DEV => ' if Rails.env.development?
     end
   end
 end
