@@ -33,18 +33,7 @@ module UserRoom
     config.autoload_paths << "#{ config.root }/app/mailers/concerns/"
 
     initializer :add_user_room_engine_view_paths do
-      # ActiveSupport.on_load(:active_record) do
-      #   gem_root = ::UserRoom::Engine.config.root
-      #   ::Rails.application.config.paths['db/migrate'] << "#{ gem_root }/db/migrate"
-      # end
-
-      # %w[
-      #   user_room
-      #   user_room/frontend
-      # ].each do |additional_path|
-      #   config.assets.paths << "#{config.root}/app/assets/javascripts/#{additional_path}"
-      #   config.assets.paths << "#{config.root}/app/assets/stylesheets/#{additional_path}"
-      # end
+      config.assets.paths << "#{ config.root }/app/mailers/assets/stylesheets"
 
       ActiveSupport.on_load(:action_mailer) do
         if respond_to?(:prepend_view_path)
