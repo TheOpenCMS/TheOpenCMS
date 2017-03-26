@@ -1,7 +1,7 @@
-- content_for :title
+- content_for :title do
   = @subject
 
-.m20
+- content_for :text_block do
   .mb15.fs16.lh130.ffa
     | New user has been registered #{ link_to @user.login, @user }
 
@@ -17,3 +17,5 @@
       - if (addr = @user.try(addr)).present?
         .mb15.fs16.lh130.ffa
           | User's profile: #{ link_to addr, addr }
+
+= render template: 'devise_mailer/base_template'

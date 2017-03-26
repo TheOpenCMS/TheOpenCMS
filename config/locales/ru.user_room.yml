@@ -70,6 +70,8 @@ ru:
         reset_password_instructions: "Инструкции по восстановлению пароля"
         unlock_instructions: "Инструкции по разблокировке учётной записи"
         password_change: "Пароль изменен"
+        onetime_login_request: "Одноразовая ссылка для входа"
+        new_user_created: "Был зарегистрирован новый пользователь"
 
     controllers:
       users:

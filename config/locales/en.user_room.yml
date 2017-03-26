@@ -69,6 +69,8 @@ en:
         reset_password_instructions: "Reset password instructions"
         unlock_instructions: "Unlock instructions"
         password_change: "Password Changed"
+        onetime_login_request: "One-time Login link"
+        new_user_created: "New User has been created"
       copies:
         alt_address: 'If the link above is disabled then copy/paste the following address:'
         reg_request: Hello! Someone has sent a request to create a new account

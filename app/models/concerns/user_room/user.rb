@@ -39,7 +39,7 @@ module UserRoom
       has_many :orders
 
       def login_chars_required
-        errors.add(:login, "должен содержать хотя бы один символ") unless (self.login =~ /[a-zA-Z]/mix)
+        errors.add(:login, "has to have a one of more letters") unless (self.login =~ /[a-zA-Z]/mix)
       end
 
       private
