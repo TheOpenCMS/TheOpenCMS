@@ -5,6 +5,63 @@
 
 # TheOpenCMS weekly report
 
+## Week 3
+
+Hello World!
+
+Content is Everything!
+
+First of all I want to say Thank you to people who already supported the project with their stars. Your starts are very important!
+
+During this week I was working on improvements for a few parts of the project.
+
+[notifications](https://github.com/TheOpenCMS/notifications) gem was improved, but it still needs for some improvements. I'll do it later when I meet a real cases and problems.
+
+There are some screenshots how gem [notifications](https://github.com/TheOpenCMS/notifications) renders notifications:
+
+<table>
+  <tr>
+    <td><img src="./imgs/week_3/pic_2.png" width="150"></td>
+    <td><img src="./imgs/week_3/pic_3.png" width="150"></td>
+    <td><img src="./imgs/week_3/pic_4.png" width="150"></td>
+  </tr>
+</table>
+
+Most of the time I was working on gem [user_room](https://github.com/TheOpenCMS/user_room). I improved localizations, mailer, mailer's templates.
+
+There are some examples how mailer's templates look
+
+<table>
+  <tr>
+    <td><img src="./imgs/week_3/pic_5.png" width="150"></td>
+    <td><img src="./imgs/week_3/pic_6.png" width="150"></td>
+    <td><img src="./imgs/week_3/pic_7.png" width="150"></td>
+    <td><img src="./imgs/week_3/pic_8.png" width="150"></td>
+  </tr>
+</table>
+
+I collected all the mailer's staff (`css`, `mailer's classes`, `templates`) in the only folder [app/mailers](https://github.com/TheOpenCMS/TheOpenCMS/tree/master/SUBTREES/TheOpenCMS/user_room/app/mailers). If you are interested how I've done it you may check [this file](https://github.com/TheOpenCMS/user_room/blob/master/lib/user_room.rb#L36)
+
+Also small gem [log-js](https://github.com/TheOpenCMS/log_js) was improved.
+
+Also I was playing with `Turbolinks`. I'm going to use it later, but right now I don't have enough cases to use it somehow.
+
+I've created a channel in gitter.im - [gitter.im/the_open_cms](https://gitter.im/the_open_cms/main). Feel free to ask anything about the project TheOpenCMS.
+
+**Plans for the next week**
+
+* I'm going to start debugging Login/Sign-in workflows.
+
+**How to help**
+
+* Feel free to give a star to [the project](https://github.com/TheOpenCMS/TheOpenCMS) to show you interest to this initiative.
+* You can take a look at localizations files. I'm not a native speaker and I'm sure there are a lot of things to improve.
+* Feel free to ask me about the project in the new channel [gitter.im/the_open_cms](https://gitter.im/the_open_cms/main)
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
 ## Week 2
 
 Hello World!
@@ -25,7 +82,7 @@ On this week I've done the following things:
 - [x] [Sprockets](https://github.com/rails/sprockets-rails) didn't compile my Engine's assets as they have to. I found a solution. Just use a code from the current *mater* branch.
 - [x] The first page of [user_room](https://github.com/TheOpenCMS/user_room) gem started to work. Now it looks so:
 
-  <img src="./imgs/pic_1.png" width="150">
+  <img src="./imgs/week_2/pic_1.png" width="150">
 
 **Plans for the next week**
 

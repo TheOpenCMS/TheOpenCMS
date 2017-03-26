@@ -32,3 +32,7 @@ This project based on the project `Deploy.RB` https://deployrb.github.io
 ### JavaScript / CoffeeScript code style
 
 [JS Code style](./JS_Code_style.md)
+
+### Discussions
+
+[the_open_cms](https://gitter.im/the_open_cms/main)

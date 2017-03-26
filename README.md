@@ -27,6 +27,10 @@ See documentation in [DOCS](./docs)
 
 See documentation in [Changelog](./docs/Changelog.md)
 
+### Discussions
+
+[gitter.im/the_open_cms](https://gitter.im/the_open_cms/main)
+
 ### The MIT License (MIT)
 
 Copyright (c) 2017-[Current Year] Ilya N. Zykin (https://github.com/the-teacher)
