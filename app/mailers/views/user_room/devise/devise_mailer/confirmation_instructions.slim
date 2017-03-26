@@ -1,22 +1,13 @@
 - content_for :title
   = @subject
 
-.m20
-  .mb50.fs16.lh130.ffa
-    | To activate your account press the following button
+- content_for :text_block do
+  .mb50.fs16.lh130.ffa To activate your account press the following button
 
-  .mb50.tac
-    table.w100p
-      tr
-        td.w50p
-        td
-          .user_room_mailer-activation_btn_border
-            = link_to 'Activate your account',
-              confirmation_url(@resource, confirmation_token: @token),
-              class: 'app_mailer-activation_btn p20 block br-off'
-        td.w50p
+- content_for :main_btn_copy do
+  = _t_copy(:activate_btn)
 
-  .mb15.fs16.lh130.ffa If the link above is disabled then copy/paste the following address:
+- content_for :main_btn_address do
+  = confirmation_url(@resource, confirmation_token: @token)
 
-  .user_room_mailer-activation_text.p20.tac.fs12.mb50
-    = confirmation_url(@resource, confirmation_token: @token)
+= render template: 'devise_mailer/base_template'
