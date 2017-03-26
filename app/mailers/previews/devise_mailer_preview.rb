@@ -18,7 +18,7 @@ class DeviseMailerPreview < ActionMailer::Preview
   end
 
   def DEVISE_New_user_created
-    user_id = User.first.id
+    user_id = User.last.id
     ::DeviseMailer.new_user_created(user_id)
   end
 end

@@ -1,0 +1,20 @@
+.m20
+  - if content_for?(:text_block)
+    .tac
+      = yield(:text_block)
+
+  - if content_for?(:main_btn_address)
+    .mb50.tac
+      table.w100p
+        tr
+          td.w50p
+          td
+            .user_room_mailer-activation_btn_border
+              = link_to yield(:main_btn_copy),
+                yield(:main_btn_address),
+                class: 'user_room_mailer-activation_btn p20 block br-off fs18 ffa'
+          td.w50p
+
+    .tac.mb15.fs16.lh130.ffa = _t_copy(:alt_address)
+    .user_room_mailer-activation_text.p20.tac.fs12.mb50
+      = yield(:main_btn_address)

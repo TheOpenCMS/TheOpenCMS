@@ -16,7 +16,7 @@ module UserRoom
           gp_1 = gp_addr.match(/^(http:\/\/|https:\/\/)(www.)?plus.google.com\/\S/)
 
           unless gp && gp_1
-            errors.add "GooglePlus", "Адрес Google plus должен быть вида: http://plus.google.com/login"
+            errors.add "GooglePlus", "Google plus address format: http://plus.google.com/login"
           end
         end
 
@@ -24,7 +24,7 @@ module UserRoom
           pt_1 = pt_addr.match(/^(http:\/\/|https:\/\/)(www.)?pinterest.com\/\S/)
 
           unless pt && pt_1
-            errors.add :pinterest, "Адрес Pinterest должен быть вида: http://pinterest.com/login"
+            errors.add :pinterest, "Pinterest address format: http://pinterest.com/login"
           end
         end
 
@@ -32,7 +32,7 @@ module UserRoom
           ig_1 = ig_addr.match(/^(http:\/\/|https:\/\/)(www.)?instagram.com\/\S/)
 
           unless ig && ig_1
-            errors.add :instagram, "Адрес Instagram должен быть вида: http://instagram.com/login"
+            errors.add :instagram, "Instagram address format: http://instagram.com/login"
           end
         end
 
@@ -41,19 +41,19 @@ module UserRoom
           fb_2 = fb_addr.match(/^(http:\/\/|https:\/\/)(www.)?fb.com\/\S/)
 
           unless fb && (fb_1 || fb_2)
-            errors.add :facebook, "Адрес на Facebook должен быть вида: http://facebook.com/login"
+            errors.add :facebook, "Facebook address format: http://facebook.com/login"
           end
         end
 
         if vk
           unless vk && vk_addr.match(/^(http:\/\/|https:\/\/)(www.)?vk.com\/\S/)
-            errors.add :vkontakte, "Адрес на VK должен быть вида: http://vk.com/login"
+            errors.add :vkontakte, "VK address format: http://vk.com/login"
           end
         end
 
         if tw
           unless tw && tw_addr.match(/^(http:\/\/|https:\/\/)(www.)?twitter.com\/\S/)
-            errors.add :twitter, "Адрес на Twitter должен быть вида: http://twitter.com/login"
+            errors.add :twitter, "Twitter address format: http://twitter.com/login"
           end
         end
       end
