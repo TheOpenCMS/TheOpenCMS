@@ -122,7 +122,7 @@ module UserRoom
         end
 
         def oauth_default_email_domain
-          'my-web-site.com'
+          'theopencms.org'
         end
 
         # USER SIDE VARIABLES
@@ -150,7 +150,7 @@ module UserRoom
 
         def oauth_set_avatar_url
           # self.avatar_url = oauth_get_avatar_url
-          self.avatar = URI.parse oauth_get_avatar_url
+          self.avatar = ::URI.parse oauth_get_avatar_url
         end
 
         def oauth_set_common_params
@@ -218,7 +218,7 @@ module UserRoom
           gp_avatar, fb_avatar, tw_avatar = Array.new(3, avatar)
 
           if fb_oauth?
-            json   = JSON.parse(Net::HTTP.get(URI.parse(fb_avatar.gsub('&redirect=false', '') + '?type=large&redirect=false')))
+            json   = ::JSON.parse(Net::HTTP.get(URI.parse(fb_avatar.gsub('&redirect=false', '') + '?type=large&redirect=false')))
             avatar = json['data']['url'] unless json['data']['is_silhouette']
           end
 
@@ -248,7 +248,7 @@ module UserRoom
           uid      = oauth_params['uid']
           provider = oauth_params['provider']
 
-          if Credential.find_by_uid_and_provider(uid, provider)
+          if ::Credential.find_by_uid_and_provider(uid, provider)
             errors.add :credentials, :uniqueness
           end
         end
