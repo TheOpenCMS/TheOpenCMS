@@ -11,7 +11,7 @@ Hello World!
 
 Content is Everything!
 
-First of all I want to say Thank you to people who already supported the project with their stars. Your starts are very important!
+First of all I want to say Thank you to people who already supported the project with their stars. Your stars are very important!
 
 During this week I was working on improvements for a few parts of the project.
 
