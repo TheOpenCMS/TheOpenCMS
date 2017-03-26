@@ -66,6 +66,14 @@ Rails.application.routes.draw do
 end
 ```
 
+**Include `UserRoom` concern in your Model**
+
+```ruby
+class User < ApplicationRecord
+  include ::UserRoom::User
+end
+```
+
 **Include `UserRoom` in `application_controller.rb`**
 
 ```ruby
