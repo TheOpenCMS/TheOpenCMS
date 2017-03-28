@@ -5,6 +5,5 @@
 #= require log_js
 #= require notifications/base
 
+#= require user_room/frontend/avatar_crop
 #= require user_room/frontend/login_popup
-#= require user_room/frontend/section_switcher
-#= require user_room/frontend/registration_accordion

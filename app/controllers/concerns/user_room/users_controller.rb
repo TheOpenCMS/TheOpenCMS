@@ -4,7 +4,7 @@ module UserRoom
     extend ActiveSupport::Concern
 
     included do
-      layout 'user_room'
+      layout -> { layout_template }
       include ::UserRoom::UserAvatarActions
 
       before_action :set_user, only: %w[
@@ -13,7 +13,9 @@ module UserRoom
       ] + ::UserRoom::UserAvatarActions::ACTIONS_NAMES
     end # included
 
-    # Public actions
+    ##########################################
+    ### Public actions
+    ##########################################
 
     def index
       @users = ::User.max2min(:created_at).simple_sort(params).pagination(params)
@@ -24,7 +26,9 @@ module UserRoom
 
     def new; @user = ::User.new ; end
 
-    # Restricted actions
+    ##########################################
+    ### Restricted actions
+    ##########################################
 
     def show; end
     def edit; end
@@ -59,7 +63,17 @@ module UserRoom
       end
     end
 
+    ##########################################
+    ### Private methods
+    ##########################################
+
     private
+
+    def layout_template
+      public_actions = %w[show]
+      return 'user_room_frontend' if public_actions.include?(action_name)
+      'user_room_backend'
+    end
 
     def set_user
       @user = ::User.where(login: user_id).first
@@ -87,8 +101,6 @@ module UserRoom
 
       _params
     end
-
-    protected
 
     def _t(name)
       t("user_room.controllers.users.#{name}")
