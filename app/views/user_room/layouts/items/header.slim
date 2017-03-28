@@ -1,2 +1,8 @@
+- if current_user
+  .user_room_toolbar-block
+    .ma.w80p.clearfix.fs15
+      .pull-left = @user.email
+      .pull-right = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'user_room_toolbar-link'
+
 .user_room_layout-header
   .tac.fs30.pt40.ffg TheOpenCMS

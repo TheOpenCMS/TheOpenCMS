@@ -12,14 +12,15 @@ html.w100p.h100p
     = javascript_include_tag 'user_room/frontend', 'data-turbolinks-track' => true
 
   body.w100p.h100p.ffa
-    = render template: 'user_room/layouts/items/header'
-
-    .w100p
-      .w80p.ma
-        .mt20.mb20
-          = render partial: 'notifications/flash'
-          = yield
-
-    = render template: 'user_room/layouts/items/footer'
+    .ptz_table.h100p.w100p
+      .ptz_row
+        = render template: 'user_room/layouts/items/header'
+      .ptz_row.h100p
+        .w80p.ma
+          .mt20.mb20
+            = render partial: 'notifications/flash'
+            = yield
+      .ptz_row
+        = render template: 'user_room/layouts/items/footer'
 
   link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")

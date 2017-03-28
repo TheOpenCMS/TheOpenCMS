@@ -25,20 +25,6 @@ ruby:
 
           .ptz_table.mt40.mb40.w100p
             .ptz_tr
-              .ptz_td.pr40.tac
-                = link_to '',
-                  user_vkontakte_omniauth_authorize_path(callback_path: callback_path),
-                  class: 'js-social_login_btn social_login_btn social_login_btn-vk fa fa-vk',
-                  title: t('networks_names.vk', scope: :user_room)
-                .fs11.mt5 = t('networks_names.vk', scope: :user_room)
-
-              .ptz_td.pr40.tac
-                = link_to '',
-                  user_odnoklassniki_omniauth_authorize_path(callback_path: callback_path),
-                  class: 'js-social_login_btn social_login_btn social_login_btn-ok fa fa-odnoklassniki',
-                  data:  { width: 650 },
-                  title: t('networks_names.ok', scope: :user_room)
-                .fs11.mt5 = t('networks_names.ok', scope: :user_room)
 
               .ptz_td.pr40.tac
                 = link_to '',
@@ -63,6 +49,21 @@ ruby:
                   data:  { height: 600 },
                   title: t('networks_names.gp', scope: :user_room)
                 .fs11.mt5 = t('networks_names.gp', scope: :user_room)
+
+              .ptz_td.pr40.tac
+                = link_to '',
+                  user_vkontakte_omniauth_authorize_path(callback_path: callback_path),
+                  class: 'js-social_login_btn social_login_btn social_login_btn-vk fa fa-vk',
+                  title: t('networks_names.vk', scope: :user_room)
+                .fs11.mt5 = t('networks_names.vk', scope: :user_room)
+
+              .ptz_td.pr40.tac
+                = link_to '',
+                  user_odnoklassniki_omniauth_authorize_path(callback_path: callback_path),
+                  class: 'js-social_login_btn social_login_btn social_login_btn-ok fa fa-odnoklassniki',
+                  data:  { width: 650 },
+                  title: t('networks_names.ok', scope: :user_room)
+                .fs11.mt5 = t('networks_names.ok', scope: :user_room)
 
           .fs12.mb10 = t('login_copies.copy_1_html', scope: :user_room)
           .fs12 = t('login_copies.copy_2_html', scope: :user_room)

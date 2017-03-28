@@ -3,16 +3,18 @@ class DeviseControllers::RegistrationsController < Devise::RegistrationsControll
 
   before_action :configure_sign_up_params, only: [:create]
 
+  REG_REQUEST_MINUTES_DELAY = 10
+
   def create_email_registration_request
     _email = params[:email].to_s.strip
     callback_path = params[:callback_path]
 
-    user       = ::User.where(email: _email).first
-    reg_req    = ::EmailRegistrationRequest.where("email = ? AND created_at > ?", _email, 1.hour.ago).first
+    user    = ::User.where(email: _email).first
+    reg_req = ::EmailRegistrationRequest.where("email = ? AND created_at > ?", _email, REG_REQUEST_MINUTES_DELAY.minutes.ago).first
     used_email = user.present? || reg_req.present?
 
     if used_email || _email.blank? || !_email.match(/@/)
-      redirect_back fallback_location: root_path, alert: _t(:incorrect_email)
+      redirect_back fallback_location: root_path, alert: _t(:incorrect_email, mins: REG_REQUEST_MINUTES_DELAY)
     else
       reg_req = ::EmailRegistrationRequest.create(email: params[:email])
       ::DeviseMailer.mail_registration_request(reg_req.id, callback_path).deliver
@@ -51,8 +53,8 @@ class DeviseControllers::RegistrationsController < Devise::RegistrationsControll
 
   protected
 
-  def _t(name)
-    t(name, scope: 'user_room.controllers.devise.registrations')
+  def _t(name, options = {})
+    t(name, options.merge(scope: 'user_room.controllers.devise.registrations'))
   end
 
   # The path used after sign up.
