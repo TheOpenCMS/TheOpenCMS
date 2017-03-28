@@ -97,3 +97,44 @@ en:
           check_inbox:   Request is already created. Check your inbox
           wrong_request: Wrong request
           logined_in: You are logged in
+
+    users:
+      edit:
+        title: "Edit User's Profile"
+
+        basic_info:
+          title: Basic Info
+          name: Name
+          login: Login
+          email: Email
+          about: About
+          btn: Update Info
+
+        change_password:
+          title: Change Password
+          password: New Password
+          password_confirm: Confirm New Password
+          btn: Set New Password
+
+        social_network_contacts:
+          title: I'm in Social Networks
+          vk: VK.com
+          gp: Google Plus
+          ok: Odnoklassniki.ru
+          fb: Facebook.com
+          tw: Twitter.com
+          pt: Pinterest.com
+          ig: Instagram.com
+          btn: Update Info
+
+        social_networks:
+          title: Connect My Profile to Social Networks
+          vk: VK.com
+          gp: Google Plus
+          ok: Odnoklassniki.ru
+          fb: Facebook.com
+          tw: Twitter.com
+
+      avatar:
+        title: Upload Avatar
+        upload_btn: Upload Image

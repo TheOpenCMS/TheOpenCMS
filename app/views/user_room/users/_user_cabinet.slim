@@ -1,11 +1,11 @@
-.mt20
-  .mb15
-    .fs13.b My Profile
-
-  - unless current_page? cabinet_path
-    .mb15= link_to "My Account",  cabinet_path, class: 'ptz_btn ptz_size-14'
-
-  .mb15= link_to "My Profile", @user, class: 'ptz_btn ptz_size-14'
-  .mb15= link_to "Edit Profile", [:edit, @user], class: 'ptz_btn ptz_size-14'
+/ .mt20
+/   .mb15
+/     .fs13.b My Profile
+/
+/   - unless current_page? cabinet_path
+/     .mb15= link_to "My Account",  cabinet_path, class: 'ptz_btn ptz_size-14'
+/
+/   .mb15= link_to "My Profile", @user, class: 'ptz_btn ptz_size-14'
+/   .mb15= link_to "Edit Profile", [:edit, @user], class: 'ptz_btn ptz_size-14'
 
 = render template: 'users/edit'

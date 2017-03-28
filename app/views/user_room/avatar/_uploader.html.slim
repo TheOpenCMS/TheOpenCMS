@@ -1,13 +1,7 @@
-
-  .p20
-    - if object.avatar.blank?
-      = form_for object, html: { enctype: 'multipart/form-data', class: '' } do |f|
-        .mb15
-          .fs14.lh120.mb10 = t('avatar.upload', scope: :user_room)
-
-        .mb15
-          = f.file_field :avatar, class: 'ptz_input ptz_size-12'
-        div
-          = f.submit t('avatar.upload_btn', scope: :user_room), class: 'ptz_btn ptz_size-14'
-    - else
-      = render partial: 'user_room/avatar/toolbar', locals: { object: object }
+- if object.avatar.blank?
+  = form_for object, html: { enctype: 'multipart/form-data' } do |f|
+    .mb20.fs16.b = t(:title, scope: 'user_room.users.avatar')
+    .mb15= f.file_field :avatar, class: 'ptz_input ptz_size-12'
+    div= f.submit t(:upload_btn, scope: 'user_room.users.avatar'), class: 'ptz_btn ptz_size-14'
+- else
+  = render partial: 'user_room/avatar/edit_tools', locals: { object: object }
