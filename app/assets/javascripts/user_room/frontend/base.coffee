@@ -3,9 +3,7 @@
 #= require turbolinks
 
 #= require log_js
-
-# require notifications/vendors/toastr
-# require notifications
+#= require notifications/base
 
 #= require user_room/frontend/avatar_crop
 #= require user_room/frontend/login_popup
