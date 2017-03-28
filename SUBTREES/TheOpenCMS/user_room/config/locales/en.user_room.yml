@@ -55,7 +55,7 @@ en:
       copy_1_html: "&mdash; Registration via social networks is easy, fast, secure and comfortable."
       copy_2_html: "&mdash; On your Profile Settings page you can link your Profile to a few social networks."
 
-      copy_3_html: "&mdash; <span class='b'>Password is forgotten?</span> Get a link for a one-time login below."
+      copy_3_html: "&mdash; <span class='b'>Have you forgotten Password?</span> Get a link for a one-time login below."
       copy_4_html: "&mdash; You can change your password after you are logged in"
       copy_5_html: "&mdash; It's easy to use Login via Social networks"
 
@@ -85,7 +85,7 @@ en:
 
       devise:
         registrations:
-          incorrect_email: You can not use this email for registration. Email is incorrect or already used
+          incorrect_email: "You can not use this email for registration. Email is incorrect or already used. If you have already sent a request then please wait for %{mins} minutes before send a new one"
           request_created: Request is created. Check yout inbox
           request_not_found: Request doesn't exist
           request_activated: Request is already activated
