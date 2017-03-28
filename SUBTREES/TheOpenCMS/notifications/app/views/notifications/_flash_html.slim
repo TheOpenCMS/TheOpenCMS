@@ -4,5 +4,5 @@
     css_klass = "notifications-#{ level }"
 
   - if msg.present?
-    .notifications-block class=css_klass
+    .notifications-block.js-notifications-block class=css_klass
       .notifications-message = msg
