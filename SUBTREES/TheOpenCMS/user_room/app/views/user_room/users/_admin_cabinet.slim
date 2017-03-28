@@ -1,13 +1,8 @@
 content_for :title do
-  | Кабинет Администратора APP
-
-= render template: 'layouts/items/header_footer'
+  | Admin UI
 
 .m20
-  .fs20.mb40 Кабинет Администратора
-
-  ruby:
-
+  .fs20.mb40
 
   .ptz_table.ptz_table-0.w100p
     .ptz_thead.fs18
@@ -17,5 +12,5 @@ content_for :title do
     .ptz_tbody
       .ptz_tr
         .ptz_td.p25
-          .mb20 = link_to 'My Profile',  @user,            class: 'ptz_btn ptz_size-14'
+          .mb20 = link_to 'My Profile', @user, class: 'ptz_btn ptz_size-14'
           .mb20 = link_to "Profile Edit", [ :edit, @user ], class: 'ptz_btn ptz_size-14'

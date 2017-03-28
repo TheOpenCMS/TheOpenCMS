@@ -1,3 +1,4 @@
+# include ::UserRoom::UsersController
 module UserRoom
   module UsersController
     extend ActiveSupport::Concern

@@ -1,5 +1,5 @@
 module UserRoom
-  # :UserRoom::Routes.mixin(self)
+  # include ::UserRoom::Routes.mixin(self)
   class Routes
     def self.mixin mapper
       mapper.extend ::UserRoom::DefaultRoutes

@@ -1,4 +1,3 @@
 class UsersController < ApplicationController
-  def cabinet
-  end
+  include ::UserRoom::UsersController
 end
