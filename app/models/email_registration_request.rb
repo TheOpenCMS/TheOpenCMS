@@ -1,5 +1,6 @@
 class EmailRegistrationRequest < ActiveRecord::Base
   before_validation :build_uid, on: :create
+  validates :email, presence: true
 
   private
 
