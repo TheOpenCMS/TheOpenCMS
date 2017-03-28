@@ -1,0 +1,38 @@
+= form_for @user, html: { class: '' } do |f|
+  ruby:
+    bi_title = t(:title, scope: 'user_room.users.edit.basic_info')
+    bi_name  = t(:name, scope: 'user_room.users.edit.basic_info')
+    bi_login = t(:login, scope: 'user_room.users.edit.basic_info')
+    bi_email = t(:email, scope: 'user_room.users.edit.basic_info')
+    bi_about = t(:about, scope: 'user_room.users.edit.basic_info')
+    bi_btn   = t(:btn, scope: 'user_room.users.edit.basic_info')
+
+  .mb20.fs16.b = bi_title
+
+  .ptz_table.w100p
+    .ptz_tr
+      .ptz_td.w50p
+        .mb15
+          = f.label :username, bi_name, class: 'block fs14 lh120 mb5'
+          = f.text_field :username, class: 'ptz_input w90p'
+
+        .mb15
+          = f.label :login, bi_login, class: 'block fs14 lh120 mb5'
+          = f.text_field :login, class: 'ptz_input w90p'
+
+        .mb15
+          = f.label :email, bi_email, class: 'block fs14 lh120 mb5 '
+          = f.text_field :email, class: 'ptz_input w90p'
+
+        - if @user.unconfirmed_email
+          .mb15
+            .block.fs14.lh120.mb10 Unconfirmed Email:
+            .b.mt15.fs15= @user.unconfirmed_email
+
+      .ptz_td
+        .mb15
+          = f.label :raw_about, bi_about, class: 'block fs14 lh120 mb5'
+          = f.text_area :raw_about, class: 'ptz_textarea w90p', rows: 5
+
+  .mt10
+    = f.submit bi_btn, class: 'ptz_btn ptz_size-14'
