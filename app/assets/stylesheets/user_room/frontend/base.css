@@ -13,6 +13,8 @@
   //= require user_room/frontend/user_room_header
   //= require user_room/frontend/registration_accordion
 
+  //= require user_room/frontend/layout
+
   # require notifications/vendors/toastr
   # require components/toastr/style
 */

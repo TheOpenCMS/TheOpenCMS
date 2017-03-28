@@ -1,182 +1,178 @@
 - content_for :title do
   | Edit the Profile
 
-= render partial: 'users/header_footer'
-
-- content_for :left_sidebar do
-  = render partial: 'users/left_sidebar'
-
 .m15
   = render partial: 'notifications/form', locals: { object: @user, format: :json }
 
   h3.fs20 Edit
 
-  .mt20.mb20= render partial: 'user_room/avatar/uploader', locals: { object: @user }
+  .mt20.mb20
+    = render partial: 'user_room/avatar/uploader', locals: { object: @user }
 
+  .mt20.mb20
+    = form_for @user, html: { class: 'p20' } do |f|
+      h3.mb15.fs16.b Basic Info
 
-    .mt20.mb20
-      = form_for @user, html: { class: 'p20' } do |f|
-        h3.mb15.fs16.b Basic Info
-
-        .ptz_table.w100p
-          .ptz_tr
-            .ptz_td.w50p
-              .mb15
-                = f.label :username, "Name", class: 'block fs14 lh120 mb5 '
-                = f.text_field :username, class: 'ptz_input w90p'
-
-              .mb15
-                = f.label :login, "Login", class: 'block fs14 lh120 mb5 '
-                = f.text_field :login, class: 'ptz_input w90p'
-
-            .ptz_td
-              .mb15
-                = f.label :raw_about, "About", class: 'block fs14 lh120 mb5 '
-                = f.text_area :raw_about, class: 'ptz_textarea w400', rows: 5
-
-        .ptz_table.w100p
-          .ptz_tr
-            .ptz_td.w50p
-
-              .mb15
-                = f.label :email, "Email", class: 'block fs14 lh120 mb5 '
-                = f.text_field :email, class: 'ptz_input w90p'
-            .ptz_td
-              - if @user.unconfirmed_email
-                .mb15
-                  .block.fs14.lh120.mb10 Unconfirmed Email:
-                  .b.mt15.fs15= @user.unconfirmed_email
-
-        .mt20
-          = f.submit "Update", class: 'ptz_btn ptz_size-14'
-
-
-    .mt20.mb20
-      = form_for @user, html: { class: 'p20' } do |f|
-        h3.mb15.fs16.b Change the password
-
-        .clearfix.mb15
-          .pull-left.mr25
-            = f.label :password, "Password", class: 'block fs14 lh120 mb5 '
-            = f.text_field :password, class: 'ptz_input w200'
-
-          .pull-left
-            = f.label :password_confirmation, "Repeat password", class: 'block fs14 lh120 mb5 '
-            = f.text_field :password_confirmation, class: 'ptz_input w200'
-
-        .mt20
-          = f.submit "Submit", class: 'ptz_btn ptz_size-14'
-
-
-    .mt20.mb20
-      = form_for @user, html: { class: 'p20' } do |f|
-        h3.mb15.fs16.b You contacts in Social Networks
-
-        .ptz_table.w100p
-          .ptz_tr
-            .ptz_td.w50p
-              .mb15
-                = f.label :vk_addr, "vk.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :vk_addr, class: 'ptz_input w90p'
-
-              .mb15
-                = f.label :ok_addr, "odnoklassniki.ru", class: 'block fs14 lh120 mb5 '
-                = f.text_field :ok_addr, class: 'ptz_input w90p'
-
-              .mb15
-                = f.label :fb_addr, "facebook.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :fb_addr, class: 'ptz_input w90p'
-
-              .mb15
-                = f.label :tw_addr, "twitter.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :tw_addr, class: 'ptz_input w90p'
-            .ptz_td
-              .mb15
-                = f.label :ig_addr, "instagram.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :ig_addr, class: 'ptz_input w90p'
-
-              .mb15
-                = f.label :gp_addr, "google plus", class: 'block fs14 lh120 mb5 '
-                = f.text_field :gp_addr, class: 'ptz_input w90p'
-
-              .mb15
-                = f.label :pt_addr, "pinterest.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :pt_addr, class: 'ptz_input w90p'
-
-        .mt20
-          = f.submit "Update", class: 'ptz_btn ptz_size-14'
-
-  - credentials = @user.credentials
-  - available_to_unlink = @user.credentials.count > 1
-
-
-    .mb15.p20
-
-      h3.mb15.fs16.b Link to Social networks
-
-      .ptz_table.mt40.mb40
+      .ptz_table.w100p
         .ptz_tr
-          .ptz_td.w100.pr20.tac
-            - if credentials.select{|c| c.provider == 'vkontakte'}.blank?
-              = link_to '', user_omniauth_authorize_path(:vkontakte), class: 'social_login_btn social_login_btn-vk fa fa-vk', data: { role: 'social_login_btn' }, title: 'ВКонтакте'
-            - else
-              .social_login_btn-unlink-holder
-                = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-vk fa fa-vk', title: 'VK'
+          .ptz_td.w50p
+            .mb15
+              = f.label :username, "Name", class: 'block fs14 lh120 mb5 '
+              = f.text_field :username, class: 'ptz_input w90p'
 
-                - if available_to_unlink
-                  = link_to delete_provider_path(:vkontakte), method: :delete, class: 'social_login_btn-unlink' do
-                    .fa.fa-times.social_login_btn-unlink-icon
+            .mb15
+              = f.label :login, "Login", class: 'block fs14 lh120 mb5 '
+              = f.text_field :login, class: 'ptz_input w90p'
 
-            .fs11.mt5 VK
+          .ptz_td
+            .mb15
+              = f.label :raw_about, "About", class: 'block fs14 lh120 mb5 '
+              = f.text_area :raw_about, class: 'ptz_textarea w400', rows: 5
 
-          .ptz_td.w100.pr20.tac
-            - if credentials.select{|c| c.provider == 'odnoklassniki'}.blank?
-              = link_to '', user_omniauth_authorize_path(:odnoklassniki), class: 'social_login_btn social_login_btn-ok fa fa-odnoklassniki', data: { role: 'social_login_btn', width: 650 },  title: 'Одноклассники'
-            - else
-              .social_login_btn-unlink-holder
-                = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-ok fa fa-odnoklassniki',  title: 'OK'
+      .ptz_table.w100p
+        .ptz_tr
+          .ptz_td.w50p
 
-                - if available_to_unlink
-                  = link_to delete_provider_path(:odnoklassniki), method: :delete, class: 'social_login_btn-unlink' do
-                    .fa.fa-times.social_login_btn-unlink-icon
+            .mb15
+              = f.label :email, "Email", class: 'block fs14 lh120 mb5 '
+              = f.text_field :email, class: 'ptz_input w90p'
+          .ptz_td
+            - if @user.unconfirmed_email
+              .mb15
+                .block.fs14.lh120.mb10 Unconfirmed Email:
+                .b.mt15.fs15= @user.unconfirmed_email
 
-            .fs11.mt5 OK
+      .mt20
+        = f.submit "Update", class: 'ptz_btn ptz_size-14'
 
-          .ptz_td.w100.pr20.tac
-            - if credentials.select{|c| c.provider == 'facebook'}.blank?
-              = link_to '', user_omniauth_authorize_path(:facebook), class: 'social_login_btn social_login_btn-fb fa fa-facebook', data: { role: 'social_login_btn' }, title: 'Facebook'
-            - else
-              .social_login_btn-unlink-holder
-                = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-fb fa fa-facebook', title: 'Facebook'
 
-                - if available_to_unlink
-                  = link_to delete_provider_path(:facebook), method: :delete, class: 'social_login_btn-unlink' do
-                    .fa.fa-times.social_login_btn-unlink-icon
+  .mt20.mb20
+    = form_for @user, html: { class: 'p20' } do |f|
+      h3.mb15.fs16.b Change the password
 
-            .fs11.mt5 Facebook
+      .clearfix.mb15
+        .pull-left.mr25
+          = f.label :password, "Password", class: 'block fs14 lh120 mb5 '
+          = f.text_field :password, class: 'ptz_input w200'
 
-          .ptz_td.w100.pr20.tac
-            - if credentials.select{|c| c.provider == 'twitter'}.blank?
-              = link_to '', user_omniauth_authorize_path(:twitter), class: 'social_login_btn social_login_btn-tw fa fa-twitter', data: { role: 'social_login_btn', height: 650 }, title: 'Twitter'
-            - else
-              .social_login_btn-unlink-holder
-                = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-tw fa fa-twitter', title: 'Twitter'
+        .pull-left
+          = f.label :password_confirmation, "Repeat password", class: 'block fs14 lh120 mb5 '
+          = f.text_field :password_confirmation, class: 'ptz_input w200'
 
-                - if available_to_unlink
-                  = link_to delete_provider_path(:twitter), method: :delete, class: 'social_login_btn-unlink' do
-                    .fa.fa-times.social_login_btn-unlink-icon
+      .mt20
+        = f.submit "Submit", class: 'ptz_btn ptz_size-14'
 
-            .fs11.mt5 Twitter
 
-          .ptz_td.w100.pr20.tac
-            - if credentials.select{|c| c.provider == 'google_oauth2'}.blank?
-              = link_to '', user_omniauth_authorize_path(:google_oauth2), class: 'social_login_btn social_login_btn-gp fa fa-google-plus', data: { role: 'social_login_btn' }, title: 'Google+'
-            - else
-              .social_login_btn-unlink-holder
-                = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-gp fa fa-google-plus', title: 'Google+'
+  .mt20.mb20
+    = form_for @user, html: { class: 'p20' } do |f|
+      h3.mb15.fs16.b You contacts in Social Networks
 
-                - if available_to_unlink
-                  = link_to delete_provider_path(:google_oauth2), method: :delete, class: 'social_login_btn-unlink' do
-                    .fa.fa-times.social_login_btn-unlink-icon
+      .ptz_table.w100p
+        .ptz_tr
+          .ptz_td.w50p
+            .mb15
+              = f.label :vk_addr, "vk.com", class: 'block fs14 lh120 mb5 '
+              = f.text_field :vk_addr, class: 'ptz_input w90p'
 
-            .fs11.mt5 Google+
+            .mb15
+              = f.label :ok_addr, "odnoklassniki.ru", class: 'block fs14 lh120 mb5 '
+              = f.text_field :ok_addr, class: 'ptz_input w90p'
+
+            .mb15
+              = f.label :fb_addr, "facebook.com", class: 'block fs14 lh120 mb5 '
+              = f.text_field :fb_addr, class: 'ptz_input w90p'
+
+            .mb15
+              = f.label :tw_addr, "twitter.com", class: 'block fs14 lh120 mb5 '
+              = f.text_field :tw_addr, class: 'ptz_input w90p'
+          .ptz_td
+            .mb15
+              = f.label :ig_addr, "instagram.com", class: 'block fs14 lh120 mb5 '
+              = f.text_field :ig_addr, class: 'ptz_input w90p'
+
+            .mb15
+              = f.label :gp_addr, "google plus", class: 'block fs14 lh120 mb5 '
+              = f.text_field :gp_addr, class: 'ptz_input w90p'
+
+            .mb15
+              = f.label :pt_addr, "pinterest.com", class: 'block fs14 lh120 mb5 '
+              = f.text_field :pt_addr, class: 'ptz_input w90p'
+
+      .mt20
+        = f.submit "Update", class: 'ptz_btn ptz_size-14'
+
+  ruby:
+    credentials = @user.credentials
+    available_to_unlink = @user.credentials.count > 1
+
+
+  .mb15.p20
+
+    h3.mb15.fs16.b Link to Social networks
+
+    .ptz_table.mt40.mb40
+      .ptz_tr
+        .ptz_td.w100.pr20.tac
+          - if credentials.select{|c| c.provider == 'vkontakte'}.blank?
+            = link_to '', user_omniauth_authorize_path(:vkontakte), class: 'social_login_btn social_login_btn-vk fa fa-vk', data: { role: 'social_login_btn' }, title: 'ВКонтакте'
+          - else
+            .social_login_btn-unlink-holder
+              = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-vk fa fa-vk', title: 'VK'
+
+              - if available_to_unlink
+                = link_to delete_provider_path(:vkontakte), method: :delete, class: 'social_login_btn-unlink' do
+                  .fa.fa-times.social_login_btn-unlink-icon
+
+          .fs11.mt5 VK
+
+        .ptz_td.w100.pr20.tac
+          - if credentials.select{|c| c.provider == 'odnoklassniki'}.blank?
+            = link_to '', user_omniauth_authorize_path(:odnoklassniki), class: 'social_login_btn social_login_btn-ok fa fa-odnoklassniki', data: { role: 'social_login_btn', width: 650 },  title: 'Одноклассники'
+          - else
+            .social_login_btn-unlink-holder
+              = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-ok fa fa-odnoklassniki',  title: 'OK'
+
+              - if available_to_unlink
+                = link_to delete_provider_path(:odnoklassniki), method: :delete, class: 'social_login_btn-unlink' do
+                  .fa.fa-times.social_login_btn-unlink-icon
+
+          .fs11.mt5 OK
+
+        .ptz_td.w100.pr20.tac
+          - if credentials.select{|c| c.provider == 'facebook'}.blank?
+            = link_to '', user_omniauth_authorize_path(:facebook), class: 'social_login_btn social_login_btn-fb fa fa-facebook', data: { role: 'social_login_btn' }, title: 'Facebook'
+          - else
+            .social_login_btn-unlink-holder
+              = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-fb fa fa-facebook', title: 'Facebook'
+
+              - if available_to_unlink
+                = link_to delete_provider_path(:facebook), method: :delete, class: 'social_login_btn-unlink' do
+                  .fa.fa-times.social_login_btn-unlink-icon
+
+          .fs11.mt5 Facebook
+
+        .ptz_td.w100.pr20.tac
+          - if credentials.select{|c| c.provider == 'twitter'}.blank?
+            = link_to '', user_omniauth_authorize_path(:twitter), class: 'social_login_btn social_login_btn-tw fa fa-twitter', data: { role: 'social_login_btn', height: 650 }, title: 'Twitter'
+          - else
+            .social_login_btn-unlink-holder
+              = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-tw fa fa-twitter', title: 'Twitter'
+
+              - if available_to_unlink
+                = link_to delete_provider_path(:twitter), method: :delete, class: 'social_login_btn-unlink' do
+                  .fa.fa-times.social_login_btn-unlink-icon
+
+          .fs11.mt5 Twitter
+
+        .ptz_td.w100.pr20.tac
+          - if credentials.select{|c| c.provider == 'google_oauth2'}.blank?
+            = link_to '', user_omniauth_authorize_path(:google_oauth2), class: 'social_login_btn social_login_btn-gp fa fa-google-plus', data: { role: 'social_login_btn' }, title: 'Google+'
+          - else
+            .social_login_btn-unlink-holder
+              = link_to '', jsvoid, class: 'social_login_btn social_login_btn-linked social_login_btn-gp fa fa-google-plus', title: 'Google+'
+
+              - if available_to_unlink
+                = link_to delete_provider_path(:google_oauth2), method: :delete, class: 'social_login_btn-unlink' do
+                  .fa.fa-times.social_login_btn-unlink-icon
+
+          .fs11.mt5 Google+
