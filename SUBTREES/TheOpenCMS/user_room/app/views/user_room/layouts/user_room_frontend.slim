@@ -1,0 +1,5 @@
+- content_for :base_assets do
+  = stylesheet_link_tag    'user_room/frontend', media: :all, 'data-turbolinks-track' => true
+  = javascript_include_tag 'user_room/frontend', 'data-turbolinks-track' => true
+
+= render template: 'user_room/layouts/user_room_shared'

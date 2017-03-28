@@ -1,5 +1,5 @@
 class DeviseControllers::SessionsController < Devise::SessionsController
-  layout 'user_room'
+  layout 'user_room_frontend'
 
   def create_onetime_login_link
     _email  = params[:email].to_s.strip

@@ -5,11 +5,8 @@ html.w100p.h100p
     meta charset='utf-8'
     title TheOpenCMS / User Room
 
-    = action_cable_meta_tag
+    / = action_cable_meta_tag
     = csrf_meta_tags
-
-    = stylesheet_link_tag    'user_room/frontend', media: :all, 'data-turbolinks-track' => true
-    = javascript_include_tag 'user_room/frontend', 'data-turbolinks-track' => true
 
   body.w100p.h100p.ffa
     .ptz_table.h100p.w100p
@@ -23,4 +20,5 @@ html.w100p.h100p
       .ptz_row
         = render template: 'user_room/layouts/items/footer'
 
+  = yield(:base_assets)
   link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")

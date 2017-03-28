@@ -1,5 +1,5 @@
 class DeviseControllers::RegistrationsController < Devise::RegistrationsController
-  layout 'user_room'
+  layout 'user_room_frontend'
 
   before_action :configure_sign_up_params, only: [:create]
 
