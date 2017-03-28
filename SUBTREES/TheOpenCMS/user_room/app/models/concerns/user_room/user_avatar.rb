@@ -4,7 +4,7 @@ module UserRoom
     extend ActiveSupport::Concern
 
     included do
-      include ImageTools
+      include ::ImageTools
 
       before_validation :generate_avatar_name
 
