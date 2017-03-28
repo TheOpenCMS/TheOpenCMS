@@ -10,18 +10,20 @@ ruby:
     _errors = object.localized_errors if object.respond_to?(:localized_errors)
 
   - if format == 'html'
-    .notifications-block
-      .notifications-title = t 'notifications.form_errors'
+    .notifications-block.notifications-form_errors.js-notifications-block
+      .notifications-title = t('notifications.form_errors')
+
       .notifications-list
         - _errors.map do |name, msgs|
           - if msgs.is_a? Array
             - msgs.each do |msg|
               .notifications-item
-                .notifications-item_name = name
-                .notifications-item_message = msg
+                span.notifications-item_name>= "#{ name }:"
+                span.notifications-item_message= msg
           - else
-            .notifications-item = name
-            .notifications-item_message = msgs
+            .notifications-item
+              span.notifications-item_name> = name
+              span.notifications-item_message = msgs
 
   - else
     = javascript_tag defer: :defer, type: "text/javascript" do
