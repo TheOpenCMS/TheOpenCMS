@@ -1,4 +1,4 @@
-# include UserRoom::UserAvatarActions
+# include ::UserRoom::UserAvatarActions
 module UserRoom
   module UserAvatarActions
 

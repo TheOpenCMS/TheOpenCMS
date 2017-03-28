@@ -14,4 +14,8 @@ module DeviseHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def has_provider?(credentials, name)
+    credentials.select { |c| c.provider == name.to_s }.present?
+  end
 end
