@@ -11,8 +11,8 @@ module UserRoom
 
     def define_user
       @root = ::User.try(:root)
-
       @user = current_user
+
       user_id = params[:user_id]
 
       if user_id
