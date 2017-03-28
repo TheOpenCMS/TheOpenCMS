@@ -63,16 +63,14 @@ body
 *application.js*
 
 ```js
-//= require vendors/toastr
-//= require notifications
+//= require notifications/base
 ```
 
 *application_initializer.js*
 
-```js
+```coffee
 $ ->
-  Notifications.init()
-  Notifications.show_notifications()
+  do Notifications.init
 ```
 
 ### Format `html` or `json`
