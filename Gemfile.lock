@@ -86,6 +86,7 @@ PATH
   specs:
     crop_tool (0.4)
       image_tools
+      protozaur
 
 PATH
   remote: SUBTREES/TheOpenCMS/image_tools
