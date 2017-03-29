@@ -7,3 +7,6 @@
 
 #= require user_room/shared/login_popup
 #= require user_room/frontend/avatar_crop
+
+#= require crop_tool/crop_tool
+#= require jquery-jcrop/js/jquery.Jcrop
