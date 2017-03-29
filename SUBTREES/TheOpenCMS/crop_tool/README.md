@@ -4,6 +4,19 @@ This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
 
 # CropTool
 
+```json
+{
+  "name": "MyApp",
+  "dependencies": {
+    "jquery-jcrop": "=0.9.13"
+  }
+}
+```
+
+```sh
+yarn install
+```
+
 **application.html.slim**
 
 ```ruby
@@ -13,18 +26,43 @@ This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
 **CSS**
 
 ```css
-#= require crop_tool/crop_tool
-#= require crop_tool/jcrop/jquery.Jcrop
+//= require ptz/reset
+//= require ptz/base
+//= require ptz/framework
+//= require ptz/inputs_buttons/all
+```
+
+and
+
+```css
+//= require crop_tool/crop_tool
+//= require jquery-jcrop/css/jquery.Jcrop
+```
+
+or
+
+```css
+//= require crop_tool/crop_tool
+//= require crop_tool/jcrop/jquery.Jcrop
 ```
 
 **JS**
 
 ```coffee
 #= require crop_tool/crop_tool
-#= require crop_tool/jcrop/jquery.Jcrop
+#= require jquery-jcrop/js/jquery.Jcrop
+```
 
+or
+
+```coffee
+#= require crop_tool/crop_tool
+#= require crop_tool/jcrop/jquery.Jcrop
+```
+
+```coffee
 $ ->
-  CropTool.init()
+  do CropTool.init
 ```
 
 **routes.rb**
