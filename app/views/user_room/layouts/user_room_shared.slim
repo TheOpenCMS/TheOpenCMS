@@ -19,6 +19,7 @@ html.w100p.h100p
             = yield
       .ptz_row
         = render template: 'user_room/layouts/items/footer'
+    = yield :crop_tool
 
   = yield(:base_assets)
   link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
