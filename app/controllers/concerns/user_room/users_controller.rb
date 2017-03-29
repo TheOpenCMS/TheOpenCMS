@@ -6,6 +6,7 @@ module UserRoom
     included do
       layout -> { layout_template }
       include ::UserRoom::UserAvatarActions
+      skip_before_action :authenticate_user!, only: %w[show index]
 
       before_action :set_user, only: %w[
         show edit update
@@ -22,15 +23,16 @@ module UserRoom
       @users_count = ::User.count
     end
 
-    def cabinet; end
+    # def new; @user = ::User.new ; end
 
-    def new; @user = ::User.new ; end
+    def show; end
 
     ##########################################
     ### Restricted actions
     ##########################################
 
-    def show; end
+    def cabinet; end
+
     def edit; end
 
     def autologin

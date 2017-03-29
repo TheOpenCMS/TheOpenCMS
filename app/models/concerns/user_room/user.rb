@@ -38,7 +38,7 @@ module UserRoom
       ### Callbacks
       ##########################################
 
-      after_create :create_default_login
+      after_create :set_default_login
 
       ##########################################
       ### Relations
@@ -56,8 +56,8 @@ module UserRoom
 
       private
 
-      def create_default_login
-        self.login = "id#{self.id}"
+      def set_default_login
+        self.update_column(:login, "id#{self.id}")
       end
 
       def login_validations
