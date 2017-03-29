@@ -5,10 +5,10 @@
   table.ptz_table.w100p
     tbody
       tr.tal.fs15
-        th.fwn.pb40 Аватарка
-        th.pb40= link_to 'Login ↕',            simple_sort_url(:login),      title: :login
-        th.pb40= link_to 'Name ↕', simple_sort_url(:username),   title: :username
-        th.pb40= link_to 'Create at ↕',  simple_sort_url(:created_at), title: :created_at
+        th.fwn.pb40 User Pic
+        th.pb40 = link_to 'Login ↕',     simple_sort_url(:login),      title: :login
+        th.pb40 = link_to 'Name ↕',      simple_sort_url(:username),   title: :username
+        th.pb40 = link_to 'Create at ↕', simple_sort_url(:created_at), title: :created_at
 
       - @users.each do |user|
         tr.tal
@@ -18,9 +18,9 @@
                 = image_tag user.avatar.url(:v100x100), class: 'user_room_header-avatar_image'
               - else
                 .user-room-header-avatar-placeholder.w100 ?
-          td.fs15.pt25.pb25.vam= user.login
-          td.fs15.pt25.pb25.vam= user.username
-          td.fs15.pt25.pb25.vam= I18n.l(user.created_at, format: "%-d %B %Y")
+          td.fs15.pt25.pb25.vam = user.login
+          td.fs15.pt25.pb25.vam = user.username
+          td.fs15.pt25.pb25.vam = I18n.l(user.created_at, format: "%-d %B %Y")
 
-    - if (paginator = paginate @users, views_prefix: 'protozaur_theme/paginator').present?
-      .mt20.mb20= paginator
+  / - if (paginator = paginate @users, views_prefix: 'protozaur_theme/paginator').present?
+  /   .mt20.mb20= paginator

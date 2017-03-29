@@ -1,8 +1,14 @@
-- if current_user
-  .user_room_toolbar-block
-    .ma.w80p.clearfix.fs15
+.user_room_toolbar-block
+  .ma.w80p.clearfix.fs15
+    - if current_user
       .pull-left = @user.email
       .pull-right = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'user_room_toolbar-link'
+    - else
+      .pull-left
+        span.mr5 = link_to 'theopencms.org', root_path, class: 'user_room_toolbar-link'
+        span.mr5 |
+        span = link_to 'users', users_path, class: 'user_room_toolbar-link'
+      .pull-right = link_to 'Login', new_user_session_path, class: 'user_room_toolbar-link'
 
 .user_room_layout-header
   .tac.fs30.pt40.ffg TheOpenCMS
