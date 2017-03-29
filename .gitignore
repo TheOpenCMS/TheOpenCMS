@@ -33,4 +33,5 @@ config/ENV/*
 db/REDIS/*
 db/SPHINX/*
 /public/packs
+/public/uploads
 /node_modules
