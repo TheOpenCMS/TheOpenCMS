@@ -10,6 +10,8 @@ module SimpleSortHelper
       sort_type = { desc: :asc, asc: :desc }[ params[:sort_type].to_sym ]
     end
 
-    url_for params.merge(sort_column: field, sort_type: sort_type)
+    url_for params
+      .permit(:sort_column, :sort_type)
+      .merge(sort_column: field, sort_type: sort_type)
   end
 end
