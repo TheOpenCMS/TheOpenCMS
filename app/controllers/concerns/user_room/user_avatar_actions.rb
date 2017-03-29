@@ -12,8 +12,9 @@ module UserRoom
     ]
 
     def avatar_crop_1x1
-      path = @user.avatar_crop_1x1(params)
-      render json: { ids: { '.js-user_avatar-v1x1' => path + rnd_num } }
+      crop_params = params[:crop].permit(:img_w, :x, :y, :w, :h).to_h.symbolize_keys
+      path = @user.avatar_crop_1x1(crop_params)
+      render json: { ids: { '.js-user_avatar-v1x1' => path } }
     end
 
     def avatar_rotate_left
@@ -29,12 +30,6 @@ module UserRoom
     def avatar_delete
       @user.avatar_destroy!
       redirect_back fallback_location: root_path
-    end
-
-    private
-
-    def rnd_num
-      "?#{ Time.now.to_i }"
     end
   end
 end

@@ -1,27 +1,21 @@
 module UserRoom
   module UserAvatar
-
     extend ActiveSupport::Concern
 
     included do
       include ::ImageTools
 
       before_validation :generate_avatar_name
-
-      # after_commit :avatar_original_resize
       after_commit :avatar_build_variants
 
       prefix = ::UserRoom.config.storage_prefix
 
       has_attached_file :avatar,
-
         default_url: "/projects/#{ prefix }/default_images/avatar/:style.gif",
         path:        ":rails_root/public/uploads/#{ prefix }/avatars/user-:user_id/:id/:style/:filename",
         url:         "/uploads/#{ prefix }/avatars/user-:user_id/:id/:style/:filename"
 
-
       validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-
     end # included
 
     def generate_avatar_name
@@ -31,10 +25,7 @@ module UserRoom
       end
     end
 
-
-    def avatar_crop_1x1 params
-      crop_params = params[:crop].symbolize_keys
-
+    def avatar_crop_1x1 crop_params
       src      = avatar.path
       v500x500 = avatar.path :v500x500
       v100x100 = avatar.path :v100x100
@@ -51,7 +42,13 @@ module UserRoom
         image
       end
 
-      avatar.url(:v500x500, timestamp: false)
+      ##########################################
+      # Update timestamp to avoid caching
+      ##########################################
+      avatar.instance.touch
+      avatar.instance.reload
+
+      avatar.url(:v500x500)
     end
 
     def avatar_rotate_left
@@ -82,19 +79,18 @@ module UserRoom
       if avatar.present? && previous_changes[:avatar_updated_at]
         src  = avatar.path
 
-        ###########################
+        ##########################################
         # VARIANTS
-        ###########################
+        ##########################################
 
         v500x500 = avatar.path(:v500x500)
         v100x100 = avatar.path(:v100x100)
         v50x50   = avatar.path(:v50x50)
 
-        ###########################
-        # ~ VARIANTS
-        ###########################
+        ##########################################
+        # SRC PREPARE
+        ##########################################
 
-        # src prepare
         manipulate({ src: src, dest: src, larger_side: 800 }) do |image, opts|
           image = auto_orient image
           image = optimize    image
@@ -102,7 +98,10 @@ module UserRoom
           image = biggest_side_not_bigger_than(image, opts[:larger_side])
         end
 
+        ##########################################
         # 1x1
+        ##########################################
+
         manipulate({ src: src, dest: v500x500, larger_side: 500 }) do |image, opts|
           image = to_square image, 500, { repage: true }
           image
