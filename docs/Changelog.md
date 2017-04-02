@@ -11,7 +11,7 @@ Hello World!
 
 Content is Everything!
 
-On this week I improved `gem 'user_room'`. Now gem provides all basic actions. User us able to sign in/login, update profile's data, and to see a list of users.
+On this week I improved `gem 'user_room'`. Now gem provides all basic actions. User is able to sign in/login, update profile's data, and to see a list of users.
 
 There is a basic user's story with screenshots:
 
@@ -26,15 +26,15 @@ There is a basic user's story with screenshots:
 
 <table>
   <tr>
-    <td><img src="./imgs/week_4/pic_1.png" width="200"></td>
-    <td><img src="./imgs/week_4/pic_2.png" width="200"></td>
-    <td><img src="./imgs/week_4/pic_3.png" width="200"></td>
+    <td><img src="./imgs/week_4/1.png" width="200"></td>
+    <td><img src="./imgs/week_4/2.png" width="200"></td>
+    <td><img src="./imgs/week_4/3.png" width="200"></td>
   </tr>
 
   <tr>
-    <td><img src="./imgs/week_4/pic_4.png" width="200"></td>
-    <td><img src="./imgs/week_4/pic_5.png" width="200"></td>
-    <td><img src="./imgs/week_4/pic_6.png" width="200"></td>
+    <td><img src="./imgs/week_4/4.png" width="200"></td>
+    <td><img src="./imgs/week_4/5.png" width="200"></td>
+    <td><img src="./imgs/week_4/6.png" width="200"></td>
   </tr>
 </table>
 
