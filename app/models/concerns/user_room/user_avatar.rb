@@ -29,6 +29,7 @@ module UserRoom
       src      = avatar.path
       v500x500 = avatar.path :v500x500
       v100x100 = avatar.path :v100x100
+      v50x50   = avatar.path :v50x50
 
       manipulate({ src: src, dest: v500x500 }.merge(crop_params)) do |image, opts|
         scale = image[:width].to_f / opts[:img_w].to_f
@@ -39,6 +40,11 @@ module UserRoom
 
       manipulate({ src: v500x500, dest: v100x100 }) do |image, opts|
         image = strict_resize image, 100, 100
+        image
+      end
+
+      manipulate({ src: v100x100, dest: v50x50 }) do |image, opts|
+        image = strict_resize image, 50, 50
         image
       end
 
