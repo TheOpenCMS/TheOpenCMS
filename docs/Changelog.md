@@ -5,6 +5,54 @@
 
 # TheOpenCMS weekly report
 
+## Week 4
+
+Hello World!
+
+Content is Everything!
+
+On this week I improved `gem 'user_room'`. Now gem provides all basic actions. User us able to sign in/login, update profile's data, and to see a list of users.
+
+There is a basic user's story with screenshots:
+
+**User**
+
+* is able to Sign in/Login in the system with email
+* receives an email with activation link or a one-time login link
+* sees a user's profile
+* is able to update a profile's data: Name, Login, About, Social Networks addresses, etc.
+* uploads and crops an avatar image
+* is able to see a list of users
+
+<table>
+  <tr>
+    <td><img src="./imgs/week_4/pic_1.png" width="200"></td>
+    <td><img src="./imgs/week_4/pic_2.png" width="200"></td>
+    <td><img src="./imgs/week_4/pic_3.png" width="200"></td>
+  </tr>
+
+  <tr>
+    <td><img src="./imgs/week_4/pic_4.png" width="200"></td>
+    <td><img src="./imgs/week_4/pic_5.png" width="200"></td>
+    <td><img src="./imgs/week_4/pic_6.png" width="200"></td>
+  </tr>
+</table>
+
+**Plans for the next week**
+
+* I'm going to start debugging `Login via Social Networks` workflow.
+
+**How to help**
+
+* Feel free to give a star to [the project](https://github.com/TheOpenCMS/TheOpenCMS). Your support is very important
+* It's always possible to improve localization and improve current translations.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
+P.S.: Btw, I've bought already a domain name `theopencms.org`. I'm going to start a web site soon(...ish).
+
 ## Week 3
 
 Hello World!
