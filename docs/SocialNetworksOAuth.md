@@ -19,6 +19,8 @@
 
   * App ID
   * App Secret
+  * App Domains: http://theopencms.org
+  * Website > Site URL: http://theopencms.org
 
 * Configurate Settings
 
@@ -32,3 +34,23 @@
         scope: 'public_profile,user_friends,email'
         display: popup
   ```
+
+## Debug on local machine
+
+Edit host file
+
+```
+sudo vi /etc/hosts
+```
+
+Add an instruction at `/etc/hosts`
+
+```
+127.0.0.1 theopencms.org
+```
+
+Run web server on port number 80
+
+```
+rvmsudo rails server -p 80
+```
