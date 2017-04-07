@@ -7,7 +7,7 @@
 
 * https://developers.facebook.com/docs/facebook-login
 * https://developers.facebook.com/docs/facebook-login/web
-* https://developers.facebook.com/apps/
+* https://developers.facebook.com/apps
 * Add a New App
 
   * Display Name: example.com
@@ -33,6 +33,32 @@
       options:
         scope: 'public_profile,user_friends,email'
         display: popup
+  ```
+
+## Twitter
+
+* https://dev.twitter.com
+* https://apps.twitter.com
+* Create New App
+
+  * Name: example.com
+  * Description: example.com
+  * Website: http://example.com
+  * Callback URL: http://example.com/auth/twitter
+
+* Keys and Access Tokens(active tab)
+
+  * Consumer Key (API Key)
+  * Consumer Secret (API Secret)
+
+* Configurate Settings
+
+  ```yaml
+  oauth:
+    twitter:
+      tokens:
+        - xxxYYYXXXZZZaaaBB
+        - xxxYYYXXXZZZaaaBBxxxYYYXXXZZZaaaBBxxxYYYXXXZZZaaaBB
   ```
 
 ## Debug on local machine
