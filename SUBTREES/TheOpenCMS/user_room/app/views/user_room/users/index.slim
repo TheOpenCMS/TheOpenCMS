@@ -1,5 +1,15 @@
 - if (paginator = paginate @users, views_prefix: 'protozaur/paginator').present?
-  .mt20.mb50= paginator
+  .mt20.mb20= paginator
+
+.tar.fs16.mb30.pr10
+  span.b> Items amount:
+  - %w[ 5 10 20 50 100 125 ].each do |num|
+    ruby:
+      is_current = 'b' if params[:per_page] == num
+
+    span.mr10 = link_to num, url_for(per_page: num), class: is_current
+
+  span.mr10= link_to '[x]', reset_simple_sort
 
 table.ptz_table.w100p.h100p.user_room_list-block
   tbody
@@ -7,7 +17,7 @@ table.ptz_table.w100p.h100p.user_room_list-block
       th.p20
       th.p20 = link_to 'Login ↕',     simple_sort_url(:login),      title: :login
       th.p20 = link_to 'Name ↕',      simple_sort_url(:username),   title: :username
-      th.p20 = link_to 'Create at ↕', simple_sort_url(:created_at), title: :created_at
+      th.p20.tar = link_to 'Create at ↕', simple_sort_url(:created_at), title: :created_at
 
     - @users.each do |user|
       tr.user_room_list-row.fs16
@@ -20,4 +30,4 @@ table.ptz_table.w100p.h100p.user_room_list-block
 
         td.p20.vam = user.login
         td.p20.vam.w100p = user.username
-        td.p20.vam.br-off = I18n.l(user.created_at, format: "%-d %B %Y")
+        td.p20.vam.tar.br-off = I18n.l(user.created_at, format: "%-d %B %Y")
