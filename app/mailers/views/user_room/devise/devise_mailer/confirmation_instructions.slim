@@ -1,0 +1,13 @@
+- content_for :title
+  = @subject
+
+- content_for :text_block do
+  .mb50.fs16.lh130.ffa To activate your account press the following button
+
+- content_for :main_btn_copy do
+  = _t_copy(:activate_btn)
+
+- content_for :main_btn_address do
+  = confirmation_url(@resource, confirmation_token: @token)
+
+= render template: 'devise_mailer/base_template'
