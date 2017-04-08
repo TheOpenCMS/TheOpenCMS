@@ -22,7 +22,7 @@
   * App Domains: http://theopencms.org
   * Website > Site URL: http://theopencms.org
 
-### Configurate Settings
+#### Application Settings
 
 ```yaml
 oauth:
@@ -51,7 +51,7 @@ oauth:
   * Consumer Key (API Key)
   * Consumer Secret (API Secret)
 
-### Configurate Settings
+#### Application Settings
 
 ```yaml
 oauth:
@@ -90,7 +90,7 @@ oauth:
 
 * Client ID / Client Secret
 
-### Configurate Settings
+#### Application Settings
 
 ```yaml
 google_oauth2:
