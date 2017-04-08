@@ -42,7 +42,10 @@ module UserRoom
     end
 
     def update
-      if @user.update(user_params)
+      @user.assign_attributes(user_params)
+      @user.content_processing_for(current_user)
+
+      if @user.save
         sign_in(@user, bypass: true) if user_params[:password].present?
         redirect_to edit_user_path(@user), notice: _t(:changes_saved)
       else
