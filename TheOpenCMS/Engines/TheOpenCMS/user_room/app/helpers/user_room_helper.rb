@@ -7,4 +7,8 @@ module UserRoomHelper
 
     content_tag :canvas, nil, class: klass, width: width, height: height, 'data-jdenticon-hash' => id
   end
+
+  def user_room_date_format(date)
+    I18n.l(date, format: "%-d %B %Y")
+  end
 end

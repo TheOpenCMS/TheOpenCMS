@@ -32,4 +32,4 @@ table.ptz_table.w100p.h100p.user_room_list-block
         td.p20.vam = user.login
         td.p20.vam.br-off = user.username
         td.p20.vam.w100p = user.about
-        td.p20.vam.tar.br-off = I18n.l(user.created_at, format: "%-d %B %Y")
+        td.p20.vam.tar.br-off = user_room_date_format(user.created_at)
