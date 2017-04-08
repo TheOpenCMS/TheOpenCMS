@@ -33,6 +33,14 @@ This project based on the project `Deploy.RB` https://deployrb.github.io
 
 [JS Code style](./JS_Code_style.md)
 
+### How to get OAuth tokens for Social Network Login
+
+[Get OAuth tokens](./SocialNetworksOAuth.md)
+
+### Installation
+
+[Installation](./Development_Installation.md)
+
 ### Discussions
 
 [the_open_cms](https://gitter.im/the_open_cms/main)

@@ -13,14 +13,14 @@ Content is Everything!
 
 * Login via Social Networks was debugged. Works fine.
 * User can connect multiple Social Accounts to own Profile
-* I described how to get OAuth tokens for some social networks. New page added in `docs` folder.
+* I've described how to get OAuth tokens for some social networks. [New page](./SocialNetworksOAuth.md) was added in `docs` folder.
 * Index/Show pages for `Users` controller were improved
 * Some improvements were done
 * File structure of the project was changed
 
 **Login via Social Networks**
 
-<img src="./imgs/week_5/pic_1.png" width="400">
+<img src="./imgs/week_5/pic_1.png" width="600">
 
 **Index/Show pages**
 
