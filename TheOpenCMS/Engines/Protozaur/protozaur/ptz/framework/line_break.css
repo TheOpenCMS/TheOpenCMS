@@ -1,0 +1,7 @@
+.br-off {
+  white-space: nowrap !important;
+}
+
+.br-on {
+  white-space: normal !important;
+}
