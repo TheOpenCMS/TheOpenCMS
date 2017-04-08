@@ -48,7 +48,7 @@ development:
 ### Create development seeds
 
 ```
-rake dev_seeds:fakes
+rake dev_seeds:fakes USERS=30
 ```
 
 ### Launch web server

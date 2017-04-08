@@ -9,7 +9,7 @@
 
     span.mr10 = link_to num, url_for(per_page: num), class: is_current
 
-  span.mr10= link_to '[x]', reset_simple_sort
+  span.mr10= link_to '[x]', reset_simple_sort(per_page: nil)
 
 table.ptz_table.w100p.h100p.user_room_list-block
   tbody
@@ -26,7 +26,7 @@ table.ptz_table.w100p.h100p.user_room_list-block
             - if user.avatar.present?
               = image_tag user.avatar.url(:v100x100), class: 'user_room_list-avatar_image'
             - else
-              = image_tag "https://github.com/identicons/#{ user.login }.png", class: 'user_room_list-avatar_image'
+              = default_user_avatar(user, {class: 'user_room_list-avatar_image'})
 
         td.p20.vam = user.login
         td.p20.vam.w100p = user.username

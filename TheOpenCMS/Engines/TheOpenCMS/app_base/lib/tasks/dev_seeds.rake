@@ -3,9 +3,10 @@ namespace :dev_seeds do
   desc "Create some entities for developement"
   task fakes: :environment do
     Rake::Task["db:bootstrap"].invoke
+    users_count = ENV.fetch('USERS', 5).to_i
 
     create_admin_user!
-    create_regular_users!(3)
+    create_regular_users!(users_count)
     create_registration_request!
     create_one_time_login_link!
   end
