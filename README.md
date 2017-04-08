@@ -1,23 +1,22 @@
-# Content is Everything!
+# TheOpenCMS
 
-Let's make Content Management Systems great again! Together we can!
+Engine-based **C**ontent **M**anagement **S**ystem for Ruby on Rails 5+
 
-## TheOpenCMS
+[**All engines**](./TheOpenCMS/Engines) are being managed by git subtrees. You can work with engines like with a code of the only project and at the same time you can publish all engines separately.
 
-CMS (Content Management System) based on Rails.
+All engines of the project may be reused with other projects.
 
 ### Features
 
-This open CMS provides:
+This open CMS provides (will provide):
 
 * User Room
   * Authentication via Devise
-  * Sign in/Login via social networks: Facebook, Twitter, G+, Vk.com ...
-  * User's cabinet. Basic management panel to manage a user's profile
-* Blogging System
-  * Articles, News, Recipes etc.
-  * SEO friendly markup
+  * Signup/Login via Social Networks: Facebook, Twitter, G+, Vk.com ...
+  * Management panel for a user's profile
+  * Blogging System (Articles, News, Recipes etc.)
   * Powerful commenting system
+  * SEO friendly markup
 
 ## Docs
 
