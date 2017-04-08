@@ -11,6 +11,8 @@ Hello World!
 
 Content is Everything!
 
+On this week I've done the following things:
+
 * Login via Social Networks was debugged. Works fine.
 * User can connect multiple Social Accounts to own Profile
 * I've described how to get OAuth tokens for some social networks. [New page](./SocialNetworksOAuth.md) was added in `docs` folder.
