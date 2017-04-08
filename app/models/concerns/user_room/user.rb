@@ -23,6 +23,8 @@ module UserRoom
       include ::Notifications::LocalizedErrors
 
       include ::UserRoom::UserAvatar
+      include ::UserRoom::UserContentProcessing
+
       include ::UserRoom::SocialNetworks::Login
       include ::UserRoom::SocialNetworks::Validations
 
