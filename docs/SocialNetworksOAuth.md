@@ -22,18 +22,18 @@
   * App Domains: http://theopencms.org
   * Website > Site URL: http://theopencms.org
 
-* Configurate Settings
+### Configurate Settings
 
-  ```yaml
-  oauth:
-    facebook:
-      tokens:
-        - 100011112222333
-        - 1aaaaabbbbbcccccddddddeeeeeeffff
-      options:
-        scope: 'public_profile,user_friends,email'
-        display: popup
-  ```
+```yaml
+oauth:
+  facebook:
+    tokens:
+      - 100011112222333
+      - 1aaaaabbbbbcccccddddddeeeeeeffff
+    options:
+      scope: 'public_profile,user_friends,email'
+      display: popup
+```
 
 ## Twitter
 
@@ -51,15 +51,60 @@
   * Consumer Key (API Key)
   * Consumer Secret (API Secret)
 
-* Configurate Settings
+### Configurate Settings
 
-  ```yaml
-  oauth:
-    twitter:
-      tokens:
-        - xxxYYYXXXZZZaaaBB
-        - xxxYYYXXXZZZaaaBBxxxYYYXXXZZZaaaBBxxxYYYXXXZZZaaaBB
-  ```
+```yaml
+oauth:
+  twitter:
+    tokens:
+      - xxxYYYXXXZZZaaaBB
+      - xxxYYYXXXZZZaaaBBxxxYYYXXXZZZaaaBBxxxYYYXXXZZZaaaBB
+```
+
+## Google Plus
+
+* https://developers.google.com
+* Google API Console: https://console.developers.google.com
+* Create Project
+
+  * Project name: example-com
+
+* Library > Google APIs
+
+  * Google Apps APIs > Contacts API > [Enable]
+  * Social APIs > Google+ API > [Enable]
+
+* Library > Credential
+
+  * OAuth consent screen
+
+    * Product name: example.com
+    * Homepage URL: http://example.com
+
+  * Create credentials > OAuth Client ID
+
+    * Web application
+    * Name: example.com
+    * Authorised JavaScript origins: http://example.com
+    * Authorised redirect URIs: http://example.com/auth/google_oauth2/callback
+
+* Client ID / Client Secret
+
+### Configurate Settings
+
+```yaml
+google_oauth2:
+  tokens:
+    - 012345678901-qwertyuiopasdfghjklzxcvbnm.apps.googleusercontent.com
+    - AABBCCDDDEE-AAAbbbCCC-AB1
+  options:
+    scope: 'email, profile, plus.me'
+    prompt: select_account
+    image_aspect_ratio: square
+    image_size: 50
+    display: popup
+    skip_jwt: true
+```
 
 ## Debug on local machine
 
