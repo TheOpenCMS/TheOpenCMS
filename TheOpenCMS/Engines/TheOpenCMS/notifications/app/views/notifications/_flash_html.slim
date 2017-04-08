@@ -1,0 +1,8 @@
+- flash_types.each do |level|
+  ruby:
+    msg = flash.try(:[], level.to_s) || flash.try(:[], level.to_sym)
+    css_klass = "notifications-#{ level }"
+
+  - if msg.present?
+    .notifications-block.js-notifications-block class=css_klass
+      .notifications-message = msg
