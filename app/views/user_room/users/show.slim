@@ -6,9 +6,9 @@
     .ptz_td.p20
       .mb20
         - if @user.avatar.present?
-          = image_tag @user.avatar.url(:v100x100), class: 'user_room_header-avatar_image'
+          = image_tag @user.avatar.url(:v100x100), class: 'user_room_list-avatar_image'
         - else
-          .user_room_header-avatar-placeholder.w100 ?
+          = default_user_avatar(@user, {class: 'user_room_list-avatar_image'})
 
       - if current_user && current_user == @user
         = link_to 'Edit', [:edit, @user], class: 'ptz_btn ptz_btn-size-s'
@@ -32,24 +32,30 @@
             = @user.login
 
         .fs15.mb15
-          span.b Created at
-          '
-          = I18n.l(@user.created_at, format: "%-d %B %Y")
+          span.b<> Created at:
+          = user_room_date_format(@user.created_at)
 
-        - if @user.vk_addr.present?
-          .fs15.mb15
-            span.b VK.com:
-            '
-            = link_to @user.vk_addr, @user.vk_addr
+        ruby:
+          soc_nets = {
+            gp: :Google,
+            fb: :Facebook,
+            vk: :Vkontakte,
+            tw: :Twitter,
+            ok: :Odnoklassniki
+          }
 
-        - if @user.tw_addr.present?
-          .fs15.mb15
-            span.b twitter.com:
-            '
-            = link_to @user.tw_addr, @user.tw_addr
+        ul.ul.mt20.mb20
+          - soc_nets.each_pair do |abbr, title|
+            ruby:
+              soc_addr = "#{abbr}_addr"
+              field_addr = @user.send(soc_addr)
 
-        - if @user.ok_addr.present?
-          .fs15.mb15
-            span.b odnoklassniki.ru:
-            '
-            = link_to @user.ok_addr, @user.ok_addr
+            - if field_addr.present?
+              li.fs15.mb5
+                = link_to title, field_addr, target: :_blank
+
+        - if @user.about.present?
+          .fs16.b.mb20 About
+
+          .fs16.mt20.mb20
+            = @user.about
