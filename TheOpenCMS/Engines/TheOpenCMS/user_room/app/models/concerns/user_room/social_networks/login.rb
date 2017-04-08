@@ -162,19 +162,14 @@ module UserRoom
 
           if _info.present?
             ::User.social_networks_hash.each_pair do |key, name|
-              # fb_addr
-              network_field = "#{ key }_addr"
-              # if self.respond_to?('fb_addr')
-              if self.respond_to?(network_field)
-                # if self.fb_addr.blank?
-                if self.send(network_field).blank?
-                  # social_network_url = info['urls']['Google']
-                  social_network_url = _info.try(:[], 'urls').try(:[], name.to_s)
-                  # self.fb_addr = social_network_url
-                  self.try "#{ network_field }=", social_network_url
-                end
-              else
-                logger.warn { "User: field `#{ key }_addr=` not found; Please, add this field to `User` model" }
+              network_field = "#{ key }_addr" # fb_addr
+
+              # if self.respond_to?('fb_addr') && self.fb_addr.blank?
+              if self.respond_to?(network_field) && self.send(network_field).blank?
+                # social_network_url = info['urls']['Google']
+                # self.fb_addr = social_network_url
+                social_network_url = _info.try(:[], 'urls').try(:[], name.to_s)
+                self.try "#{ network_field }=", social_network_url
               end
             end # each_pair
           end # if _info.present?

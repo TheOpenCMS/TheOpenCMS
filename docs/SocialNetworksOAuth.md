@@ -34,7 +34,8 @@ oauth:
       - 100011112222333
       - 1aaaaabbbbbcccccddddddeeeeeeffff
     options:
-      scope: 'public_profile,user_friends,email'
+      scope: 'email,public_profile,user_friends'
+      info_fields: 'name,email,cover,link'
       display: popup
 ```
 
