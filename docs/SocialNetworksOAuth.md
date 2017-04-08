@@ -93,17 +93,47 @@ oauth:
 #### Application Settings
 
 ```yaml
-google_oauth2:
-  tokens:
-    - 012345678901-qwertyuiopasdfghjklzxcvbnm.apps.googleusercontent.com
-    - AABBCCDDDEE-AAAbbbCCC-AB1
-  options:
-    scope: 'email, profile, plus.me'
-    prompt: select_account
-    image_aspect_ratio: square
-    image_size: 50
-    display: popup
-    skip_jwt: true
+oauth:
+  google_oauth2:
+    tokens:
+      - 012345678901-qwertyuiopasdfghjklzxcvbnm.apps.googleusercontent.com
+      - AABBCCDDDEE-AAAbbbCCC-AB1
+    options:
+      scope: 'email, profile, plus.me'
+      prompt: select_account
+      image_aspect_ratio: square
+      image_size: 50
+      display: popup
+      skip_jwt: true
+```
+
+## VK.com
+
+* http://vk.com/dev
+* https://vk.com/apps?act=manage
+* Create an Application
+
+  * Title: example.com
+  * Platform: Website
+  * Site address: http://example.com
+  * Base domain: example.com
+  * Confirmation code (via mobile devise)
+
+* Settings
+
+  * Application ID:	123456789
+  * Secure key: AAABbbCCCddDEeEFFF
+
+#### Application Settings
+
+```yaml
+oauth:
+  vkontakte:
+    tokens:
+      - 12345678
+      - AAABbbCCCddDEeEFFF
+    options:
+      display: popup
 ```
 
 ## Debug on local machine
