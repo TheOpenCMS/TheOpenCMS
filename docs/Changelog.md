@@ -5,6 +5,43 @@
 
 # TheOpenCMS weekly report
 
+## Week 5
+
+Hello World!
+
+Content is Everything!
+
+* Login via Social Networks was debugged. Works fine.
+* User can connect multiple Social Accounts to own Profile
+* I described how to get OAuth tokens for some social networks. New page added in `docs` folder.
+* Index/Show pages for `Users` controller were improved
+* Some improvements were done
+* File structure of the project was changed
+
+**Login via Social Networks**
+
+<img src="./imgs/week_5/pic_1.png" width="400">
+
+**Index/Show pages**
+
+<table>
+  <tr>
+    <td><img src="./imgs/week_5/pic_2.png" width="300"></td>
+    <td><img src="./imgs/week_5/pic_3.png" width="300"></td>
+  </tr>
+</table>
+
+**Plans for the next week**
+
+I'm going to setup a server and launch the project.
+
+* Feel free to give a star to [the project](https://github.com/TheOpenCMS/TheOpenCMS). Your support is very important
+* It's always possible to improve localization and improve current translations.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
 ## Week 4
 
 Hello World!
