@@ -77,7 +77,7 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
   end
 
   def action_after_failure_oauth_sign_up
-    render views_path('oauth_failure'), layout: 'user_room/layouts/base'
+    render views_path('oauth_failure'), layout: 'user_room/layouts/user_room_oauth'
   end
 
   def views_path view_path

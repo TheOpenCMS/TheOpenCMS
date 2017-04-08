@@ -35,7 +35,7 @@ en:
       upload_btn: Upload
 
     oauth:
-      failure: "OAuth failure. Can't user social network for login"
+      failure: "OAuth failure. Can't process social network data"
 
     confirmations:
       get_instructions: To get instructions to activate my Profile
