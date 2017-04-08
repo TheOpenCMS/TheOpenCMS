@@ -1,0 +1,14 @@
+h3.h2 = t('passwords.forgot_the_password', scope: :user_room)
+
+p = t('passwords.email_for_instructions', scope: :user_room)
+
+br
+br
+
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = render partial: 'notifications/form', locals: { object: resource, format: :json }
+  .mb20
+    = f.label :email
+    = f.email_field :email, autofocus: true, class: ''
+  .mb20
+    = f.submit t('passwords.get_instructions_btn', scope: :user_room), class: 'ptz_btn'

@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        login: Логин
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        confirmation_token: Ключ активации
+        email: Email
