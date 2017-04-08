@@ -2,7 +2,7 @@
 
 Engine-based **C**ontent **M**anagement **S**ystem for Ruby on Rails 5+
 
-[**All engines**](./TheOpenCMS/Engines) are being managed by git subtrees. You can work with engines like with a code of the only project and at the same time you can publish all engines separately.
+[**All engines**](./TheOpenCMS/Engines/TheOpenCMS) are being managed by git subtrees. You can work with engines like with a code of the only project and at the same time you can publish all engines separately.
 
 All engines of the project may be reused with other projects.
 
@@ -11,10 +11,14 @@ All engines of the project may be reused with other projects.
 This open CMS provides (will provide):
 
 * User Room
+
   * Authentication via Devise
   * Signup/Login via Social Networks: Facebook, Twitter, G+, Vk.com ...
   * Management panel for a user's profile
-  * Blogging System (Articles, News, Recipes etc.)
+
+* Blogging System
+
+  * Articles, News, Recipes etc.
   * Powerful commenting system
   * SEO friendly markup
 
