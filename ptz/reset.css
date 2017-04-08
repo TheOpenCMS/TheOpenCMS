@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+*:hover, *:active, *:focus {
+  outline: 0;
+}
+
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-size: 10px;
+  line-height: 125%;
+  background: white;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+li {
+  list-style-position: outside;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+table, tr, th, td {
+  border-collapse: collapse;
+  vertical-align: top;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+}
+
+input::-moz-placeholder {
+  color: #ccc !important;
+}
+
+input:-ms-input-placeholder {
+  color: #ccc !important;
+}
+
+input::-webkit-input-placeholder {
+  color: #ccc !important;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent !important;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}

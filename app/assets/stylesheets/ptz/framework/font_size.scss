@@ -1,0 +1,8 @@
+.fs0{ font-size: 0 !important }
+
+$i: 10;
+
+@while $i <= 30 {
+  .fs#{ $i }{ font-size: #{ $i }px !important }
+  $i: $i + 1;
+}
