@@ -1,1 +1,1 @@
-gem 'protozaur', path: '../../../SUBTREES/Protozaur/protozaur'
+gem 'protozaur', path: '../../Engines/Protozaur/protozaur'

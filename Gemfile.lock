@@ -72,53 +72,53 @@ GIT
       slim (~> 3.0)
 
 PATH
-  remote: SUBTREES/Protozaur/protozaur
+  remote: TheOpenCMS/Engines/Protozaur/protozaur
   specs:
     protozaur (1.1.0)
 
 PATH
-  remote: SUBTREES/TheOpenCMS/app_base
+  remote: TheOpenCMS/Engines/TheOpenCMS/app_base
   specs:
     app_base (0.1.0)
 
 PATH
-  remote: SUBTREES/TheOpenCMS/crop_tool
+  remote: TheOpenCMS/Engines/TheOpenCMS/crop_tool
   specs:
     crop_tool (0.4)
       image_tools
       protozaur
 
 PATH
-  remote: SUBTREES/TheOpenCMS/image_tools
+  remote: TheOpenCMS/Engines/TheOpenCMS/image_tools
   specs:
     image_tools (0.1)
       mini_magick
 
 PATH
-  remote: SUBTREES/TheOpenCMS/log_js
+  remote: TheOpenCMS/Engines/TheOpenCMS/log_js
   specs:
     log_js (0.5)
       coffee-rails
 
 PATH
-  remote: SUBTREES/TheOpenCMS/notifications
+  remote: TheOpenCMS/Engines/TheOpenCMS/notifications
   specs:
     the_notifications (0.6.0)
       slim
 
 PATH
-  remote: SUBTREES/TheOpenCMS/pagination
+  remote: TheOpenCMS/Engines/TheOpenCMS/pagination
   specs:
     the_pagination (1.0.0)
       kaminari
 
 PATH
-  remote: SUBTREES/TheOpenCMS/simple_sort
+  remote: TheOpenCMS/Engines/TheOpenCMS/simple_sort
   specs:
     simple_sort (0.1)
 
 PATH
-  remote: SUBTREES/TheOpenCMS/user_room
+  remote: TheOpenCMS/Engines/TheOpenCMS/user_room
   specs:
     user_room (0.1.0)
       config
@@ -142,7 +142,7 @@ PATH
       the_string_to_slug
 
 PATH
-  remote: SUBTREES/TheOpenCMS/voiceless
+  remote: TheOpenCMS/Engines/TheOpenCMS/voiceless
   specs:
     voiceless (1.1)
       colorize
