@@ -35,6 +35,8 @@ Content is Everything!
 
 I'm going to setup a server and launch the project.
 
+**How to help**
+
 * Feel free to give a star to [the project](https://github.com/TheOpenCMS/TheOpenCMS). Your support is very important
 * It's always possible to improve localization and improve current translations.
 
