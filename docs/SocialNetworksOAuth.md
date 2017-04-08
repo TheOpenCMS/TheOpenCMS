@@ -21,6 +21,9 @@
   * App Secret
   * App Domains: http://theopencms.org
   * Website > Site URL: http://theopencms.org
+  * Category: [Any]
+
+* App Review > Make public
 
 #### Application Settings
 
@@ -134,6 +137,36 @@ oauth:
       - AAABbbCCCddDEeEFFF
     options:
       display: popup
+```
+
+## Odnoklassniki.ru
+
+* https://ok.ru/devaccess
+* https://ok.ru/dk?st.cmd=appsInfoMyDevList
+* Add App
+
+  * Title: example.com
+  * Enable OAuth
+  * List of permitted redirect_uri:
+  http://example.com/auth/odnoklassniki/callback
+
+* Check inbox (usually SPAM folder)
+
+  * Application ID: 0123456789
+  * Public key: BABABABABABABABA
+  * Secret key:  1111111111AAAAAAAAABBBBBBB
+
+#### Application Settings
+
+```yaml
+oauth:
+  odnoklassniki:
+    tokens:
+      - 0123456789
+      - 1111111111AAAAAAAAABBBBBBB
+    options:
+      public_key: BABABABABABABABA
+      scope: 'VALUABLE_ACCESS'
 ```
 
 ## Debug on local machine
