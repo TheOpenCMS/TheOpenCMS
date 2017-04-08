@@ -1,0 +1,9 @@
+ruby:
+  format = (format || Notifications.config.default_type).to_s
+  flash_types = local_assigns[:flash_types] || Notifications.config.default_types
+
+- if flash.present?
+  - if format == 'html'
+    = render partial: 'notifications/flash_html', locals: { flash_types: flash_types }
+  - else
+    = render partial: 'notifications/flash_json', locals: { flash_types: flash_types }
