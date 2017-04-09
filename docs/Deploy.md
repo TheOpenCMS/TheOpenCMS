@@ -21,19 +21,19 @@ To provide a deployment process TheOpenCMS uses its own simple solution `DeployT
 
 1. Go to a folder with `DeployTool`
 
-  `cd TheOpenCMS/DeployTool/`
+    `cd TheOpenCMS/DeployTool/`
 
 2. Install gems
 
-  `bundle install`
+    `bundle install`
 
 3. Copy templates & config files from examples
 
-  ```
-  cp -Rv __TEMPLATES__/production.example __TEMPLATES__/production
+    ```
+    cp -Rv __TEMPLATES__/production.example __TEMPLATES__/production
 
-  cp -Rv __ENV__/production.example __ENV__/production
-  ```
+    cp -Rv __ENV__/production.example __ENV__/production
+    ```
 
 4. Carefully edit the following important configuration files
 
