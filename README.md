@@ -10,7 +10,7 @@ All engines of the project may be reused with other projects.
 
 This open CMS provides (will provide):
 
-* User Room
+* User' profile
 
   * Authentication via Devise
   * Signup/Login via Social Networks: Facebook, Twitter, G+, Vk.com ...
