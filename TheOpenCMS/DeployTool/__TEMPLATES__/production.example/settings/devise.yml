@@ -1,0 +1,4 @@
+devise:
+  mailer_sender: 'mail-sender@example.com'
+  parent_mailer: 'ActionMailer::Base'
+  mailer: 'DeviseMailer'
