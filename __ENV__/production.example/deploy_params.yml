@@ -26,6 +26,7 @@ link:
     - tmp
     - db/REDIS
     - db/SPHINX
+    - node_modules
     - public/uploads
     - public/assets
 
