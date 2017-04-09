@@ -1,5 +1,5 @@
 SUBTREES = %w[
-  Protozaur/protozaur
+  Engines/Protozaur/protozaur
   git@github.com:the-teacher/protozaur.git
   master
 ]
