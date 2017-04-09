@@ -22,3 +22,7 @@ redis:
 
 sidekiq:
   namespace: "<%= config.sidekiq.namespace %>"
+
+  ui:
+    user: "<%= config.sidekiq.ui.user %>"
+    password: "<%= config.sidekiq.ui.password %>"
