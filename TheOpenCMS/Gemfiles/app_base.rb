@@ -4,8 +4,8 @@ gem 'config', '1.3.0'
 gem 'sprockets',
   github: 'rails/sprockets' # 09f44cb
 
-gem 'webpacker',
-  github: 'rails/webpacker'
+# gem 'webpacker',
+#   github: 'rails/webpacker'
 
 gem 'jquery-rails',
   github: 'rails/jquery-rails',
