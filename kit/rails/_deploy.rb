@@ -28,6 +28,7 @@ class DeployKit
     git_submodules_install
 
     app_bundle
+    yarn_bundle
 
     app_database_create
     app_database_migrate
