@@ -1,0 +1,12 @@
+<%= kit.app_env %>:
+  host: <%= config.db.host %>
+  pool: <%= config.db.pool %>
+  adapter:  <%= config.db.adapter %>
+  encoding: <%= config.db.encoding %>
+
+  database: <%= config.db.database %>
+  username: <%= config.db.username %>
+  password: <%= config.db.password %>
+
+  # port: 5432
+  # socket: /tmp/socket.sock

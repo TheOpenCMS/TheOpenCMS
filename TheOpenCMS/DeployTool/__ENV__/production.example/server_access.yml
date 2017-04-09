@@ -1,0 +1,15 @@
+ssh:
+  user:
+    sudo:
+      domain:   example.com
+      login:    root
+      password: a0000000000000000000000000004
+      key:      ~/.ssh/id_rsa
+      key_pub:  ~/.ssh/id_rsa.pub
+
+    deployer:
+      domain:   example.com
+      login:    rails
+      password: a0000000000000000000000000005
+      key:      ~/.ssh/id_rsa
+      key_pub:  ~/.ssh/id_rsa.pub
