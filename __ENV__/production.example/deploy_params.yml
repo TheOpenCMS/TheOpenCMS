@@ -53,6 +53,10 @@ sidekiq:
   namespace:
     'example_com'
 
+  ui:
+    user: admin
+    password: qwerty12345
+
 sphinx:
   mysql_port: 9156
 
