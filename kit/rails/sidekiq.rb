@@ -27,6 +27,7 @@ class DeployKit
 
     until process_exists?(sidekiq_pid) do
       puts 'Trying to start Sidekiq'.red
+      remote_exec("rm #{ sidekiq_pid }") if remote_file_exists?(sidekiq_pid)
 
       remote_exec [
         "cd #{ current_path }",
