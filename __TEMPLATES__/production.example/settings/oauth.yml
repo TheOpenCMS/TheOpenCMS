@@ -1,0 +1,40 @@
+oauth:
+  vkontakte:
+    tokens:
+      - VKABC123
+      - VKXXXXXXXXXX
+    options:
+      display: popup
+
+  facebook:
+    tokens:
+      - FBABC123
+      - FBXXXXXXXXXX
+    options:
+      scope: 'public_profile,user_friends,email'
+      display: popup
+
+  twitter:
+    tokens:
+      - TWABC123
+      - TWXXXXXXXXXX
+
+  google_oauth2:
+    tokens:
+      - GPABC123
+      - GPXXXXXXXXXX
+    options:
+      scope: 'email, profile, plus.me'
+      prompt: select_account
+      image_aspect_ratio: square
+      image_size: 50
+      display: popup
+      skip_jwt: true
+
+  odnoklassniki:
+    tokens:
+      - OKABC123
+      - OKXXXXXXXXXX
+    options:
+      app_public: OKXXXXXXXXXX
+      scope: 'VALUABLE_ACCESS'
