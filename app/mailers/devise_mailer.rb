@@ -1,9 +1,22 @@
 class DeviseMailer < Devise::Mailer
-  include ::UserRoom::MailerSettingsConcern
+  def self.smtp?
+    ['smtp', 'letter_opener'].include?(::Settings.app.mailer.service)
+  end
 
+  if smtp?
+    _mailer = ::Settings.app.mailer
+
+    default bcc:  _mailer.admin_email
+    default from: _mailer.smtp.default.user_name
+
+    def self.smtp_settings
+      ::Settings.app.mailer.smtp.default.to_h
+    end
+  end
+
+  helper_method :_t_copy
   layout 'layouts/user_room'
   default template_path: ['devise_mailer']
-  helper_method :_t_copy
 
   ######################################################
   # Additional Mailers
