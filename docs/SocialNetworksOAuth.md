@@ -17,10 +17,11 @@
 
 * App > Settings > Basic
 
+  * Add Platform: WebSite
+    * Website > Site URL: http://example.com
   * App ID
   * App Secret
-  * App Domains: http://theopencms.org
-  * Website > Site URL: http://theopencms.org
+  * App Domains: http://example.com
   * Category: [Any]
 
 * App Review > Make public
@@ -181,7 +182,7 @@ sudo vi /etc/hosts
 Add an instruction at `/etc/hosts`
 
 ```
-127.0.0.1 theopencms.org
+127.0.0.1 example.com
 ```
 
 Run web server on port number 80
