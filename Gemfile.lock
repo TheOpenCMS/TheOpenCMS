@@ -266,6 +266,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mysql2 (0.4.4)
+    newrelic_rpm (4.1.0.333)
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
@@ -276,6 +277,7 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
+    oj (2.18.5)
     omniauth (1.6.1)
       hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
@@ -364,6 +366,8 @@ GEM
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     riddle (2.1.0)
+    rollbar (2.14.1)
+      multi_json
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.4.23)
@@ -447,6 +451,8 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   log_js!
   mysql2 (= 0.4.4)
+  newrelic_rpm (= 4.1.0.333)
+  oj (= 2.18.5)
   omniauth (= 1.6.1)
   omniauth-facebook (= 4.0.0)
   omniauth-google-oauth2 (= 0.4.1)
@@ -463,6 +469,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (= 5.1.0.rc1)
   redis-namespace (= 1.5.2)
+  rollbar (= 2.14.1)
   sass-rails!
   selenium-webdriver
   sidekiq (= 4.2.1)
