@@ -19,6 +19,10 @@ class DeployKit
     config.tools.new_relic
   end
 
+  def has_letsencript?
+    config.tools.letsencript
+  end
+
   def has_unicorn?
     config.tools.app_server.downcase == 'unicorn'
   end
