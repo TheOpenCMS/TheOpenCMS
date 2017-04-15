@@ -12,7 +12,7 @@ voiceless do
       email: {
         email_prefix: app_name,
         sender_address: %{"#{ sender_name }" <#{ sender_address }>},
-        exception_recipients: %w{ recipient_address }
+        exception_recipients: [recipient_address]
       }
     )
   end
