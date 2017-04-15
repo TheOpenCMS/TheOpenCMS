@@ -9,7 +9,7 @@ module UserRoom
     private
 
     def process_content(text, user)
-      text.squish.strip
+      text.to_s.squish.strip
     end
   end
 end
