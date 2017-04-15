@@ -1,0 +1,3 @@
+services:
+  rollbar:
+    token: a000000000000000000000001
