@@ -61,7 +61,7 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
     sign_in @oauth_user
     current_user.remember_me!
 
-    render views_path('close_popup_and_redirect_to_cabinet'), layout: false
+    render views_path('close_popup_and_redirect_to_profile'), layout: false
   end
 
   def action_after_sucesssful_oauth_sign_up
@@ -73,7 +73,7 @@ class DeviseControllers::OmniauthCallbacksController < Devise::OmniauthCallbacks
 
     ::UserRoomLogger.new_user_created(@oauth_user.id)
 
-    render views_path('close_popup_and_redirect_to_cabinet'), layout: false
+    render views_path('close_popup_and_redirect_to_profile'), layout: false
   end
 
   def action_after_failure_oauth_sign_up

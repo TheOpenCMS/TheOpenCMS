@@ -36,9 +36,8 @@ module UserRoom
       end
 
       # Personal
-      get  "cabinet"       => "users#cabinet",       as: :cabinet
+      get  "profile"       => "users#profile",       as: :profile
       post "autologin/:id" => 'users#autologin',     as: :autologin
-      get  "admin_cabinet" => "users#admin_cabinet", as: :admin_cabinet
 
       resources :users, only: %w[ index show edit update ] do
         patch  :change_email

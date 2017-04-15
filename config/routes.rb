@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/async/tasks'
   mount ActionCable.server => '/app-cable'
 
-  root to: 'users#cabinet'
+  root to: 'users#profile'
   voiceless { ::UserRoom::Routes.mixin(self) }
 end

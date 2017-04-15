@@ -5,7 +5,7 @@ class DeviseControllers::ConfirmationsController < Devise::ConfirmationsControll
 
   def after_confirmation_path_for(resource_name, resource)
     sign_in resource
-    cabinet_url
+    profile_path
   end
 
   # The path used after confirmation.
