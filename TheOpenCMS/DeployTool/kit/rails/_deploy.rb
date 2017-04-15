@@ -40,19 +40,18 @@ class DeployKit
     new_relic_config_link
 
     redis_start
-    sidekiq_restart
 
     ts_config
     ts_index
     ts_restart
-
     cron_restart
 
     app_server_restart
     nginx_restart
 
     release_cleanup
-
     letsencript_info
+
+    sidekiq_restart
   end
 end
