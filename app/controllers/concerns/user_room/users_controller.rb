@@ -31,14 +31,14 @@ module UserRoom
     ### Restricted actions
     ##########################################
 
-    def cabinet; end
+    def profile; end
 
     def edit; end
 
     def autologin
       user = ::User.where(login: params[:id]).first
       sign_in(user, bypass: true)
-      redirect_to cabinet_url
+      redirect_to profile_path
     end
 
     def update

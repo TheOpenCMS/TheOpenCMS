@@ -41,7 +41,7 @@ class DeviseControllers::SessionsController < Devise::SessionsController
     user = ::User.where(email: log_req.email).first
     sign_in user
 
-    next_page = callback_path.present? ? callback_path : cabinet_path
+    next_page = callback_path.present? ? callback_path : profile_path
     redirect_to next_page, notice: _t(:logined_in)
   end
 
@@ -68,6 +68,6 @@ class DeviseControllers::SessionsController < Devise::SessionsController
   end
 
   def after_sign_in_path_for(resource)
-    cabinet_path
+    profile_path
   end
 end

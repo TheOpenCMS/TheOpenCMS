@@ -47,7 +47,7 @@ class DeviseControllers::RegistrationsController < Devise::RegistrationsControll
 
     ::UserRoomLogger.new_user_created(user.id)
 
-    next_page = callback_path.present? ? callback_path : cabinet_path
+    next_page = callback_path.present? ? callback_path : profile_path
     redirect_to next_page, notice: _t(:signed_in)
   end
 
@@ -59,7 +59,7 @@ class DeviseControllers::RegistrationsController < Devise::RegistrationsControll
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    cabinet_path
+    profile_path
   end
 
   # The path used after sign up for inactive accounts.

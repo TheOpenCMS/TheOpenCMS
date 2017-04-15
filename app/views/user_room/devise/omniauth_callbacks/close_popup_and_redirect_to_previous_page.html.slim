@@ -2,7 +2,7 @@ ruby:
   redirect_path = if cookies[:previous_location].present?
     cookies[:previous_location]
   else
-    cabinet_path
+    profile_path
   end
 
   redirect_path = @callback_path ? @callback_path : redirect_path

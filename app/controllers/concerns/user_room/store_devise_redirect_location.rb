@@ -19,7 +19,7 @@ module UserRoom
         passwords:     %w[ new edit ],
         omniauth_callbacks: %[ vkontakte facebook twitter google_oauth2 odnoklassniki failure ],
 
-        users:   %w[ cabinet ],
+        users:   %w[ profile ],
         carts:   %w[ index ],
         orders:  %w[ index ]
       }.with_indifferent_access
