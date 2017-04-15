@@ -8,8 +8,11 @@ class AppBaseMailer < ActionMailer::Base
   if smtp?
     _mailer = ::Settings.app.mailer
 
-    default bcc:  _mailer.admin_email
-    default from: _mailer.smtp.default.user_name
+    sender = _mailer.smtp.default.user_name
+    admin_email = _mailer.admin_email
+
+    default bcc:  [sender, admin_email]
+    default from: sender
 
     def self.smtp_settings
       ::Settings.app.mailer.smtp.default.to_h
