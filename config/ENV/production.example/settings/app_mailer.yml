@@ -25,3 +25,9 @@ app:
     mailcatcher:
       address: 'localhost'
       port: 1025
+
+  exception_notification:
+    app_name: example.com
+    sender_name: '[Example.com Errors]'
+    sender_address: no-reply@example.com
+    recipient_address: errors@example.com
