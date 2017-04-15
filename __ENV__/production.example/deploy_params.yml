@@ -19,6 +19,7 @@ copy_app:
     - app_mailer.yml
     - oauth.yml
     - devise.yml
+    - services.yml
 
 link:
   shared:
