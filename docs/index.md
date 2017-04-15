@@ -1,19 +1,21 @@
 ## How to:
 
-* Install and Setup for Development
-* Setup a server
+* Preparations
+  * Create Email accounts
+  * Create Social Network accounts
+  * Get Social Network OAuth Tokens
+  * Get Rollbar token
+  * Get NewRelic token
+* Setup the App for Development
+* Setup a production server
   * Digital Ocean
     * Create a server
     * Install Software
     * Check software
-* Deployment Preparations
-  * Email account
-  * Social Networks OAuth Tokens
-  * Rollbar token
-  * NewRelic token
 * Deploy
-  * DeployTool Configuration
-  * Deploy
+  * DeployTool
+    * Configuration
+    * Deploy
   * Let's Encrypt
 * Contribution
   * Fork
