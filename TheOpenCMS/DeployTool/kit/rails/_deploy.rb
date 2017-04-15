@@ -52,5 +52,7 @@ class DeployKit
     nginx_restart
 
     release_cleanup
+
+    letsencript_info
   end
 end

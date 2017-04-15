@@ -39,6 +39,7 @@ tools:
   os: debian
   app_server: puma
   assets_precompile: true
+  letsencript: false
   binstubs: true
   new_relic: false
   whenever: true
