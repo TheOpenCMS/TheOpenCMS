@@ -13,6 +13,12 @@ html.w100p.h100p
     = csrf_meta_tags
 
   body.w100p.h100p.ffa
+    .star_me_on_github
+      = link_to 'https://github.com/TheOpenCMS/TheOpenCMS', target: :_blank do
+        i.fa.fa-star>
+        | me on
+        i.fa.fa-github<
+
     .ptz_table.h100p.w100p
       .ptz_row
         = render template: 'app_theme/layouts/items/header'
