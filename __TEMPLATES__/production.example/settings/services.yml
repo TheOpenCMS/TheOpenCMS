@@ -1,3 +1,5 @@
 services:
   rollbar:
     token: a000000000000000000000001
+  google_analytics:
+    tracking_code: 'UA-01234567-8'
