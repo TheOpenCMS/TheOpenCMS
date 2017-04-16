@@ -1,0 +1,32 @@
+- content_for :base_assets do
+  = stylesheet_link_tag    'app_theme/frontend', media: :all, 'data-turbolinks-track' => true
+  = javascript_include_tag 'app_theme/frontend', 'data-turbolinks-track' => true
+
+doctype html
+
+html.w100p.h100p
+  head class=('log-js' if Rails.env.development?)
+    meta charset='utf-8'
+    title TheOpenCMS.org
+
+    / = action_cable_meta_tag
+    = csrf_meta_tags
+
+  body.w100p.h100p.ffa
+    .ptz_table.h100p.w100p
+      .ptz_row
+        = render template: 'app_theme/layouts/items/header'
+      .ptz_row.h100p
+        .w80p.ma
+          .mt20.mb20
+            = render partial: 'notifications/flash'
+            = yield
+      .ptz_row
+        = render template: 'app_theme/layouts/items/footer'
+
+  = yield(:base_assets)
+
+  link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
+
+  = render template: 'analytics/google.analytics', locals: { tracking_id: Settings.services.google_analytics.tracking_id }
+  = render template: 'analytics/yandex.metrika',   locals: { tracking_id: Settings.services.yandex_metrika.tracking_id }
