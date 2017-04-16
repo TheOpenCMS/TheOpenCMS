@@ -19,23 +19,23 @@ This project based on the project `Deploy.RB` https://deployrb.github.io
 
 ### Structure of a configuration system
 
-[Project's configuration_system](./Configuration_system.md)
+[Project's configuration_system](./Configuration_System.md)
 
 ### Git Subtree Notes
 
-[Git Subtree](./subtrees.md)
+[Git Subtree](./Subtrees.md)
 
 ### CSS / BEM code style
 
-[CSS Code style](./CSS_Code_style.md)
+[CSS Code style](./CSS_Code_Style.md)
 
 ### JavaScript / CoffeeScript code style
 
-[JS Code style](./JS_Code_style.md)
+[JS Code style](./JS_Code_Style.md)
 
 ### How to get OAuth tokens for Social Network Login
 
-[Get OAuth tokens](./SocialNetworksOAuth.md)
+[Get OAuth tokens](./Social_Networks_OAuth.md)
 
 ### Installation
 
