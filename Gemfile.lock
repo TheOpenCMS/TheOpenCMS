@@ -63,6 +63,11 @@ GIT
       slim (~> 3.0)
 
 PATH
+  remote: TheOpenCMS/Engines/Addons/theopencms.org
+  specs:
+    app_theme (0.1)
+
+PATH
   remote: TheOpenCMS/Engines/Protozaur/protozaur
   specs:
     protozaur (1.1.0)
@@ -436,6 +441,7 @@ PLATFORMS
 
 DEPENDENCIES
   app_base!
+  app_theme!
   byebug
   capybara (~> 2.7.0)
   coffee-rails (~> 4.2)
