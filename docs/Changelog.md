@@ -5,6 +5,30 @@
 
 # TheOpenCMS weekly report
 
+## Week 6
+
+Hello World!
+
+Content is Everything!
+
+* I reworked some parts of the code and changed a structure of the project.
+* I added a simple DeployTool to the Project.
+* I've finished all preparations and launched the website for the project. <b><a href='https://theopencms.org'>TheOpenCMS.org</a></b> is available!
+
+**Plans for the next week**
+
+I'm going to improve an existing code base and test everything what I have for the current moment. When everything is done I start development of a Content Management functionality.
+
+**How to help**
+
+* Now it's possible to check how the website <a href='https://theopencms.org'>TheOpenCMS.org</a> works and create an issue on GitHub if any bug is found.
+* Feel free to give a star to [the project](https://github.com/TheOpenCMS/TheOpenCMS).
+* It's always possible to improve localization and current translations.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
 ## Week 5
 
 Hello World!
