@@ -34,4 +34,8 @@ SUBTREES = %w[
   Engines/TheOpenCMS/app_base
   git@github.com:TheOpenCMS/app_base.git
   master
+
+  Engines/Addons/theopencms.org
+  git@github.com:TheOpenCMS/theopencms.org.git
+  master
 ]
