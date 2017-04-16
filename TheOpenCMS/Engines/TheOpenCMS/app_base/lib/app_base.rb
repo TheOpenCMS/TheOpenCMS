@@ -10,4 +10,16 @@ module AppBase
       end
     end # initializer
   end
+
+  # ::AppBase.rails_app_config!
+  def self.rails_app_config!
+    app = ::Rails.application
+
+    Dir["#{ app.config.root }/config/ENV/#{ ::Rails.env }/settings/*.yml"].each do |settings_file|
+      ::Settings.add_source!(settings_file)
+      puts "Settings: #{settings_file}".yellow
+    end
+
+    ::Settings.reload!
+  end
 end

@@ -12,6 +12,6 @@ module Rails51
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    require_relative 'configs'
+    ::AppBase.rails_app_config!
   end
 end
