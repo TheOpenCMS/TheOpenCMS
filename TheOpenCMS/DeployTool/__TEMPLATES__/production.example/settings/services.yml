@@ -3,3 +3,5 @@ services:
     token: a000000000000000000000001
   google_analytics:
     tracking_id: 'UA-01234567-8'
+  yandex_metrika:
+    tracking_id: 01234567
