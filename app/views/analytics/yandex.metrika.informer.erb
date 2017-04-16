@@ -1,0 +1,7 @@
+<% if tracking_id.present? %>
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=<%= tracking_id %>&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/<%= tracking_id %>/3_0_FFFFFFFF_FFFFFFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Yandex.Metrica" title="Yandex.Metrica: data for today (page views, visits and unique users)" class="ym-advanced-informer" data-cid="<%= tracking_id %>" data-lang="en" /></a>
+<!-- /Yandex.Metrika informer -->
+<% end %>
