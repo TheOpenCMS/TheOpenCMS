@@ -1,2 +1,2 @@
 $(document).on 'ready turbolinks:load',  ->
-  log 'AppTheme'
+  do Notifications.init

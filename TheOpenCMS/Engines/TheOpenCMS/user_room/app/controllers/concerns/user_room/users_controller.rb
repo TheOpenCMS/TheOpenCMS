@@ -6,13 +6,12 @@ module UserRoom
     included do
       layout -> { layout_template }
       include ::UserRoom::UserAvatarActions
-      skip_before_action :authenticate_user!, only: %w[show index]
 
-      before_action :set_user, only: %w[
-        show edit update
-        change_password change_email
-      ] + ::UserRoom::UserAvatarActions::ACTIONS_NAMES
-    end # included
+      skip_before_action :authenticate_user!, only: %w[index show]
+      skip_before_action :set_resource!,      only: %w[index profile]
+      skip_before_action :authorize_owner!,   only: %w[index show profile]
+      skip_before_action :authorize_admin!,   only: %w[index show edit update profile change_password change_email]
+    end
 
     ##########################################
     ### Public actions
@@ -23,23 +22,13 @@ module UserRoom
       @users_count = ::User.count
     end
 
-    # def new; @user = ::User.new ; end
-
     def show; end
 
     ##########################################
     ### Restricted actions
     ##########################################
 
-    def profile; end
-
     def edit; end
-
-    def autologin
-      user = ::User.where(login: params[:id]).first
-      sign_in(user, bypass: true)
-      redirect_to profile_path
-    end
 
     def update
       @user.assign_attributes(user_params)
@@ -52,6 +41,10 @@ module UserRoom
         @user.reload
         render 'users/edit'
       end
+    end
+
+    def profile
+      @user = current_user
     end
 
     def change_password
@@ -69,8 +62,14 @@ module UserRoom
     end
 
     ##########################################
-    ### Private methods
+    ### Admin Actions
     ##########################################
+
+    def autologin
+      user = ::User.where(login: params[:id]).first
+      sign_in(user, bypass: true)
+      redirect_to profile_path
+    end
 
     private
 
@@ -80,13 +79,9 @@ module UserRoom
       'user_room_backend'
     end
 
-    def set_user
+    def set_resource!
+      user_id = params[:id] || params[:user_id]
       @user = ::User.where(login: user_id).first
-      @owner_check_object = @user
-    end
-
-    def user_id
-      params[:id] || params[:user_id]
     end
 
     def user_params

@@ -2,8 +2,6 @@
 module UserRoom
   module UserAvatarActions
 
-    # ::UserRoom::UserAvatarActions::ACTIONS_NAMES
-
     ACTIONS_NAMES = %w[
       avatar_crop_1x1
       avatar_rotate_left
