@@ -43,7 +43,7 @@ module UserRoom
 
     def update
       @user.assign_attributes(user_params)
-      @user.content_processing_for(current_user)
+      @user.content_processing!(current_user)
 
       if @user.save
         sign_in(@user, bypass: true) if user_params[:password].present?

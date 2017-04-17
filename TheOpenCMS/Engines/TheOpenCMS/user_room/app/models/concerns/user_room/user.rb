@@ -67,7 +67,7 @@ module UserRoom
           errors.add(:login, "has to have a one of more letters")
         end
 
-        if self.login =~ /^id/mix
+        if self.login =~ /\Aid/mix
           if self.login.downcase != "id#{self.id}"
             errors.add(:login, "This Login could not be used")
           end

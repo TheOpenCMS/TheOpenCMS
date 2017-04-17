@@ -1,8 +1,7 @@
 module UserRoom
   module UserContentProcessing
-    def content_processing_for(user)
-      return unless user
-
+    def content_processing!(user = self)
+      self.login = login.to_s.to_slug_param
       self.about = process_content(raw_about, user)
     end
 
