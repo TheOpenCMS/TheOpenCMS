@@ -21,7 +21,7 @@ Well, really I've totally forgot about any restrictions and I had to fix it ASAP
 
 Anyway, great thanks to [@karthickrajak](https://github.com/karthickrajak) and to people who signed up to check how a user's profile functionality works.
 
-Since this week I have a short vacation and I'm not sure I'll have enough time to implement of improve something. I'm just going to have a good rest.
+Since this week I have a short vacation and I'm not sure I'll have enough time to implement or improve something during the next week. I'm just going to have a good rest.
 
 Have a good week! See you soon.
 
