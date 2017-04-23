@@ -15,9 +15,11 @@ Last week I've published the first early release `v0.1` of TheOpenCMS, also I've
 
 As I wrote it in the previous report just a simple user's profile functionality was ready on the last week.
 
-Right after the release I've got a really helpful report from [@karthickrajak](https://github.com/karthickrajak) about an issue with access permissions. Really, I've totally forgot about any restrictions and I had to fix it ASAP. So, if you think I used something like `cancan` or `cancancan` then you are wrong. I'm going to implement authorization system from the scratch. Actually I've already finished a first simple implementation. I have some experience with authorization systems and I'm pretty sure it I can implement this kind of functionality myself.
+Right after the release I've got a really helpful report from [@karthickrajak](https://github.com/karthickrajak) about an issue with access permissions.
 
-The only thing I have problem with, I'm not sure about a name of this authorization solution. Maybe `authorize_it!`?
+Well, really I've totally forgot about any restrictions and I had to fix it ASAP. So, if you think I used something like `cancan` or `cancancan` then you are wrong. I'm going to implement authorization system from the scratch. Actually I've already finished a first simple implementation. I have some experience with authorization systems and I'm pretty sure it I can implement this kind of functionality myself.
+
+Anyway, great thanks to [@karthickrajak](https://github.com/karthickrajak) and to people who signed up to check how a user's profile functionality works.
 
 Since this week I have a short vacation and I'm not sure I'll have enough time to implement of improve something. I'm just going to have a good rest.
 
