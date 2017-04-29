@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include ::AutorizeHelpers
+  include ::AutorizeIt::Controller
   protect_from_forgery with: :exception
 
   before_action -> { @user = current_user }
