@@ -78,6 +78,11 @@ PATH
     app_base (0.1.0)
 
 PATH
+  remote: TheOpenCMS/Engines/TheOpenCMS/authorize_it
+  specs:
+    authorize_it (0.1.0)
+
+PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/crop_tool
   specs:
     crop_tool (0.4)
@@ -442,6 +447,7 @@ PLATFORMS
 DEPENDENCIES
   app_base!
   app_theme!
+  authorize_it!
   byebug
   capybara (~> 2.7.0)
   coffee-rails (~> 4.2)
