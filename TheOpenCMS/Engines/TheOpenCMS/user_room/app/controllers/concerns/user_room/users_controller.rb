@@ -8,9 +8,9 @@ module UserRoom
       include ::UserRoom::UserAvatarActions
 
       skip_before_action :authenticate_user!, only: %w[index show]
+      skip_before_action :authorize_action!,  only: %w[index show edit update profile change_password change_email]
       skip_before_action :set_resource!,      only: %w[index profile]
       skip_before_action :authorize_owner!,   only: %w[index show profile]
-      skip_before_action :authorize_admin!,   only: %w[index show edit update profile change_password change_email]
     end
 
     ##########################################

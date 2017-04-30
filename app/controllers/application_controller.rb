@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action -> { @user = current_user }
   before_action :authenticate_user!, unless: :devise_controller?
+  before_action :authorize_action!,  unless: :devise_controller?
   before_action :set_resource!,      unless: :devise_controller?
   before_action :authorize_owner!,   unless: :devise_controller?
-  before_action :authorize_admin!,   unless: :devise_controller?
 end
