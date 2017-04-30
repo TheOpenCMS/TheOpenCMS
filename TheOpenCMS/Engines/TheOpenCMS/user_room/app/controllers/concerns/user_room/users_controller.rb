@@ -32,11 +32,11 @@ module UserRoom
     def edit; end
 
     def update
-      @user.assign_attributes(user_params)
+      @user.assign_attributes(permitted_params)
       @user.content_processing!(current_user)
 
       if @user.save
-        sign_in(@user, bypass: true) if user_params[:password].present?
+        sign_in(@user, bypass: true) if permitted_params[:password].present?
         redirect_to edit_user_path(@user), notice: _t(:changes_saved)
       else
         @user.reload
@@ -54,7 +54,7 @@ module UserRoom
     end
 
     def change_email
-      if @user.update(user_params)
+      if @user.update(permitted_params)
         redirect_to url_for([:edit, @user]), notice: _t(:email_instructions_sent)
       else
         @user.reload
@@ -83,24 +83,6 @@ module UserRoom
       public_actions = %w[show index]
       return 'user_room_frontend' if public_actions.include?(action_name)
       'user_room_backend'
-    end
-
-    def user_params
-      _params = params.require(:user).permit(
-        :avatar, :raw_about,
-        :login, :username, :email,
-        :password, :password_confirmation,
-
-        :vk_addr, :ok_addr, :tw_addr,
-        :fb_addr, :ig_addr, :pt_addr,
-        :gp_addr
-      )
-
-      if _params[:password].blank? && _params[:password_confirmation].blank?
-        _params = _params.except(:password, :password_confirmation)
-      end
-
-      _params
     end
 
     def _t(name)
