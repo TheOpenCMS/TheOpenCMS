@@ -5,7 +5,7 @@ module AuthorizeIt::Controller
     private
 
     def authorize_action!
-      authorization_fail
+      authorization_exception!
     end
 
     def authorize_owner!
@@ -15,7 +15,7 @@ module AuthorizeIt::Controller
 
       return true if authorize_user == authorize_resource
 
-      authorization_fail
+      authorization_exception!
     end
 
     def authorize_user
@@ -26,9 +26,8 @@ module AuthorizeIt::Controller
       root_path
     end
 
-    def authorization_fail
-      redirect_back fallback_location: authorize_fallback_location,
-        flash: {error: t('authorize_it.access_denied')}
+    def authorization_exception!
+      raise ::AuthorizeIt::NotAuthorized
     end
 
     def authorize_resource
