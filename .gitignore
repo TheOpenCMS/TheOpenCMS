@@ -15,7 +15,7 @@
 
 # Ignore database config
 /config/database.yml
-/public/release.info.txt
+/public/release.txt
 
 # Ignore all logfiles and tempfiles.
 /log/*

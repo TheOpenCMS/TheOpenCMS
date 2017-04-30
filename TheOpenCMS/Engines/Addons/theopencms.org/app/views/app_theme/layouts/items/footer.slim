@@ -1,4 +1,8 @@
-.app_theme_layout-footer
+.app_theme_layout-footer.posrel
+  - if File.exist?(file = "#{ Rails.root}/public/release.txt")
+    .app_theme_layout-footer-release_info.posabs.p10.fs11
+      = File.open(file).read
+
   .tac.fs18.b.pt40
     | TheOpenCMS
     ',
