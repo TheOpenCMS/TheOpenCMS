@@ -7,11 +7,11 @@ module UserRoom
       layout -> { layout_template }
       include ::UserRoom::UserAvatarActions
 
-      skip_before_action :authenticate_user!, only: %w[index show]
-      skip_before_action :authorize_action!,  only: %w[index show edit update profile change_password change_email]
-      skip_before_action :set_resource!,      only: %w[index profile]
-      skip_before_action :authorize_owner!,   only: %w[index show profile]
-      skip_before_action :authorize_admin!,   only: %w[index show edit update profile change_password change_email]
+      skip_before_action :authenticate_user!, if: :skip_authenticate_user?
+      skip_before_action :authorize_action!,  if: :skip_authorize_action?
+      skip_before_action :set_resource!,      if: :skip_set_resource?
+      skip_before_action :authorize_owner!,   if: :skip_authorize_owner?
+      skip_before_action :authorize_admin!,   if: :skip_authorize_admin?
     end
 
     ##########################################
@@ -74,15 +74,15 @@ module UserRoom
 
     private
 
+    def set_resource!
+      user_id = params[:id] || params[:user_id]
+      @user = ::User.where(login: user_id).first
+    end
+
     def layout_template
       public_actions = %w[show index]
       return 'user_room_frontend' if public_actions.include?(action_name)
       'user_room_backend'
-    end
-
-    def set_resource!
-      user_id = params[:id] || params[:user_id]
-      @user = ::User.where(login: user_id).first
     end
 
     def user_params
@@ -106,5 +106,36 @@ module UserRoom
     def _t(name)
       t("user_room.controllers.users.#{name}")
     end
+
+    protected
+
+    def skip_authenticate_user?
+      %w[index show].include?(action_name)
+    end
+
+    def skip_authorize_action?
+      skipped_actions =
+        %w[index show edit update profile change_password change_email] +
+        ::UserRoom::UserAvatarActions::AVATAR_ACTIONS_NAMES
+
+      skipped_actions.include?(action_name)
+    end
+
+    def skip_set_resource?
+      %w[index profile].include?(action_name)
+    end
+
+    def skip_authorize_owner?
+      %w[index show profile].include?(action_name)
+    end
+
+    def skip_authorize_admin?
+      skipped_actions =
+        %w[index show edit update profile change_password change_email] +
+        ::UserRoom::UserAvatarActions::AVATAR_ACTIONS_NAMES
+
+      skipped_actions.include?(action_name)
+    end
+
   end # UsersController
 end # UserRoom

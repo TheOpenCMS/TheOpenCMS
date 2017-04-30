@@ -2,7 +2,7 @@
 module UserRoom
   module UserAvatarActions
 
-    ACTIONS_NAMES = %w[
+    AVATAR_ACTIONS_NAMES = %w[
       avatar_crop_1x1
       avatar_rotate_left
       avatar_rotate_right
