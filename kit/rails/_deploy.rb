@@ -53,5 +53,6 @@ class DeployKit
     letsencript_info
 
     sidekiq_restart
+    app_release_info
   end
 end

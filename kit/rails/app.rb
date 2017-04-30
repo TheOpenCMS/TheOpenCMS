@@ -88,4 +88,24 @@ class DeployKit
     unicorn_status
     puma_status
   end
+
+  def app_release_info
+    git_branch_name = "git rev-parse --abbrev-ref HEAD"
+    git_commit_name = "git log --oneline | sed -n '1p'"
+    time_stamp = "date"
+
+    release_info_command = <<-EOS
+      echo "
+        [$(#{ git_branch_name })]
+        [$(#{ git_commit_name })]
+        [$(#{ time_stamp })]
+      " > public/release.txt
+    EOS
+
+    remote_exec [
+      "cd #{ current_path }",
+      release_info_command,
+      'cat public/release.txt'
+    ]
+  end
 end
