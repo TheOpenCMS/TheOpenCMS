@@ -10,3 +10,4 @@
 
 #= require crop_tool/crop_tool
 #= require jquery-jcrop/js/jquery.Jcrop
+#= require app_base/frontend/select_locale
