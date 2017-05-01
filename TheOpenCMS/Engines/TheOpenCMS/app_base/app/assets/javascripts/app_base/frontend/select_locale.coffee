@@ -1,6 +1,6 @@
 @SelectLocale = do ->
   init: ->
-    @init ||= do ->
+    @inited ||= do ->
       $(document).on 'change', '.js-select_locale', (e) ->
         select = $(e.currentTarget)
         locale = select.val()
