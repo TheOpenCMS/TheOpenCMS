@@ -40,7 +40,6 @@ module UserRoom
       post "autologin/:id" => 'users#autologin',     as: :autologin
 
       resources :users, only: %w[ index show edit update ] do
-        patch  :change_email
         patch  :change_password
 
         member do

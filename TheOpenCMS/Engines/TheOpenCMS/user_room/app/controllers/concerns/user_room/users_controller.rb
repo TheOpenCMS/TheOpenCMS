@@ -53,15 +53,6 @@ module UserRoom
       redirect_to url_for([:edit, @user]), notice: _t(:password_instructions_sent)
     end
 
-    def change_email
-      if @user.update(permitted_params)
-        redirect_to url_for([:edit, @user]), notice: _t(:email_instructions_sent)
-      else
-        @user.reload
-        render 'users/edit'
-      end
-    end
-
     ##########################################
     ### Admin Actions
     ##########################################
@@ -97,7 +88,7 @@ module UserRoom
 
     def skip_authorize_action?
       skipped_actions =
-        %w[index show edit update profile change_password change_email] +
+        %w[index show edit update profile change_password] +
         ::UserRoom::UserAvatarActions::AVATAR_ACTIONS_NAMES
 
       skipped_actions.include?(action_name)
@@ -113,7 +104,7 @@ module UserRoom
 
     def skip_authorize_admin?
       skipped_actions =
-        %w[index show edit update profile change_password change_email] +
+        %w[index show edit update profile change_password] +
         ::UserRoom::UserAvatarActions::AVATAR_ACTIONS_NAMES
 
       skipped_actions.include?(action_name)

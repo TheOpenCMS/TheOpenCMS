@@ -1,9 +1,11 @@
-class UsersController::UpdateAction < UserRoomParametersPermits
+class UsersController::UpdateActionPermits < UserRoomParamsPermits
   def permitted_params
     params = @params.require(:user).permit(
       :avatar, :raw_about,
       :login, :username, :email,
+
       :password, :password_confirmation,
+
       :vk_addr, :ok_addr, :tw_addr,
       :fb_addr, :ig_addr, :pt_addr,
       :gp_addr
