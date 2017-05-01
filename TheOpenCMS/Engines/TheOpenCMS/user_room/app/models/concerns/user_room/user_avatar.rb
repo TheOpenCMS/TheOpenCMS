@@ -48,12 +48,7 @@ module UserRoom
         image
       end
 
-      ##########################################
-      # Update timestamp to avoid caching
-      ##########################################
-      avatar.instance.touch
-      avatar.instance.reload
-
+      avatar_update_timestamp!
       avatar.url(:v500x500)
     end
 
@@ -67,6 +62,8 @@ module UserRoom
           rotate_left image
         end
       end
+
+      avatar_update_timestamp!
     end
 
     def avatar_rotate_right
@@ -79,6 +76,9 @@ module UserRoom
           rotate_right image
         end
       end
+
+      avatar.instance.touch(:avatar_updated_at)
+      avatar.instance.reload
     end
 
     def avatar_build_variants
@@ -122,6 +122,8 @@ module UserRoom
           image = to_square image, 50
           image
         end
+
+        avatar_update_timestamp!
       end
     end
 
@@ -131,6 +133,8 @@ module UserRoom
       save!
     end
 
+    private
+
     def all_image_variants
       [
         avatar.path(:v500x500),
@@ -139,5 +143,8 @@ module UserRoom
       ]
     end
 
+    def avatar_update_timestamp!
+      avatar.instance.touch(:avatar_updated_at)
+    end
   end # UserAvatar
 end # UserRoom
