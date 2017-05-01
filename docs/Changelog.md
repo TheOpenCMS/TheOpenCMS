@@ -5,6 +5,30 @@
 
 # TheOpenCMS weekly report
 
+## Week 8
+
+Hello World!
+
+Content is Everything!
+
+Almost all week I spent on vacation in Istanbul. It was a great time. Really nice city. Really great culture!
+
+Anyway I found some time during my flight to home to improve my prject.
+
+First of all I'm glad to introduce a new authorization solution for TheOpenCMS! With the new gem <a href='https://github.com/TheOpenCMS/authorize_it'>AuthorizeIt</a> I provided a common API for authorization actions and to extract `Strong parameters` into separated classes for an each action.
+
+I'm absolutely sure Rails team does filtering of parameters with not a best way. Rails controllers have to know noting about how to filter incoming parameters from users. That is why since now all my engines will have a special folder `app/permissions` to provide authorization staff and filtering of parameters.
+
+Also I've updated the Index page of the project. Now you can see a small notification block at the bottom of the Index page. This block shows a data about recent deployed code on the production server.
+
+**Plans for the next week**
+
+Next week I'm going to spend on bug fixing and some refactoring of the code.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
 ## Week 7
 
 Hello World!
