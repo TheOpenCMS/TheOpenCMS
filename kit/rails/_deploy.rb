@@ -46,13 +46,12 @@ class DeployKit
     ts_restart
     cron_restart
 
+    app_release_info
     app_server_restart
     nginx_restart
 
     release_cleanup
     letsencript_info
-
     sidekiq_restart
-    app_release_info
   end
 end
