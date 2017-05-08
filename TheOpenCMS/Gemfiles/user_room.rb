@@ -1,4 +1,6 @@
-gem 'devise', '4.2.1'
+gem 'devise', '4.2.1',
+  github: 'plataformatec/devise',
+  branch: 'a62faa2'
 
 gem 'omniauth',        '1.6.1'
 gem 'omniauth-oauth',  '1.1.0'
