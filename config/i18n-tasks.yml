@@ -19,12 +19,10 @@ data:
     # - config/locales/%{locale}.yml
     ## More files:
     # - config/locales/**/*.%{locale}.yml
-    - TheOpenCMS/Engines/TheOpenCMS/user_room/config/locales/*.%{locale}.yml
-    - TheOpenCMS/Engines/TheOpenCMS/pagination/config/locales/*.%{locale}.yml
-    - TheOpenCMS/Engines/TheOpenCMS/notifications/config/locales/*.%{locale}.yml
-    - TheOpenCMS/Engines/TheOpenCMS/autorize_it/config/locales/*.%{locale}.yml
-    ## Another gem (replace %#= with %=):
-    # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
+    - TheOpenCMS/Engines/TheOpenCMS/user_room/config/locales/*.yml
+    - TheOpenCMS/Engines/TheOpenCMS/pagination/config/locales/*.yml
+    - TheOpenCMS/Engines/TheOpenCMS/notifications/config/locales/*.yml
+    - TheOpenCMS/Engines/TheOpenCMS/autorize_it/config/locales/*.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -62,11 +60,13 @@ search:
 
   ## Root directories for relative keys resolution.
   relative_roots:
+    - app/models
+    - app/views
     - app/controllers
+
     - app/helpers
     - app/mailers
     - app/presenters
-    - app/views
 
   ## Files or `File.fnmatch` patterns to exclude from search. Some files are always excluded regardless of this setting:
   ##   %w(*.jpg *.png *.gif *.svg *.ico *.eot *.otf *.ttf *.woff *.woff2 *.pdf *.css *.sass *.scss *.less *.yml *.json)
@@ -96,13 +96,15 @@ search:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
 # - '{devise,simple_form}.*'
 
-## Consider these keys used:
-# ignore_unused:
-# - 'activerecord.attributes.*'
-# - '{devise,kaminari,will_paginate}.*'
-# - 'simple_form.{yes,no}'
-# - 'simple_form.{placeholders,hints,labels}.*'
-# - 'simple_form.{error_notification,required}.:'
+# Consider these keys used:
+ignore_unused:
+  - 'user_room.controllers.*'
+  - 'devise.*'
+  
+  # - '{devise,kaminari,will_paginate}.*'
+  # - 'simple_form.{yes,no}'
+  # - 'simple_form.{placeholders,hints,labels}.*'
+  # - 'simple_form.{error_notification,required}.:'
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:
