@@ -4,6 +4,8 @@ gem 'config', '1.3.0'
 gem 'sprockets',
   github: 'rails/sprockets' # 09f44cb
 
+gem 'autoprefixer-rails'
+
 gem 'exception_notification', '4.2.1'
 gem 'newrelic_rpm', '4.1.0.333'
 gem 'rollbar', '2.14.1'
