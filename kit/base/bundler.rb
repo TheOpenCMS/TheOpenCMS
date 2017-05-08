@@ -1,4 +1,8 @@
 class DeployKit
+  def without_envs
+    ' --without development test '
+  end
+
   def bundler_install
     version = config.rvm.bundler_version
 
@@ -19,7 +23,7 @@ class DeployKit
   end
 
   def bundle_install
-    "#{ bundle } install"
+    "#{ bundle } install #{ without_envs }"
   end
 
   def bundle_exec
