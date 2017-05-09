@@ -5,6 +5,36 @@
 
 # TheOpenCMS weekly report
 
+## Week 9
+
+Hello World!
+
+Content is Everything!
+
+This week I updated some gems on the project. Now it uses:
+
+* Rails 5.1
+* Sidekiq 5.0
+
+This week I added:
+
+* `autoprefixer-rails` gem to the project to improve CSS for different browsers. Also I've found a small issue in `autoprefixer-rails` and going to prepare small PR for this gem soon.
+* `I18n-tasks` gem to the project to improve work with locale files. Unfortunately this nice gem can't recognize some cases in my code like some self-written helper-wrappers in Controllers. I'm talking about cases like
+
+  ```ruby
+  def _t(name, options)
+    t(name, options.merge(scope: 'some_scope'))
+  end
+  ```
+
+**Plans for the next week**
+
+I'm close to start development of the content-based part of the project. I wish I had some time for that.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
 ## Week 8
 
 Hello World!
