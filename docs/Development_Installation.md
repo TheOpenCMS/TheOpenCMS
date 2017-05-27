@@ -77,7 +77,7 @@ puts puts Settings.to_hash.deep_stringify_keys.to_yaml
 
 You will see something like this:
 
-```
+```yaml
 app:
   default_locale: en
   time_zone: St. Petersburg
