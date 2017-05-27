@@ -47,11 +47,11 @@ cp -av config/ENV/production.example config/ENV/development
 
 ### Edit files in folders were copied
 
-0. Edit files were copied and replace `/ABS/PATH/TO` with real absolute path to your `Rails5App` app path
+1. Edit files were copied and replace `/ABS/PATH/TO` with real absolute path to your `Rails5App` app path
 
     For example, `/ABS/PATH/TO/Rails5App` => `/Users/the-teacher/rails/Rails5App`
 
-0. Edit files were copied and replace `production.example` with a name of your environment
+2. Edit files were copied and replace `production.example` with a name of your environment
 
   For example:
 
