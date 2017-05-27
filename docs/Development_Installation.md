@@ -62,13 +62,13 @@ cp -av config/ENV/production.example config/ENV/development
 ### Create development seeds
 
 ```
-rake dev_seeds:fakes USERS=30
+bundle exec rake dev_seeds:fakes USERS=30
 ```
 
 ### Check App Settings
 
 ```
-rails c
+bundle exec rails c
 ```
 
 ```
