@@ -62,7 +62,7 @@ With `git subtrees` you can develop the only code base and update all requiremen
 
 #### Question
 
-What if I have an error like `undefined method `tracking_id' for nil:NilClass for Settings.services.google_analytics.tracking_id`
+What if I have an error like `undefined method 'tracking_id' for nil:NilClass for Settings.services.google_analytics.tracking_id`
 
 #### Answere
 
