@@ -1,3 +1,7 @@
 services:
   rollbar:
     token: a000000000000000000000001
+  google_analytics:
+    tracking_id: a000000000000000000000001
+  yandex_metrika:
+    tracking_id: a000000000000000000000001

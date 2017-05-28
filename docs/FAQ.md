@@ -57,3 +57,25 @@ Unfortunately `git submodules` is the very uncomfortable way if you work in a te
 I've tried another way `git subtrees`. This way looks really promising.
 
 With `git subtrees` you can develop the only code base and update all requirements with much more comfortable way if you need. Looks like it must provide also a very comfortable way to work with pull requests in a team.
+
+### Installation
+
+#### Question
+
+What if I have an error like `undefined method `tracking_id' for nil:NilClass for Settings.services.google_analytics.tracking_id`
+
+#### Answere
+
+It means you don't have a specific value in your `Settings` object.
+
+`Settings` object is provided by gem `config`.
+
+To resolve this issue you have to put settings like
+
+```
+services:
+  google_analytics:
+    tracking_id: 'MyTrackingId'
+```
+
+at any configuration file in the folder [config/ENV/development/settings](../config/ENV/development/settings)
