@@ -182,6 +182,7 @@ You will see something like this:
 ### Install JS dependencies
 
 0. [Install Yarn](https://yarnpkg.com/lang/en/docs/install/)
+
 0. Install dependencies
 
     ```sh
