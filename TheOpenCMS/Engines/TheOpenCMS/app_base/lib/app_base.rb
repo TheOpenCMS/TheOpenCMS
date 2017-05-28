@@ -1,3 +1,6 @@
+require 'user_room'
+require 'the_article'
+
 module AppBase
   class Engine < Rails::Engine
     initializer :add_app_base_engine_view_paths do

@@ -89,6 +89,8 @@ PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/app_base
   specs:
     app_base (0.1.0)
+      the_article
+      user_room
 
 PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/authorize_it
@@ -130,6 +132,24 @@ PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/simple_sort
   specs:
     simple_sort (0.1)
+
+PATH
+  remote: TheOpenCMS/Engines/TheOpenCMS/the_article
+  specs:
+    the_article (0.1.0)
+      config
+      crop_tool
+      image_tools
+      log_js
+      mini_magick
+      paperclip
+      premailer-rails
+      protozaur
+      simple_sort
+      slim
+      the_notifications
+      the_pagination
+      the_string_to_slug
 
 PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/user_room
@@ -536,6 +556,7 @@ DEPENDENCIES
   sinatra (= 2.0.0)
   slim-rails!
   sprockets!
+  the_article!
   the_notifications!
   the_pagination!
   thinking-sphinx (= 3.2.0)

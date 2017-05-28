@@ -8,5 +8,7 @@ gem 'log_js',            path: '../../Engines/TheOpenCMS/log_js'
 
 gem 'authorize_it',      path: '../../Engines/TheOpenCMS/authorize_it'
 gem 'user_room',         path: '../../Engines/TheOpenCMS/user_room'
+gem 'the_article',       path: '../../Engines/TheOpenCMS/the_article'
+
 gem 'app_base',          path: '../../Engines/TheOpenCMS/app_base'
 gem 'app_theme',         path: '../../Engines/Addons/theopencms.org'
