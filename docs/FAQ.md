@@ -78,4 +78,4 @@ services:
     tracking_id: 'MyTrackingId'
 ```
 
-at any configuration file in the folder [config/ENV/development/settings](../config/ENV/development/settings)
+at any configuration file in the folder [config/ENV/development/settings](../config/ENV/production.example/settings)
