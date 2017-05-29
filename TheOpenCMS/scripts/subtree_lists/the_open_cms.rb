@@ -43,6 +43,10 @@ SUBTREES = %w[
   git@github.com:TheOpenCMS/the_publication.git
   master
 
+  Engines/TheOpenCMS/friendly_id_pack
+  git@github.com:TheOpenCMS/friendly_id_pack.git
+  master
+
   Engines/Addons/theopencms.org
   git@github.com:TheOpenCMS/theopencms.org.git
   master

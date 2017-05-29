@@ -1,3 +1,4 @@
+gem 'friendly_id_pack',  path: '../../Engines/TheOpenCMS/friendly_id_pack'
 gem 'voiceless',         path: '../../Engines/TheOpenCMS/voiceless'
 gem 'the_notifications', path: '../../Engines/TheOpenCMS/notifications'
 gem 'the_pagination',    path: '../../Engines/TheOpenCMS/pagination'
