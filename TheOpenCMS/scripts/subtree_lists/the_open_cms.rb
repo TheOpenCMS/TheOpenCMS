@@ -39,8 +39,8 @@ SUBTREES = %w[
   git@github.com:TheOpenCMS/authorize_it.git
   master
 
-  Engines/TheOpenCMS/the_article
-  git@github.com:TheOpenCMS/the_article.git
+  Engines/TheOpenCMS/the_publication
+  git@github.com:TheOpenCMS/the_publication.git
   master
 
   Engines/Addons/theopencms.org

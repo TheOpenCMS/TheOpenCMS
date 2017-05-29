@@ -1,5 +1,5 @@
 require 'user_room'
-require 'the_article'
+require 'the_publication'
 
 module AppBase
   class Engine < Rails::Engine
