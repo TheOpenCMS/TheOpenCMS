@@ -5,7 +5,7 @@
   simple_sort
   the_pagination
   the_string_to_slug
-  premailer/rails
+  friendly_id_pack
 
   mini_magick
   paperclip

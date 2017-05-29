@@ -89,6 +89,7 @@ PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/app_base
   specs:
     app_base (0.1.0)
+      the_publication
       user_room
 
 PATH
@@ -102,6 +103,12 @@ PATH
     crop_tool (0.4)
       image_tools
       protozaur
+
+PATH
+  remote: TheOpenCMS/Engines/TheOpenCMS/friendly_id_pack
+  specs:
+    friendly_id_pack (0.0.1)
+      the_string_to_slug
 
 PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/image_tools
@@ -131,6 +138,24 @@ PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/simple_sort
   specs:
     simple_sort (0.1)
+
+PATH
+  remote: TheOpenCMS/Engines/TheOpenCMS/the_publication
+  specs:
+    the_publication (0.1.0)
+      config
+      crop_tool
+      image_tools
+      log_js
+      mini_magick
+      paperclip
+      premailer-rails
+      protozaur
+      simple_sort
+      slim
+      the_notifications
+      the_pagination
+      the_string_to_slug
 
 PATH
   remote: TheOpenCMS/Engines/TheOpenCMS/user_room
@@ -500,6 +525,7 @@ DEPENDENCIES
   exception_notification (= 4.2.1)
   ffaker
   foreman
+  friendly_id_pack!
   i18n-tasks (= 0.9.15)
   image_tools!
   jbuilder (~> 2.5)
@@ -539,6 +565,7 @@ DEPENDENCIES
   sprockets!
   the_notifications!
   the_pagination!
+  the_publication!
   thinking-sphinx (= 3.2.0)
   turbolinks (~> 5)
   tzinfo-data

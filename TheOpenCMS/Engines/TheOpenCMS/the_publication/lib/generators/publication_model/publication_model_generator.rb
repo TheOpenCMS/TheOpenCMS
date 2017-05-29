@@ -55,7 +55,7 @@ class PublicationModelGenerator < Rails::Generators::Base
       You have to add/remove the following routes".yellow
 
     puts """
-      ThePublication::Routes.mixin(self, '#{model_name}')
+      ::ThePublication::Routes.mixin(self, '#{model_name}')
     """.red
   end
 end

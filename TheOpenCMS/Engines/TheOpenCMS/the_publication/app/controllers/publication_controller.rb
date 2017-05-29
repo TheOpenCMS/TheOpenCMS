@@ -3,6 +3,7 @@ class PublicationController
 
   class Base < ApplicationController
     # include ::TheSortableTreeController::ReversedRebuild
+    include ::ThePublication::RenderCustomView
 
     authorize_resource_name :pub
     layout ->{ publication_layout }
@@ -13,12 +14,12 @@ class PublicationController
     before_action :set_pub
     before_action :set_user
 
-    def show
-      increment_publication_counter!
-    end
+    before_action :increment_publication_counter!, only: :show
+
+    def show; end
 
     def print
-      render layout: false, template: 'the_publication/pubs/print'
+      render layout: false, template: 'the_pubs/pubs/print'
     end
 
     private
@@ -34,9 +35,9 @@ class PublicationController
 
     def set_pub
       @pub = @klass.first
-              # .with_users
-              # .available_pub_for(current_user)
-              # .friendly_first(pub_id)
+              .with_user
+              .available_pub_for(current_user)
+              .friendly_first(pub_id)
 
       raise ThePublication::RecordNotFound.new unless @pub
     end
@@ -45,27 +46,10 @@ class PublicationController
       @user = @pub.user
     end
 
-    def render_custom_view opts = {}
-      opts = opts.with_indifferent_access
-
-      layout   = opts[:default_layout]
-      template = opts[:default_template]
-      pub      = opts[:publication]
-
-      if pub
-        layout   = pub.view_layout   if pub.view_layout.present?
-        template = pub.view_template if pub.view_template.present?
-      end
-
-      if layout.present? || template.present?
-        render({ layout: layout, template: template }.compact)
-      end
-    end
-
     def increment_publication_counter
       if @pub.published? && !@pub.owner?(current_user)
         @klass.increment_counter(:view_counter, @pub.id)
       end
     end
   end # class Base
-end
+end # PublicationController
