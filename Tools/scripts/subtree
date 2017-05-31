@@ -20,7 +20,7 @@ if action == 'add'
 
     puts `
       git subtree add \
-        --prefix #{subtrees_dir}/#{local_path} \
+        --prefix #{subtrees_dir}#{local_path} \
         #{remote_repo} \
         #{branch} --squash
     `
@@ -33,7 +33,7 @@ elsif action == 'push'
 
     puts `
       git subtree push \
-        --prefix #{subtrees_dir}/#{local_path} \
+        --prefix #{subtrees_dir}#{local_path} \
         #{remote_repo} \
         #{branch}
     `
@@ -46,7 +46,7 @@ elsif action == 'pull'
 
     puts `
       git subtree pull \
-        --prefix #{subtrees_dir}/#{local_path} \
+        --prefix #{subtrees_dir}#{local_path} \
         #{remote_repo} \
         #{branch}
     `
