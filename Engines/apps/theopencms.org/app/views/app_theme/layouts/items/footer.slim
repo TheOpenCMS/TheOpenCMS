@@ -1,0 +1,11 @@
+.app_theme_layout-footer.posrel
+  - if File.exist?(file = "#{ Rails.root}/public/release.txt")
+    .app_theme_layout-footer-release_info.posabs.p10.fs11
+      = File.open(file).read
+
+  .app_theme_layout-footer-locale.posabs.p10.fs11
+    = select nil, :locale, %w[ru en].map {|i| [i, i] }, { selected: session[:locale] }, class: 'js-select_locale'
+
+  .tac.fs18.b.pt40
+    | TheOpenCMS,
+    =< Time.now.year
