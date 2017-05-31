@@ -5,8 +5,8 @@ module ThePublication
     def render_custom_view opts = {}
       opts = opts.with_indifferent_access
 
-      template = opts[:default_template]
-      layout = opts[:default_layout]
+      layout = opts[:layout]
+      template = opts[:template]
 
       if pub = opts[:publication]
         layout   = pub.view_layout   if pub.view_layout.present?

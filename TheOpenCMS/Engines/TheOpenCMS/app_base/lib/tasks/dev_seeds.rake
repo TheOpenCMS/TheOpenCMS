@@ -3,12 +3,20 @@ namespace :dev_seeds do
   desc "Create some entities for developement"
   task fakes: :environment do
     Rake::Task["db:bootstrap"].invoke
+
     users_count = ENV.fetch('USERS', 5).to_i
+    articles_count = ENV.fetch('ARTICLES', 50).to_i
 
     create_admin_user!
     create_regular_users!(users_count)
     create_registration_request!
     create_one_time_login_link!
+
+    admin = User.first
+    create_articles!([admin], articles_count)
+
+    users = User.where("id > 2").to_a
+    create_articles!(users, articles_count)
   end
 
   private
@@ -48,5 +56,20 @@ namespace :dev_seeds do
   def create_one_time_login_link!
     OnetimeLoginLink.create(email: 'new_user@test_email.com')
     puts 'One Time Login link has been created'.yellow
+  end
+
+  def create_articles!(users, articles_count = 50)
+    users.each do |user|
+      puts "We create Articles for User #{user.id}".red
+      articles_count.times do |i|
+        Article.create!(
+          user: user,
+          title: FFaker::Lorem.sentence[0..200],
+          raw_intro: FFaker::Lorem.sentences(5).join(' '),
+          raw_content: FFaker::Lorem.sentences(15).join(' ')
+        )
+        puts 'Article has been created'.green
+      end # articles_count
+    end # users
   end
 end

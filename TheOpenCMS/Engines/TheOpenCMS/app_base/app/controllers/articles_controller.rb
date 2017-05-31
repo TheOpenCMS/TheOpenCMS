@@ -3,20 +3,19 @@ class ArticlesController < ::PublicationController::Base
 
   def index
     super
-
     render_custom_view(
-      default_layout:   'the_publication/layouts/index',
-      default_template: 'the_publication/pubs/index'
+      layout: 'app_theme/layouts/layout',
+      template: 'pubs/index'
     )
   end
 
-  # def show
-  #   super
-  #
-  #   render_custom_view(
-  #     default_layout:   'pubs_frontend',
-  #     default_template: 'the_pubs/show',
-  #     publication: @pub
-  #   )
-  # end
+  def show
+    super
+
+    render_custom_view(
+      layout: 'app_theme/layouts/',
+      template: 'pubs/index',
+      publication: @pub
+    )
+  end
 end

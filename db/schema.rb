@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313205017) do
+ActiveRecord::Schema.define(version: 20170531151758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.string "slug", default: ""
+    t.string "short_id", default: ""
+    t.string "friendly_id", default: ""
+    t.string "main_image_file_name"
+    t.string "main_image_content_type"
+    t.integer "main_image_file_size", default: 0
+    t.datetime "main_image_updated_at"
+    t.string "title", default: ""
+    t.text "raw_intro"
+    t.text "intro"
+    t.text "raw_content"
+    t.text "content"
+    t.string "editor_type", default: "ckeditor"
+    t.string "view_layout", default: ""
+    t.string "view_template", default: ""
+    t.integer "view_counter", default: 0
+    t.string "state", default: "draft"
+    t.string "access_token", default: ""
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "credentials", force: :cascade do |t|
     t.bigint "user_id"
