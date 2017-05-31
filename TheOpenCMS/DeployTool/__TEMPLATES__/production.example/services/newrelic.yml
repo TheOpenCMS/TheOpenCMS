@@ -1,4 +1,0 @@
-<%= kit.app_env %>:
-  log_level: info
-  app_name: MyProject
-  license_key: a000000000000000000000000000000000000001

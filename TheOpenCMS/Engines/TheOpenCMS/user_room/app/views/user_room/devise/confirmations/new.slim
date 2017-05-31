@@ -1,9 +1,0 @@
-h3.h2 = t('confirmations.get_confirm_instructions', scope: :user_room)
-
-= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = render partial: 'notifications/form', locals: { object: resource, format: :json }
-  .mb20
-    = f.label :email
-    = f.email_field :email, autofocus: true, class: ''
-  .mb20
-    = f.submit t('confirmations.get_confirm_btn', scope: :user_room), class: 'ptz_btn'

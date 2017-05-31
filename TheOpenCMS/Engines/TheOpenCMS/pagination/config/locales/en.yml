@@ -1,8 +1,0 @@
-en:
-  views:
-    pagination:
-      first_html: '&laquo; First'
-      last_html: 'Last &raquo;'
-      next_html: '&#9658;'
-      prev_html: '&#9668;'
-      truncate_html: '...'
