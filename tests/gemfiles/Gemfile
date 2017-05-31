@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+gem 'pry'
+gem 'the_string_addon', path: '../../../the_string_addon'
