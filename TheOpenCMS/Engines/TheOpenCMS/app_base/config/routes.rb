@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/app-cable'
 
   voiceless { ::UserRoom::Routes.mixin(self) }
+  voiceless { ::ThePublication::Routes.mixin(self, 'article') }
 end

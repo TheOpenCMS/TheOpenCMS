@@ -7,9 +7,8 @@ module ThePublication
 
       template = opts[:default_template]
       layout = opts[:default_layout]
-      pub = opts[:publication]
 
-      if pub
+      if pub = opts[:publication]
         layout   = pub.view_layout   if pub.view_layout.present?
         template = pub.view_template if pub.view_template.present?
       end

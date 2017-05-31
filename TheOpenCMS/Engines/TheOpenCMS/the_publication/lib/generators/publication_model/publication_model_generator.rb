@@ -45,7 +45,7 @@ class PublicationModelGenerator < Rails::Generators::Base
 
     template(
       'publication_migration.erb',
-      "db/migrate/#{ts}_create_#{model_name.downcase.tableize}_publication_model.rb",
+      "db/migrate/#{ts}_create_#{model_name.downcase}_publication_model.rb",
       locals
     )
   end
@@ -55,7 +55,7 @@ class PublicationModelGenerator < Rails::Generators::Base
       You have to add/remove the following routes".yellow
 
     puts """
-      ::ThePublication::Routes.mixin(self, '#{model_name}')
+      ::ThePublication::Routes.mixin(self, '#{model_name.to_s.downcase}')
     """.red
   end
 end

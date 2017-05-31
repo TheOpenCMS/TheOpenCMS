@@ -21,6 +21,8 @@
 
 module ThePublication
   class Engine < Rails::Engine
+    # config.autoload_paths << "#{ config.root }/app/controllers/concerns/the_publication/"
+    # config.autoload_paths << "#{ config.root }/app/models/concerns/the_publication/"
   end
 end
 
