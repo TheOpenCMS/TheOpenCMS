@@ -1,0 +1,49 @@
+- intro_visible   = 'display:none' if  visible
+- content_visible = 'display:none' if !visible
+- visible_style   = 'disable'      if !visible
+
+
+.js-registration_accordion(class=visible_style)
+  .js-registration_accordion-intro.registration_accordion-intro(style=intro_visible)
+
+    .js-registration_accordion-switcher
+      ruby:
+        checked = false
+        id = 'accounted-off-always'
+        radio_group_name = :radio_group
+
+      input.ptz_radio_button(type='radio' value=id id=id name=radio_group_name checked=checked)
+      label.fs15.lh120(for=id) = t('email_login.i_have_a_profile', scope: :user_room)
+
+  .js-registration_accordion-content.registration_accordion-content(style=content_visible)
+    .ptz_table.w100p
+      .ptz_tr
+        .ptz_td.pl10
+          p.mt0 = t('email_login.i_have_a_profile', scope: :user_room)
+
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+            .mb15.clearfix
+              .pull-left.mr20.mb5
+                = f.label :email, t('email_login.your_email', scope: :user_room), class: 'block fs14 lh120 mb5 '
+                = f.text_field :email, value: '', autofocus: true, class: 'ptz_input ptz_size-14 w250'
+
+              .pull-left.mr20.mb5
+                = f.label :password, t('email_login.your_password', scope: :user_room), class: 'block fs14 lh120 mb5 '
+                = f.password_field :password, value: '', autocomplete: :off, class: 'ptz_input ptz_size-14 w250'
+
+            .clearfix
+              - if devise_mapping.rememberable?
+                .mb15.clearfix.mb0
+                  = f.check_box :remember_me, { checked: true, autocomplete: :off }
+                  ' &nbsp;
+                  span.fs13 = t('email_login.remember_me', scope: :user_room)
+
+              .pull-left.mr20.mb5
+                = f.submit t('email_login.login', scope: :user_room), class: 'ptz_btn ptz_size-14  w100'
+
+        .ptz_td.w50p.pl30
+          p.mt0 = t('login_copies.title_1', scope: :user_room)
+          p.fs14.mt0.mb10 = t('login_copies.copy_3_html', scope: :user_room)
+          p.fs14.mt0.mb10 = t('login_copies.copy_4_html', scope: :user_room)
+          p.fs14.mt0.mb10 = t('login_copies.copy_5_html', scope: :user_room)

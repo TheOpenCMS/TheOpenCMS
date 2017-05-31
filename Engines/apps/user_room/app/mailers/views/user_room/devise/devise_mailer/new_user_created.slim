@@ -1,0 +1,21 @@
+- content_for :title do
+  = @subject
+
+- content_for :text_block do
+  .mb15.fs16.lh130.ffa
+    | New user has been registered #{ link_to @user.login, @user }
+
+  - if (email = @user.actual_email).present?
+    .mb15.fs16.lh130.ffa
+      | User's email: <b>#{ email }</b>
+
+  - if credential = @user.credentials.first
+    .mb15.fs16.lh130.ffa
+      | User used a social network for registration: <b>#{ credential.provider }</b>
+
+    - %w[ vk_addr ok_addr tw_addr fb_addr gp_addr ].each do |addr|
+      - if (addr = @user.try(addr)).present?
+        .mb15.fs16.lh130.ffa
+          | User's profile: #{ link_to addr, addr }
+
+= render template: 'devise_mailer/base_template'

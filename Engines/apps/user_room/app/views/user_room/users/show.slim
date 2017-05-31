@@ -1,0 +1,61 @@
+- content_for :title do
+  = t 'users_page', scope: :user_room
+
+.ptz_table
+  .ptz_tr
+    .ptz_td.p20
+      .mb20
+        - if @user.avatar.present?
+          = image_tag @user.avatar.url(:v100x100), class: 'user_room_list-avatar_image'
+        - else
+          = default_user_avatar(@user, {class: 'user_room_list-avatar_image'})
+
+      - if current_user && current_user == @user
+        = link_to 'Edit', [:edit, @user], class: 'ptz_btn ptz_btn-size-s'
+    .ptz_td.p20
+      .mt20
+        - if current_user.try(:admin?)
+          - if current_user != @user
+            .mb20
+              = link_to 'Login as', autologin_path(@user), method: :post, class: 'ptz_btn ptz_size-12'
+
+        - if @user.username.present?
+          .fs15.mb15
+            span.b Name:
+            '
+            = @user.username
+
+        - if @user.login.present?
+          .fs15.mb15
+            span.b Login:
+            '
+            = @user.login
+
+        .fs15.mb15
+          span.b<> Created at:
+          = user_room_date_format(@user.created_at)
+
+        ruby:
+          soc_nets = {
+            gp: :Google,
+            fb: :Facebook,
+            vk: :Vkontakte,
+            tw: :Twitter,
+            ok: :Odnoklassniki
+          }
+
+        ul.ul.mt20.mb20
+          - soc_nets.each_pair do |abbr, title|
+            ruby:
+              soc_addr = "#{abbr}_addr"
+              field_addr = @user.send(soc_addr)
+
+            - if field_addr.present?
+              li.fs15.mb5
+                = link_to title, field_addr, target: :_blank
+
+        - if @user.about.present?
+          .fs16.b.mb20 About
+
+          .fs16.mt20.mb20
+            = @user.about
