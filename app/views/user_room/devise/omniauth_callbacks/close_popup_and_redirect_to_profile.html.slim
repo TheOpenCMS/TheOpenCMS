@@ -1,0 +1,33 @@
+ruby:
+  redirect_path = profile_path
+  redirect_path = @callback_path ? @callback_path : redirect_path
+
+javascript:
+  parent_window  = window.opener;
+  current_window = window;
+
+  var replace_window_url = function(win, url){
+    win.location.replace(win.location.origin + url);
+  }
+
+  if(parent_window){
+    // TRY/CATCH
+    try{
+      // check for original domain and access to it
+      // because sometimes we can have problems with it
+      parent_origin  = parent_window.location.origin;
+      current_origin = current_window.location.origin;
+
+      if( parent_origin == current_origin ){
+        replace_window_url(parent_window, '#{ redirect_path }');
+        current_window.close();
+      }else{
+        replace_window_url(current_window, '#{ redirect_path }');
+      }
+    }catch(e){
+      replace_window_url(current_window, '#{ redirect_path }');
+    }
+    //~ TRY/CATCH
+  }else{
+    replace_window_url(current_window, '#{ redirect_path }');
+  }

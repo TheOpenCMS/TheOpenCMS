@@ -1,0 +1,140 @@
+en:
+  user_room:
+    networks_names:
+      vk: VKontakte
+      ok: Odnoklassniki
+      gp: Google +
+      tw: Twitter
+      fb: Facebook
+
+    social_login:
+      login_title: Login via Social networks
+
+    email_login:
+      i_have_a_profile: I already have a Profile
+      your_email: Email
+      your_password: Password
+      remember_me: Remember me
+      login: Login
+
+    onetime_login:
+      cant_recall_the_password: I can't recall the password
+      cant_recall_send_me_link: I can't recall the password. Send me one-time login link
+      your_email: Your email
+      get_the_link: Get the link
+
+    email_signup:
+      signup: Email Sign up
+      signup_copy: You'll get an activation link. Check your inbox
+      your_email: Your email
+      signup_btn: Sign up
+
+    avatar:
+      change: Change Avatar
+      upload: Upload Avatar
+      upload_btn: Upload
+
+    oauth:
+      failure: "OAuth failure. Can't process social network data"
+
+    confirmations:
+      get_instructions: To get instructions to activate my Profile
+      get_instructions_btn: To get instructions
+
+    passwors:
+      new_password: New Password
+      repeat_new_password: Repeat the password
+      set_new_password_btn: Save a new password
+      set_new_password: Set a new password
+      forgot_the_password: Did you forget the password?
+      email_for_instructions: Type your email. We will send you instructions to recover your password
+      get_instructions_btn: To get password recover instructions
+
+    login_copies:
+      title_1: Some Hints
+      copy_1_html: "&mdash; Registration via social networks is easy, fast, secure and comfortable."
+      copy_2_html: "&mdash; On your Profile Settings page you can link your Profile to a few social networks."
+
+      copy_3_html: "&mdash; <span class='b'>Have you forgotten Password?</span> Get a link for a one-time login below."
+      copy_4_html: "&mdash; You can change your password after you are logged in"
+      copy_5_html: "&mdash; It's easy to use Login via Social networks"
+
+      copy_6_html: "&mdash; If you are already signed in the you will get the link to login this web site"
+      copy_7_html: "&mdash; If email didn't come in a few minutes, please, check the <b>SPAM</b>. Sometimes even good letters may be marked as SPAM"
+
+    mailer:
+      subjects:
+        mail_registration_request: "Registration Request"
+        confirmation_instructions: "Confirmation instructions"
+        reset_password_instructions: "Reset password instructions"
+        unlock_instructions: "Unlock instructions"
+        password_change: "Password Changed"
+        onetime_login_request: "One-time Login link"
+        new_user_created: "New User has been created"
+      copies:
+        alt_address: 'If the link above is disabled then copy/paste the following address:'
+        reg_request: Hello! Someone has sent a request to create a new account
+        if_its_you: If it was you, please, follow insructions below
+        activate_btn: Activate my account
+
+    controllers:
+      users:
+        changes_saved: Changes are saved
+        password_instructions_sent: You will get instructions about how to change the password in a few minutes. Check your inbox
+        email_instructions_sent: You will get instructions about how to confirm your Email in a few minutes. Check your inbox
+
+      devise:
+        registrations:
+          incorrect_email: "You can not use this email for registration. Email is incorrect or already used. If you have already sent a request then please wait for %{mins} minutes before send a new one"
+          request_created: Request is created. Check yout inbox
+          request_not_found: Request doesn't exist
+          request_activated: Request is already activated
+          signed_in: You are signed in
+
+        sessions:
+          cant_perform_request: Request can not be performed
+          request_already_sent: Request is already sent. Please, wait for a few minues and retry
+          check_inbox:   Request is already created. Check your inbox
+          wrong_request: Wrong request
+          logined_in: You are logged in
+
+    users:
+      edit:
+        title: "Edit User's Profile"
+
+        basic_info:
+          title: Basic Info
+          name: Name
+          login: Login
+          email: Email
+          about: About
+          btn: Update Info
+
+        change_password:
+          title: Change Password
+          password: New Password
+          password_confirm: Confirm New Password
+          btn: Set New Password
+
+        social_network_contacts:
+          title: I'm in Social Networks
+          vk: VK.com
+          gp: Google Plus
+          ok: Odnoklassniki.ru
+          fb: Facebook.com
+          tw: Twitter.com
+          pt: Pinterest.com
+          ig: Instagram.com
+          btn: Update Info
+
+        social_networks:
+          title: Connect My Profile to Social Networks
+          vk: VK.com
+          gp: Google Plus
+          ok: Odnoklassniki.ru
+          fb: Facebook.com
+          tw: Twitter.com
+
+      avatar:
+        title: Upload Avatar
+        upload_btn: Upload Image

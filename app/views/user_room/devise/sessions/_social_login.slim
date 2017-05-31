@@ -1,0 +1,29 @@
+ruby:
+  callback_path = local_assigns[:callback_path]
+
+  intro_visible   = 'display:none' if  visible
+  content_visible = 'display:none' if !visible
+  visible_style   = 'disable'      if !visible
+
+.js-registration_accordion(class=visible_style)
+  .js-registration_accordion-intro.registration_accordion-intro(style=intro_visible)
+
+    .js-registration_accordion-switcher
+      ruby:
+        checked = false
+        id = 'social-ligin-off-always'
+        radio_group_name = :radio_group
+
+      input.ptz_radio_button(type='radio' value=id id=id name=radio_group_name checked=checked)
+      label.fs15.lh120(for=id) = t('social_login.login_title', scope: :user_room)
+
+  .js-registration_accordion-content.registration_accordion-content(style=content_visible)
+    .ptz_table.w100p
+      .ptz_tr
+        .ptz_td.pl10
+          p.mt0 = t('social_login.login_title', scope: :user_room)
+
+          = render template: 'user_room/users/edit/social_networks_credentials'
+
+          .fs12.mb10 = t('login_copies.copy_1_html', scope: :user_room)
+          .fs12 = t('login_copies.copy_2_html', scope: :user_room)
