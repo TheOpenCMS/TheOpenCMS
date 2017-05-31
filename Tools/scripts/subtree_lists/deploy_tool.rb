@@ -1,5 +1,5 @@
 SUBTREES = %w[
-  DeployTool
+  Tools/DeployTool
   git@github.com:DeployRB/DeployTool.git
   master
 ]
