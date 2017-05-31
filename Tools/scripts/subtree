@@ -1,8 +1,11 @@
 #!/usr/bin/env ruby
 # chmod 744 Tools/scripts/subtree
 
-# Tools/scripts/subtree push protozaur
-# Tools/scripts/subtree push the_open_cms
+# Tools/scripts/subtree add apps
+# Tools/scripts/subtree add tools
+
+# Tools/scripts/subtree push apps
+# Tools/scripts/subtree push tools
 
 action = ARGV.first.strip.downcase
 list   = ARGV.last.strip.downcase + '.rb'
