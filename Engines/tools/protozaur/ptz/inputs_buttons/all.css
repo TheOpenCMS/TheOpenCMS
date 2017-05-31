@@ -1,0 +1,176 @@
+.ptz_input, .ptz_textarea {
+  color: black;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ptz_input:disabled, .ptz_textarea:disabled {
+  color: #eee;
+  background: white;
+  cursor: not-allowed;
+}
+
+.ptz_input:disabled:hover, .ptz_textarea:disabled:hover {
+  color: #eee;
+  background: white;
+}
+
+.ptz_btn {
+  color: black;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+  background: white;
+  transition: background-color .2s ease;
+}
+
+.ptz_btn.current {
+  border-color: #7bc7ff;
+  background-color: #c5e6ff;
+}
+
+.ptz_btn.current:hover {
+  background-color: #c5e6ff;
+}
+
+.ptz_btn:hover {
+  color: #000;
+  background-color: #e3f2fd;
+}
+
+.ptz_btn:disabled, .ptz_btn[disabled] {
+  color: #eee;
+  background: white;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ptz_btn:disabled:hover, .ptz_btn[disabled]:hover {
+  color: #eee;
+  background: white;
+}
+
+.ptz_btn-group .ptz_btn {
+  border-radius: 0;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.ptz_btn-group .ptz_btn:first-child {
+  margin-right: -3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.ptz_btn-group .ptz_btn:last-child {
+  margin-left: -3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.ptz_size-10 {
+  font-size: 10px;
+  line-height: 13px;
+  padding: 5px 8px;
+}
+
+.ptz_size-11 {
+  font-size: 11px;
+  line-height: 14px;
+  padding: 6px 9px;
+}
+
+.ptz_size-12 {
+  font-size: 12px;
+  line-height: 15px;
+  padding: 7px 10px;
+}
+
+.ptz_size-13 {
+  font-size: 13px;
+  line-height: 16px;
+  padding: 8px 11px;
+}
+
+.ptz_size-14 {
+  font-size: 14px;
+  line-height: 17px;
+  padding: 9px 12px;
+}
+
+.ptz_size-15 {
+  font-size: 15px;
+  line-height: 18px;
+  padding: 10px 13px;
+}
+
+.ptz_size-16 {
+  font-size: 16px;
+  line-height: 19px;
+  padding: 11px 14px;
+}
+
+.ptz_size-17 {
+  font-size: 17px;
+  line-height: 20px;
+  padding: 12px 15px;
+}
+
+.ptz_size-18 {
+  font-size: 18px;
+  line-height: 21px;
+  padding: 13px 16px;
+}
+
+.ptz_size-19 {
+  font-size: 19px;
+  line-height: 22px;
+  padding: 14px 17px;
+}
+
+.ptz_size-20 {
+  font-size: 20px;
+  line-height: 23px;
+  padding: 15px 18px;
+}
+
+.ptz_size-21 {
+  font-size: 21px;
+  line-height: 24px;
+  padding: 16px 19px;
+}
+
+.ptz_size-22 {
+  font-size: 22px;
+  line-height: 25px;
+  padding: 17px 20px;
+}
+
+.ptz_size-23 {
+  font-size: 23px;
+  line-height: 26px;
+  padding: 18px 21px;
+}
+
+.ptz_size-24 {
+  font-size: 24px;
+  line-height: 27px;
+  padding: 19px 22px;
+}
+
+.ptz_size-25 {
+  font-size: 25px;
+  line-height: 28px;
+  padding: 20px 23px;
+}

@@ -1,0 +1,37 @@
+.clearfix:after {
+  content: '.';
+  display: block;
+  line-height: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  zoom: 1;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.ofh {
+  overflow: hidden !important;
+  zoom: 1;
+}
+
+.xscroll {
+  overflow-x: scroll !important;
+}
+
+.yscroll {
+  overflow-y: scroll !important;
+}
