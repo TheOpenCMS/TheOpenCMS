@@ -1,0 +1,11 @@
+def map_to_rus(word)
+  en_syms = 'qwertyuiop[]asdfghjkl;\'\zxcvbnm,./'.chars
+  ru_syms = 'йцукенгшщзхъфывапролджэ\ячсмитьбю.'.chars
+  syms_map = en_syms.each.with_index.inject({}){|h,(v, i)| h[v] = ru_syms[i]; h }
+end
+
+def map_to_en(word)
+  en_syms = 'qwertyuiop[]asdfghjkl;\'\zxcvbnm,./'.chars
+  ru_syms = 'йцукенгшщзхъфывапролджэ\ячсмитьбю.'.chars
+  syms_map = en_syms.each.with_index.inject({}){|h,(v, i)| h[v] = ru_syms[i]; h }
+end
