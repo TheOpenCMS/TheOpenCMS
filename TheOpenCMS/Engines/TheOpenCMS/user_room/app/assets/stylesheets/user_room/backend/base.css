@@ -10,9 +10,9 @@
   //= require crop_tool/jcrop/jquery.Jcrop
 
   //= require user_room/shared/social_login_btn
-  //= require user_room/shared/layout
   //= require user_room/backend/form
 
+  //= require app_theme/shared/layout
   //= require crop_tool/crop_tool
   //= require jquery-jcrop/css/jquery.Jcrop
 */

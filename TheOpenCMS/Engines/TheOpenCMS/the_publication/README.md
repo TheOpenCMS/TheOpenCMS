@@ -6,6 +6,47 @@ This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
 
 This gem provides Publishing-oriented functionality for TheOpenCMS
 
+### Publication Model Generator
+
+```sh
+rails generate publication_model Article
+```
+
+```ruby
+app/models/article.rb
+app/controllers/articles_controller.rb
+db/migrate/20170528215144_create_articles_publication_model.rb
+```
+
+### Routing
+
+*config/routes.rb*
+
+```ruby
+::ThePublication::Routes.mixin(self, :article)
+```
+
+### JS/CSS/Templates to be implemented
+
+```slim
+  = render template: 'app_theme/layouts/items/header'
+  = render template: 'app_theme/layouts/items/footer'
+```
+
+*layout.css*
+
+```css
+/*
+  //= require app_theme/shared/layout
+*/
+```
+
+*base.coffee*
+
+```js
+#= require app_base/frontend/select_locale
+```
+
 ### MIT License
 
 Copyright (c) 2014-[Current Year] Ilya N. Zykin

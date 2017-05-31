@@ -8,3 +8,6 @@ Example:
     app/models/article.rb
     app/controllers/articles_controller.rb
     db/migrate/20170528215144_create_articles_publication_model.rb
+
+  Routing:
+    ::ThePublication::Routes.mixin(self, :article)
