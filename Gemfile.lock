@@ -76,71 +76,14 @@ GIT
       slim (~> 3.0)
 
 PATH
-  remote: TheOpenCMS/Engines/Addons/theopencms.org
-  specs:
-    app_theme (0.1)
-
-PATH
-  remote: TheOpenCMS/Engines/Protozaur/protozaur
-  specs:
-    protozaur (1.1.0)
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/app_base
+  remote: Engines/apps/app_base
   specs:
     app_base (0.1.0)
       the_publication
       user_room
 
 PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/authorize_it
-  specs:
-    authorize_it (0.1.0)
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/crop_tool
-  specs:
-    crop_tool (0.4)
-      image_tools
-      protozaur
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/friendly_id_pack
-  specs:
-    friendly_id_pack (0.0.1)
-      the_string_to_slug
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/image_tools
-  specs:
-    image_tools (0.1)
-      mini_magick
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/log_js
-  specs:
-    log_js (0.5)
-      coffee-rails
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/notifications
-  specs:
-    the_notifications (0.6.0)
-      slim
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/pagination
-  specs:
-    the_pagination (1.0.0)
-      kaminari
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/simple_sort
-  specs:
-    simple_sort (0.1)
-
-PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/the_publication
+  remote: Engines/apps/the_publication
   specs:
     the_publication (0.1.0)
       config
@@ -158,7 +101,12 @@ PATH
       the_string_to_slug
 
 PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/user_room
+  remote: Engines/apps/theopencms.org
+  specs:
+    app_theme (0.1)
+
+PATH
+  remote: Engines/apps/user_room
   specs:
     user_room (0.1.0)
       config
@@ -182,7 +130,75 @@ PATH
       the_string_to_slug
 
 PATH
-  remote: TheOpenCMS/Engines/TheOpenCMS/voiceless
+  remote: Engines/tools/authorize_it
+  specs:
+    authorize_it (0.1.0)
+
+PATH
+  remote: Engines/tools/crop_tool
+  specs:
+    crop_tool (0.4)
+      image_tools
+      protozaur
+
+PATH
+  remote: Engines/tools/friendly_id_pack
+  specs:
+    friendly_id_pack (0.0.1)
+      the_string_to_slug
+
+PATH
+  remote: Engines/tools/image_tools
+  specs:
+    image_tools (0.1)
+      mini_magick
+
+PATH
+  remote: Engines/tools/log_js
+  specs:
+    log_js (0.5)
+      coffee-rails
+
+PATH
+  remote: Engines/tools/notifications
+  specs:
+    the_notifications (0.6.0)
+      slim
+
+PATH
+  remote: Engines/tools/pagination
+  specs:
+    the_pagination (1.0.0)
+      kaminari
+
+PATH
+  remote: Engines/tools/protozaur
+  specs:
+    protozaur (1.1.0)
+
+PATH
+  remote: Engines/tools/simple_sort
+  specs:
+    simple_sort (0.1)
+
+PATH
+  remote: Engines/tools/the_string_addon
+  specs:
+    the_string_addon (0.0.1)
+      pygments.rb
+      rails
+      rails_autolink
+      redcarpet
+      sanitize
+
+PATH
+  remote: Engines/tools/the_string_to_slug
+  specs:
+    the_string_to_slug (1.4)
+      rails-i18n (~> 4.0.0.pre)
+
+PATH
+  remote: Engines/tools/voiceless
   specs:
     voiceless (1.1)
       colorize
@@ -263,6 +279,7 @@ GEM
       activesupport (>= 3.0)
       deep_merge (~> 1.1.1)
     connection_pool (2.2.1)
+    crass (1.0.2)
     css_parser (1.4.10)
       addressable
     debug_inspector (0.0.2)
@@ -337,6 +354,8 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    nokogumbo (1.4.11)
+      nokogiri
     oauth (0.5.1)
     oauth2 (1.3.1)
       faraday (>= 0.8, < 0.12)
@@ -394,6 +413,8 @@ GEM
       pry (>= 0.9.10)
     public_suffix (2.0.5)
     puma (3.8.1)
+    pygments.rb (1.1.2)
+      multi_json (>= 1.0.0)
     rack (2.0.1)
     rack-protection (2.0.0)
       rack
@@ -419,6 +440,8 @@ GEM
     rails-i18n (4.0.2)
       i18n (~> 0.6)
       rails (>= 4.0)
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     railties (5.1.0)
       actionpack (= 5.1.0)
       activesupport (= 5.1.0)
@@ -431,6 +454,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redcarpet (3.4.0)
     redis (3.3.3)
     redis-namespace (1.5.3)
       redis (~> 3.0, >= 3.0.4)
@@ -442,6 +466,10 @@ GEM
       multi_json
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
+    sanitize (4.4.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4.1)
     sass (3.4.23)
     selenium-webdriver (3.3.0)
       childprocess (~> 0.5)
@@ -470,8 +498,6 @@ GEM
     temple (0.7.7)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
-    the_string_to_slug (1.4)
-      rails-i18n (~> 4.0.0.pre)
     thinking-sphinx (3.2.0)
       activerecord (>= 3.1.0)
       builder (>= 2.1.2)
@@ -566,6 +592,8 @@ DEPENDENCIES
   the_notifications!
   the_pagination!
   the_publication!
+  the_string_addon!
+  the_string_to_slug!
   thinking-sphinx (= 3.2.0)
   turbolinks (~> 5)
   tzinfo-data
