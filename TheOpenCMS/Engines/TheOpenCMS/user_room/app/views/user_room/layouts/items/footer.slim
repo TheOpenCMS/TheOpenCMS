@@ -1,8 +1,0 @@
-.user_room_layout-footer.posrel
-  .user_room_layout-footer-locale.posabs.p10.fs11
-    = select nil, :locale, %w[ru en].map {|i| [i, i] }, { selected: session[:locale] }, class: 'js-select_locale'
-
-  .tac.fs18.b.pt40
-    | TheOpenCMS
-    ',
-    = Time.now.year

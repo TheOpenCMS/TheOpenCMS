@@ -2,11 +2,13 @@ class PublicationController
   class RecordNotFound < StandardError; end
 
   class Base < ApplicationController
+    layout ->{ publication_layout }
+
     # include ::TheSortableTreeController::ReversedRebuild
     include ::ThePublication::RenderCustomView
     #
     # authorize_resource_name :pub
-    # layout ->{ publication_layout }
+
     #
     before_action :set_pub_klass
     # before_action :set_authorize_resource_name
@@ -60,6 +62,11 @@ class PublicationController
       if @pub.published? && !@pub.owner?(current_user)
         @klass.increment_counter(:view_counter, @pub.id)
       end
+    end
+
+    def publication_layout
+      return 'the_publication_frontend' if %w[index].include?(action_name)
+      'the_publication_backend'
     end
 
     # Authintication White List

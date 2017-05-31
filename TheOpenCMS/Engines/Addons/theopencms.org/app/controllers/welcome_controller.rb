@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  layout 'app_theme/layouts/layout'
+  layout 'layouts/app_theme_frontend'
 
   skip_before_action :authenticate_user!, only: :index
   skip_before_action :authorize_action!,  only: :index
