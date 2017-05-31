@@ -1,0 +1,17 @@
+class PublicationModel
+  class Base < ApplicationRecord
+    self.abstract_class = true
+
+    include ::ThePublication::PublicationScopes
+    include ::ThePublication::PublicationStates
+    include ::ThePublication::ContentProcessing
+
+    include ::SimpleSort::Base
+    include ::Pagination::Base
+    include ::FriendlyIdPack::Base
+    include ::Notifications::LocalizedErrors
+
+    belongs_to :user
+    validates :title, :slug, presence: true
+  end
+end

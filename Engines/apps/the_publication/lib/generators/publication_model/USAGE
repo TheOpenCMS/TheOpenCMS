@@ -1,0 +1,13 @@
+Description:
+    This generator creates publishing oriented models, controllers and migrations for TheOpenCMS
+
+Example:
+  rails generate publication_model Article
+
+  This will create:
+    app/models/article.rb
+    app/controllers/articles_controller.rb
+    db/migrate/20170528215144_create_articles_publication_model.rb
+
+  Routing:
+    ::ThePublication::Routes.mixin(self, :article)
