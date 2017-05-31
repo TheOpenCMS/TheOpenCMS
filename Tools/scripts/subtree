@@ -9,7 +9,7 @@ list   = ARGV.last.strip.downcase + '.rb'
 
 require_relative "subtree_lists/#{list}"
 
-subtrees_dir = 'TheOpenCMS'
+subtrees_dir = '.'
 subtrees = SUBTREES.each_slice(3)
 
 if action == 'add'
