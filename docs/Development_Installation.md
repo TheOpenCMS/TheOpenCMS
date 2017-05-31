@@ -65,6 +65,22 @@ cp -av config/ENV/production.example config/ENV/development
 bundle exec rake dev_seeds:fakes USERS=30
 ```
 
+*Admin*
+
+```
+  admin@theopencms.org
+  qwerty
+```
+
+*User*
+
+```
+  user-1@exmple.com
+  qwerty
+```
+
+Emails: `user-1`, `user-2` ... `user-30` and so on
+
 ### Check App Settings
 
 ```
