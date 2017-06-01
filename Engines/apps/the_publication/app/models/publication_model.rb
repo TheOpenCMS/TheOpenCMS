@@ -5,6 +5,7 @@ class PublicationModel
     include ::ThePublication::PublicationScopes
     include ::ThePublication::PublicationStates
     include ::ThePublication::ContentProcessing
+    include ::ThePublication::AdditionalTimestamps
 
     include ::SimpleSort::Base
     include ::Pagination::Base

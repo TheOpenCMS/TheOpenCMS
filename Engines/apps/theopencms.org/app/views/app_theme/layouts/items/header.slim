@@ -5,6 +5,8 @@
       span.mr5 |
       span.mr5 = link_to 'Users', users_path, class: 'app_theme_toolbar-link'
       span.mr5 |
+      span.mr5 = link_to 'Articles', articles_path, class: 'app_theme_toolbar-link'
+      span.mr5 |
     - if current_user
       span.mr5 = link_to 'My Profile', [:edit, @user], class: 'app_theme_toolbar-link'
       span.mr5 |

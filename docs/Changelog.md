@@ -54,7 +54,7 @@ I found a guy who is ready to help with testing. I'm going to pay some time to s
 
 Also I started working on content-oriented part of the project. I've called my new Engine `the_publication`. It will be responsible for all publication functionality.
 
-I've created first simple rails generator to build so mach publication models as I want. For example I'm going to have models like `article`, `post`, `recipe`, `repost` and so on. All models will provide the same functionality with possibility to extend each specific model with any custom functionality.
+I've created first simple rails generator to build so much publication models as I want. For example I'm going to have models like `article`, `post`, `recipe`, `repost` and so on. All models will provide the same functionality with possibility to extend each specific model with any custom functionality.
 
 ## Week 11
 

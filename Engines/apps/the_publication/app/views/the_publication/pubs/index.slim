@@ -1,4 +1,31 @@
+.tar.fs16.mb30.pr10
+  span.b> Items amount:
+  - %w[ 5 10 20 50 100 125 ].each do |num|
+    ruby:
+      is_current = 'b' if params[:per_page] == num
+
+    span.mr10 = link_to num, url_for(per_page: num), class: is_current
+
+  span.mr10= link_to '[x]', reset_simple_sort(per_page: nil)
+
 - @pubs.each do |pub|
   .mt30.mb30
-    .mb15= link_to pub.title, pub, class: 'fs20 b'
-    .fs16.lh130= pub.intro
+    .mb15
+      = link_to pub.title, pub, class: 'fs20 b'
+
+    .fs16.lh130 = raw pub.intro
+    .fs14
+      span.mr20
+        span.fa.fa-user.mr5
+        = pub.user.email
+
+      span.mr20
+        span.fa.fa-pencil.mr5
+        = pub.published_at.present? ? pub.published_at.to_rus_date_1 : raw('&mdash;')
+
+      span.mr20
+        span.fa.fa-eye.mr5
+        = pub.view_counter
+
+- if (paginator = paginate @pubs, views_prefix: 'protozaur/paginator').present?
+  .mt20.mb20= paginator

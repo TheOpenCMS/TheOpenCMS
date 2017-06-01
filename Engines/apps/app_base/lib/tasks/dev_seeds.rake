@@ -69,7 +69,7 @@ namespace :dev_seeds do
           raw_content: FFaker::Lorem.sentences(15).join(' ')
         )
         article.content_processing_for(user)
-        article.state = %i[ draft published ].sample
+        article.state = %i[ draft published ].sample        
         article.save!
         puts 'Article has been created'.green
       end # articles_count

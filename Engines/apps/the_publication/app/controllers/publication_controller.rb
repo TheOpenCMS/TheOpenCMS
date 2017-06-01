@@ -1,22 +1,18 @@
+# include ::TheSortableTreeController::ReversedRebuild
+
 class PublicationController
   class RecordNotFound < StandardError; end
 
   class Base < ApplicationController
+    authorize_resource_name :pub
     layout ->{ publication_layout }
 
-    # include ::TheSortableTreeController::ReversedRebuild
     include ::ThePublication::RenderCustomView
-    #
-    # authorize_resource_name :pub
-
-    #
     before_action :set_pub_klass
-    # before_action :set_authorize_resource_name
-    #
-    # before_action :set_pub
-    # before_action :set_user
-    #
-    # before_action :increment_publication_counter!, only: :show
+
+    before_action :set_pub
+    before_action :set_user
+    before_action :increment_pub_counter!, only: :show
 
     skip_before_action :authenticate_user!, if: :skip_authenticate_user?
     skip_before_action :authorize_action!,  if: :skip_authorize_action?
@@ -25,7 +21,11 @@ class PublicationController
     skip_before_action :authorize_admin!,   if: :skip_authorize_admin?
 
     def index
-      @pubs = @klass.pagination(params)
+      @pubs = @klass
+                .with_user
+                .available_for(current_user)
+                .simple_sort(params)
+                .pagination(params)
     end
 
     def show; end
@@ -41,28 +41,28 @@ class PublicationController
       @klass_name = controller_name.singularize.to_sym
     end
 
-    def pub_id
-      permitted_params(action: :pub_id)
-    end
-
     def set_pub
+      pub_id = permitted_params(action: :pub_id)
+
       @pub = @klass.first
               .with_user
-              .available_pub_for(current_user)
+              .available_for(current_user)
               .friendly_first(pub_id)
 
       raise ThePublication::RecordNotFound.new unless @pub
     end
 
-    # def set_user
-    #   @user = @pub.user
-    # end
+    def set_user
+      @user = @pub.user
+    end
 
-    def increment_publication_counter
+    def increment_pub_counter!
       if @pub.published? && !@pub.owner?(current_user)
         @klass.increment_counter(:view_counter, @pub.id)
       end
     end
+
+    # Layout
 
     def publication_layout
       return 'the_publication_frontend' if %w[index].include?(action_name)
