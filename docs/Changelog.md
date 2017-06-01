@@ -5,6 +5,56 @@
 
 # TheOpenCMS weekly report
 
+## Week 13
+
+I'm working on `the_publication` gem. There is a lot of work.
+
+I've reworked a structure of the project. Now we have the following structure for important components of the system:
+
+```ruby
+Tools/
+├── DeployTool
+├── ServerSetup
+└── scripts
+Gemfiles
+├── TheOpenCMS.rb
+├── app_base.rb
+├── application.rb
+├── content.rb
+├── databases.rb
+├── delayed_jobs.rb
+├── development.rb
+└── user_room.rb
+Engines/
+├── apps
+│   ├── app_base
+│   ├── the_publication
+│   ├── theopencms.org
+│   └── user_room
+└── tools
+    ├── authorize_it
+    ├── crop_tool
+    ├── friendly_id_pack
+    ├── image_tools
+    ├── log_js
+    ├── notifications
+    ├── pagination
+    ├── protozaur
+    ├── simple_sort
+    ├── the_string_addon
+    ├── the_string_to_slug
+    └── voiceless
+```
+
+We started video meetings with guys who are interested with my project. During video calls we're discussing the project, project's structure and related topics. Hope it will give some results.
+
+## Week 12
+
+I found a guy who is ready to help with testing. I'm going to pay some time to show the project to him and explain main concepts. I hope he will help me with the project.
+
+Also I started working on content-oriented part of the project. I've called my new Engine `the_publication`. It will be responsible for all publication functionality.
+
+I've created first simple rails generator to build so mach publication models as I want. For example I'm going to have models like `article`, `post`, `recipe`, `repost` and so on. All models will provide the same functionality with possibility to extend each specific model with any custom functionality.
 
 ## Week 11
 
