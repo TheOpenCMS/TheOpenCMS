@@ -10,8 +10,8 @@ module AuthorizeIt::PermittedParams
   private
 
   def permitted_params(options = {})
-    controller_name = options.fetch(:controller_name, self.controller_name)
-    action_name     = options.fetch(:action_name, self.action_name)
+    controller_name = options.fetch(:controller, self.controller_name)
+    action_name     = options.fetch(:action, self.action_name)
 
     options = options.merge({
       controller_name: controller_name,
