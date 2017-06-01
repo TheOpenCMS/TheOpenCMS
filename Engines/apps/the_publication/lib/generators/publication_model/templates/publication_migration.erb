@@ -8,12 +8,6 @@ class Create<%= config[:migration_class_name] %>PublicationModel < ActiveRecord:
       t.string :short_id,    default: ''
       t.string :friendly_id, default: ''
 
-      # Main Image (gem `paperclip`)
-      t.string   :main_image_file_name
-      t.string   :main_image_content_type
-      t.integer  :main_image_file_size, default: 0
-      t.datetime :main_image_updated_at
-
       # Base
       t.string :title, default: ''
 

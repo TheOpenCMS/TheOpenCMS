@@ -62,12 +62,15 @@ namespace :dev_seeds do
     users.each do |user|
       puts "We create Articles for User #{user.id}".red
       articles_count.times do |i|
-        Article.create!(
+        article = Article.new(
           user: user,
           title: FFaker::Lorem.sentence[0..200],
           raw_intro: FFaker::Lorem.sentences(5).join(' '),
           raw_content: FFaker::Lorem.sentences(15).join(' ')
         )
+        article.content_processing_for(user)
+        article.state = %i[ draft published ].sample
+        article.save!
         puts 'Article has been created'.green
       end # articles_count
     end # users

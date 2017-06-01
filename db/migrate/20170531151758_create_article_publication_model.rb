@@ -1,4 +1,4 @@
-class CreateArticlePublicationModel < ActiveRecord::Migration[5.0]
+class CreateArticlePublicationModel < ActiveRecord::Migration[5.1]
   def change
     create_table 'articles' do |t|
       t.integer :user_id
@@ -7,12 +7,6 @@ class CreateArticlePublicationModel < ActiveRecord::Migration[5.0]
       t.string :slug,        default: ''
       t.string :short_id,    default: ''
       t.string :friendly_id, default: ''
-
-      # Main Image (gem `paperclip`)
-      t.string   :main_image_file_name
-      t.string   :main_image_content_type
-      t.integer  :main_image_file_size, default: 0
-      t.datetime :main_image_updated_at
 
       # Base
       t.string :title, default: ''
