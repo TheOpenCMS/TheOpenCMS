@@ -12,7 +12,7 @@ class PublicationController
     def index
       @resources = @resource_class
                 .with_user
-                .available_for(current_user)
+                .published
                 .simple_sort(params)
                 .pagination(params)
 
@@ -25,8 +25,7 @@ class PublicationController
     private
 
     def authorize_fallback_location
-      articles_path
+      request.referer || articles_path
     end
-
   end # Base
 end

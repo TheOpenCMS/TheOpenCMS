@@ -54,6 +54,7 @@ module ThePublication
     end
 
     def authorize_owner!
+      return true if current_user.admin?
       authorized = @resource.user == current_user
       authorization_exception!('Owner required') unless authorized
     end

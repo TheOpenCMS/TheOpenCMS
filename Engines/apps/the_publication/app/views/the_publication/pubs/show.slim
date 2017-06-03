@@ -4,4 +4,18 @@ h3.fs26.b.lh130.mb30 = @pub.title
   = raw @pub.intro
   = raw @pub.content
 
-.mb10= raw @pub.view_counter
+.mb10
+  span.mr30
+    | Status:
+    =< @pub.state
+
+  span.mr30
+    | Counter:
+    =< @pub.view_counter
+  span.mr30
+    | Author:
+    =< @pub.user.email
+
+  span.mr30
+    | Published At:
+    =< pubs_localized_date(@pub.published_at)
