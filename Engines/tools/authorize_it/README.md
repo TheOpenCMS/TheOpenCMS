@@ -9,7 +9,7 @@ Close everything!
 ```ruby
 class ApplicationController < ActionController::Base
   include ::AuthorizeIt::Controller
-  rescue_from ::AuthorizeIt::NotAuthorized, with: :access_denied
+  rescue_from ::AuthorizeIt::AuthorizationException, with: :access_denied
 
   protect_from_forgery with: :exception
 

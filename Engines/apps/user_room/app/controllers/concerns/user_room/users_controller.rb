@@ -5,13 +5,8 @@ module UserRoom
 
     included do
       layout -> { layout_template }
-      include ::UserRoom::UserAvatarActions
-
-      skip_before_action :authenticate_user!, if: :skip_authenticate_user?
-      skip_before_action :authorize_action!,  if: :skip_authorize_action?
-      skip_before_action :set_resource!,      if: :skip_set_resource?
-      skip_before_action :authorize_owner!,   if: :skip_authorize_owner?
-      skip_before_action :authorize_admin!,   if: :skip_authorize_admin?
+      include ::UserRoom::ControllerAvatarActions
+      include ::UserRoom::ControllerCallbacks
     end
 
     ##########################################
@@ -80,35 +75,5 @@ module UserRoom
       t("user_room.controllers.users.#{name}")
     end
 
-    protected
-
-    def skip_authenticate_user?
-      %w[index show].include?(action_name)
-    end
-
-    def skip_authorize_action?
-      skipped_actions =
-        %w[index show edit update profile change_password] +
-        ::UserRoom::UserAvatarActions::AVATAR_ACTIONS_NAMES
-
-      skipped_actions.include?(action_name)
-    end
-
-    def skip_set_resource?
-      %w[index profile].include?(action_name)
-    end
-
-    def skip_authorize_owner?
-      %w[index show profile].include?(action_name)
-    end
-
-    def skip_authorize_admin?
-      skipped_actions =
-        %w[index show edit update profile change_password] +
-        ::UserRoom::UserAvatarActions::AVATAR_ACTIONS_NAMES
-
-      skipped_actions.include?(action_name)
-    end
-
   end # UsersController
-end # UserRoom
+end

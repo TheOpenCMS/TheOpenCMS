@@ -1,5 +1,6 @@
+# include ::ThePublication::ControllerCustomViewRender
 module ThePublication
-  module RenderCustomView
+  module ControllerCustomViewRender
     private
 
     def render_custom_view opts = {}

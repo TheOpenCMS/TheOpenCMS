@@ -1,6 +1,6 @@
-# include ::UserRoom::UserAvatarActions
+# include ::UserRoom::ControllerAvatarActions
 module UserRoom
-  module UserAvatarActions
+  module ControllerAvatarActions
 
     AVATAR_ACTIONS_NAMES = %w[
       avatar_crop_1x1

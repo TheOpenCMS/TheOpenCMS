@@ -10,7 +10,7 @@ class ArticlesController < ::PublicationController::Base
     super
 
     render_custom_view(
-      template: 'pubs/index',
+      template: 'pubs/show',
       publication: @pub
     )
   end
