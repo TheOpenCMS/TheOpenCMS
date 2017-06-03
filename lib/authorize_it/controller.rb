@@ -7,29 +7,19 @@ module AuthorizeIt::Controller
     private
 
     def authorize_action!
-      authorization_exception!
+      authorization_exception!!("Action Authorization is required")
     end
 
     def authorize_owner!
-      if self.respond_to?(:authorize_owner?)
-        return true if authorize_owner?(authorize_user, authorize_resource)
-      end
-
-      return true if authorize_user == authorize_resource
-
-      authorization_exception!
-    end
-
-    def authorize_user
-      current_user
+      authorization_exception!("Owner Authorization is required")
     end
 
     def authorize_fallback_location
-      root_path
+      authorization_exception!("Authorization Fallback Location is required")
     end
 
-    def authorization_exception!
-      raise ::AuthorizeIt::NotAuthorized
+    def authorization_exception!(message = "AuthorizeIt / Authorization Exception")
+      fail ::AuthorizeIt::AuthorizationException.new(message)
     end
 
     def authorize_resource

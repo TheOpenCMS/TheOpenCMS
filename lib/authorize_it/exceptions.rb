@@ -1,3 +1,3 @@
 module AuthorizeIt
-  class NotAuthorized < StandardError; end
+  class AuthorizationException < StandardError; end
 end
