@@ -1,0 +1,35 @@
+css:
+  .highlighttable, .highlighttable pre {
+    font-size: 13px !important;
+    line-height: 150% !important;
+    font-family: monospace !important;
+  }
+  .highlight{
+    background: #272822;
+    color: #fff;
+    padding: 20px;
+    max-width: 598px;
+    overflow: auto;
+  }
+  .highlight pre {
+    font-family: 'Anonymous Pro', Arial, serif !important;
+    font-weight: 400;
+  }
+  .highlighttable{
+    width: 100%; max-width: 620px;
+    line-height: 150% !important;
+    font-size: 16px !important;
+  }
+  .highlighttable td {
+    padding: 0 !important
+  }
+  .highlighttable td.linenos {
+    width: 1%;
+    color: #bbb;
+    padding: 20px 5px !important;
+    background: #033a8d;
+  }
+  .highlight .s{
+    text-decoration: none !important;
+  }
+  #{::ColoredCode.with_pygments_css(:monokai)}
