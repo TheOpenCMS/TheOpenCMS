@@ -65,14 +65,47 @@ namespace :dev_seeds do
         article = Article.new(
           user: user,
           title: FFaker::Lorem.sentence[0..200],
-          raw_intro: FFaker::Lorem.sentences(5).join(' '),
-          raw_content: FFaker::Lorem.sentences(15).join(' ')
+          raw_intro: FFaker::Lorem.sentences(2).join(' '),
+          raw_content: fake_content(15)
         )
         article.content_processing_for(user)
-        article.state = %i[ draft published ].sample        
+        article.state = %i[ draft published deleted ].sample
         article.save!
         puts 'Article has been created'.green
       end # articles_count
     end # users
+  end
+
+  def fake_content(amount = 5)
+    content = []
+    amount.times do |i|
+      content << FFaker::Lorem.sentence
+      content << <<-TXT_STRING
+## An Amazing Header
+
+### Sub header
+
+http://example.ru *ITALIC* **BOLD** ~~DELETED~~ _UNDERLINE_ ==highlighted== 2<sup>(nd)<sup>
+
+```python
+# more python code
+```
+
+`some code` [LINK TEXT](http://example.com) ![IMG ALT](https://dummyimage.com/100x30/db0fdb/0011ff.png "Img title") ![](https://dummyimage.com/100x30/db0fdb/0011ff.png "Img title")
+
+> _blockquote_ text
+> blockquote **text**
+> blockquote text
+
+TXT_STRING
+      content << ruby_code
+      content << FFaker::Lorem.sentence
+    end
+
+    content.join(" \n")
+  end
+
+  def ruby_code
+    "```ruby\n" + File.read("#{__dir__}/ruby_code_sample.rb") + "\n```"
   end
 end

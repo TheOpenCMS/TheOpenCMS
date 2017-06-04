@@ -20,7 +20,7 @@ module ThePublication
     private
 
     def set_role!
-      @role = current_user.admin? ? :admin : :user
+      @role = current_user.try(:admin?) ? :admin : :user
     end
 
     def authorize_action!
@@ -62,7 +62,7 @@ module ThePublication
     # Authentication
 
     def needs_authenticate_user?
-       except_actions = %w[index]
+       except_actions = %w[index show]
       !except_actions.include?(action_name)
     end
 
@@ -92,7 +92,7 @@ module ThePublication
     end
 
     def needs_authorize_owner?
-       except_actions = %w[index]
+       except_actions = %w[index show]
       !except_actions.include?(action_name)
     end
 

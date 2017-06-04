@@ -1,3 +1,6 @@
+.mb20.fs20
+  = link_to raw('&larr; Articles'), articles_path
+
 h3.fs26.b.lh130.mb30 = @pub.title
 
 .mb30
@@ -8,14 +11,12 @@ h3.fs26.b.lh130.mb30 = @pub.title
   span.mr30
     | Status:
     =< @pub.state
-
   span.mr30
     | Counter:
     =< @pub.view_counter
   span.mr30
     | Author:
     =< @pub.user.email
-
   span.mr30
     | Published At:
     =< pubs_localized_date(@pub.published_at)
