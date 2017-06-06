@@ -17,6 +17,8 @@ gem "user_room"
 ```
 
 **Ensure you have users table**
+Hello, I am Sergey
+
 
 ```ruby
 class AddUsers < ActiveRecord::Migration[5.1]

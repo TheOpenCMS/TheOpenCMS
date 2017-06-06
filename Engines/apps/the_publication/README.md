@@ -6,6 +6,8 @@ This gem is a part of TheOpenCMS project. https://github.com/TheOpenCMS
 
 This gem provides Publishing-oriented functionality for TheOpenCMS
 
+Hello, I am Sergey
+
 ### Publication Model Generator
 
 ```sh
