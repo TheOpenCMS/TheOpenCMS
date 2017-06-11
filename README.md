@@ -594,8 +594,8 @@ Will show button based on `font-size: 16px;`
 
 All CSS properties can be split in 2 groups:
 
-0. decorative properties (`background`, `color`, `border` etc.)
-0. context-dependent properties (`margin`, `padding`, `font-size` etc.)
+1. decorative properties (`background`, `color`, `border` etc.)
+2. context-dependent properties (`margin`, `padding`, `font-size` etc.)
 
 Protozaur say:
 
@@ -607,21 +607,21 @@ Protozaur advice:
 
 ### Protozaur components
 
-0. **reset.css** &mdash; just the reset file
-0. **framework.css** &mdash; the heart of framework
-0. **base.css** &mdash; some most common css definitions
+1. **reset.css** &mdash; just the reset file
+2. **framework.css** &mdash; the heart of framework
+3. **base.css** &mdash; some most common css definitions
 
 also will be better to include `inputs-buttons` componetns:
 
-0. **inputs-buttons/base.css** &mdash; for using styles for inputs and buttons
-0. **inputs-buttons/sizes.css** &mdash; for set sizes to buttons and inputs
+1. **inputs-buttons/base.css** &mdash; for using styles for inputs and buttons
+2. **inputs-buttons/sizes.css** &mdash; for set sizes to buttons and inputs
 
 ### Features
 
 Protozaur:
 
-0. based on `box-sizing: border-box` property
-0. based on **px** and **%**
+1. based on `box-sizing: border-box` property
+2. based on **px** and **%**
 
 ### Protozaur [vs] or [with]  Bootstrap / Foundation / Any CSS framework
 
