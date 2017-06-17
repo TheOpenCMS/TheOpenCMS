@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include ::AuthorizeIt::Controller
 
   include ::LocaleHelpers
   include ::AuthorizationHelpers
-  include ::AuthorizeIt::Controller
   rescue_from ::AuthorizeIt::AuthorizationException, with: :access_denied
 
   before_action :set_locale

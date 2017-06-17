@@ -1,4 +1,4 @@
-class UsersController::UpdateActionPermits < UserRoomParamsPermits
+class UserPermits::Update < AuthorizeIt::PermittedParams::Base
   def permitted_params
     params = @params.require(:user).permit(
       :avatar, :raw_about,

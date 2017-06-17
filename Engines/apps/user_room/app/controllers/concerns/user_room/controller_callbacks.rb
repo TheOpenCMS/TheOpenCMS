@@ -22,8 +22,8 @@ module UserRoom
 
     def authorize_action!
       acl = {
-        user:  %w[index show edit update],
-        admin: %w[index show edit update]
+        user:  %w[index show edit update] + user_avatar_actions,
+        admin: %w[index show edit update] + user_avatar_actions
       }
       authorized = acl[@role].include?(action_name)
       authorization_exception!('Action is not allowed to perform') unless authorized

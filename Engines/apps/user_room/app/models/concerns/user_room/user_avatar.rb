@@ -5,6 +5,7 @@ module UserRoom
     included do
       include ::ImageTools
 
+      attr_accessor :avatar_timestamp_updated
       before_validation :generate_avatar_name
       after_commit :avatar_build_variants
 
@@ -77,13 +78,12 @@ module UserRoom
         end
       end
 
-      avatar.instance.touch(:avatar_updated_at)
-      avatar.instance.reload
+      avatar_update_timestamp!
     end
 
     def avatar_build_variants
       if avatar.present? && previous_changes[:avatar_updated_at]
-        src  = avatar.path
+        src = avatar.path
 
         ##########################################
         # VARIANTS
@@ -122,8 +122,6 @@ module UserRoom
           image = to_square image, 50
           image
         end
-
-        avatar_update_timestamp!
       end
     end
 
@@ -145,6 +143,7 @@ module UserRoom
 
     def avatar_update_timestamp!
       avatar.instance.touch(:avatar_updated_at)
+      avatar.instance.reload
     end
   end # UserAvatar
-end # UserRoom
+end

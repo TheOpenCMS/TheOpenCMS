@@ -1,5 +1,13 @@
 module AuthorizationHelpers
-  private
+  extend ActiveSupport::Concern
+
+  included do
+    private
+
+    def authorize_fallback_location
+      request.referer || root_path
+    end
+  end
 
   def set_role!
     @role = current_user.try(:admin?) ? :admin : :user
@@ -17,9 +25,5 @@ module AuthorizationHelpers
   def access_denied
     redirect_back fallback_location: authorize_fallback_location,
       flash: {error: t('authorize_it.access_denied')}
-  end
-
-  def authorize_fallback_location
-    request.referer || root_path
   end
 end

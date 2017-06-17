@@ -14,7 +14,11 @@ module UserRoom
     ##########################################
 
     def index
-      @users = ::User.max2min(:created_at).simple_sort(params).pagination(params)
+      @users = ::User
+        .max2min(:created_at)
+        .simple_sort(params)
+        .pagination(params)
+
       @users_count = ::User.count
     end
 
