@@ -7,7 +7,7 @@ module AuthorizeIt::Controller
     private
 
     def authorize_action!
-      authorization_exception!!("Action Authorization is required")
+      authorization_exception!("Action Authorization is required")
     end
 
     def authorize_owner!

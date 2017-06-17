@@ -19,9 +19,9 @@ module ThePublication
 
     private
 
-    def set_role!
-      @role = current_user.try(:admin?) ? :admin : :user
-    end
+    ################################################
+    # Authorization
+    ################################################
 
     def authorize_action!
       acl = {
@@ -30,11 +30,6 @@ module ThePublication
       }
       authorized = acl[@role].include?(action_name)
       authorization_exception!('Action is not allowed to perform') unless authorized
-    end
-
-    def set_resource_class!
-      @resource_class = controller_name.classify.constantize
-      @resource_class_name = controller_name.singularize.to_sym
     end
 
     def set_resource!
@@ -59,7 +54,9 @@ module ThePublication
       authorization_exception!('Owner required') unless authorized
     end
 
-    # Authentication
+    ################################################
+    # Do We Need to Perform a Callback?
+    ################################################
 
     def needs_authenticate_user?
        except_actions = %w[index show]
@@ -101,7 +98,9 @@ module ThePublication
       only_actions.include?(action_name)
     end
 
+    ################################################
     # After Actions
+    ################################################
 
     def increment_view_counter!
       return if  @resource.user == current_user

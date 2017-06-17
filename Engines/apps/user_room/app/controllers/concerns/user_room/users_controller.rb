@@ -60,11 +60,6 @@ module UserRoom
 
     private
 
-    def set_resource!
-      user_id = params[:id] || params[:user_id]
-      @user = ::User.where(login: user_id).first
-    end
-
     def layout_template
       public_actions = %w[show index]
       return 'user_room_frontend' if public_actions.include?(action_name)
