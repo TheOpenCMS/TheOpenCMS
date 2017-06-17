@@ -5,6 +5,34 @@
 
 # TheOpenCMS weekly report
 
+## Week 15
+
+Hello World!
+
+On this week I've done some improvements in the code. I'm going to make code of `user_room` and `the_publication` gems consistent.
+
+We added indices to `Article` model but there is no UI for it now. We're going to add it soon.
+
+Also I need to provide edit UI for Articles.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
+## Week 14
+
+Hello World!
+
+Content is Everything!
+
+We added a functionality for publishing part. Now we can process `Markdown` markup and add code samples into a content of pages.
+
+We have 2 video meetings every week with my assistants where I try to explain main parts of TheOpenCMS. We're going to add some tests to `SimpleSort` engine.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
 ## Week 13
 
 I'm working on `the_publication` gem. There is a lot of work.
@@ -48,6 +76,10 @@ Engines/
 
 We started video meetings with guys who are interested with my project. During video calls we're discussing the project, project's structure and related topics. Hope it will give some results.
 
+TheOpenCMS. Content is Everything!
+
+See you next week!
+
 ## Week 12
 
 I found a guy who is ready to help with testing. I'm going to pay some time to show the project to him and explain main concepts. I hope he will help me with the project.
@@ -55,6 +87,10 @@ I found a guy who is ready to help with testing. I'm going to pay some time to s
 Also I started working on content-oriented part of the project. I've called my new Engine `the_publication`. It will be responsible for all publication functionality.
 
 I've created first simple rails generator to build so much publication models as I want. For example I'm going to have models like `article`, `post`, `recipe`, `repost` and so on. All models will provide the same functionality with possibility to extend each specific model with any custom functionality.
+
+TheOpenCMS. Content is Everything!
+
+See you next week!
 
 ## Week 11
 
