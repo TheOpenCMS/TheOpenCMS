@@ -4,7 +4,7 @@ gem 'premailer-rails', '1.9.5'
 
 gem 'kaminari',
   github: 'amatsuda/kaminari',
-  branch: '1c9ec3603'
+  branch: '4efe5fd'
 
 gem 'slim-rails',
   github: 'slim-template/slim-rails',
