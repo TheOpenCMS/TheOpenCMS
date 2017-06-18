@@ -1,7 +1,7 @@
 module AuthorizeIt::PermittedParams
   class Base
     def initialize(controller, options = {})
-      @options = options
+      @options = options.with_indifferent_access
       @controller = controller
       @params = @controller.params.clone
     end

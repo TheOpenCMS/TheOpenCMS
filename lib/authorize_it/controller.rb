@@ -5,6 +5,9 @@ module AuthorizeIt::Controller
     include ::AuthorizeIt::PermittedParams
     include ::AuthorizeIt::ACLPermits
 
+    helper_method :permitted_params
+    helper_method :can_perform?
+
     private
 
     def authorize_action!
