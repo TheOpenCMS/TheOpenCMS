@@ -5,6 +5,10 @@ module AuthorizeIt::PermittedParams
       @controller = controller
       @params = @controller.params.clone
     end
+
+    def controller_var(variable_name)
+      @controller.instance_variable_get(variable_name)
+    end
   end
 
   private
