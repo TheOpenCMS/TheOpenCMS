@@ -75,17 +75,17 @@ module ThePublication
     end
 
     def needs_set_resource?
-       except_actions = %w[index new]
+       except_actions = %w[index new create]
       !except_actions.include?(action_name)
     end
 
     def needs_set_user?
-      except_actions = %w[index new]
+      except_actions = %w[index new create]
      !except_actions.include?(action_name)
     end
 
     def needs_authorize_owner?
-       except_actions = %w[index show print new]
+       except_actions = %w[index show print new create]
       !except_actions.include?(action_name)
     end
 

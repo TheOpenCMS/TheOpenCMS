@@ -1,6 +1,10 @@
 class ArticlesController < ::PublicationController::Base
   # There may be your specific code
 
+  #################################
+  # Public
+  #################################
+
   def index
     super
     render(template: 'pubs/index')
@@ -16,7 +20,16 @@ class ArticlesController < ::PublicationController::Base
     render(template: 'pubs/print')
   end
 
+  #################################
+  # Restricted
+  #################################
+
   def new
+    super
+    render(template: 'pubs/new')
+  end
+
+  def create
     super
     render(template: 'pubs/new')
   end
