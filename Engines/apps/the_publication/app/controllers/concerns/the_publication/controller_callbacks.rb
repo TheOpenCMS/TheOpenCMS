@@ -24,11 +24,7 @@ module ThePublication
     ################################################
 
     def authorize_action!
-      acl = {
-        user:  %w[index show print edit update destroy],
-        admin: %w[index show print edit update destroy manage]
-      }
-      authorized = acl[@role].include?(action_name)
+      authorized = can_perform?(action: :shared)
       authorization_exception!('Action is not allowed to perform') unless authorized
     end
 
@@ -59,17 +55,17 @@ module ThePublication
     ################################################
 
     def needs_authenticate_user?
-       except_actions = %w[index show]
+       except_actions = %w[index show print]
       !except_actions.include?(action_name)
     end
 
     def needs_set_role?
-       except_actions = %w[index]
+       except_actions = %w[index print]
       !except_actions.include?(action_name)
     end
 
     def needs_authorize_action?
-       except_actions = %w[index]
+       except_actions = %w[index print]
       !except_actions.include?(action_name)
     end
 
@@ -89,12 +85,12 @@ module ThePublication
     end
 
     def needs_authorize_owner?
-       except_actions = %w[index show]
+       except_actions = %w[index show print]
       !except_actions.include?(action_name)
     end
 
     def needs_increment_view_counter?
-      only_actions = %w[show]
+      only_actions = %w[show print]
       only_actions.include?(action_name)
     end
 

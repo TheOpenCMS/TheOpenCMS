@@ -11,6 +11,10 @@ module ThePublication
   module BaseRoutes
     def the_publication_routes(model_name)
       resources model_name do
+        member do
+          get :print
+        end
+
         collection do
           get :manage
         end

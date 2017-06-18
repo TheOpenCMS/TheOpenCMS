@@ -8,10 +8,11 @@ class ArticlesController < ::PublicationController::Base
 
   def show
     super
+    render_custom_view(template: 'pubs/show', publication: @pub)
+  end
 
-    render_custom_view(
-      template: 'pubs/show',
-      publication: @pub
-    )
+  def print
+    super
+    render(layout: false, template: 'pubs/print')
   end
 end
