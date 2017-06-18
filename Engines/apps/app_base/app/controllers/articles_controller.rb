@@ -31,6 +31,17 @@ class ArticlesController < ::PublicationController::Base
 
   def create
     super
-    render(template: 'pubs/new')
+    render(template: 'pubs/new') unless performed?
+  end
+
+  def edit
+    super
+    render(template: 'pubs/edit')
+  end
+
+  private
+
+  def authorize_fallback_location
+    request.referer || articles_path
   end
 end

@@ -1,0 +1,50 @@
+ruby:
+  scope = [:views, @pub.class.to_s.downcase.pluralize, :edit_form]
+  state_scope = scope + [:state_options]
+
+  state_options = [:draft, :published].map { |option| [t(option, scope: state_scope), option] }
+  state_options = options_for_select(state_options, @pub.state)
+
+= render partial: 'notifications/form', locals: { object: @pub, format: :html }
+
+.pub_form-block
+  .m20
+    = form_for @pub do |f|
+      .mb20
+        = f.label :title,
+          t(:title_lable, scope: scope),
+          class: 'block mb10 fs20'
+
+        = f.text_field :title,
+          size: 200, maxlength: 200,
+          placeholder: t(:title_placeholder, scope: scope),
+          class: 'ptz_input w80p fs18'
+
+      .mb20
+        = f.label :raw_intro,
+          t(:raw_intro_lable, scope: scope),
+          class: 'block mb10 fs20'
+
+        = f.text_area :raw_intro,
+          class: 'ptz_textarea w80p fs18'
+
+      .mb20
+        = f.label :raw_content,
+          t(:raw_content_lable, scope: scope),
+          class: 'block mb10 fs20'
+
+        = f.text_area :raw_content,
+          class: 'ptz_textarea w80p fs18'
+
+      .mb50
+        = f.label :state,
+          t(:state_lable, scope: scope),
+          class: 'block mb10 fs20'
+
+        = f.select :state, state_options, {},
+          autocomplete: :off,
+          class: 'ptz_input ptz_size-15 w250'
+
+      div
+        = f.submit t(:update_btn, scope: scope),
+          class: 'ptz_btn ptz_size-20'

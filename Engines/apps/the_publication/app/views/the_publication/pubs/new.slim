@@ -1,19 +1,16 @@
 ruby:
-  scope = [:views, @pub.class.to_s.downcase.pluralize, :new_form]
+  scope = [:views, @pub.class.to_s.downcase.pluralize, :edit_form]
   editor_scope = scope + [:editor_type_options]
 
-  options_hash = [:ckeditor, :plain].inject({}) do |hash, item|
-    key = t(item, scope: editor_scope)
-    hash[key] = item
-    hash
-  end
+  editor_type_options = [:ckeditor, :plain].map { |option| [t(option, scope: editor_scope), option] }
+  editor_type_options = options_for_select(editor_type_options, @pub.editor_type)
 
-  options = options_for_select(options_hash, @pub.editor_type)
+= render partial: 'notifications/form', locals: { object: @pub, format: :html }
 
 .pub_form-block
   .m20
     = form_for @pub do |f|
-      .mb15
+      .mb20
         = f.label :title,
           t(:title_lable, scope: scope),
           class: 'block mb10 fs20'
@@ -26,12 +23,12 @@ ruby:
       .mb50
         = f.label :editor_type,
           t(:editor_type_lable, scope: scope),
-          class: 'block mb10 fs16'
+          class: 'block mb10 fs20'
 
-        = f.select :editor_type, options, {},
+        = f.select :editor_type, editor_type_options, {},
           autocomplete: :off,
           class: 'ptz_input ptz_size-15 w250'
 
       div
-        = f.submit t(:submit_btn, scope: scope),
+        = f.submit t(:create_btn, scope: scope),
           class: 'ptz_btn ptz_size-20'

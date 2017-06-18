@@ -1,11 +1,19 @@
 en:
   views:
     articles:
-      new_form:
+      edit_form:
         title_lable: Title
         title_placeholder: Title
         editor_type_lable: Type of an Editor
         editor_type_options:
           plain: Without an editor
           ckeditor: User-oriented editor
-        submit_btn: Create Article
+        raw_intro_lable: Intro
+        raw_content_lable: Content
+        state_lable: State
+        state_options:
+          draft: Draft
+          published: Published
+          deleted: Deleted
+        create_btn: Create Article
+        update_btn: Update Article

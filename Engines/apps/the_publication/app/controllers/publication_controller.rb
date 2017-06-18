@@ -41,15 +41,12 @@ class PublicationController
       @pub.content_processing_for(current_user)
 
       if @pub.save
-        redirect_to url_for([:edit, @pub]), notice: "Publication has been created"
-        return
+        redirect_to \
+          url_for([:edit, @pub]),
+          notice: "Publication has been created"
       end
     end
 
-    private
-
-    def authorize_fallback_location
-      request.referer || articles_path
-    end
+    def edit; end
   end # Base
 end

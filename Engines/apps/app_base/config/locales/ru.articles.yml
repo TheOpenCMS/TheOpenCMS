@@ -1,11 +1,19 @@
 ru:
   views:
     articles:
-      new_form:
-        title_lable: Заголовок статьи
+      edit_form:
+        title_lable: 'Заголовок статьи:'
         title_placeholder: Укажите заголовок статьи
-        editor_type_lable: Тип редактора
+        editor_type_lable: 'Тип редактора:'
         editor_type_options:
           plain: Без редактора
           ckeditor: Пользовательский
-        submit_btn: Создать Статью
+        raw_intro_lable: 'Вводная часть статьи:'
+        raw_content_lable: 'Содержимое статьи:'
+        state_lable: 'Статус статьи:'
+        state_options:
+          draft: Черновик
+          published: Опубликовано
+          deleted: Удалено
+        create_btn: Создать Статью
+        update_btn: Обновить Статью
