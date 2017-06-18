@@ -21,8 +21,8 @@ module UserRoom
     ################################################
 
     def authorize_action!
-      authorized = can_perform?(action: :shared)
-      authorization_exception!('Action is not allowed to perform') unless authorized
+      return if can_perform?
+      authorization_exception!('Action is not allowed to perform')
     end
 
     def set_resource!
@@ -32,6 +32,7 @@ module UserRoom
 
     def authorize_owner!
       return true if current_user.admin?
+
       authorized = @resource == current_user
       authorization_exception!('Owner required') unless authorized
     end

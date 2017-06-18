@@ -20,13 +20,15 @@ module AuthorizeIt::ACLPermits
 
   class Base
     def initialize(options = {})
-      @options = options
+      @options = options.with_indifferent_access
       @controller = options[:controller]
 
       @user = options[:user]
-      @scope = options[:scope]
-      @action = options[:action]
       @resource = options[:resource]
+
+      @scope = options[:scope]
+      @acl = options[:acl]
+      @action = options[:action]
     end
   end
 
@@ -38,19 +40,23 @@ module AuthorizeIt::ACLPermits
 
   def can_perform?(options = {})
     user = options.fetch(:user, self.try(:current_user))
-    scope = options.fetch(:scope, self.try(:controller_name))
-    action = options.fetch(:action, self.try(:action_name))
     resource = options.fetch(:resource, nil)
+
+    scope  = options.fetch(:scope, self.try(:controller_name))
+    action = options.fetch(:action, self.try(:action_name))
+    acl    = options.fetch(:acl, :shared)
 
     options = options.merge({
       user: user,
-      scope: scope,
-      action: action,
+      controller: self,
       resource: resource,
-      controller: self
+
+      scope: scope,
+      acl: acl,
+      action: action
     })
 
-    acl_klass_name = "#{ scope.singularize.to_s.classify }ACL::#{ action.to_s.classify }"
+    acl_klass_name = "#{ scope.to_s.singularize.classify }ACL::#{ acl.to_s.classify }"
     acl_klass = acl_klass_name.constantize
 
     acl_klass.new(options).can_perform?

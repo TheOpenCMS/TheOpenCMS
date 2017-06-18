@@ -8,6 +8,8 @@
       span.mr5 = link_to 'Articles', articles_path, class: 'app_theme_toolbar-link'
       span.mr5 |
     - if current_user
+      span.mr5 = link_to 'Create New', create_new_path, class: 'app_theme_toolbar-link'
+      span.mr5 |
       span.mr5 = link_to 'My Profile', [:edit, @user], class: 'app_theme_toolbar-link'
       span.mr5 |
       span = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'app_theme_toolbar-link'

@@ -4,6 +4,6 @@ class UserACL::Shared < AuthorizeIt::ACLPermits::Base
 
     user_avatar_actions = ::UserRoom::ControllerAvatarActions::AVATAR_ACTIONS_NAMES
     acl = %w[index show edit update] + user_avatar_actions
-    acl.include?(@controller.action_name)
+    acl.include?(@action.to_s)
   end
 end

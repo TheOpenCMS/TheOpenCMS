@@ -24,8 +24,8 @@ module ThePublication
     ################################################
 
     def authorize_action!
-      authorized = can_perform?(action: :shared)
-      authorization_exception!('Action is not allowed to perform') unless authorized
+      return if can_perform?
+      authorization_exception!('Action is not allowed to perform')
     end
 
     def set_resource!
