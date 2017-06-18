@@ -1,0 +1,49 @@
+.ptz_radio_button {
+  display: none;
+}
+
+.ptz_radio_button + label {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.ptz_radio_button + label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 19px;
+  height: 19px;
+  border-radius: 10px;
+  border: 4px solid lightgray;
+}
+
+.ptz_radio_button + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 9px;
+  height: 9px;
+  border-radius: 10px;
+}
+
+.ptz_radio_button + label:hover:after {
+  background-color: gray;
+}
+
+.ptz_radio_button:checked + label:after {
+  background: black;
+}
+
+.ptz_radio_button:disabled + label {
+  cursor: not-allowed;
+}
+
+.ptz_radio_button:disabled:not(:checked) + label:hover:after {
+  background-color: transparent;
+}

@@ -182,3 +182,33 @@
   -ms-flex-line-pack: distribute !important;
       align-content: space-around !important;
 }
+
+.flex-item_as_a {
+  -ms-flex-item-align: auto !important;
+      align-self: auto !important;
+}
+
+.flex-item_as_s {
+  -ms-flex-item-align: start !important;
+      align-self: flex-start !important;
+}
+
+.flex-item_as_e {
+  -ms-flex-item-align: end !important;
+      align-self: flex-end !important;
+}
+
+.flex-item_as_c {
+  -ms-flex-item-align: center !important;
+      align-self: center !important;
+}
+
+.flex-item_as_b {
+  -ms-flex-item-align: baseline !important;
+      align-self: baseline !important;
+}
+
+.flex-item_as_st {
+  -ms-flex-item-align: stretch !important;
+      align-self: stretch !important;
+}

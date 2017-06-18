@@ -2111,6 +2111,10 @@
   text-decoration: underline !important;
 }
 
+.s {
+  text-decoration: line-through !important;
+}
+
 .fwn {
   font-weight: normal !important;
 }

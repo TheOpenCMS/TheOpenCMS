@@ -22,12 +22,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
       <td style="text-align:left">
         <b>CSS class</b>
       </td>
-
       <td style="text-align:left">
         <b>CSS style</b>
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ma
@@ -36,12 +34,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         margin: auto
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Margin</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         m0 ... m100 &mdash; <em>(step 5)</em>
@@ -50,7 +46,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         margin: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ml0 ... ml100
@@ -59,7 +54,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         margin-left: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         mr0 ... mr100
@@ -68,7 +62,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         margin-right: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         mt0 ... mt100
@@ -77,7 +70,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         margin-top: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         mb0 ... mb100
@@ -86,12 +78,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         margin-bottom: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Padding</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         p0 ... p100
@@ -100,7 +90,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         padding: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         pl0 ... pl100
@@ -109,7 +98,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         padding-left: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         pr0 ... pr100
@@ -118,7 +106,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         padding-right: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         pt0 ... pt100
@@ -127,7 +114,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         padding-top: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         pb0 ... pb100
@@ -136,12 +122,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         padding-bottom: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Width</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         w10 ... w1200
@@ -150,7 +134,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         width: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         w5p ... w100p
@@ -159,12 +142,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         width: <b>X</b>% !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Display</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         inline
@@ -173,7 +154,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         display: inline !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         block
@@ -182,7 +162,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         display: block !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         iblock
@@ -191,12 +170,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         display: inline-block !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Table</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ptz_table
@@ -205,7 +182,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         display: table
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ptz_row, ptz_tr
@@ -214,7 +190,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         display: table-row
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ptz_cell, ptz_th, ptz_td
@@ -223,12 +198,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         display: table-cell; vertical-align: top
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         vat
@@ -237,7 +210,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         vertical-align: top !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         vam
@@ -246,7 +218,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         vertical-align: middle !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         vab
@@ -255,12 +226,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         vertical-align: bottom !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Position</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         posrel
@@ -269,7 +238,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         position: relative !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         posabs
@@ -278,12 +246,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         position: absolute !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Common style</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         fs0, fs10 ... fs30 &mdash; <em>(step 1)</em>
@@ -292,7 +258,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-size: <b>X</b>px !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         lh100 ... lh200
@@ -301,12 +266,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         line-height: <b>X</b>% !important;
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         tac
@@ -315,7 +278,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         text-align: center !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         tar
@@ -324,7 +286,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         text-align: right !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         tal
@@ -333,7 +294,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         text-align: left !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         taj
@@ -342,12 +302,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         text-align: justify !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         b
@@ -356,7 +314,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-weight: bold !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         i
@@ -365,7 +322,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-style: italic !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         n
@@ -374,7 +330,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-style: normal !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         u
@@ -383,7 +338,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         text-decoration: underline !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         fwn
@@ -392,12 +346,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-weight: normal !important
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         upcase
@@ -406,7 +358,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         text-transform: uppercase
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         downcase
@@ -415,12 +366,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         text-transform: lowercase
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ffa
@@ -429,7 +378,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-family: Arial
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         fft
@@ -438,7 +386,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-family: Tahoma
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ffv
@@ -447,7 +394,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-family: Verdana
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ffg
@@ -456,7 +402,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-family: Georgia
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ffm
@@ -465,7 +410,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-family: Monospace
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         fftnr
@@ -474,12 +418,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         font-family: Times New Roman
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         br-off
@@ -488,7 +430,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         white-space: nowrap
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         br-on
@@ -497,12 +438,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         white-space: normal
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ls0
@@ -511,7 +450,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         letter-spacing: 0
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         lsn
@@ -520,12 +458,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         letter-spacing: normal
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Buttons</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ptz_btn
@@ -534,7 +470,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         button style
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ptz_size-10 ... ptz_size-25
@@ -543,12 +478,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         button's size. 10px ... 25px
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Inputs</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ptz_input, ptz_textarea
@@ -557,7 +490,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         Input style
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ptz_size-10 ... ptz_size-25
@@ -566,12 +498,10 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         inputs's size. 10px ... 25px
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'><b>Floating</b></td>
       <td width="400px" valign="top" style='vertical-align:top'>&nbsp;</td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         clearfix
@@ -580,7 +510,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         no comments
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         pull-left
@@ -589,7 +518,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         float: left
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         pull-right
@@ -598,7 +526,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         float: right
       </td>
     </tr>
-
     <tr>
       <td width="400px" valign="top" style='vertical-align:top'>
         ofh
@@ -607,7 +534,6 @@ Protozaur is semantic, mnemonic, declarative CSS framework, created to avoid was
         overflow: hidden !important
       </td>
     </tr>
-
   </tbody>
 </table>
 
@@ -668,8 +594,8 @@ Will show button based on `font-size: 16px;`
 
 All CSS properties can be split in 2 groups:
 
-0. decorative properties (`background`, `color`, `border` etc.)
-0. context-dependent properties (`margin`, `padding`, `font-size` etc.)
+1. decorative properties (`background`, `color`, `border` etc.)
+2. context-dependent properties (`margin`, `padding`, `font-size` etc.)
 
 Protozaur say:
 
@@ -681,21 +607,21 @@ Protozaur advice:
 
 ### Protozaur components
 
-0. **reset.css** &mdash; just the reset file
-0. **framework.css** &mdash; the heart of framework
-0. **base.css** &mdash; some most common css definitions
+1. **reset.css** &mdash; just the reset file
+2. **framework.css** &mdash; the heart of framework
+3. **base.css** &mdash; some most common css definitions
 
 also will be better to include `inputs-buttons` componetns:
 
-0. **inputs-buttons/base.css** &mdash; for using styles for inputs and buttons
-0. **inputs-buttons/sizes.css** &mdash; for set sizes to buttons and inputs
+1. **inputs-buttons/base.css** &mdash; for using styles for inputs and buttons
+2. **inputs-buttons/sizes.css** &mdash; for set sizes to buttons and inputs
 
 ### Features
 
 Protozaur:
 
-0. based on `box-sizing: border-box` property
-0. based on **px** and **%**
+1. based on `box-sizing: border-box` property
+2. based on **px** and **%**
 
 ### Protozaur [vs] or [with]  Bootstrap / Foundation / Any CSS framework
 
