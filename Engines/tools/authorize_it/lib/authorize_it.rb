@@ -1,4 +1,5 @@
 require_relative 'authorize_it/exceptions'
+require_relative 'authorize_it/acl_permits'
 require_relative 'authorize_it/permitted_params'
 require_relative 'authorize_it/controller'
 
@@ -22,7 +23,7 @@ module AuthorizeIt
       def load_permittions!
         engines_with_permissions.each do |engine|
           root_path = engine.root
-          dir = "#{root_path}/#{ PERMISSIONS_DIR }"
+          dir = "#{ root_path }/#{ PERMISSIONS_DIR }"
 
           ::ActiveSupport::Dependencies.autoload_paths += Dir["#{dir}/**"]
 

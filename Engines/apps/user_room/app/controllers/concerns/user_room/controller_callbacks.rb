@@ -4,14 +4,14 @@ module UserRoom
     extend ActiveSupport::Concern
 
     included do
-      before_action :authenticate_user!, if: :needs_authenticate_user?
-      before_action :set_role!,          if: :needs_set_role?
-      before_action :authorize_action!,  if: :needs_authorize_action?
+      before_action :authenticate_user!,  if: :needs_authenticate_user?
+      before_action :set_role!,           if: :needs_set_role?
+      before_action :authorize_action!,   if: :needs_authorize_action?
 
       before_action :set_resource_class!, if: :needs_set_resource_class?
       before_action :set_resource!,       if: :needs_set_resource?
 
-      before_action :authorize_owner!,   if: :needs_authorize_owner?
+      before_action :authorize_owner!,    if: :needs_authorize_owner?
     end
 
     protected
@@ -21,11 +21,7 @@ module UserRoom
     ################################################
 
     def authorize_action!
-      acl = {
-        user:  %w[index show edit update] + user_avatar_actions,
-        admin: %w[index show edit update] + user_avatar_actions
-      }
-      authorized = acl[@role].include?(action_name)
+      authorized = can_perform?(action: :shared)
       authorization_exception!('Action is not allowed to perform') unless authorized
     end
 

@@ -2,7 +2,8 @@ module AuthorizeIt::Controller
   extend ActiveSupport::Concern
 
   included do
-    include AuthorizeIt::PermittedParams
+    include ::AuthorizeIt::PermittedParams
+    include ::AuthorizeIt::ACLPermits
 
     private
 
