@@ -1,0 +1,30 @@
+.ptz_fileinput {
+  width: 0.1px;
+  height: 0.1px;
+  z-index: -1;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.ptz_fileinput + label {
+  color: black;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+  background: white;
+  transition: background-color .2s ease;
+}
+
+.ptz_fileinput:disabled + label {
+  color: #eee;
+  background: white;
+  cursor: not-allowed;
+}
