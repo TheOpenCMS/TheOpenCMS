@@ -9,6 +9,10 @@ module AuthorizeIt::PermittedParams
 
   private
 
+  #################################
+  # Controller Helper
+  #################################
+
   def permitted_params(options = {})
     controller_name = options.fetch(:controller, self.controller_name)
     action_name     = options.fetch(:action, self.action_name)
@@ -18,7 +22,7 @@ module AuthorizeIt::PermittedParams
       action_name: action_name
     })
 
-    permit_klass_name = "#{controller_name.singularize}_permits/#{action_name}".classify
+    permit_klass_name = "#{ controller_name.singularize }_permits/#{ action_name }".classify
     permit_klass = (permit_klass_name).constantize
 
     permit_klass.new(self, options).permitted_params
