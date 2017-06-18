@@ -86,6 +86,7 @@ PATH
   remote: Engines/apps/the_publication
   specs:
     the_publication (0.1.0)
+      authorize_it
       config
       crop_tool
       image_tools
@@ -104,11 +105,13 @@ PATH
   remote: Engines/apps/theopencms.org
   specs:
     app_theme (0.1)
+      app_base
 
 PATH
   remote: Engines/apps/user_room
   specs:
     user_room (0.1.0)
+      authorize_it
       config
       crop_tool
       devise

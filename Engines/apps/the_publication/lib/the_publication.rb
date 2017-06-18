@@ -15,6 +15,7 @@
 
   log_js
   the_notifications
+  authorize_it
 
   protozaur
 ].each { |gem_name| require gem_name }
