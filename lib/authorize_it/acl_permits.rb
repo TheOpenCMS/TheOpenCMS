@@ -9,7 +9,7 @@ module AuthorizeIt::ACLPermits
   #     }
   #
   #     role = @user.editor? ? :editor : :user
-  #     acl[role].include?(@action)
+  #     acl.include?(@controller.action_name)
   #   end
   # end
 
@@ -21,6 +21,7 @@ module AuthorizeIt::ACLPermits
   class Base
     def initialize(options = {})
       @options = options
+      @controller = options[:controller]
 
       @user = options[:user]
       @scope = options[:scope]
@@ -45,7 +46,8 @@ module AuthorizeIt::ACLPermits
       user: user,
       scope: scope,
       action: action,
-      resource: resource
+      resource: resource,
+      controller: self
     })
 
     acl_klass_name = "#{ scope.singularize.to_s.classify }ACL::#{ action.to_s.classify }"
