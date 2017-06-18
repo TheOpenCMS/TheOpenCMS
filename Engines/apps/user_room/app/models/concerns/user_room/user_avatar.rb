@@ -5,7 +5,6 @@ module UserRoom
     included do
       include ::ImageTools
 
-      attr_accessor :avatar_timestamp_updated
       before_validation :generate_avatar_name
       after_commit :avatar_build_variants
 
