@@ -1,0 +1,25 @@
+.ptz_input, .ptz_textarea {
+  color: black;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.ptz_input:focus, .ptz_textarea:focus {
+  box-shadow: 0 0px 7px rgba(123, 199, 255, 0.8);
+}
+
+.ptz_input:disabled, .ptz_textarea:disabled {
+  color: #eee;
+  background: white;
+  cursor: not-allowed;
+}
+
+.ptz_input:disabled:hover, .ptz_textarea:disabled:hover {
+  color: #eee;
+  background: white;
+}

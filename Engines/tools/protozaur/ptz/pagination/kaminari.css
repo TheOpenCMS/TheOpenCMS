@@ -1,0 +1,33 @@
+.ptz_paginator {
+  text-align: center;
+  border-radius: 3px;
+  background: #e3f2fd;
+  box-sizing: border-box;
+}
+
+.ptz_paginator-page {
+  padding: 5px 10px;
+  font-size: 17px;
+  line-height: 35px;
+  display: inline-block;
+}
+
+.ptz_paginator-page:hover {
+  background: #fff;
+}
+
+.ptz_paginator-prev, .ptz_paginator-next, .ptz_paginator-first, .ptz_paginator-last {
+  white-space: nowrap;
+}
+
+.ptz_paginator-current {
+  background: #fff;
+}
+
+.ptz_paginator-current:hover {
+  background: #fff;
+}
+
+.ptz_paginator-gap:hover {
+  background: #e3f2fd;
+}

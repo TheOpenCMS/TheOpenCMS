@@ -1,0 +1,41 @@
+.ptz_btn
+  color: black
+  font-size: 15px
+  line-height: 18px
+
+  padding: 7px 10px
+  border-radius: 3px
+  vertical-align: top
+  border: 1px solid rgba(0, 0, 0, 0.2)
+
+  text-align: center
+  white-space: nowrap
+  display: inline-block
+
+  cursor: pointer
+  background: white
+  transition: background-color .2s ease
+
+  &.current
+    border-color: #7bc7ff
+    background-color: #c5e6ff
+
+    &:hover
+      background-color: #c5e6ff
+
+  &:hover
+    color: #000
+    background-color: #e3f2fd
+
+  &:disabled, &[disabled]
+    color: #eee
+    background: white
+    cursor: not-allowed
+    pointer-events: none
+
+    &:hover
+      color: #eee
+      background: white
+
+  &:active
+    box-shadow: 0 1px 5px #7bc7ff
