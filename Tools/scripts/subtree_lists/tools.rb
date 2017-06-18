@@ -31,10 +31,6 @@ SUBTREES = %w[
   git@github.com:TheOpenCMS/crop_tool.git
   master
 
-  Engines/tools/crop_tool
-  git@github.com:TheOpenCMS/crop_tool.git
-  master
-
   Engines/tools/friendly_id_pack
   git@github.com:TheOpenCMS/friendly_id_pack.git
   master
