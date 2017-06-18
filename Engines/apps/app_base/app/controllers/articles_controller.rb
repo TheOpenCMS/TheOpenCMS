@@ -13,6 +13,11 @@ class ArticlesController < ::PublicationController::Base
 
   def print
     super
-    render(layout: false, template: 'pubs/print')
+    render(template: 'pubs/print')
+  end
+
+  def new
+    super
+    render(template: 'pubs/new')
   end
 end

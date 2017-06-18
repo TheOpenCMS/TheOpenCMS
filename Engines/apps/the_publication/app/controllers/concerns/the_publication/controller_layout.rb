@@ -10,8 +10,11 @@ module ThePublication
     private
 
     def publication_layout
-      false if %w[print].include?(action_name)
-      return 'the_publication_frontend' if %w[index show].include?(action_name)
+      no_layout = %w[print]
+      frontent_layout = %w[index show]
+
+      return false if no_layout.include?(action_name)
+      return 'the_publication_frontend' if frontent_layout.include?(action_name)
       'the_publication_backend'
     end
   end # ControllerLayout

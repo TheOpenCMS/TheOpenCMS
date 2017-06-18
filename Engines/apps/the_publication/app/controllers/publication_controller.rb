@@ -9,6 +9,9 @@ class PublicationController
     include ::ThePublication::ControllerCustomViewRender
     # include ::TheSortableTreeController::ReversedRebuild
 
+    #################################
+    # Public
+    #################################
     def index
       @resources = @resource_class
                 .with_user
@@ -21,6 +24,14 @@ class PublicationController
 
     def show;  end
     def print; end
+
+    #################################
+    # Restricted
+    #################################
+
+    def new
+      @pub = @resource_class.new(user: current_user)
+    end
 
     private
 

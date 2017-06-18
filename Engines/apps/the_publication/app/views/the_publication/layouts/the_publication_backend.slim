@@ -1,1 +1,5 @@
-= render template: 'the_publication/layouts/the_publication_shared'
+- content_for :base_assets do
+  = stylesheet_link_tag    'the_publication/backend', media: :all, 'data-turbolinks-track' => true
+  = javascript_include_tag 'the_publication/backend', 'data-turbolinks-track' => true
+
+= render template: 'layouts/the_publication_shared'

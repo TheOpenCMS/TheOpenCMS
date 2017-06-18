@@ -1,0 +1,11 @@
+ru:
+  views:
+    articles:
+      new_form:
+        title_lable: Заголовок статьи
+        title_placeholder: Укажите заголовок статьи
+        editor_type_lable: Тип редактора
+        editor_type_options:
+          plain: Без редактора
+          ckeditor: Пользовательский
+        submit_btn: Создать Статью
