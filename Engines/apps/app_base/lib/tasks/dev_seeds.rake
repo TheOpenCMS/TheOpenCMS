@@ -39,7 +39,7 @@ namespace :dev_seeds do
         username: "User #{i.next}",
         password: 'qwerty',
         password_confirmation: 'qwerty',
-        email: "user-#{i.next}@exmple.com"
+        email: "user-#{i.next}@theopencms.org"
       )
       user.skip_confirmation!
       user.save!

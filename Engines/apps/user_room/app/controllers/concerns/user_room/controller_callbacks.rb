@@ -27,7 +27,7 @@ module UserRoom
 
     def set_resource!
       user_id = params[:id] || params[:user_id]
-      @user = ::User.where(login: user_id).first
+      @resource = @user = ::User.where(login: user_id).first
     end
 
     def authorize_owner!
@@ -41,7 +41,7 @@ module UserRoom
     ################################################
 
     def needs_authenticate_user?
-      except_actions = %w[index show]
+       except_actions = %w[index show]
       !except_actions.include?(action_name)
     end
 
@@ -51,7 +51,7 @@ module UserRoom
     end
 
     def needs_authorize_action?
-      except_actions = %w[index show]
+       except_actions = %w[index show]
       !except_actions.include?(action_name)
     end
 
@@ -61,17 +61,17 @@ module UserRoom
     end
 
     def needs_set_resource?
-      except_actions = %w[index show] + user_avatar_actions
+       except_actions = %w[index]
       !except_actions.include?(action_name)
     end
 
     def needs_authorize_owner?
-      except_actions = %w[index show profile]
+       except_actions = %w[index show profile]
       !except_actions.include?(action_name)
     end
 
     def needs_authorize_admin?
-      except_actions = %w[index show] + user_avatar_actions
+       except_actions = %w[index show] + user_avatar_actions
       !except_actions.include?(action_name)
     end
 
