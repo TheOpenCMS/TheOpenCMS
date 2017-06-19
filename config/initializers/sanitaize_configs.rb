@@ -9,9 +9,12 @@ class Sanitize
         a img br
 
         strong b i em u s sub sup
-        font span div p  pre blockquote
+        font span div p pre
 
-        table th tr td
+        blockquote
+        footer
+
+        table tbody th tr td
         ul ol li
       ],
       :attributes => {
