@@ -17,6 +17,7 @@ class PublicationController
       @resources = @resource_class
                 .with_user
                 .published
+                .max2min(:published_at)
                 .simple_sort(params)
                 .pagination(params)
 
@@ -35,7 +36,8 @@ class PublicationController
     end
 
     def create
-      pub_params = permitted_params.merge(user: current_user)
+      pub_params = permitted_params(action: :edit)
+      pub_params = pub_params.merge(user: current_user)
 
       @pub = @resource_class.new(pub_params)
       @pub.content_processing_for(current_user)
@@ -48,5 +50,16 @@ class PublicationController
     end
 
     def edit; end
+
+    def update
+      @pub.assign_attributes(permitted_params(action: :edit))
+      @pub.content_processing_for(current_user)
+
+      if @pub.save
+        redirect_to \
+          url_for([:edit, @pub]),
+          notice: "Publication has been updated"
+      end
+    end
   end # Base
 end

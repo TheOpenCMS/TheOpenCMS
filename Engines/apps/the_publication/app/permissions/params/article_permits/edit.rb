@@ -1,4 +1,4 @@
-class ArticlePermits::Create < AuthorizeIt::PermittedParams::Base
+class ArticlePermits::Edit < AuthorizeIt::PermittedParams::Base
   def permitted_params
     return @params.permit! if @controller.current_user.admin?
 

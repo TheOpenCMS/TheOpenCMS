@@ -25,16 +25,16 @@ ruby:
           t(:raw_intro_lable, scope: scope),
           class: 'block mb10 fs20'
 
-        = f.text_area :raw_intro,
-          class: 'ptz_textarea w80p fs18'
+        = f.text_area :raw_intro, rows: 7,
+          class: 'ptz_textarea w80p fs18  lh135'
 
       .mb20
         = f.label :raw_content,
           t(:raw_content_lable, scope: scope),
           class: 'block mb10 fs20'
 
-        = f.text_area :raw_content,
-          class: 'ptz_textarea w80p fs18'
+        = f.text_area :raw_content, rows: 15,
+          class: 'ptz_textarea w80p fs18 lh135'
 
       .mb50
         = f.label :state,

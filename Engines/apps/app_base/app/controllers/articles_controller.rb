@@ -39,6 +39,11 @@ class ArticlesController < ::PublicationController::Base
     render(template: 'pubs/edit')
   end
 
+  def update
+    super
+    render(template: 'pubs/edit') unless performed?
+  end
+
   private
 
   def authorize_fallback_location
