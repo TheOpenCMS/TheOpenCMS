@@ -1,7 +1,9 @@
 ruby:
   scope = [:views, @pub.class.to_s.downcase.pluralize, :show]
 
-= render partial: 'pubs/code_pygments_css'
+- content_for :base_assets do
+  link href="https://fonts.googleapis.com/css?family=Anonymous+Pro&amp;subset=cyrillic,latin-ext" rel="stylesheet"
+  = render partial: 'pubs/code_pygments_css'
 
 .ptz_table.mb20
   .ptz_td.w15p
@@ -23,8 +25,9 @@ ruby:
     h1.fs26.b.lh130.mb30 = @pub.title
 
     .mb30
-      = raw @pub.intro
-      = raw @pub.content
+      .pub-content_typography
+        = raw @pub.intro
+        = raw @pub.content
 
     .mb10
       span.mr30

@@ -1,0 +1,81 @@
+@mixin common_font_style
+  color: #292e31
+  font-size: 16px
+  line-height: 160%
+
+.pub-content_typography
+  @include common_font_style
+
+  h2, h3, h4
+    line-height: 135%
+    margin-bottom: 20px
+    padding-bottom: 5px
+    border-bottom: 4px solid #eee
+
+  h2
+    font-size: 26px
+
+  h3
+    font-size: 22px
+
+  h4
+    font-size: 18px
+
+  p
+    @include common_font_style
+    margin: 20px 0
+
+  table
+    border-collapse: collapse
+    border: 1px solid #eee
+    margin: 20px 0
+    width: 100%
+
+    th
+      color: white
+      background-color: #4CAF50
+
+    th, td
+      padding: 10px
+      text-align: left
+
+    tr:nth-child(even)
+      background-color: #f2f2f2
+
+  u, ins
+    text-decoration: none
+    display: inline-block
+    border-bottom: 4px solid #ffd721
+
+  s, strike, del
+    text-decoration: none
+    background: #292e31
+    padding: 0 5px
+    transition: background 1s linear
+
+    &:hover
+      background: transparent
+      border-bottom: 4px solid #737070
+
+  blockquote
+    @include common_font_style
+    position: relative
+    background: #f9f9f9
+    border-left: 10px solid #ccc
+    padding: 10px 10px 10px 35px
+    border-radius: 0px 5px 5px 0px
+    margin: 15px 0
+
+    &:before
+      color: #ccc
+      display: block
+      content: open-quote
+      position: absolute
+      top: 5px
+      left: 0px
+      font-size: 75px
+      font-style: italic
+
+    footer
+      margin-top: 5px
+      color: #015fff

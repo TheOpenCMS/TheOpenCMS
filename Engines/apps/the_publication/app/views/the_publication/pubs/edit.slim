@@ -7,44 +7,60 @@ ruby:
 
 = render partial: 'notifications/form', locals: { object: @pub, format: :html }
 
-.pub_form-block
-  .m20
-    = form_for @pub do |f|
-      .mb20
-        = f.label :title,
-          t(:title_lable, scope: scope),
-          class: 'block mb10 fs20'
+.ptz_table.mb20
+  .ptz_td.w15p
+    .mr15
+      .mb15
+        = link_to t(:root_page_html, scope: scope),
+          root_path,
+          class: 'ptz_btn ptz_size-16'
+      .mb15
+        = link_to t(:all_articles_html, scope: scope),
+          articles_path,
+          class: 'ptz_btn ptz_size-16'
+      .mb15
+          = link_to t(:show, scope: scope),
+            [@pub],
+            class: 'ptz_btn ptz_size-16'
+  .ptz_td
+    .pub_form-block
+      .m20
+        = form_for @pub do |f|
+          .mb20
+            = f.label :title,
+              t(:title_lable, scope: scope),
+              class: 'block mb10 fs20'
 
-        = f.text_field :title,
-          size: 200, maxlength: 200,
-          placeholder: t(:title_placeholder, scope: scope),
-          class: 'ptz_input w80p fs18'
+            = f.text_field :title,
+              size: 200, maxlength: 200,
+              placeholder: t(:title_placeholder, scope: scope),
+              class: 'ptz_input w80p fs18'
 
-      .mb20
-        = f.label :raw_intro,
-          t(:raw_intro_lable, scope: scope),
-          class: 'block mb10 fs20'
+          .mb20
+            = f.label :raw_intro,
+              t(:raw_intro_lable, scope: scope),
+              class: 'block mb10 fs20'
 
-        = f.text_area :raw_intro, rows: 7,
-          class: 'ptz_textarea w80p fs18  lh135'
+            = f.text_area :raw_intro, rows: 7,
+              class: 'ptz_textarea w80p fs18  lh135'
 
-      .mb20
-        = f.label :raw_content,
-          t(:raw_content_lable, scope: scope),
-          class: 'block mb10 fs20'
+          .mb20
+            = f.label :raw_content,
+              t(:raw_content_lable, scope: scope),
+              class: 'block mb10 fs20'
 
-        = f.text_area :raw_content, rows: 15,
-          class: 'ptz_textarea w80p fs18 lh135'
+            = f.text_area :raw_content, rows: 15,
+              class: 'ptz_textarea w80p fs18 lh135'
 
-      .mb50
-        = f.label :state,
-          t(:state_lable, scope: scope),
-          class: 'block mb10 fs20'
+          .mb50
+            = f.label :state,
+              t(:state_lable, scope: scope),
+              class: 'block mb10 fs20'
 
-        = f.select :state, state_options, {},
-          autocomplete: :off,
-          class: 'ptz_input ptz_size-15 w250'
+            = f.select :state, state_options, {},
+              autocomplete: :off,
+              class: 'ptz_input ptz_size-15 w250'
 
-      div
-        = f.submit t(:update_btn, scope: scope),
-          class: 'ptz_btn ptz_size-20'
+          div
+            = f.submit t(:update_btn, scope: scope),
+              class: 'ptz_btn ptz_size-20'
