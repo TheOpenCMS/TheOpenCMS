@@ -1,24 +1,41 @@
+ruby:
+  scope = [:views, @pub.class.to_s.downcase.pluralize, :show]
+
 = render partial: 'pubs/code_pygments_css'
 
-.mb20.fs20
-  = link_to raw('&larr; Articles'), articles_path
+.ptz_table.mb20
+  .ptz_td.w15p
+    .mr15
+      .mb15
+        = link_to t(:root_page_html, scope: scope),
+          root_path,
+          class: 'ptz_btn ptz_size-16'
+      .mb15
+        = link_to t(:all_articles_html, scope: scope),
+          articles_path,
+          class: 'ptz_btn ptz_size-16'
+      .mb15
+        - if can_perform?(scope: @pub.class, acl: :shared, action: :edit)
+          = link_to t(:edit, scope: scope),
+            [:edit, @pub],
+            class: 'ptz_btn ptz_size-16'
+  .ptz_td
+    h1.fs26.b.lh130.mb30 = @pub.title
 
-h1.fs26.b.lh130.mb30 = @pub.title
+    .mb30
+      = raw @pub.intro
+      = raw @pub.content
 
-.mb30
-  = raw @pub.intro
-  = raw @pub.content
-
-.mb10
-  span.mr30
-    | Status:
-    =< @pub.state
-  span.mr30
-    | Counter:
-    =< @pub.view_counter
-  span.mr30
-    | Author:
-    =< @pub.user.email
-  span.mr30
-    | Published At:
-    =< pubs_localized_date(@pub.published_at)
+    .mb10
+      span.mr30
+        | Status:
+        =< @pub.state
+      span.mr30
+        | Counter:
+        =< @pub.view_counter
+      span.mr30
+        | Author:
+        =< @pub.user.email
+      span.mr30
+        | Published At:
+        =< pubs_localized_date(@pub.published_at)

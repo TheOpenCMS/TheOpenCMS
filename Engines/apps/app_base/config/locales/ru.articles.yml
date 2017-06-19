@@ -1,6 +1,11 @@
 ru:
   views:
     articles:
+      show:
+        root_page_html: '&laquo; Главная'
+        all_articles_html: '&laquo; Все статьи'
+        edit: 'Править Статью'
+
       edit_form:
         title_lable: 'Заголовок статьи:'
         title_placeholder: Укажите заголовок статьи
