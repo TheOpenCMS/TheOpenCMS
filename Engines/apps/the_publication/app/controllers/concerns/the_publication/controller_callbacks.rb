@@ -1,11 +1,12 @@
 # include ::ThePublication::ControllerCallbacks
+# before_action :set_role!,           if: :needs_set_role?
+
 module ThePublication
   module ControllerCallbacks
     extend ActiveSupport::Concern
 
     included do
       before_action :authenticate_user!,  if: :needs_authenticate_user?
-      before_action :set_role!,           if: :needs_set_role?
       before_action :authorize_action!,   if: :needs_authorize_action?
 
       before_action :set_resource_class!, if: :needs_set_resource_class?
