@@ -2,6 +2,7 @@ require_relative 'authorize_it/exceptions'
 require_relative 'authorize_it/acl_permits'
 require_relative 'authorize_it/permitted_params'
 require_relative 'authorize_it/controller'
+require_relative 'authorize_it/ownership'
 
 module AuthorizeIt
   class Engine < Rails::Engine

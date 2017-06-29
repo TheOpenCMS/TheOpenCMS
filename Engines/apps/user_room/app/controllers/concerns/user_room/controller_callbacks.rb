@@ -31,10 +31,8 @@ module UserRoom
     end
 
     def authorize_owner!
-      return true if current_user.admin?
-
-      authorized = @resource == current_user
-      authorization_exception!('Owner required') unless authorized
+      owner = current_user.owner?(@resource)
+      authorization_exception!('Owner required') unless owner
     end
 
     ################################################
