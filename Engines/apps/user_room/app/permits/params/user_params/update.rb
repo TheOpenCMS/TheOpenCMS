@@ -1,4 +1,4 @@
-class UserParams::Update < AuthorizeIt::PermittedParams::Base
+class UserParams::Update < ActivePermits::PermittedParams::Base
   def permitted_params
     params = @params.require(:user).permit(
       :avatar, :raw_about,

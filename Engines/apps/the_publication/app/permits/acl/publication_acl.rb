@@ -1,4 +1,4 @@
-class PublicationACL < AuthorizeIt::ACLPermits::Base
+class PublicationACL < ActivePermits::ACLPermits::Base
   def can_perform?
     return true if @user.admin?
 

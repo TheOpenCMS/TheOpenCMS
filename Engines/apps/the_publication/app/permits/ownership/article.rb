@@ -1,4 +1,4 @@
-class Ownership::Article < AuthorizeIt::Ownership::Base
+class Ownership::Article < ActivePermits::Ownership::Base
   def owner?
     return true if @user.admin?
     @resource.user == @user

@@ -1,6 +1,6 @@
-module AuthorizeIt::ACLPermits
+module ActivePermits::ACLPermits
 
-  # class ArticleACL < AuthorizeIt::ACLPermits::Base
+  # class ArticleACL < ActivePermits::ACLPermits::Base
   #   def can_perform?
   #     return true if @user.admin?
   #

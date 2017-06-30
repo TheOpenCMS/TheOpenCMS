@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   include ::RoleSystem
   include ::UserRoom::User
-  include ::AuthorizeIt::User
+  include ::ActivePermits::User
 
   has_many :articles
 end

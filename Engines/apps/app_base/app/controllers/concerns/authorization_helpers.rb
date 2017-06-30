@@ -24,6 +24,6 @@ module AuthorizationHelpers
 
   def access_denied
     redirect_back fallback_location: authorize_fallback_location,
-      flash: {error: t('authorize_it.access_denied')}
+      flash: {error: t('active_permits.access_denied')}
   end
 end

@@ -1,4 +1,4 @@
-module AuthorizeIt::Ownership
+module ActivePermits::Ownership
   class Base
     def initialize(params = {})
       @params = params.with_indifferent_access

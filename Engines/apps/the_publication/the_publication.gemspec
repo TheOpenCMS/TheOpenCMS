@@ -49,7 +49,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'paperclip'
   spec.add_dependency 'image_tools'
   spec.add_dependency 'crop_tool'
-  spec.add_dependency 'authorize_it'
+  spec.add_dependency 'active_permits'
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"

@@ -1,4 +1,4 @@
-module AuthorizeIt::PermittedParams
+module ActivePermits::PermittedParams
   class Base
     def initialize(controller, options = {})
       @options = options.with_indifferent_access

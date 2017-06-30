@@ -1,4 +1,4 @@
-# AuthorizeIt
+# ActivePermits
 
 The Authorization Solution for TheOpenCMS
 
@@ -8,8 +8,8 @@ Close everything!
 
 ```ruby
 class ApplicationController < ActionController::Base
-  include ::AuthorizeIt::Controller
-  rescue_from ::AuthorizeIt::AuthorizationException, with: :access_denied
+  include ::ActivePermits::Controller
+  rescue_from ::ActivePermits::AuthorizationException, with: :access_denied
 
   protect_from_forgery with: :exception
 
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def access_denied
     redirect_back fallback_location: authorize_fallback_location,
-      flash: {error: t('authorize_it.access_denied')}
+      flash: {error: t('active_permits.access_denied')}
   end
 ```
 
@@ -87,7 +87,7 @@ end
 **app/permissions/params/users_controller/update_action.rb**
 
 ```ruby
-class UsersController::UpdateAction < AuthorizeIt::PermittedParams::Base
+class UsersController::UpdateAction < ActivePermits::PermittedParams::Base
   def permitted_params
     if @controller.current_user.admin?
       @params.require(:user).permit!

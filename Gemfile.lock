@@ -86,7 +86,7 @@ PATH
   remote: Engines/apps/the_publication
   specs:
     the_publication (0.1.0)
-      authorize_it
+      active_permits
       config
       crop_tool
       image_tools
@@ -111,7 +111,7 @@ PATH
   remote: Engines/apps/user_room
   specs:
     user_room (0.1.0)
-      authorize_it
+      active_permits
       config
       crop_tool
       devise
@@ -135,7 +135,7 @@ PATH
 PATH
   remote: Engines/tools/authorize_it
   specs:
-    authorize_it (0.1.0)
+    active_permits (0.1.0)
 
 PATH
   remote: Engines/tools/crop_tool
@@ -540,9 +540,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_permits!
   app_base!
   app_theme!
-  authorize_it!
   autoprefixer-rails
   byebug
   capybara (~> 2.7.0)

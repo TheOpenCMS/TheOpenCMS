@@ -1,4 +1,4 @@
-class UserACL::Shared < AuthorizeIt::ACLPermits::Base
+class UserACL::Shared < ActivePermits::ACLPermits::Base
   def can_perform?
     return true if @user.admin?
 
