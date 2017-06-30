@@ -2,17 +2,17 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-module AuthorizeIt
+module ActivePermits
   VERSION = "0.1.0"
 end
 
 Gem::Specification.new do |spec|
-  spec.name          = "authorize_it"
-  spec.version       = AuthorizeIt::VERSION
+  spec.name          = "active_permits"
+  spec.version       = ActivePermits::VERSION
   spec.authors       = ["Ilya N. Zykin"]
   spec.email         = ["zykin-ilya@ya.ru"]
 
-  spec.summary       = %q{Acts as ActivePermissions}
+  spec.summary       = %q{Acts as ActivePermits}
   spec.description   = %q{Authorization solution for TheOpenCMS}
   spec.homepage      = "https://github.com/the-teacher"
   spec.license       = "MIT"

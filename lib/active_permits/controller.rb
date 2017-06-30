@@ -1,9 +1,9 @@
-module AuthorizeIt::Controller
+module ActivePermits::Controller
   extend ActiveSupport::Concern
 
   included do
-    include ::AuthorizeIt::PermittedParams
-    include ::AuthorizeIt::ACLPermits::Controller
+    include ::ActivePermits::PermittedParams
+    include ::ActivePermits::ACLPermits::Controller
 
     helper_method :permitted_params
     helper_method :can_perform?
@@ -22,8 +22,8 @@ module AuthorizeIt::Controller
       authorization_exception!("Authorization Fallback Location is required")
     end
 
-    def authorization_exception!(message = "AuthorizeIt / Authorization Exception")
-      fail ::AuthorizeIt::AuthorizationException.new(message)
+    def authorization_exception!(message = "ActivePermits / Authorization Exception")
+      fail ::ActivePermits::AuthorizationException.new(message)
     end
 
     def authorize_resource
