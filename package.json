@@ -1,7 +1,8 @@
 {
-  "name": "rails51",
+  "name": "TheOpenCMS",
   "private": true,
   "dependencies": {
+    "ckeditor": "=4.7.1",
     "jquery-jcrop": "=0.9.13"
   }
 }
