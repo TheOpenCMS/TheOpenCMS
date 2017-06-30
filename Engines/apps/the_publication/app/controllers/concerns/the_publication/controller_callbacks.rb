@@ -25,12 +25,12 @@ module ThePublication
     ################################################
 
     def authorize_action!
-      return if can_perform?
+      return if can_perform?(:publication, action: action_name)
       authorization_exception!('Action is not allowed to perform')
     end
 
     def set_resource!
-      pub_id = permitted_params(action: :pub_id)
+      pub_id = permitted_params(class: :publication, action: :pub_id)
 
       @pub = @resource_class.with_user
                             .available_for(current_user)

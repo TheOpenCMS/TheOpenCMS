@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
   ################################################
 
   def authorize_action!
-    return if can_perform?
+    return if can_perform?(:welcome, action: action_name)
     authorization_exception!('Action is not allowed to perform')
   end
 

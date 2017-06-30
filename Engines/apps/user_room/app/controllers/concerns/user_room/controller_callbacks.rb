@@ -21,7 +21,7 @@ module UserRoom
     ################################################
 
     def authorize_action!
-      return if can_perform?
+      return if can_perform?(controller_name, action: action_name)
       authorization_exception!('Action is not allowed to perform')
     end
 

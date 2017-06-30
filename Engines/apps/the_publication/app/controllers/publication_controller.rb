@@ -1,6 +1,8 @@
 class PublicationController
   class RecordNotFound < StandardError; end
+end
 
+class PublicationController
   class Base < ApplicationController
     authorize_resource_name :pub
 
@@ -36,10 +38,9 @@ class PublicationController
     end
 
     def create
-      pub_params = permitted_params(action: :edit)
-      pub_params = pub_params.merge(user: current_user)
+      edit_params = edit_params.merge(user: current_user)
 
-      @pub = @resource_class.new(pub_params)
+      @pub = @resource_class.new(edit_params)
       @pub.content_processing_for(current_user)
 
       if @pub.save
@@ -52,7 +53,7 @@ class PublicationController
     def edit; end
 
     def update
-      @pub.assign_attributes(permitted_params(action: :edit))
+      @pub.assign_attributes(edit_params)
       @pub.content_processing_for(current_user)
 
       if @pub.save
@@ -60,6 +61,12 @@ class PublicationController
           url_for([:edit, @pub]),
           notice: "Publication has been updated"
       end
+    end
+
+    private
+
+    def edit_params
+      permitted_params(class: :publication, action: :edit)
     end
   end # Base
 end
