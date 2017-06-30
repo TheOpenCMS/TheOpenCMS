@@ -1,12 +1,15 @@
 require_relative 'authorize_it/exceptions'
+require_relative 'authorize_it/controller'
+
+require_relative 'authorize_it/ownership'
 require_relative 'authorize_it/acl_permits'
 require_relative 'authorize_it/permitted_params'
-require_relative 'authorize_it/controller'
-require_relative 'authorize_it/ownership'
+
+require_relative 'authorize_it/user'
 
 module AuthorizeIt
   class Engine < Rails::Engine
-    PERMISSIONS_DIR = 'app/permissions'
+    PERMISSIONS_DIR = 'app/permits'
 
     class << self
       def all_engines

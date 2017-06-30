@@ -3,7 +3,7 @@ module AuthorizeIt::Controller
 
   included do
     include ::AuthorizeIt::PermittedParams
-    include ::AuthorizeIt::ACLPermits
+    include ::AuthorizeIt::ACLPermits::Controller
 
     helper_method :permitted_params
     helper_method :can_perform?

@@ -18,17 +18,17 @@ module AuthorizeIt::PermittedParams
   #################################
 
   def permitted_params(options = {})
-    controller_name = options.fetch(:controller, self.controller_name)
-    action_name     = options.fetch(:action, self.action_name)
+    class_name  = options.fetch(:class, self.controller_name).to_s
+    action_name = options.fetch(:action, self.action_name).to_s
 
     options = options.merge({
-      controller_name: controller_name,
-      action_name: action_name
+      class: class_name,
+      action: action_name
     })
 
-    permit_klass_name = "#{ controller_name.singularize }_permits/#{ action_name }".classify
-    permit_klass = (permit_klass_name).constantize
+    permits_class_name = "#{ class_name.singularize }_params/#{ action_name }".classify
+    permits_class = (permits_class_name).constantize
 
-    permit_klass.new(self, options).permitted_params
+    permits_class.new(self, options).permitted_params
   end
 end

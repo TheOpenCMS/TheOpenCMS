@@ -1,5 +1,6 @@
 module AuthorizeIt::ACLPermits
-  # class ArticleACL::Update < AuthorizeIt::ACLPermits::Base
+
+  # class ArticleACL < AuthorizeIt::ACLPermits::Base
   #   def can_perform?
   #     return true if @user.admin?
   #
@@ -13,7 +14,7 @@ module AuthorizeIt::ACLPermits
   #   end
   # end
 
-  # ArticleACL::Update.new(
+  # ArticleACL.new(
   #   user: current_user,
   #   action: 'update',
   # ).can_perform?
@@ -32,33 +33,43 @@ module AuthorizeIt::ACLPermits
     end
   end
 
-  private
-
   #################################
-  # Controller Helper
+  # User Model Helper
   #################################
 
-  def can_perform?(options = {})
-    user = options.fetch(:user, self.try(:current_user))
-    resource = options.fetch(:resource, nil)
+  # if @user.can_perform?(:article, action: :new)
+  # if @user.can_perform?(:articles, action: :new)
+  # if @user.can_perform?(@article, action: :new)
+  # if @user.can_perform?('Article', action: :new)
 
-    scope  = options.fetch(:scope, self.try(:controller_name))
-    action = options.fetch(:action, self.try(:action_name))
-    acl    = options.fetch(:acl, :shared)
+  module User
+    def can_perform?(resource, options = {})
+      if %w[String Symbol].include?(resource.class.to_s)
+        resource_class_name = resource.to_s
+      else
+        resource_class_name = resource.class.to_s
+      end
 
-    options = options.merge({
-      user: user,
-      controller: self,
-      resource: resource,
+      acl_klass_name = resource_class_name.downcase.classify
+      acl_klass = "#{acl_klass_name}ACL".constantize
 
-      scope: scope,
-      acl: acl,
-      action: action
-    })
+      resource = options.fetch(:resource, resource)
+      action = options.fetch(:action)
 
-    acl_klass_name = "#{ scope.to_s.singularize.classify }ACL::#{ acl.to_s.classify }"
-    acl_klass = acl_klass_name.constantize
+      options = options.merge({
+        resource: resource,
+        action: action,
+        user: self
+      })
 
-    acl_klass.new(options).can_perform?
+      acl_klass.new(options).can_perform?
+    end
+  end
+
+  module Controller
+    def can_perform?(resource, options = {})
+      return false unless current_user
+      current_user.can_perform?(resource, options)
+    end
   end
 end
