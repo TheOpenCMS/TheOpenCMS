@@ -1,4 +1,4 @@
-require 'the_string_to_slug'
+require 'to_slug_param'
 
 module FriendlyIdPack
   class Engine < Rails::Engine; end
