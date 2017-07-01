@@ -35,8 +35,8 @@ SUBTREES = %w[
   git@github.com:TheOpenCMS/friendly_id_pack.git
   master
 
-  Engines/tools/authorize_it
-  git@github.com:TheOpenCMS/authorize_it.git
+  Engines/tools/active_permits
+  git@github.com:TheOpenCMS/active_permits.git
   master
 
   Engines/tools/the_string_addon
