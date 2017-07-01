@@ -133,7 +133,7 @@ PATH
       to_slug_param
 
 PATH
-  remote: Engines/tools/authorize_it
+  remote: Engines/tools/active_permits
   specs:
     active_permits (0.1.0)
 
