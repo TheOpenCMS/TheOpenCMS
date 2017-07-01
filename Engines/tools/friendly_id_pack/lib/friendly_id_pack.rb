@@ -1,4 +1,3 @@
-require "friendly_id_pack/version"
 require 'the_string_to_slug'
 
 module FriendlyIdPack
