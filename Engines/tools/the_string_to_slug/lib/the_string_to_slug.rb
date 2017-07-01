@@ -1,5 +1,4 @@
 require "rails-i18n"
-require "the_string_to_slug/version"
 
 module TheStringToSlug
   class << self
