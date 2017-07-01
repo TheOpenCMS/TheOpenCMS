@@ -1,3 +1,5 @@
+= render template: 'pubs/ckeditor'
+
 ruby:
   scope = [:views, @pub.class.to_s.downcase.pluralize, :edit_form]
   state_scope = scope + [:state_options]
@@ -42,6 +44,7 @@ ruby:
               class: 'block mb10 fs20'
 
             = f.text_area :raw_intro, rows: 7,
+              id: :redactor_intro,
               class: 'ptz_textarea w80p fs18  lh135'
 
           .mb20
@@ -50,6 +53,7 @@ ruby:
               class: 'block mb10 fs20'
 
             = f.text_area :raw_content, rows: 15,
+              id: :redactor_content,
               class: 'ptz_textarea w80p fs18 lh135'
 
           .mb50

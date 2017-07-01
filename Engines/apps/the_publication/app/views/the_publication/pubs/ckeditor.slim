@@ -1,0 +1,8 @@
+- content_for :editor do
+  javascript:
+    var CKEDITOR_BASEPATH = "/ckeditor/";
+
+  = javascript_include_tag "/ckeditor/ckeditor"
+
+  javascript:
+    $(function(){ PubCKEditor.init() })

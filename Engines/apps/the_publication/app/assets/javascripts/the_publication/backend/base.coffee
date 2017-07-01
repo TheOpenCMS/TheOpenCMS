@@ -5,3 +5,4 @@
 #= require log_js
 #= require notifications/base
 #= require app_base/frontend/select_locale
+#= require the_publication/backend/pub_ckeditor
