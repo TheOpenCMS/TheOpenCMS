@@ -3,7 +3,7 @@
 - content_for :base_assets do
   link href="https://fonts.googleapis.com/css?family=Anonymous+Pro&amp;subset=cyrillic,latin-ext" rel="stylesheet"
 
-.tar.fs16.mb30.pr10
+.tar.fs16.mb50.pr10
   span.b> Items amount:
   - %w[ 5 10 20 50 100 125 ].each do |num|
     ruby:
@@ -13,10 +13,12 @@
 
   span.mr10= link_to '[x]', reset_simple_sort(per_page: nil)
 
+- if @pubs.blank?
+  .fs18= t(:nothing_here, scope: 'publications')
+
 - @pubs.each do |pub|
-  .mt30.mb30
-    .mb15
-      = link_to pub.title, pub, class: 'fs20 b'
+  .mt30.mb80
+    .mb20= link_to pub.title, pub, class: 'fs25 b'
 
     .pub-content_typography.mb15
       = raw pub.intro

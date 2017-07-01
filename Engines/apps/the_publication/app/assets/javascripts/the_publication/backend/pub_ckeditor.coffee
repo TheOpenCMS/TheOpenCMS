@@ -15,10 +15,11 @@
   editors_setup: ->
     has_intro      = $('#redactor_intro').length > 0
     intro_uninited = $('#cke_redactor_intro').length is 0
-    if has_intro && intro_uninited
-      CKEDITOR.replace 'redactor_intro', { height: 200 }
 
-    has_cont      = $('#redactor_content').length > 0
+    CKEDITOR.replace 'redactor_intro',
+      height: 200
+
+    has_cont = $('#redactor_content').length > 0
     cont_uninited = $('#cke_redactor_content').length is 0
     if has_cont && cont_uninited
       CKEDITOR.replace 'redactor_content', { height: 500 }
