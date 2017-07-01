@@ -43,7 +43,7 @@ SUBTREES = %w[
   git@github.com:TheOpenCMS/the_string_addon.git
   master
 
-  Engines/tools/the_string_to_slug
-  git@github.com:TheOpenCMS/the_string_to_slug.git
+  Engines/tools/to_slug_param
+  git@github.com:the-cocoon/to_slug_param.git
   master
 ]
