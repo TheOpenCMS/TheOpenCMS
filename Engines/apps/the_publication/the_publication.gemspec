@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'simple_sort'
   spec.add_dependency 'the_pagination'
   spec.add_dependency 'the_notifications'
-  spec.add_dependency 'the_string_to_slug'
+  spec.add_dependency 'to_slug_param'
 
   spec.add_dependency 'mini_magick'
   spec.add_dependency 'paperclip'

@@ -4,7 +4,7 @@
 
   simple_sort
   the_pagination
-  the_string_to_slug
+  to_slug_param
   friendly_id_pack
 
   mini_magick

@@ -13,7 +13,7 @@ require 'user_room/config'
 
   simple_sort
   the_pagination
-  the_string_to_slug
+  to_slug_param
   premailer/rails
 
   mini_magick

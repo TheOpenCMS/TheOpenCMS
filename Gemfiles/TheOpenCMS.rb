@@ -1,4 +1,4 @@
-gem 'the_string_to_slug', path: '../Engines/tools/the_string_to_slug'
+gem 'to_slug_param',      path: '../Engines/tools/to_slug_param'
 gem 'the_string_addon',   path: '../Engines/tools/the_string_addon'
 gem 'friendly_id_pack',   path: '../Engines/tools/friendly_id_pack'
 gem 'the_notifications',  path: '../Engines/tools/notifications'

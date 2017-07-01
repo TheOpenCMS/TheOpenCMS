@@ -99,7 +99,7 @@ PATH
       slim
       the_notifications
       the_pagination
-      the_string_to_slug
+      to_slug_param
 
 PATH
   remote: Engines/apps/theopencms.org
@@ -130,7 +130,7 @@ PATH
       slim
       the_notifications
       the_pagination
-      the_string_to_slug
+      to_slug_param
 
 PATH
   remote: Engines/tools/authorize_it
@@ -148,7 +148,7 @@ PATH
   remote: Engines/tools/friendly_id_pack
   specs:
     friendly_id_pack (0.0.1)
-      the_string_to_slug
+      to_slug_param
 
 PATH
   remote: Engines/tools/image_tools
@@ -195,11 +195,11 @@ PATH
       sanitize
 
 PATH
-  remote: Engines/tools/the_string_to_slug
+  remote: Engines/tools/to_slug_param
   specs:
-    the_string_to_slug (1.4)
-      rails-i18n (~> 4.0.0.pre)
-      stringex (~> 2.5.2)
+    to_slug_param (1.2)
+      rails-i18n
+      stringex (~> 2.7.1)
 
 PATH
   remote: Engines/tools/voiceless
@@ -441,9 +441,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-i18n (4.0.2)
-      i18n (~> 0.6)
-      rails (>= 4.0)
+    rails-i18n (5.0.4)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     rails_autolink (1.1.6)
       rails (> 3.1)
     railties (5.1.2)
@@ -499,7 +499,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    stringex (2.5.2)
+    stringex (2.7.1)
     temple (0.7.7)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
@@ -598,8 +598,8 @@ DEPENDENCIES
   the_pagination!
   the_publication!
   the_string_addon!
-  the_string_to_slug!
   thinking-sphinx (= 3.2.0)
+  to_slug_param!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
