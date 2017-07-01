@@ -30,7 +30,7 @@ module ThePublication
     end
 
     def set_resource!
-      pub_id = permitted_params(class: :publication, action: :pub_id)
+      pub_id = params.fetch(:id)
 
       @pub = @resource_class.with_user
                             .available_for(current_user)

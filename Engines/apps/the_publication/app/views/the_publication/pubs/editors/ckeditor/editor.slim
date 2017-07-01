@@ -1,0 +1,11 @@
+- content_for :editor do
+  javascript:
+    var CKEDITOR_BASEPATH = "/vendor/ckeditor/ckeditor/";
+
+  = javascript_include_tag "/vendor/ckeditor/ckeditor/ckeditor"
+
+  javascript:
+    CKEDITOR.config.customConfig = '../custom/user.js';
+
+  javascript:
+    $(function(){ PubCKEditor.init() })

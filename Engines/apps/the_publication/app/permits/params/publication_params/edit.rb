@@ -1,9 +1,18 @@
 class PublicationParams::Edit < ActivePermits::PermittedParams::Base
   def permitted_params
-    return @params.permit! if @controller.current_user.admin?
+    params = @user.admin? ? admin_params : user_params
+    params = params.merge(user: @user) if @action_name == 'create'
+    params
+  end
 
+  private
+
+  def admin_params
+    @params.permit!
+  end
+
+  def user_params
     resource_class_name = controller_var('@resource_class_name')
-
     @params.require(resource_class_name).permit(
       :slug,
 

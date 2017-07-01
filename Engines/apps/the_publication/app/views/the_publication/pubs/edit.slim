@@ -1,4 +1,5 @@
-= render template: 'pubs/ckeditor'
+- if @pub.editor_type == 'ckeditor'
+  = render template: 'pubs/editors/ckeditor/editor'
 
 ruby:
   scope = [:views, @pub.class.to_s.downcase.pluralize, :edit_form]

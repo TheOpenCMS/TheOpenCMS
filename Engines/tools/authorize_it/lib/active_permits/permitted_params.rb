@@ -1,9 +1,14 @@
 module ActivePermits::PermittedParams
   class Base
     def initialize(controller, options = {})
-      @options = options.with_indifferent_access
       @controller = controller
       @params = @controller.params.clone
+
+      @options = options.with_indifferent_access
+
+      @action_name = options.fetch(:action_name, @controller.action_name)
+      @action = options.fetch(:action, @action_name)
+      @user = options.fetch(:user, @controller.try(:current_user))
     end
 
     def controller_var(variable_name)

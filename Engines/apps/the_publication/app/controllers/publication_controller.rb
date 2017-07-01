@@ -38,9 +38,7 @@ class PublicationController
     end
 
     def create
-      edit_params = edit_params.merge(user: current_user)
-
-      @pub = @resource_class.new(edit_params)
+      @pub = @resource_class.new(pub_params)
       @pub.content_processing_for(current_user)
 
       if @pub.save
@@ -53,7 +51,7 @@ class PublicationController
     def edit; end
 
     def update
-      @pub.assign_attributes(edit_params)
+      @pub.assign_attributes(pub_params)
       @pub.content_processing_for(current_user)
 
       if @pub.save
@@ -65,7 +63,7 @@ class PublicationController
 
     private
 
-    def edit_params
+    def pub_params
       permitted_params(class: :publication, action: :edit)
     end
   end # Base
