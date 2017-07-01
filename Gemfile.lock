@@ -199,6 +199,7 @@ PATH
   specs:
     the_string_to_slug (1.4)
       rails-i18n (~> 4.0.0.pre)
+      stringex (~> 2.5.2)
 
 PATH
   remote: Engines/tools/voiceless
@@ -498,6 +499,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stringex (2.5.2)
     temple (0.7.7)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
