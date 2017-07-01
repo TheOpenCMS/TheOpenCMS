@@ -44,6 +44,6 @@ SUBTREES = %w[
   master
 
   Engines/tools/to_slug_param
-  git@github.com:the-cocoon/to_slug_param.git
+  git@github.com:TheOpenCMS/to_slug_param.git
   master
 ]
