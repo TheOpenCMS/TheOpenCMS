@@ -1,11 +1,11 @@
 - content_for :editor do
   javascript:
-    var CKEDITOR_BASEPATH = "/vendor/ckeditor/ckeditor/";
+    CKEDITOR_BASEPATH = "/vendor/ckeditor/ckeditor/";
 
   = javascript_include_tag "/vendor/ckeditor/ckeditor/ckeditor"
 
   javascript:
+    CKEDITOR.config.language = '#{ I18n.locale }';
     CKEDITOR.config.customConfig = '../custom/default_settings.js';
-
-  javascript:
-    $(function(){ PubCKEditor.init() })
+    CKEDITOR.config.contentsCss = '/vendor/ckeditor/custom/default_settings.css';
+    $(function(){ PubCKEditor.init() });

@@ -1,6 +1,4 @@
 CKEDITOR.editorConfig = function( config ) {
-  config.language = 'ru';
-
   // config.allowedContent = true;
   config.disableNativeSpellChecker = false;
 
