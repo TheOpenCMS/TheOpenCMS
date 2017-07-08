@@ -61,6 +61,33 @@ class PublicationController
       end
     end
 
+    def my
+      @resources = @resource_class
+                .with_user
+                .where(user: current_user)
+                .where(state: %w[draft published])
+                .max2min(:published_at)
+                .simple_sort(params)
+                .pagination(params)
+
+      @pubs = @resources
+    end
+
+    #################################
+    # Admin Permissions
+    #################################
+
+    def manage
+      @resources = @resource_class
+                .with_user
+                .draft.or(@resource_class.published)
+                .max2min(:published_at)
+                .simple_sort(params)
+                .pagination(params)
+
+      @pubs = @resources
+    end
+
     private
 
     def pub_params

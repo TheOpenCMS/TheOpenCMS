@@ -1,5 +1,4 @@
 # include ::ThePublication::ControllerCallbacks
-# before_action :set_role!,           if: :needs_set_role?
 
 module ThePublication
   module ControllerCallbacks
@@ -59,11 +58,6 @@ module ThePublication
       !except_actions.include?(action_name)
     end
 
-    def needs_set_role?
-       except_actions = %w[index print]
-      !except_actions.include?(action_name)
-    end
-
     def needs_authorize_action?
        except_actions = %w[index print]
       !except_actions.include?(action_name)
@@ -75,17 +69,17 @@ module ThePublication
     end
 
     def needs_set_resource?
-       except_actions = %w[index new create]
+       except_actions = %w[index new create my manage]
       !except_actions.include?(action_name)
     end
 
     def needs_set_user?
-      except_actions = %w[index new create]
+      except_actions = %w[index new create my manage]
      !except_actions.include?(action_name)
     end
 
     def needs_authorize_owner?
-       except_actions = %w[index show print new create]
+       except_actions = %w[index show print new create my manage]
       !except_actions.include?(action_name)
     end
 

@@ -17,6 +17,7 @@ module ThePublication
 
         collection do
           get :manage
+          get :my
         end
       end
     end

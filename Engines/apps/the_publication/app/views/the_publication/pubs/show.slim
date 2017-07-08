@@ -3,7 +3,7 @@ ruby:
 
 - content_for :base_assets do
   link href="https://fonts.googleapis.com/css?family=Anonymous+Pro&amp;subset=cyrillic,latin-ext" rel="stylesheet"
-  = render partial: 'pubs/code_pygments_css'
+  = render partial: 'pubs/items/code_pygments_css'
 
 .ptz_table.mb20
   .ptz_td.w15p
@@ -29,16 +29,4 @@ ruby:
         = raw @pub.intro
         = raw @pub.content
 
-    .mb10
-      span.mr30
-        | Status:
-        =< @pub.state
-      span.mr30
-        | Counter:
-        =< @pub.view_counter
-      span.mr30
-        | Author:
-        =< @pub.user.email
-      span.mr30
-        | Published At:
-        =< pubs_localized_date(@pub.published_at)
+    = render 'pubs/items/pub_footer_info'

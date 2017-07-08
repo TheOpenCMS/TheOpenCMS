@@ -41,13 +41,14 @@ module ActivePermits::ACLPermits
   # if @user.can_perform?(:articles, action: :new)
   # if @user.can_perform?(@article, action: :new)
   # if @user.can_perform?('Article', action: :new)
+  # if @user.can_perform?('Article', action: [:new, :edit])
 
   module User
     def can_perform?(resource, options = {})
       if %w[String Symbol].include?(resource.class.to_s)
         resource_class_name = resource.to_s
       else
-        resource_class_name = resource.class.to_s
+        resource_class_name = resource.name
       end
 
       acl_klass_name = resource_class_name.downcase.classify

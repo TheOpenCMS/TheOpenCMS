@@ -3,7 +3,11 @@ doctype html
 html.w100p.h100p
   head class=('log-js' if Rails.env.development?)
     meta charset='utf-8'
-    title TheOpenCMS / User Room
+    title
+      - if content_for?(:title)
+        = yield(:title)
+      - else
+        | TheOpenCMS / User Room
 
     / = action_cable_meta_tag
     = csrf_meta_tags

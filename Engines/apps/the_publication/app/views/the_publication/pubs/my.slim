@@ -3,7 +3,7 @@
 - content_for :base_assets do
   link href="https://fonts.googleapis.com/css?family=Anonymous+Pro&amp;subset=cyrillic,latin-ext" rel="stylesheet"
 
-= render partial: 'pubs/pagination_and_sort_params'
+= render partial: 'pubs/items/pagination_and_sort_params'
 
 - if @pubs.blank?
   .fs18= t(:nothing_here, scope: 'publications')
@@ -11,9 +11,6 @@
 - @pubs.each do |pub|
   .mt30.mb80
     .mb20= link_to pub.title, pub, class: 'fs25 b'
-
-    .pub-content_typography.mb15
-      = raw pub.intro
 
     .fs14
       span.mr20

@@ -1,3 +1,6 @@
+ruby:
+  voiceless { Article }
+
 - content_for :title do
   | Edit the Profile
 
@@ -6,6 +9,15 @@
 
   .fs28.lh120.mb20
     = t(:title, scope: 'user_room.users.edit')
+
+  - if defined?(Article) && can_perform?(Article, action: [:manage, :my])
+    .user_room_form-block.mb20
+      .m20
+        - if can_perform?(Article, action: :manage)
+          = link_to 'Edit Articles', manage_articles_path, class: 'ptz_btn ptz_size-16'
+
+        - if can_perform?(Article, action: :my)
+          = link_to 'Edit My Articles', my_articles_path, class: 'ptz_btn ptz_size-16'
 
   .user_room_form-block.mb20
     .m20

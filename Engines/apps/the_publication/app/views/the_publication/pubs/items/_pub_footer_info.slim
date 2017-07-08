@@ -1,0 +1,13 @@
+.mb10.fs16
+  span.mr30
+    | Status:
+    =< @pub.state
+  span.mr30
+    | Counter:
+    =< @pub.view_counter
+  span.mr30
+    | Author:
+    =< @pub.user.email
+  span.mr30
+    | Published At:
+    =< pubs_localized_date(@pub.published_at)

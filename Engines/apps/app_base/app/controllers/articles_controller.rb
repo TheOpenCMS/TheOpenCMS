@@ -24,6 +24,11 @@ class ArticlesController < ::PublicationController::Base
   # Restricted
   #################################
 
+  def my
+    super
+    render(template: 'pubs/my')
+  end
+
   def new
     super
     render(template: 'pubs/new')
@@ -42,6 +47,15 @@ class ArticlesController < ::PublicationController::Base
   def update
     super
     render(template: 'pubs/edit') unless performed?
+  end
+
+  #################################
+  # Admin
+  #################################
+
+  def manage
+    super
+    render(template: 'pubs/manage') unless performed?
   end
 
   private
