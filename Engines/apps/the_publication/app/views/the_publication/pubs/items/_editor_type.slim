@@ -1,2 +1,5 @@
 - if @pub.editor_type == 'ckeditor'
   = render template: 'pubs/editors/ckeditor/editor'
+
+- if @pub.editor_type == 'code_mirror'
+  = render template: 'pubs/editors/code_mirror/editor'

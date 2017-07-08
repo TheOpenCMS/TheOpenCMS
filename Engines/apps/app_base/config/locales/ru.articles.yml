@@ -14,6 +14,7 @@ ru:
         editor_type_lable: 'Тип редактора:'
         editor_type_options:
           plain: Без редактора
+          code_mirror: HTML редактор
           ckeditor: Пользовательский
         raw_intro_lable: 'Вводная часть статьи:'
         raw_content_lable: 'Содержимое статьи:'

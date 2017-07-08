@@ -8,6 +8,10 @@
 - if @pubs.blank?
   .fs18= t(:nothing_here, scope: 'publications')
 
+- if can_perform?(:publication, action: :new)
+  .mb25
+    = link_to 'Create publication', new_publication_path, class: 'ptz_btn ptz_size-16'
+
 - @pubs.each do |pub|
   .mt30.mb80
     .mb20= link_to pub.title, pub, class: 'fs25 b'

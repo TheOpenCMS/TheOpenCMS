@@ -1,4 +1,4 @@
 $(document).on 'ready turbolinks:load',  ->
   do SelectLocale.init
   do Notifications.init
-  do PubCKEditor.init
+  do PubCodeMirror.init

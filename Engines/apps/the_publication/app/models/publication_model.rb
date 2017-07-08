@@ -1,4 +1,6 @@
 class PublicationModel
+  EDITORS = %w[ ckeditor code_mirror plain ]
+
   class Base < ApplicationRecord
     self.abstract_class = true
 
@@ -14,7 +16,5 @@ class PublicationModel
 
     belongs_to :user
     validates :title, :slug, presence: true
-
-    EDITORS = %w[ ckeditor code_mirror plain ]
   end
 end

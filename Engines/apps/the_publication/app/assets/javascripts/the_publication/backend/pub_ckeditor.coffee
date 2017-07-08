@@ -1,34 +1,40 @@
 @PubCKEditor = do ->
+  editor_included: -> typeof(CKEDITOR) isnt 'undefined'
+
+  destroy_all: ->
+    for name, instance of CKEDITOR.instances
+      instance.destroy(true)
+
   init: ->
-    log 'CKEditor Initializer'
+    unless PubCKEditor.init_editor()
+      setTimeout (=> PubCKEditor.init_editor()), 1000
 
-    try
+  init_editor: ->
+    if PubCKEditor.editor_included()
       PubCKEditor.editors_setup()
-    catch e
-      log 'CKE Not loaded'
-      log e
-
-      setTimeout ->
-        PubCKEditor.editors_setup()
-      , 2000
+      return true
 
   editors_setup: ->
-    has_intro      = $('#redactor_intro').length > 0
-    intro_uninited = $('#cke_redactor_intro').length is 0
+    PubCKEditor.destroy_all()
 
-    CKEDITOR.replace 'redactor_intro',
-      height: 200
+    setTimeout =>
+      $('#pub_intro').prop('disabled', false)
+      $('#pub_content').prop('disabled', false)
 
-    has_cont = $('#redactor_content').length > 0
-    cont_uninited = $('#cke_redactor_content').length is 0
-    if has_cont && cont_uninited
-      CKEDITOR.replace 'redactor_content', { height: 500 }
+      if $('#pub_intro').length
+        unless CKEDITOR.instances['pub_intro']
+          CKEDITOR.replace 'pub_intro',
+            height: 200
+
+      if $('#pub_content').length
+        unless CKEDITOR.instances['pub_content']
+          CKEDITOR.replace 'pub_content',
+            height: 500
+    , 1000
 
     do @customizer
 
   customizer: ->
-    log 'Customizer'
-
     CKEDITOR.on 'dialogDefinition', (ev) ->
       dialogName = ev.data.name
       dialogDefinition = ev.data.definition
@@ -39,7 +45,7 @@
         advRel.default = 'nofollow'
 
       if dialogName is 'image'
-        pub_title = $('.js--cke-editor--pub-title').val()
+        pub_title = $('.js-pub-title').val()
 
         infoTab = dialogDefinition.getContents('info')
         advTab  = dialogDefinition.getContents('advanced')

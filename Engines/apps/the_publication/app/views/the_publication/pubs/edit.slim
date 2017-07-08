@@ -43,7 +43,7 @@ ruby:
             = f.text_field :title,
               size: 200, maxlength: 200,
               placeholder: t(:title_placeholder, scope: edit_scope),
-              class: 'ptz_input w80p fs18'
+              class: 'ptz_input w80p fs18 js-pub-title'
 
           .mb20
             = f.label :raw_intro,
@@ -51,8 +51,8 @@ ruby:
               class: 'block mb10 fs20'
 
             = f.text_area :raw_intro, rows: 7,
-              id: :redactor_intro,
-              class: 'ptz_textarea w80p fs18  lh135'
+              id: :pub_intro, disabled: true,
+              class: 'ptz_textarea w80p fs18 lh135'
 
           .mb20
             = f.label :raw_content,
@@ -60,7 +60,7 @@ ruby:
               class: 'block mb10 fs20'
 
             = f.text_area :raw_content, rows: 15,
-              id: :redactor_content,
+              id: :pub_content, disabled: true,
               class: 'ptz_textarea w80p fs18 lh135'
 
           .mb50

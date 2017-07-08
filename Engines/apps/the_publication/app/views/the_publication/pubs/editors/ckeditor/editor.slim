@@ -5,7 +5,11 @@
   = javascript_include_tag "/vendor/ckeditor/ckeditor/ckeditor"
 
   javascript:
-    CKEDITOR.config.language = '#{ I18n.locale }';
-    CKEDITOR.config.customConfig = '../custom/default_settings.js';
-    CKEDITOR.config.contentsCss = '/vendor/ckeditor/custom/default_settings.css';
-    $(function(){ PubCKEditor.init() });
+    function initCKEditor() {
+      CKEDITOR.config.language = '#{ I18n.locale }';
+      CKEDITOR.config.customConfig = '../custom/default_settings.js';
+      CKEDITOR.config.contentsCss = '/vendor/ckeditor/custom/default_settings.css';
+      PubCKEditor.init()
+    }
+
+    $(function(){ setTimeout(function(){initCKEditor()}, 1000) });
