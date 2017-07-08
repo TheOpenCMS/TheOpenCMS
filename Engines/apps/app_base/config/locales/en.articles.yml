@@ -3,14 +3,12 @@ en:
     articles:
       show:
         root_page_html: '&laquo; Index'
-        all_articles_html: '&laquo; All Articles'
+        all_html: '&laquo; All Articles'
+        my_html: '&laquo; My Articles'
+        show: Show Article
         edit: Edit Article
 
       edit_form:
-        root_page_html: '&laquo; Index'
-        all_articles_html: '&laquo; All Articles'
-        show: Show Article
-
         title_lable: Title
         title_placeholder: Title
         editor_type_lable: Type of an Editor

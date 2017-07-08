@@ -2,7 +2,7 @@ ruby:
   scope = [:views, @pub.class.to_s.downcase.pluralize, :edit_form]
   editor_scope = scope + [:editor_type_options]
 
-  editor_type_options = [:ckeditor, :plain].map { |option| [t(option, scope: editor_scope), option] }
+  editor_type_options = ::PublicationModel::EDITORS.map { |option| [t(option, scope: editor_scope), option] }
   editor_type_options = options_for_select(editor_type_options, @pub.editor_type)
 
 = render partial: 'notifications/form', locals: { object: @pub, format: :html }

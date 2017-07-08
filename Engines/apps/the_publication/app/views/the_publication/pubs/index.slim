@@ -1,9 +1,9 @@
-= render partial: 'pubs/items/code_pygments_css'
-
 - content_for :base_assets do
   link href="https://fonts.googleapis.com/css?family=Anonymous+Pro&amp;subset=cyrillic,latin-ext" rel="stylesheet"
 
-= render partial: 'pubs/pagination_and_sort_params'
+= render partial: 'pubs/items/code_pygments_css'
+
+= render partial: 'pubs/items/pagination_and_sort_params'
 
 - if @pubs.blank?
   .fs18= t(:nothing_here, scope: 'publications')

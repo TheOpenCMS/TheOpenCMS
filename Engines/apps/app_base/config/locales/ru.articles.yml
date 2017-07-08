@@ -3,7 +3,9 @@ ru:
     articles:
       show:
         root_page_html: '&laquo; Главная'
-        all_articles_html: '&laquo; Все статьи'
+        all_html: '&laquo; Все статьи'
+        my_html: '&laquo; Мои статьи'
+        show: 'Просмотр'
         edit: 'Править Статью'
 
       edit_form:

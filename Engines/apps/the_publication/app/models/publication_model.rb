@@ -14,5 +14,7 @@ class PublicationModel
 
     belongs_to :user
     validates :title, :slug, presence: true
+
+    EDITORS = %w[ ckeditor code_mirror plain ]
   end
 end

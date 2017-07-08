@@ -13,8 +13,8 @@ ruby:
           root_path,
           class: 'ptz_btn ptz_size-16'
       .mb15
-        = link_to t(:all_articles_html, scope: scope),
-          articles_path,
+        = link_to t(:all_html, scope: scope),
+          @resource_class,
           class: 'ptz_btn ptz_size-16'
       .mb15
         - if can_perform?(:publication, action: :edit)
