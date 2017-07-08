@@ -1,3 +1,4 @@
+// http://ckeditor.com/tmp/4.5.0-beta/ckeditor/samples/toolbarconfigurator/index.html#advanced
 CKEDITOR.editorConfig = function( config ) {
   // config.allowedContent = true;
   config.disableNativeSpellChecker = false;
