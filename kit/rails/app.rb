@@ -94,18 +94,28 @@ class DeployKit
     git_commit_name = "git log --oneline | sed -n '1p'"
     time_stamp = "date"
 
-    release_info_command = <<-EOS
-      echo "
-        [$(#{ git_branch_name })]
-        [$(#{ git_commit_name })]
-        [$(#{ time_stamp })]
-      " > public/release.txt
-    EOS
+release_info_command = <<-EOS
+echo "
+  [$(#{ git_branch_name })]
+  [$(#{ git_commit_name })]
+  [$(#{ time_stamp })]
+" > public/release.txt
+EOS
+
+    tmp_file = Tempfile.new rand.to_s
+    tmp_file.write(release_info_command)
+    tmp_file.rewind
+
+    sh_script = "#{ current_path }/release.sh"
+    copy_file_to_remote(tmp_file.path, sh_script)
+
+    tmp_file.close
+    tmp_file.unlink
 
     remote_exec [
-      "cd #{ current_path }",
-      release_info_command,
-      'cat public/release.txt'
+      "chmod 744 #{sh_script}",
+      "cd #{ current_path } && ./release.sh",
+      "rm #{sh_script}"
     ]
   end
 end
