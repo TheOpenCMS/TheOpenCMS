@@ -1,2 +1,2 @@
-- if current_user.can_perform?(:Article, action: :new)
+- if current_user.can_perform?(:publication, action: :new)
   = link_to t(:article, scope: [:welcome, :create_new]), new_article_path, class: 'ptz_btn ptz_size-20'
