@@ -1,15 +1,10 @@
-- content_for :editor do
-  javascript:
-    CKEDITOR_BASEPATH = "/vendor/ckeditor/ckeditor/";
-
-  = javascript_include_tag "/vendor/ckeditor/ckeditor/ckeditor"
-
-  javascript:
-    function initCKEditor() {
-      CKEDITOR.config.language = '#{ I18n.locale }';
-      CKEDITOR.config.customConfig = '../custom/default_settings.js';
-      CKEDITOR.config.contentsCss = '/vendor/ckeditor/custom/default_settings.css';
-      PubCKEditor.init()
+javascript:
+  window.CONTENT_EDITOR = {
+    'name': 'ckeditor',
+    'config': {
+      'base_path': '/vendor/ckeditor/ckeditor/',
+      'language': '#{ I18n.locale }',
+      'customConfig': '../custom/default_settings.js',
+      'contentsCss': '/vendor/ckeditor/custom/default_settings.css'
     }
-
-    $(function(){ setTimeout(function(){initCKEditor()}, 1000) });
+  }

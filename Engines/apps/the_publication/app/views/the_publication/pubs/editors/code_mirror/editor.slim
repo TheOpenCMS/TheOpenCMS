@@ -1,19 +1,12 @@
-- content_for :editor do
-  = javascript_include_tag "/vendor/code_mirror/code_mirror/lib/codemirror"
+javascript:
+  window.CONTENT_EDITOR = {'name': 'code_mirror'}
 
-  = javascript_include_tag "/vendor/code_mirror/code_mirror/mode/xml/xml"
-  = javascript_include_tag "/vendor/code_mirror/code_mirror/mode/javascript/javascript"
-  = javascript_include_tag "/vendor/code_mirror/code_mirror/mode/css/css"
+= stylesheet_link_tag '/vendor/code_mirror/code_mirror/lib/codemirror', media: :all
 
-  = stylesheet_link_tag "/vendor/code_mirror/code_mirror/lib/codemirror"
-
-  = javascript_include_tag "/vendor/code_mirror/code_mirror/mode/htmlmixed/htmlmixed"
-  = javascript_include_tag "/vendor/code_mirror/code_mirror/mode/markdown/markdown"
-
-  css:
-    .CodeMirror {
-      font-size: 16px;
-      line-height: 140%;
-      border: 5px solid lightgray;
-      border-radius: 3px;
-    }
+css:
+  .CodeMirror {
+    font-size: 16px;
+    line-height: 140%;
+    border: 5px solid lightgray;
+    border-radius: 3px;
+  }

@@ -1,4 +1,6 @@
 Rails.application.config.assets.precompile += %W[
+  the_publication/requirejs.js
+
   the_publication/frontend.js
   the_publication/frontend.css
 

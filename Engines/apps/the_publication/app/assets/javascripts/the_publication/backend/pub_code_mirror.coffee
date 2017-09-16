@@ -1,36 +1,23 @@
 @PubCodeMirror = do ->
-  editor_included: -> typeof(CodeMirror) isnt 'undefined'
-
   init: ->
-    try
-      if PubCodeMirror.editor_included()
-        PubCodeMirror.editors_setup()
-      else
-        PubCodeMirror.retry()
-    catch e
-      log e
-      PubCodeMirror.retry()
-      log 'CodeMirror is not loaded'
+    log('Init Code Mirror Editors')
 
-  retry: ->
-    setTimeout =>
-      if PubCodeMirror.editor_included()
-        PubCodeMirror.editors_setup()
-    , 2000
+    require [
+      'code_mirror/code_mirror/lib/codemirror'
+      'code_mirror/code_mirror/mode/markdown/markdown'
+    ], (CodeMirror) ->
+      window.CodeMirror ||= CodeMirror
+      PubCodeMirror.init_items()
 
-  editors_setup: ->
-    console.log('Init Editors')
+  init_items: ->
+    for editor_id in ['#pub_intro', '#pub_content']
+      myTextArea = $(editor_id)
 
-    myTextArea = $('#pub_intro')[0]
-    CodeMirror.fromTextArea(myTextArea,
-      lineNumbers: true
-      mode: "markdown"
-      matchBrackets: true
-    )
-
-    myTextArea = $('#pub_content')[0]
-    CodeMirror.fromTextArea(myTextArea,
-      lineNumbers: true
-      mode: "markdown"
-      matchBrackets: true
-    )
+      if myTextArea.length
+        unless myTextArea.data('CodeMirror')
+          cm = CodeMirror.fromTextArea(myTextArea[0],
+            lineNumbers: true
+            mode: "markdown"
+            matchBrackets: true
+          )
+          myTextArea.data('CodeMirror', cm)

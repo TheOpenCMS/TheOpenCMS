@@ -4,6 +4,7 @@
   "dependencies": {
     "ckeditor": "=4.7.1",
     "codemirror": "=5.27.4",
-    "jquery-jcrop": "=0.9.13"
+    "jquery-jcrop": "=0.9.13",
+    "requirejs": "=2.3.4"
   }
 }

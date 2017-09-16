@@ -1,12 +1,12 @@
 = render partial: 'pubs/items/code_pygments_css'
 
-- content_for :base_assets do
+- content_for :additional_assets do
   link href="https://fonts.googleapis.com/css?family=Anonymous+Pro&amp;subset=cyrillic,latin-ext" rel="stylesheet"
 
 = render partial: 'pubs/items/pagination_and_sort_params'
 
 - if @pubs.blank?
-  .fs18= t(:nothing_here, scope: 'publications')
+  .fs18 = t(:nothing_here, scope: 'publications')
 
 - if can_perform?(:publication, action: :new)
   .mb25
@@ -14,7 +14,7 @@
 
 - @pubs.each do |pub|
   .mt30.mb80
-    .mb20= link_to pub.title, pub, class: 'fs25 b'
+    .mb20 = link_to pub.title, pub, class: 'fs25 b'
 
     .fs14
       span.mr20

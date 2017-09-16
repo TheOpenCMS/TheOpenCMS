@@ -1,3 +1,4 @@
-$(document).on 'ready turbolinks:load',  ->
-  do SelectLocale.init
-  do Notifications.init
+@AppInit ||= do ->
+  init: ->
+    do SelectLocale.init
+    do Notifications.init

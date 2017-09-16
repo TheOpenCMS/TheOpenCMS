@@ -1,36 +1,25 @@
 @PubCKEditor = do ->
-  editor_included: -> typeof(CKEDITOR) isnt 'undefined'
-
-  destroy_all: ->
-    for name, instance of CKEDITOR.instances
-      instance.destroy(true)
-
   init: ->
-    unless PubCKEditor.init_editor()
-      setTimeout (=> PubCKEditor.init_editor()), 1000
+    log('Init CKEditors')
 
-  init_editor: ->
-    if PubCKEditor.editor_included()
-      PubCKEditor.editors_setup()
-      return true
+    require [
+      'ckeditor/ckeditor/ckeditor'
+    ], (CKeditor) ->
+      CKEDITOR_BASEPATH = CONTENT_EDITOR.config.base_path;
+      CKEDITOR.config.language     = CONTENT_EDITOR.config.language;
+      CKEDITOR.config.customConfig = CONTENT_EDITOR.config.customConfig;
+      CKEDITOR.config.contentsCss  = CONTENT_EDITOR.config.contentsCss;
 
-  editors_setup: ->
-    PubCKEditor.destroy_all()
+      PubCKEditor.init_items()
 
-    setTimeout =>
-      $('#pub_intro').prop('disabled', false)
-      $('#pub_content').prop('disabled', false)
+  init_items: ->
+    $('#pub_intro, #pub_content').prop('disabled', false)
 
-      if $('#pub_intro').length
-        unless CKEDITOR.instances['pub_intro']
-          CKEDITOR.replace 'pub_intro',
-            height: 200
+    CKEDITOR.replace 'pub_intro',
+      height: 200
 
-      if $('#pub_content').length
-        unless CKEDITOR.instances['pub_content']
-          CKEDITOR.replace 'pub_content',
-            height: 500
-    , 1000
+    CKEDITOR.replace 'pub_content',
+      height: 500
 
     do @customizer
 
