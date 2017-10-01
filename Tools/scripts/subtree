@@ -10,7 +10,13 @@
 action = ARGV.first.strip.downcase
 list   = ARGV.last.strip.downcase + '.rb'
 
+require 'colorize'
 require_relative "subtree_lists/#{list}"
+
+def execute_cmd cmd
+  puts cmd.strip.red
+  system cmd
+end
 
 subtrees_dir = ''
 subtrees = SUBTREES.each_slice(3)
@@ -21,14 +27,9 @@ if action == 'add'
     remote_repo = item[1]
     branch      = item[2]
 
-    puts cmd = "
-      git subtree add \
-        --prefix #{subtrees_dir}#{local_path} \
-        #{remote_repo} \
-        #{branch} --squash
+    execute_cmd "
+      git subtree add --prefix #{subtrees_dir}#{local_path} #{remote_repo} #{branch} --squash
     "
-
-    system cmd
   end
 elsif action == 'push'
   subtrees.each do |item|
@@ -36,13 +37,9 @@ elsif action == 'push'
     remote_repo = item[1]
     branch      = item[2]
 
-    puts cmd = "
-      git subtree push \
-        --prefix #{subtrees_dir}#{local_path} \
-        #{remote_repo} \
-        #{branch}
+    execute_cmd "
+      git subtree push --prefix #{subtrees_dir}#{local_path} #{remote_repo} #{branch}
     "
-    system cmd
   end
 elsif action == 'pull'
   subtrees.each do |item|
@@ -50,14 +47,19 @@ elsif action == 'pull'
     remote_repo = item[1]
     branch      = item[2]
 
-    puts cmd = "
-      git subtree pull \
-        --prefix #{subtrees_dir}#{local_path} \
-        #{remote_repo} \
-        #{branch}
+    execute_cmd "
+      git subtree pull --prefix #{subtrees_dir}#{local_path} #{remote_repo} #{branch}
     "
+  end
+elsif action == 'push-force'
+  subtrees.each do |item|
+    local_path  = item[0]
+    remote_repo = item[1]
+    branch      = item[2]
 
-    system cmd
+    execute_cmd "
+      git push #{remote_repo} \`git subtree split --prefix #{subtrees_dir}#{local_path} master\`:#{branch} --force
+    "
   end
 else
   puts 'Undefined action. Acceptable values: [ add | push | pull ]'
