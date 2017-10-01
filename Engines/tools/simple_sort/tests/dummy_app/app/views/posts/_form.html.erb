@@ -1,0 +1,7 @@
+<%= form_for @post do |f| %>
+  <%= f.label :title, 'Заголовок' %><br/>
+  <%= f.text_field :title %><br/>
+  <%= f.label :body, 'Текст статьи' %><br/>
+  <%= f.text_field :body %></br/>
+  <%= f.submit %>
+<% end %>
