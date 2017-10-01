@@ -1,1 +1,1 @@
-requirejs.config({'baseUrl': '/vendor'})
+requirejs.config({'baseUrl': '/vendors'})
