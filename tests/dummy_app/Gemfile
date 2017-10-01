@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_sort', path: '../../../simple_sort'
 gem 'pry'
 
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails', '~> 4.8'

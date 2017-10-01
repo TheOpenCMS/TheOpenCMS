@@ -55,6 +55,19 @@ class ProductsController < ApplicationController
 end
 ```
 
+### How to test
+
+```
+git clone https://github.com/TheOpenCMS/simple_sort.git
+
+cd simple_sort/tests/dummy_app/
+bundle
+
+RAILS_ENV=test bundle exec rake db:setup
+
+bundle exec rspec
+```
+
 ### MIT License
 
 Copyright (c) 2014-[Current Year] Ilya N. Zykin

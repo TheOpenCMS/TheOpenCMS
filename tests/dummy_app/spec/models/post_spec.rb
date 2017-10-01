@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
-  describe 'Sort posts using' do  
+  describe 'Sort posts using' do
     before(:each) do
       3.times { create :post }
     end
@@ -19,7 +18,7 @@ RSpec.describe Post, type: :model do
   describe 'Use simple_sort for sorting' do
     subject { Post.simple_sort(params).pluck(column) }
     let(:params) { { sort_column: column, sort_type: type_sort } }
-        
+
     describe 'column ID' do
       before(:each) do
         3.times { create :post }
@@ -28,7 +27,7 @@ RSpec.describe Post, type: :model do
 
       context ' by ACS' do
         let(:type_sort) { 'asc' }
-        
+
         it { is_expected.to eq [3, 2, 1] }
       end
 
@@ -73,7 +72,7 @@ RSpec.describe Post, type: :model do
 
         it { is_expected.to eq 'SELECT "posts".* FROM "posts" ORDER BY posts.title ASC' }
       end
-      
+
       context 'column to sort' do
         let(:type_sort) { 'ASC' }
         let(:column) { :ANY_WRONG_COLUMN_NAME }
@@ -86,7 +85,7 @@ RSpec.describe Post, type: :model do
         let(:column) { :ANY_WRONG_COLUMN_NAME }
 
         it { is_expected.to eq 'SELECT "posts".* FROM "posts"' }
-      end 
+      end
     end
 
     describe 'after sort by Title' do
