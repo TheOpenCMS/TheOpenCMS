@@ -21,12 +21,14 @@ if action == 'add'
     remote_repo = item[1]
     branch      = item[2]
 
-    puts `
+    puts cmd = "
       git subtree add \
         --prefix #{subtrees_dir}#{local_path} \
         #{remote_repo} \
         #{branch} --squash
-    `
+    "
+
+    system cmd
   end
 elsif action == 'push'
   subtrees.each do |item|
@@ -34,12 +36,13 @@ elsif action == 'push'
     remote_repo = item[1]
     branch      = item[2]
 
-    puts `
+    puts cmd = "
       git subtree push \
         --prefix #{subtrees_dir}#{local_path} \
         #{remote_repo} \
         #{branch}
-    `
+    "
+    system cmd
   end
 elsif action == 'pull'
   subtrees.each do |item|
@@ -47,12 +50,14 @@ elsif action == 'pull'
     remote_repo = item[1]
     branch      = item[2]
 
-    puts `
+    puts cmd = "
       git subtree pull \
         --prefix #{subtrees_dir}#{local_path} \
         #{remote_repo} \
         #{branch}
-    `
+    "
+
+    system cmd
   end
 else
   puts 'Undefined action. Acceptable values: [ add | push | pull ]'
