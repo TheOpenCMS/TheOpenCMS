@@ -1,0 +1,23 @@
+<%= link_to "New Post", new_post_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Id', simple_sort_url(:id), id: :id %></th>
+      <th><%= link_to 'Title', simple_sort_url(:title), title: :title %></th>
+      <th><%= link_to 'Created', simple_sort_url(:created_at), created_at: :created_at %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= post.title %></td>
+      <td><%= post.created_at.strftime('%d.%m.%Y') %></td>
+      <td><%= link_to t('.edit'), edit_post_path(post) %></td>
+      <td><%= link_to t('.delete'), post, method: :delete,
+                      data: { confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table
