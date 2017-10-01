@@ -13,7 +13,8 @@
     = link_to 'Create publication', new_publication_path, class: 'ptz_btn ptz_size-16'
 
 - @pubs.each do |pub|
-  .mt30.mb80
+  .mt30.mb30.p20(class="pubs-item-state_#{pub.state}")
+
     .mb20 = link_to pub.title, pub, class: 'fs25 b'
 
     .fs14

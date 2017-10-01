@@ -6,26 +6,27 @@
 = render partial: 'pubs/items/pagination_and_sort_params'
 
 - if @pubs.blank?
-  .fs18= t(:nothing_here, scope: 'publications')
+  .fs18= t(:nothing_here, scope: :publications)
 
-- @pubs.each do |pub|
-  .mt30.mb80
-    .mb20= link_to pub.title, pub, class: 'fs25 b'
+- else
+  h3.fs25.mb30 = t(:latests, scope: :publications)
 
-    .pub-content_typography.mb15
-      = raw pub.intro
+  - @pubs.each do |pub|
+    .pubs-item.p20
+      h1.fs30.mb10 = link_to pub.title, pub
+      .fs13.mb25
+        = t(:published_at, scope: :publications)
+        =<> pubs_localized_date pub.created_at
+        ||
+        =<> t(:author, scope: :publications)
+        = link_to pub.user.email, pub.user
 
-    .fs14
-      span.mr20
-        span.fa.fa-user.mr5
-        = pub.user.email
-
-      span.mr20
-        span.fa.fa-pencil.mr5
-        = pubs_localized_date pub.published_at
-
-      span.mr20
+      span.mr20.fs15(title='views')
         span.fa.fa-eye.mr5
-        = pub.view_counter
+        span = pub.view_counter
 
-= render partial: 'pubs/items/pagination'
+      / span.mr20(title='comments')
+      /   span.fa.fa-comment.mr5
+      /   span = pub.comments_count
+
+  = render partial: 'pubs/items/pagination'

@@ -18,18 +18,10 @@ ruby:
           root_path,
           class: 'ptz_btn ptz_size-16'
       .mb15
-        = link_to t(:all_html, scope: show_scope),
-          @resource_class,
-          class: 'ptz_btn ptz_size-16'
-      - if can_perform?(:publication, action: :my)
-        .mb15
-          = link_to t(:my_html, scope: show_scope),
-            [:my, @resource_class],
-            class: 'ptz_btn ptz_size-16'
-      .mb15
         = link_to t(:show, scope: show_scope),
           [@pub],
-          class: 'ptz_btn ptz_size-16'
+          class: 'ptz_btn ptz_size-16',
+          target: :_blank
 
   .ptz_td
     .pub_form-block

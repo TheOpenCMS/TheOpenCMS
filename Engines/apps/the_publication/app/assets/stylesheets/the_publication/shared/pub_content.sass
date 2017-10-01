@@ -6,11 +6,21 @@
 .pub-content_typography
   @include common_font_style
 
-  h2, h3, h4
+  a
+    color: #257ed7
+    text-decoration: underline
+    transition: color 0.2s linear
+
+    &:hover
+      color: #d74125
+
+  ::selection
+    color: red
+    background: yellow
+
+  h1, h2, h3, h4, h5, h6
     line-height: 135%
     margin-bottom: 20px
-    padding-bottom: 5px
-    border-bottom: 4px solid #eee
 
   h2
     font-size: 26px
@@ -20,6 +30,9 @@
 
   h4
     font-size: 18px
+
+  h5
+    font-size: 15px
 
   p
     @include common_font_style
@@ -57,6 +70,14 @@
     &:hover
       background: transparent
       border-bottom: 4px solid #737070
+
+  ol, ul
+    padding-left: 20px
+
+  ol
+    list-style-type: decimal
+  ul
+    list-style-type: circle
 
   blockquote
     @include common_font_style

@@ -8,5 +8,7 @@
   //= require notifications/base
   //= require app_theme/shared/layout
   //= require the_publication/backend/form
+
+  //= require the_publication/shared/pubs
   //= require the_publication/shared/pub_content
 */

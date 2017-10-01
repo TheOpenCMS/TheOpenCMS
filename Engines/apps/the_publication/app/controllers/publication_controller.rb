@@ -66,7 +66,7 @@ class PublicationController
                 .with_user
                 .where(user: current_user)
                 .where(state: %w[draft published])
-                .max2min(:published_at)
+                .max2min(:created_at)
                 .simple_sort(params)
                 .pagination(params)
 

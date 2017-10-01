@@ -6,8 +6,18 @@ ruby:
   = render partial: 'pubs/items/code_pygments_css'
 
 .ptz_table.mb20
+  .ptz_td
+    h1.fs26.b.lh130.mb30 = @pub.title
+
+    .mb30
+      .pub-content_typography
+        = raw @pub.intro
+        = raw @pub.content
+
+    = render 'pubs/items/pub_footer_info'
+
   .ptz_td.w15p
-    .mr15
+    .ml15
       .mb15
         = link_to t(:root_page_html, scope: scope),
           root_path,
@@ -21,12 +31,3 @@ ruby:
           = link_to t(:edit, scope: scope),
             [:edit, @pub],
             class: 'ptz_btn ptz_size-16'
-  .ptz_td
-    h1.fs26.b.lh130.mb30 = @pub.title
-
-    .mb30
-      .pub-content_typography
-        = raw @pub.intro
-        = raw @pub.content
-
-    = render 'pubs/items/pub_footer_info'
