@@ -43,10 +43,11 @@ puts
 puts """
 echo '==============================================================================='
 date
-certbot renew --pre-hook 'service nginx stop' --post-hook 'service nginx start'
+certbot renew --pre-hook 'service nginx stop' --post-hook 'service nginx start' --force-renewal
 cp /etc/letsencrypt/live/#{ web_domain }/privkey.pem #{ ssl_path }
 cp /etc/letsencrypt/live/#{ web_domain }/fullchain.pem #{ ssl_path }
 chown  rails:rails #{ ssl_path }/*
+service nginx restart
 """.cyan
 
 print "root$".green
@@ -57,7 +58,7 @@ print " [EDIT] /var/spool/cron/crontabs/root".white
 puts
 
 puts """
-58 11,23 * * * /bin/bash -l -c 'source lets_encript.sh >> #{ shared_logs_path }/letsencrypt.log 2>> #{ shared_logs_path }/letsencrypt.errors.log'
+1 0 * * 1 /bin/bash -l -c 'source lets_encript.sh >> #{ shared_logs_path }/letsencrypt.log 2>> #{ shared_logs_path }/letsencrypt.errors.log'
 """.cyan
 
 print "root$".green
